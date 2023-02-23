@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.simple_html
     - node.type.article
     - node.type.page
     - taxonomy.vocabulary.tags
@@ -44,6 +45,7 @@ permissions:
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'use text format basic_html'
+  - 'use text format simple_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'

@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats:
-      - restricted_html
+      - simple_html
 id: paragraph.paragraph_video.field_p_media_cutline
 field_name: field_p_media_cutline
 entity_type: paragraph
