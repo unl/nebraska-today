@@ -1,0 +1,20 @@
+uuid: 6b2be465-207e-4527-9219-227fb7156118
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_five_news
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: unl_five_news_page_title
+theme: unl_five_news
+region: hero
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

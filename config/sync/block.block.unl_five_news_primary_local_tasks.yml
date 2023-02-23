@@ -1,0 +1,22 @@
+uuid: 88ec6298-98f6-4f0d-976f-52d572e3f862
+langcode: en
+status: true
+dependencies:
+  theme:
+    - unl_five_news
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: unl_five_news_primary_local_tasks
+theme: unl_five_news
+region: navlinks
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

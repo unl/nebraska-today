@@ -1,0 +1,22 @@
+uuid: 6269b184-521a-4f86-ae5f-4eeca1d6d82a
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - unl_five_news
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: unl_five_news_help
+theme: unl_five_news
+region: content_top
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

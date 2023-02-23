@@ -61,3 +61,24 @@ To receive upstream updates, navigate to `vendor/unl/wdntemplates` and run `git 
 #### Manual
 
 Download the [UNLedu Web Framework sync set](https://wdn.unl.edu/downloads/wdn_includes.zip) to `/web/wdn`.
+
+## Install ImageMagick
+-  If you do not have ImageMagick software installed on your device, you can do so using the following commands. This software is necessary to process/add images.
+```
+brew install imagemagick
+brew install ghostscript
+```
+
+For more infromation regaridng installation go to https://imagemagick.org/script/download.php
+
+## Install Drupal
+
+```
+cp web/sites/default/default.settings.local.php web/sites/default/settings.local.php
+```
+
+Edit `web/sites/all/settings.php` and set the LDAP password.
+
+Navigate to http://example.unl.edu/nebraska-today/web/ (or set up a virtual host, news-local.unl.edu is the recommended name) in your browser. (See Installing Drupal)
+
+When asked to select an Installation Profile, select Use existing configuration.

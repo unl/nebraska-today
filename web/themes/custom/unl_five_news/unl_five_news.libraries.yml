@@ -1,0 +1,10 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/wdn-overrides.css: {}
+article:
+  version: VERSION
+  css:
+    theme:
+      css/theme/article.css: {}

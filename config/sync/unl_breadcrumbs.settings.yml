@@ -1,0 +1,6 @@
+site_root_breadcrumb_title: ''
+site_root_breadcrumb_title_use_site_name: true
+interstitial_breadcrumbs:
+  -
+    title: 'University Communication'
+    url: 'https://ucomm.unl.edu/'

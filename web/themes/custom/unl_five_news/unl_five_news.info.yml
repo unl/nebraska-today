@@ -1,0 +1,30 @@
+name: UNLedu 5.3 News
+type: theme
+description: 'Subtheme for unl_five.'
+core_version_requirement: ^10
+base theme: unl_five
+
+libraries:
+  - unl_five_news/global-styling
+
+libraries-override:
+  core/classList: false
+  core/html5shiv: false
+  core/normalize: false
+
+regions:
+  page_top: Page top
+  page_bottom: Page bottom
+
+  header: Header
+  navlinks: Navigation links
+  hero: Hero
+  content_top: Content top
+  sidebar_first: Sidebar first
+  content: Content
+  sidebar_second: Sidebar second
+  content_bottom: Content bottom
+
+  contactinfo: Contact info
+  socialmedia: Social media
+  leftcollinks: Related links

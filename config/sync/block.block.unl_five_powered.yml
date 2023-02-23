@@ -1,0 +1,22 @@
+uuid: c546c5ff-f35a-42fe-abad-304e859a0bc5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - unl_five
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: unl_five_powered
+theme: unl_five
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

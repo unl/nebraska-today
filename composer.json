@@ -34,6 +34,7 @@
         "php": ">=8.1",
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.3",
+        "drupal/cas": "^2.1",
         "drupal/config_filter": "^2.4",
         "drupal/config_ignore": "^2.4",
         "drupal/core-composer-scaffold": "^10.0",
@@ -49,6 +50,7 @@
         "unlcms/project-herbie-composer-plugin": "^1.1",
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_five": "^5.3",
+        "unlcms/unl_user": "^1.4",
         "webflo/drupal-finder": "^1.2"
     },
     "conflict": {
@@ -70,14 +72,22 @@
     "autoload": {
         "classmap": [
             "scripts/composer/UnlScriptHandler.php"
-        ],
-        "files": ["load.environment.php"]
+        ]
     },
     "scripts": {
+        "post-drupal-scaffold-cmd": [
+            "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch"
+        ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },
     "extra": {
         "drupal-scaffold": {
+            "file-mapping": {
+                "[web-root]/sites/default/default.settings.php": {
+                    "append": "patches/default.settings.php.append.php"
+                }
+            },
             "locations": {
                 "web-root": "web/"
             }
