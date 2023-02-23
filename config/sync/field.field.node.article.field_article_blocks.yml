@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
+    - block_content.type.photo_gallery
     - field.storage.node.field_article_blocks
     - node.type.article
 id: node.article.field_article_blocks
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       basic: basic
+      photo_gallery: photo_gallery
     sort:
       field: _none
       direction: ASC
     auto_create: true
-    auto_create_bundle: ''
+    auto_create_bundle: basic
 field_type: entity_reference

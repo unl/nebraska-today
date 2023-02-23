@@ -1,0 +1,32 @@
+uuid: 7895a245-bc09-4b65-8365-a390299b7c0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_photos.field_p_media_cutline
+    - field.field.paragraph.paragraph_photos.field_p_photos
+    - paragraphs.paragraphs_type.paragraph_photos
+  module:
+    - text
+id: paragraph.paragraph_photos.default
+targetEntityType: paragraph
+bundle: paragraph_photos
+mode: default
+content:
+  field_p_media_cutline:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_photos:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

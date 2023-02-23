@@ -1,0 +1,33 @@
+uuid: bd9a29b4-6da8-4568-92f2-78d06445b8e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.photo_gallery
+    - field.field.block_content.photo_gallery.body
+    - field.field.block_content.photo_gallery.field_photo_gallery_photos
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.photo_gallery.default
+targetEntityType: block_content
+bundle: photo_gallery
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_photo_gallery_photos:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

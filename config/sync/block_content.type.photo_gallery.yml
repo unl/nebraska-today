@@ -1,0 +1,8 @@
+uuid: 42401f24-8b47-4c26-a5b3-9d250a2d6336
+langcode: en
+status: true
+dependencies: {  }
+id: photo_gallery
+label: 'Photo gallery'
+revision: 1
+description: 'A set of nice photos.'

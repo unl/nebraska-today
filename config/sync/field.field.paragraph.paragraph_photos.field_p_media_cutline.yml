@@ -1,0 +1,26 @@
+uuid: 8650e414-d9d0-4763-89f9-e6a827b2ef2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_p_media_cutline
+    - paragraphs.paragraphs_type.paragraph_photos
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - restricted_html
+id: paragraph.paragraph_photos.field_p_media_cutline
+field_name: field_p_media_cutline
+entity_type: paragraph
+bundle: paragraph_photos
+label: Cutline
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,32 @@
+uuid: 7db72a39-11da-4069-826d-7443961f5852
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_media.field_p_media
+    - field.field.paragraph.paragraph_media.field_p_media_cutline
+    - paragraphs.paragraphs_type.paragraph_media
+  module:
+    - text
+id: paragraph.paragraph_media.default
+targetEntityType: paragraph
+bundle: paragraph_media
+mode: default
+content:
+  field_p_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_p_media_cutline:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

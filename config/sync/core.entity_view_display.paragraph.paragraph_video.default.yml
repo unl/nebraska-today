@@ -1,0 +1,32 @@
+uuid: cd35eccb-4cc4-4a17-bdc0-28dd0904c654
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_video.field_p_media_cutline
+    - field.field.paragraph.paragraph_video.field_p_video
+    - paragraphs.paragraphs_type.paragraph_video
+  module:
+    - text
+id: paragraph.paragraph_video.default
+targetEntityType: paragraph
+bundle: paragraph_video
+mode: default
+content:
+  field_p_media_cutline:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_p_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
