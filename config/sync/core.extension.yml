@@ -2,6 +2,8 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   admin_toolbar: 0
+  admin_toolbar_tools: 0
+  allowed_formats: 0
   automated_cron: 0
   big_pipe: 0
   block: 0
@@ -21,6 +23,7 @@ module:
   dynamic_page_cache: 0
   editor: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   file_mdm: 0
@@ -50,6 +53,7 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_tweak: 0
   unl_breadcrumbs: 0
   unl_cas: 0
   unl_user: 0

@@ -56,11 +56,13 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    media_media:
+      allow_view_mode_override: false
 image_upload:
   status: true
   scheme: public
-  directory: inline-images
-  max_size: ''
+  directory: images/inline
+  max_size: '10 MB'
   max_dimensions:
     width: 0
     height: 0
