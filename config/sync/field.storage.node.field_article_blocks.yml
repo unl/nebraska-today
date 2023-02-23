@@ -1,18 +1,16 @@
-uuid: 991b7e63-f719-43aa-ab9f-72ec22887ee2
+uuid: b09d2a85-dafc-4ded-bdcf-ed03e30e4c67
 langcode: en
 status: true
 dependencies:
   module:
+    - block_content
     - node
-    - taxonomy
-_core:
-  default_config_hash: WpOE_bs8Bs_HY2ns7n2r__de-xno0-Bxkqep5-MsHAs
-id: node.field_tags
-field_name: field_tags
+id: node.field_article_blocks
+field_name: field_article_blocks
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: block_content
 module: core
 locked: false
 cardinality: -1

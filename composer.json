@@ -33,6 +33,7 @@
     "require": {
         "php": ">=8.1",
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.3",
         "drupal/allowed_formats": "^2.0",
         "drupal/cas": "^2.1",
@@ -47,7 +48,9 @@
         "drupal/field_group": "^3.4",
         "drupal/image_class": "^2.0",
         "drupal/imagemagick": "^3.4",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/pathauto": "^1.11",
+        "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
         "drush/drush": "^11.5",
         "unl/wdntemplates": "^5.3",
@@ -69,7 +72,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "unlcms/project-herbie-composer-plugin": true
+            "unlcms/project-herbie-composer-plugin": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -145,6 +149,11 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "patches": {
+            "drupal/config_ignore": {
+                "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
+            }
         }
     }
 }

@@ -1,0 +1,57 @@
+<?php
+
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Implements hook_token_info().
+ */
+function unl_news_tokens_token_info(){
+  $info = [];
+
+  $info['types']['unl'] = [
+    'name' => t('UNL News Tokens'),
+    'description' => t('Custom tokens to solve use-case problems for the our website.'),
+    'needs-data' => 'node',
+  ];
+
+  $info['tokens']['unl']['b'] = [
+    'name' => 'UNL News Block Embed',
+    'description' => t('This token requires a delta and returns the HTML of a custom block.')
+  ];
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function unl_news_tokens_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) : array {
+  $replacements = [];
+
+  if ($type == 'unl') {
+    foreach ($tokens as $name => $original) {
+      [$name, $delta] = explode(':', $name, 2);
+
+      switch ($name) {
+        case 'b':
+          $node = $data['node'];
+
+          if ($node->hasField('field_article_blocks') && !$node->get('field_article_blocks')->isEmpty()) {
+            $field_delta = $node->field_article_blocks->get($delta);
+            $entity = $field_delta->entity;
+            $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity->getEntityTypeId());
+            $build = $view_builder->view($entity);
+            $markup = \Drupal::service('renderer')->render($build);
+          }
+
+          $replacements[$original] = $markup ?? '';
+          break;
+
+        default:
+          break;
+      }
+    }
+  }
+
+  return $replacements;
+}

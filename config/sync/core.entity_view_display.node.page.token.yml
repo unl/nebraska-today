@@ -1,8 +1,9 @@
-uuid: 43d007ba-f1ee-4446-af71-951cd22695f4
+uuid: 59ac5965-2dc5-47cc-bce6-1680441e9f51
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.token
     - field.field.node.page.body
     - node.type.page
   module:
@@ -10,10 +11,10 @@ dependencies:
     - user
 _core:
   default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
-id: node.page.default
+id: node.page.token
 targetEntityType: node
 bundle: page
-mode: default
+mode: token
 content:
   body:
     type: text_default
