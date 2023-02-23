@@ -14,6 +14,10 @@
             "url": "https://packages.drupal.org/8"
         },
         {
+            "type": "vcs",
+            "url": "https://github.com/unlcms/project-herbie-composer-plugin.git"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "unl/wdntemplates",
@@ -29,10 +33,22 @@
     "require": {
         "php": ">=8.1",
         "composer/installers": "^2.0",
+        "drupal/admin_toolbar": "^3.3",
+        "drupal/config_filter": "^2.4",
+        "drupal/config_ignore": "^2.4",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drupal/ctools": "^4.0",
+        "drupal/diff": "^1.1",
+        "drupal/image_class": "^2.0",
+        "drupal/imagemagick": "^3.4",
+        "drupal/pathauto": "^1.11",
+        "drush/drush": "^11.5",
         "unl/wdntemplates": "^5.3",
+        "unlcms/project-herbie-composer-plugin": "^1.1",
+        "unlcms/unl_breadcrumbs": "^1.0",
+        "unlcms/unl_five": "^5.3",
         "webflo/drupal-finder": "^1.2"
     },
     "conflict": {
@@ -46,7 +62,8 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "unlcms/project-herbie-composer-plugin": true
         },
         "sort-packages": true
     },
