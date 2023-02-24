@@ -1,0 +1,93 @@
+diff --git a/core/modules/filter/filter.module b/core/modules/filter/filter.module
+index fe5615f22..504a8e40d 100644
+--- a/core/modules/filter/filter.module
++++ b/core/modules/filter/filter.module
+@@ -777,6 +777,10 @@ function _filter_html_image_secure_process($text) {
+   $base_path = base_path();
+   $base_path_length = mb_strlen($base_path);
+ 
++  // Find the private path.
++  $private_path = $base_path . 'system/files/';
++  $private_path_length = mb_strlen($private_path);
++
+   // Find the directory on the server where index.php resides.
+   $local_dir = \Drupal::root() . '/';
+ 
+@@ -791,12 +795,29 @@ function _filter_html_image_secure_process($text) {
+     // Verify that $src starts with $base_path.
+     // This also ensures that external images cannot be referenced.
+     $src = $image->getAttribute('src');
+-    if (mb_substr($src, 0, $base_path_length) === $base_path) {
++    if (mb_substr($src, 0, $private_path_length) === $private_path) {
++      $private_image_path = mb_substr($src, $private_path_length);
++      $private_image_path = 'private://' . $private_image_path;
++      $private_image_path = urldecode($private_image_path);
++      $image_object = \Drupal::service('image.factory')->get($private_image_path);
++      if ($image_object->getFileSize()) {
++        // The image has the right path. Erroneous images are dealt with below.
++        continue;
++      }
++    }
++    elseif (mb_substr($src, 0, $base_path_length) === $base_path) {
+       // Remove the $base_path to get the path relative to the Drupal root.
+       // Ensure the path refers to an actual image by prefixing the image source
+       // with the Drupal root and running getimagesize() on it.
+       $local_image_path = $local_dir . mb_substr($src, $base_path_length);
+       $local_image_path = rawurldecode($local_image_path);
++
++      // Check for query string and remove it if present.
++      $parse_query_string = substr($local_image_path, 0, strpos($local_image_path, '?'));
++      if (!empty($parse_query_string)) {
++        $local_image_path = $parse_query_string;
++      }
++
+       if (@getimagesize($local_image_path)) {
+         // The image has the right path. Erroneous images are dealt with below.
+         continue;
+diff --git a/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php b/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
+index 148af99bf..698a16c4b 100644
+--- a/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
++++ b/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
+@@ -4,6 +4,7 @@
+ 
+ use Drupal\Component\Render\FormattableMarkup;
+ use Drupal\comment\Tests\CommentTestTrait;
++use Drupal\Core\StreamWrapper\PrivateStream;
+ use Drupal\Core\StreamWrapper\PublicStream;
+ use Drupal\filter\Entity\FilterFormat;
+ use Drupal\Tests\BrowserTestBase;
+@@ -86,6 +87,7 @@ public function testImageSource() {
+     global $base_url;
+ 
+     $public_files_path = PublicStream::basePath();
++    $private_files_path = PrivateStream::basePath();
+ 
+     $http_base_url = preg_replace('/^https?/', 'http', $base_url);
+     $https_base_url = preg_replace('/^https?/', 'https', $base_url);
+@@ -107,6 +109,10 @@ public function testImageSource() {
+     $special_uri = str_replace($test_images[0]->filename, $special_filename, $test_images[0]->uri);
+     \Drupal::service('file_system')->copy($test_images[0]->uri, $special_uri);
+ 
++    // Put a test image in the private files directory.
++    $private_uri = str_replace('public://', 'private://', $test_images[0]->uri);
++    \Drupal::service('file_system')->copy($test_images[0]->uri, $private_uri);
++
+     // Create a list of test image sources.
+     // The keys become the value of the IMG 'src' attribute, the values are the
+     // expected filter conversions.
+@@ -126,11 +132,15 @@ public function testImageSource() {
+       $https_base_url . '/' . $public_files_path . '/' . $test_image => $files_path . '/' . $test_image,
+       $http_base_url . '/' . $public_files_path . '/' . $special_image => $files_path . '/' . $special_image,
+       $https_base_url . '/' . $public_files_path . '/' . $special_image => $files_path . '/' . $special_image,
++      $http_base_url . '/' . $private_files_path . '/' . $test_image => base_path() . $private_files_path . '/' . $test_image,
++      $https_base_url . '/' . $private_files_path . '/' . $test_image => base_path() . $private_files_path . '/' . $test_image,
+       $files_path . '/example.png' => $red_x_image,
+       'http://example.com/' . $druplicon => $red_x_image,
+       'https://example.com/' . $druplicon => $red_x_image,
+       'javascript:druplicon.png' => $red_x_image,
+       $csrf_path . '/logout' => $red_x_image,
++      // Test a url containing a query string.
++      $http_base_url . '/' . $druplicon . '?query=string' => base_path() . $druplicon . '?query=string',
+     ];
+     $comment = [];
+     foreach ($images as $image => $converted) {
