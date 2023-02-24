@@ -74,6 +74,7 @@ For more infromation regaridng installation go to https://imagemagick.org/script
 ## Install Drupal
 
 ```
+cp web/sites/default/default.settings.php web/sites/default/settings.php
 cp web/sites/default/default.settings.local.php web/sites/default/settings.local.php
 ```
 
@@ -106,6 +107,7 @@ Run on a deployment after updating code base:
 composer install
 drush updatedb
 drush cache:rebuild
+drush config:import
 ```
 
 ## Configuration Management
@@ -125,3 +127,7 @@ In the development config split, a number of settings are enabled, disabled, or 
 Twig caching is disabled and Twig autoloading is enabled; debug cacheability headers are enabled;
 CSS and JS aggregation is disabled; and file permission hardening is disabled.  See
 /web/sites/default/news-settings.php for more details. These settings can be overridden in settings.local.php.
+
+## Drush
+
+Available in the vendor directory: `vendor/bin/drush <drush-commands>`
