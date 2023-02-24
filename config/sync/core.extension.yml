@@ -67,6 +67,7 @@ module:
   externalauth: 10
   views: 10
   paragraphs: 11
+  minimal: 1000
 theme:
   claro: 0
   stable9: 0
