@@ -57,7 +57,7 @@
         "unl/wdntemplates": "^5.3",
         "unlcms/project-herbie-composer-plugin": "^1.1",
         "unlcms/unl_breadcrumbs": "^1.0",
-        "unlcms/unl_five": "^5.3",
+        "unlcms/unl_five": "^10.5.3",
         "unlcms/unl_user": "^1.4",
         "webflo/drupal-finder": "^1.2"
     },
