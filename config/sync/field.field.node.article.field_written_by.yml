@@ -1,0 +1,29 @@
+uuid: 89469c6e-0b01-431d-8d38-bf82b121e3ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_written_by
+    - node.type.article
+    - taxonomy.vocabulary.written_by
+id: node.article.field_written_by
+field_name: field_written_by
+entity_type: node
+bundle: article
+label: 'Written by'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      written_by: written_by
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

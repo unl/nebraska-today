@@ -1,0 +1,26 @@
+uuid: 3b2fd538-cec6-42e1-9b67-d6dc7c864a01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_subtitle
+    - node.type.article
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_html
+id: node.article.field_subtitle
+field_name: field_subtitle
+entity_type: node
+bundle: article
+label: Subtitle
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

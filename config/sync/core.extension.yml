@@ -36,6 +36,7 @@ module:
   image_class: 0
   imagemagick: 0
   inline_entity_form: 0
+  jquery_ui: 0
   link: 0
   media: 0
   media_library: 0
@@ -52,6 +53,7 @@ module:
   sophron: 0
   system: 0
   taxonomy: 0
+  taxonomy_manager: 0
   text: 0
   token: 0
   token_filter: 0

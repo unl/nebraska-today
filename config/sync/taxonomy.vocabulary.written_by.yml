@@ -1,0 +1,8 @@
+uuid: 617a4dd5-7844-4ff0-98dc-b8aced83594c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Written by'
+vid: written_by
+description: ''
+weight: 0

@@ -53,6 +53,7 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/paragraphs": "^1.15",
         "drupal/pathauto": "^1.11",
+        "drupal/taxonomy_manager": "^2.0",
         "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
         "drush/drush": "^11.5",
