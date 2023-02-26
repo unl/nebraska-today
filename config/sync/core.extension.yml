@@ -68,10 +68,10 @@ module:
   externalauth: 10
   views: 10
   paragraphs: 11
-  minimal: 1000
+  unl_news: 1000
 theme:
   claro: 0
   stable9: 0
   unl_five: 0
   unl_five_news: 0
-profile: minimal
+profile: unl_news
