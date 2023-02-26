@@ -66,6 +66,7 @@ module:
   views_ui: 0
   pathauto: 1
   externalauth: 10
+  image_style_warmer: 10
   views: 10
   paragraphs: 11
   unl_news: 1000
