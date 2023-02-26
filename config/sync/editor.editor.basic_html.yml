@@ -43,7 +43,6 @@ settings:
       startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags:
-        - '<div>'
         - '<cite>'
         - '<dl>'
         - '<dt>'

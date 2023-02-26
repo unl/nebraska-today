@@ -55,6 +55,7 @@ module:
   text: 0
   token: 0
   token_filter: 0
+  token_filter_remove_p_wrapper: 0
   toolbar: 0
   tour: 0
   twig_tweak: 0

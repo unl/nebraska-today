@@ -6,6 +6,7 @@ dependencies:
     - editor
     - media
     - token_filter
+    - token_filter_remove_p_wrapper
 _core:
   default_config_hash: RjoJPQLCAE8u1Ys_yCKubpkYlRz_Oy12a5qCVeNIHJ8
 name: 'Basic HTML'
@@ -16,47 +17,47 @@ filters:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -50
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <div> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol start type> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol start type> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: 7
+    weight: -48
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: 8
+    weight: -47
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
     status: true
-    weight: 9
+    weight: -46
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: 11
+    weight: -45
     settings: {  }
   filter_url:
     id: filter_url
     provider: filter
     status: true
-    weight: 0
+    weight: -49
     settings:
       filter_url_length: 72
   media_embed:
     id: media_embed
     provider: media
     status: true
-    weight: 100
+    weight: -44
     settings:
       default_view_mode: default
       allowed_view_modes: {  }
@@ -67,6 +68,30 @@ filters:
     id: token_filter
     provider: token_filter
     status: true
-    weight: 0
+    weight: -42
     settings:
       replace_empty: '0'
+  token_filter_remove_p_wrapper:
+    id: token_filter_remove_p_wrapper
+    provider: token_filter_remove_p_wrapper
+    status: true
+    weight: -43
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: false
+    weight: -39
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -41
+    settings: {  }

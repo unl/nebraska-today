@@ -43,7 +43,19 @@ function unl_news_tokens_tokens($type, $tokens, array $data, array $options, Bub
             $build = $view_builder->view($entity);
             $markup = \Drupal::service('renderer')->render($build);
           }
-
+/*
+          if ($node->hasField('field_article_blocks') && !$node->get('field_article_blocks')->isEmpty()) {
+            $field = $node->field_article_blocks;
+//            $itemtokeep = $field->list[0];
+//            $field['list'] = array($itemtokeep);
+            $build = $field->view(['type'=>'entity_reference_entity_view']);
+            //$build['#formatter'] = 'entity_reference_entity_view';
+//            $entity = $field_delta->entity;
+//            $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity->getEntityTypeId());
+//            $build = $view_builder->view($entity);
+            $markup = \Drupal::service('renderer')->render($build);
+          }
+*/
           $replacements[$original] = $markup ?? '';
           break;
 

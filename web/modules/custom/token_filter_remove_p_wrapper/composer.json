@@ -1,0 +1,6 @@
+{
+    "name": "drupal/token_filter_remove_p_wrapper",
+    "description": "Remove the <p> wrapper from around tokens.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later"
+}

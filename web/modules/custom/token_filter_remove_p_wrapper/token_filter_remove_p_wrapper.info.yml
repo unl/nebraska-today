@@ -1,0 +1,7 @@
+type: module
+name: 'Token Filter Remove <p> Wrapper'
+description: 'Provides a filter that removes the <p> wrapper from around tokens.'
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - drupal:filter
+  - token:token
