@@ -37,7 +37,7 @@ function unl_news_tokens_tokens($type, $tokens, array $data, array $options, Bub
           $node = $data['node'];
 
           if (isset($node) && $node->hasField('field_article_blocks') && !$node->get('field_article_blocks')->isEmpty()) {
-            $field_delta = $node->field_article_blocks->get($delta);
+            $field_delta = $node->field_article_blocks->get((int)$delta-1);
             $entity = $field_delta->entity;
             $view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity->getEntityTypeId());
             $build = $view_builder->view($entity);

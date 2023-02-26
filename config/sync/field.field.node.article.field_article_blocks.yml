@@ -12,7 +12,7 @@ field_name: field_article_blocks
 entity_type: node
 bundle: article
 label: Blocks
-description: ''
+description: 'These are not displayed unless added manually. Embed each one individually in the <em>Body</em> text (on its own line) with a shortcode: <code>&#91;unl:b:1&#93;</code> for the first, <code>&#91;unl:b:2&#93;</code> for the second, etc.'
 required: false
 translatable: false
 default_value: {  }
