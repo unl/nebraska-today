@@ -23,7 +23,7 @@ third_party_settings:
       label: 'Site section'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 13
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -33,6 +33,21 @@ third_party_settings:
         description: ''
         required_fields: true
         weight: -10
+    group_article_blocks:
+      children:
+        - field_article_blocks
+      label: 'Blocks (for embedding into the Body)'
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
 id: node.article.default
@@ -58,7 +73,7 @@ content:
     third_party_settings: {  }
   field_article_blocks:
     type: inline_entity_form_complex
-    weight: 9
+    weight: 10
     region: content
     settings:
       form_mode: default
@@ -89,7 +104,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS
@@ -99,7 +114,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
