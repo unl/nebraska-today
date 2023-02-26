@@ -1,0 +1,13 @@
+name: UNL News
+type: profile
+description: 'Based on Minimal. Exists for the purpose of possible future expansion.'
+version: VERSION
+core_version_requirement: ^10
+install:
+  - node
+  - block
+  - dblog
+  - page_cache
+  - dynamic_page_cache
+themes:
+  - stark
