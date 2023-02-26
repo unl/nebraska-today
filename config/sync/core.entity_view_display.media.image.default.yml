@@ -9,6 +9,7 @@ dependencies:
     - media.type.image
   module:
     - image
+    - image_class
 _core:
   default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
 id: media.image.default
@@ -24,7 +25,9 @@ content:
       image_style: large
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      image_class:
+        class: ''
     weight: 0
     region: content
   field_media_image_credit:

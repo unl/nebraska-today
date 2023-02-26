@@ -36,6 +36,7 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.3",
         "drupal/allowed_formats": "^2.0",
+        "drupal/block_content_template": "^1.5",
         "drupal/cas": "^2.1",
         "drupal/config_filter": "^2.4",
         "drupal/config_ignore": "^2.4",
@@ -153,7 +154,7 @@
         },
         "patches": {
             "drupal/core": {
-                "Restrict images to this site blocks image style derivatives": "patches/2528214-65.patch"
+                "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-65.patch"
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
