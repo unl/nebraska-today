@@ -2,6 +2,8 @@ uuid: be4d80ce-c228-4ee2-b8b5-75c4f2855209
 langcode: en
 status: true
 dependencies:
+  config:
+    - core.entity_view_mode.media.full
   module:
     - editor
     - media
@@ -19,32 +21,32 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol start type> <strong> <em> <code> <li> <img src alt height width data-entity-uuid data-entity-type data-caption data-align> <drupal-media data-entity-type data-entity-uuid alt data-caption data-align>'
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: -48
+    weight: -45
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: -47
+    weight: -44
     settings: {  }
   filter_html_image_secure:
     id: filter_html_image_secure
     provider: filter
-    status: true
-    weight: -46
+    status: false
+    weight: -42
     settings: {  }
   editor_file_reference:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: -45
+    weight: -48
     settings: {  }
   filter_url:
     id: filter_url
@@ -57,10 +59,12 @@ filters:
     id: media_embed
     provider: media
     status: true
-    weight: -44
+    weight: -43
     settings:
       default_view_mode: default
-      allowed_view_modes: {  }
+      allowed_view_modes:
+        default: default
+        full: full
       allowed_media_types:
         image: image
         remote_video: remote_video
@@ -68,14 +72,14 @@ filters:
     id: token_filter
     provider: token_filter
     status: true
-    weight: -42
+    weight: -46
     settings:
       replace_empty: '0'
   token_filter_remove_p_wrapper:
     id: token_filter_remove_p_wrapper
     provider: token_filter_remove_p_wrapper
     status: true
-    weight: -43
+    weight: -47
     settings: {  }
   filter_autop:
     id: filter_autop
