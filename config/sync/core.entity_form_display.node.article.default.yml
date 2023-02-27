@@ -14,6 +14,7 @@ dependencies:
     - field_group
     - inline_entity_form
     - path
+    - scheduler
     - text
 third_party_settings:
   field_group:
@@ -23,7 +24,7 @@ third_party_settings:
       label: 'Site section'
       region: content
       parent_name: ''
-      weight: 13
+      weight: 8
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -39,7 +40,7 @@ third_party_settings:
       label: 'Blocks (for embedding into the Body)'
       region: content
       parent_name: ''
-      weight: 9
+      weight: 3
       format_type: details
       format_settings:
         classes: ''
@@ -67,7 +68,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 4
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -104,7 +105,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 12
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -114,7 +115,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: entity_reference_autocomplete
-    weight: 11
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -124,27 +125,38 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 7
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 5
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 6
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -159,7 +171,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 3
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -167,4 +179,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  unpublish_on: true
