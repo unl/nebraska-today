@@ -1,0 +1,10 @@
+uuid: f8ccb769-ca41-4954-b543-7c7e74c5b0a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.email_featured
+label: 'Email (Featured)'
+targetEntityType: node
+cache: true

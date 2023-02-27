@@ -1,0 +1,10 @@
+uuid: 573d4655-b60a-416e-ba76-299f818297be
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.email_secondary
+label: 'Email (Secondary)'
+targetEntityType: node
+cache: true

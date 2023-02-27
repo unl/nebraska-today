@@ -1,0 +1,26 @@
+uuid: 71fd1c83-d74b-46b0-acb8-5bf01a204790
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_default
+    - field.storage.paragraph.field_p_email_article_display
+    - paragraphs.paragraphs_type.email_article_and_display
+id: paragraph.email_article_and_display.field_p_email_article_display
+field_name: field_p_email_article_display
+entity_type: paragraph
+bundle: email_article_and_display
+label: 'Email article view mode'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: f20b218d-addd-4bce-ab7b-fc5ed5ca5d96
+default_value_callback: ''
+settings:
+  handler: 'default:entity_view_mode'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,10 @@
+uuid: c4dcd898-6867-45b7-a4d4-2e71c86a3743
+langcode: en
+status: true
+dependencies: {  }
+id: email_article_and_display
+label: 'Email article and display'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

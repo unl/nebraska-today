@@ -1,0 +1,22 @@
+uuid: a9718ace-8a07-428c-98cd-eefcc835356d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 6wgXMbTWVfjhYZ3wFXLy3vAISxQeKEJz9SdNqt9SLMY
+name: 'Nebraska Today'
+id: default
+description: 'This is an example newsletter. Change it.'
+format: html
+priority: 0
+receipt: false
+from_name: 'Nebraska Today'
+subject: '[[simplenews-newsletter:name]] for [current-date:custom:M j, Y]'
+from_address: today@unl.edu
+hyperlinks: false
+allowed_handlers:
+  0: '0'
+  simplenews_all: '0'
+new_account: none
+access: hidden
+weight: 0

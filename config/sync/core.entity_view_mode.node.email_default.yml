@@ -1,0 +1,10 @@
+uuid: f20b218d-addd-4bce-ab7b-fc5ed5ca5d96
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.email_default
+label: 'Email (Default)'
+targetEntityType: node
+cache: true

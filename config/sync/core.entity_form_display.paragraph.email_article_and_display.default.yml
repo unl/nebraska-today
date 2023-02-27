@@ -1,0 +1,32 @@
+uuid: d9ef80e9-08d1-41dd-80c5-bf87465cf37a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.email_article_and_display.field_p_email_article
+    - field.field.paragraph.email_article_and_display.field_p_email_article_display
+    - paragraphs.paragraphs_type.email_article_and_display
+id: paragraph.email_article_and_display.default
+targetEntityType: paragraph
+bundle: email_article_and_display
+mode: default
+content:
+  field_p_email_article:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_p_email_article_display:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

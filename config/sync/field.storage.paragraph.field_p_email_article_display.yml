@@ -1,0 +1,19 @@
+uuid: aa1716cc-2a22-489c-8666-8c7c5ea7073d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_p_email_article_display
+field_name: field_p_email_article_display
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: entity_view_mode
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

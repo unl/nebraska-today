@@ -1,0 +1,34 @@
+uuid: 5927c54b-15a4-497e-9f97-1a58ce15fa8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.simplenews_issue.field_simplenews_articles
+    - field.field.node.simplenews_issue.simplenews_issue
+    - node.type.simplenews_issue
+  module:
+    - entity_reference_revisions
+    - user
+_core:
+  default_config_hash: 2uFXyR4335F9Qrls0Lx2QTobeBiF6FN1PeDjJEv47Yw
+id: node.simplenews_issue.default
+targetEntityType: node
+bundle: simplenews_issue
+mode: default
+content:
+  field_simplenews_articles:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  simplenews_issue: true

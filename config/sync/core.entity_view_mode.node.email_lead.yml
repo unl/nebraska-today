@@ -1,0 +1,10 @@
+uuid: e56270be-f2a3-4f51-b3c3-40d6247ea49b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.email_lead
+label: 'Email (Lead)'
+targetEntityType: node
+cache: true

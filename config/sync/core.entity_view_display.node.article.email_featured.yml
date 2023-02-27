@@ -1,0 +1,61 @@
+uuid: 67290b52-8aa0-4f48-89e1-ce1210c21c01
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_featured
+    - field.field.node.article.body
+    - field.field.node.article.field_article_blocks
+    - field.field.node.article.field_article_section
+    - field.field.node.article.field_subtitle
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_written_by
+    - node.type.article
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+id: node.article.email_featured
+targetEntityType: node
+bundle: article
+mode: email_featured
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_subtitle:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_written_by:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_article_blocks: true
+  field_article_section: true
