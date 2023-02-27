@@ -1,0 +1,20 @@
+uuid: 07444407-46c5-4825-a9f0-0e09a8c613c4
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - unl_five_news
+id: masquerade
+theme: unl_five_news
+region: leftcollinks
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+visibility: {  }

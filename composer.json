@@ -51,6 +51,7 @@
         "drupal/image_style_warmer": "^1.2@RC",
         "drupal/imagemagick": "^3.4",
         "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/masquerade": "^2.0@RC",
         "drupal/metatag": "^1.22",
         "drupal/paragraphs": "^1.15",
         "drupal/pathauto": "^1.11",
