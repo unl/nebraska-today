@@ -33,16 +33,23 @@
   {% endif %} #}
 
   {# <div{{ content_attributes }}> #}
-    <div class = "test">
+    <div >
       {# I need to have hover where I hover it will be var(--hover) #}
-      <div >
-        {{ content.field_article_lead_image }}
+      <div class = "dcf-hover-image">
+        <a href = "">
+          {{ content.field_article_lead_image }}
+        </a>
       </div>
-      <h5 class = "dcf-regular">
+      <h5 class = "dcf-regular dcf-txt-h5">
       <a href= "{{ url }}"> {{ label }} </a>
       </h5>
-      <div style = "font-family: 'Gotham SSm A','Gotham SSm B',Verdana,sans-serif; font-weight: 400; font-style: normal; font-size: .75em;">
-       {{ content.field_section }}
+      <div style = "font-family: 'Gotham SSm A','Gotham SSm B',Verdana,sans-serif; font-weight: 400; font-style: normal; font-size: .75em; ">
+        <div class = "dcf-d-inline-flex" >2 days ago</div>
+        <div class = "dcf-d-inline-flex" >
+          <div style = "  display: grid;  grid-auto-flow: dense;">
+            {{ content.field_section }}
+          </div>
+        </div>
       </div>
     </div>
 

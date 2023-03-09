@@ -1,3 +1,31 @@
-.test {
-  color: red;
+.dcf-hover-image {
+  border: 1px solid var(--bg-btn-tertiary);
+  transition: border 0.5s ease;
+}
+
+.dcf-hover-image:hover {
+  border: 1px solid var(--hover);
+}
+
+.dcf-l-line {
+  height: 1px;
+  margin-bottom: 18px;
+  border: none;
+  background: -webkit-gradient(
+    linear,
+    0 0,
+    100% 0,
+    from(#41413f),
+    to(transparent),
+    color-stop(40%, #41413f)
+  );
+}
+
+.slide {
+  transition: all ease-in-out 300ms;
+}
+
+.slide::after {
+  content: "";
+  float: left;
 }
