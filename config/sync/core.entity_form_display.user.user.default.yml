@@ -30,6 +30,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  simplenews:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   timezone:
     weight: 6
     region: content

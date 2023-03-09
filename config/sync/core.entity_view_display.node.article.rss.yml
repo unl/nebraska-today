@@ -6,7 +6,9 @@ dependencies:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
-    - field.field.node.article.field_article_section
+    - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_text_content
+    - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
     - field.field.node.article.field_written_by
@@ -26,7 +28,9 @@ content:
 hidden:
   body: true
   field_article_blocks: true
-  field_article_section: true
+  field_article_lead_image: true
+  field_article_text_content: true
+  field_section: true
   field_subtitle: true
   field_tags: true
   field_written_by: true

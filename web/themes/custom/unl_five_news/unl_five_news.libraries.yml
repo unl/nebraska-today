@@ -8,3 +8,8 @@ article:
   css:
     theme:
       css/theme/article.css: {}
+seven-photo-up:
+  version: VERSION
+  css:
+    theme:
+      css/theme/seven-photo-up.css: {}

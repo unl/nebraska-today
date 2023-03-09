@@ -1,0 +1,42 @@
+uuid: 1a61b2ab-daa8-4968-a343-60ca0b8c4858
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.b_custome
+    - field.field.block_content.b_custome.body
+    - field.field.block_content.b_custome.field_custome
+  module:
+    - media_library
+    - text
+id: block_content.b_custome.default
+targetEntityType: block_content
+bundle: b_custome
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_custome:
+    type: media_library_widget
+    weight: 27
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

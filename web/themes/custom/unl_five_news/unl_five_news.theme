@@ -4,3 +4,11 @@
  * @file
  * Contains theme functions for unl_five_news.
  */
+
+
+
+function unl_five_news_preprocess_field(&$variables) {
+   $node = \Drupal::request()->attributes->get('node');
+   $variables['node_title'] = $node->getTitle();
+}
+

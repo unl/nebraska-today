@@ -1,0 +1,82 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+{{ attach_library('unl_five_news/article') }}
+
+
+
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page and view_mode != "full" %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    
+    </footer>
+  {% endif %}
+
+
+  {# <div class="landing-section dcf-d-grid dcf-ai-center dcf-ji-center dcf-ac-center dcf-jc-center dcf-overflow-hidden" style="max-height: 77vh; width: auto;" >
+      <span class = "dcf-z-2 dcf-txt-center ">
+      <h1 class="landing-section-title dcf-mb-0 unl-bg-darkest-gray dcf-p">{{ label }}</h1>
+      <p class="unl-bg-darkest-gray dcf-p-0.5">7 days ago · 3 min read</p>
+      </span> #}
+     
+      <div class = "">
+       {{ node_title }}
+        {{ content.field_article_lead_image }}
+        </div>
+      </div>
+  {# </div> #}
+ 
+
+{# Paragraph #}
+  <div class="dcf-grid dcf-pt-7" >
+    {# 75% col #}
+    <div class ="dcf-col-75%-start">
+      <div style = "display: grid; grid-template-columns: 16.66% 83.33%;">
+        <div style="padding: 0 1.58vw; float: left;">
+          <div class="field-label dcf-mb-4 dcf-txt-sm dcf-lh-2 dcf-uppercase unl-ls-1 unl-font-sans">Share</div>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aeb64f82863a8b2"></script>
+          <div class="addthis_inline_share_toolbox"></div>
+        </div>
+        <div class="dcf-m-auto" style="max-width: 35.52em; padding: 0 1.58vw; float: right">
+          {{ content.field_article_text_content }}
+        </div>
+      </div>
+    </div>
+    {# 25% col #}
+    <div class = "dcf-col-25%-end" style="font-size: .75em; ">
+      <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Tags</h2>
+        <div>
+        {{ content.field_tags }}
+        </div>
+    </div>
+  </div>
+
+  <div class = "dcf-pt-10">
+    {{ drupal_view('recent', 'block_1') }}
+  </div>
+</article>
+

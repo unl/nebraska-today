@@ -1,0 +1,43 @@
+uuid: 4ede6448-0224-4719-b109-9b6e9b617207
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.lead_image.field_media_image_1
+    - field.field.media.lead_image.field_media_image_credit
+    - image.style.wide
+    - media.type.lead_image
+  module:
+    - image
+    - image_class
+id: media.lead_image.default
+targetEntityType: media
+bundle: lead_image
+mode: default
+content:
+  field_media_image_1:
+    type: image
+    label: visually_hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: 'dcf-w-100% dcf-h-auto dcf-obj-fit-cover dcf-relative unl-cream'
+    weight: 0
+    region: content
+  field_media_image_credit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

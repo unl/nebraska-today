@@ -1,0 +1,29 @@
+uuid: 429bae61-5f7c-44c8-b186-a389d58cce41
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_image
+    - field.storage.block_content.field_block_lead_image
+    - media.type.lead_image
+id: block_content.parallax_image.field_block_lead_image
+field_name: field_block_lead_image
+entity_type: block_content
+bundle: parallax_image
+label: 'Lead Image 1'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      lead_image: lead_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,22 @@
+uuid: 9c92e0d1-9d22-4ff8-ad3f-39e0c4f9e755
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_image
+    - field.field.block_content.parallax_image.field_block_lead_image
+id: block_content.parallax_image.default
+targetEntityType: block_content
+bundle: parallax_image
+mode: default
+content:
+  field_block_lead_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

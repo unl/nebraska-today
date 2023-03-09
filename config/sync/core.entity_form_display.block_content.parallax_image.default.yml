@@ -1,0 +1,23 @@
+uuid: 70c4d963-f6d3-4d0c-af0f-f36a61e4b62d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_image
+    - field.field.block_content.parallax_image.field_block_lead_image
+  module:
+    - media_library
+id: block_content.parallax_image.default
+targetEntityType: block_content
+bundle: parallax_image
+mode: default
+content:
+  field_block_lead_image:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+hidden:
+  info: true

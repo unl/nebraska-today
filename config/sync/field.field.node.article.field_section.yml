@@ -1,13 +1,13 @@
-uuid: e3f74a66-6b52-4a18-ac47-915929adcc57
+uuid: 356b2db6-e7f7-4d12-8bc3-97223c333312
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_article_section
+    - field.storage.node.field_section
     - node.type.article
-    - taxonomy.vocabulary.section
-id: node.article.field_article_section
-field_name: field_article_section
+    - taxonomy.vocabulary.news_section
+id: node.article.field_section
+field_name: field_section
 entity_type: node
 bundle: article
 label: Section
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      section: section
+      news_section: news_section
     sort:
       field: name
       direction: asc

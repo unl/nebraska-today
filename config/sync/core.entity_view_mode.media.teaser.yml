@@ -1,0 +1,10 @@
+uuid: 62dbb795-3539-4a9e-b84f-707e01e2c1cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.teaser
+label: Teaser
+targetEntityType: media
+cache: true

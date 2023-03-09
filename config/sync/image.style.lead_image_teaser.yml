@@ -1,0 +1,15 @@
+uuid: 719e6973-ec1f-420a-85c4-0dd447c59ec3
+langcode: en
+status: true
+dependencies: {  }
+name: lead_image_teaser
+label: Lead-Image-Teaser
+effects:
+  e8ee19a6-5594-4d60-852e-8d15c759c841:
+    uuid: e8ee19a6-5594-4d60-852e-8d15c759c841
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 416
+      height: 234
+      anchor: center-center

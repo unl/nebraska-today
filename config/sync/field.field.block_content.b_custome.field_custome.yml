@@ -1,0 +1,29 @@
+uuid: 6f1dcc5b-63ad-4ffc-bc1c-15e2f996bffc
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.b_custome
+    - field.storage.block_content.field_custome
+    - media.type.image
+id: block_content.b_custome.field_custome
+field_name: field_custome
+entity_type: block_content
+bundle: b_custome
+label: custome
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

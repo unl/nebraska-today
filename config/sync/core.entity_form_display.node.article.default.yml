@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
-    - field.field.node.article.field_article_section
+    - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_text_content
+    - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
     - field.field.node.article.field_written_by
@@ -25,7 +27,7 @@ third_party_settings:
       label: 'Site section'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -41,7 +43,7 @@ third_party_settings:
       label: 'Blocks (for embedding into the Body)'
       region: content
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -59,7 +61,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 2
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -69,7 +71,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -90,11 +92,42 @@ content:
       collapsed: false
       revision: true
     third_party_settings: {  }
-  field_article_section:
-    type: options_buttons
-    weight: 9
+  field_article_lead_image:
+    type: inline_entity_form_complex
+    weight: 2
     region: content
-    settings: {  }
+    settings:
+      form_mode: default
+      override_labels: false
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+      allow_duplicate: false
+      collapsible: false
+      collapsed: false
+      revision: false
+    third_party_settings: {  }
+  field_article_text_content:
+    type: text_textarea_with_summary
+    weight: 26
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_section:
+    type: entity_reference_autocomplete
+    weight: 27
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_subtitle:
     type: text_textfield
@@ -106,7 +139,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: autocomplete_deluxe
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -123,7 +156,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: autocomplete_deluxe
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -140,38 +173,38 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 12
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 14
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -186,7 +219,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 9
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -195,7 +228,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 50
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
