@@ -29,3 +29,7 @@
   content: "";
   float: left;
 }
+
+.dcf-font-family {
+  font-family: Mercury SSm A, Mercury SSm B, Georgia, serif !important;
+}

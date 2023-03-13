@@ -18,6 +18,7 @@
 
   {{ title_prefix }}
   {% if not page and view_mode != "full" %}
+  {{ node_title }}
     <h2{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h2>
@@ -43,18 +44,23 @@
       </span> #}
      
     <div class = "dcf-bleed">
+      <div class  = "">
+        <span class ="dcf-txt-h1">
+        {{ label }}
+        </span>
+        <span class = "" >
         {{ content.field_article_lead_image }}
-        {# {{ node_title }} #}
+        </span>
+      </div>
     </div>
-    
   {# </div> #}
- 
+
 
 {# Paragraph #}
-  <div class="dcf-grid dcf-pt-7" >
+  <div class="dcf-grid dcf-pt-7 dcf-pb-7"  style = "position : abosolute;">
     {# 75% col #}
     <div class ="dcf-col-75%-start">
-      <div style = "display: grid; grid-template-columns: 16.66% 83.33%;">
+      <div style = "display: grid; grid-template-columns: 33% 67%;">
         <div>
           <div class="dcf-sticky dcf-pin-top slide" style="padding: 0 1.58vw; float: left;">
             <hr class="dcf-l-line dcf-mt-0">
@@ -65,10 +71,10 @@
           </div>
         </div>
         <div class="dcf-m-auto" style="max-width: 35.52em; padding: 0 1.58vw; float: right">
-          <div  class = "dcf-txt-h5 unl-font-serif">
+          <div  class = "dcf-txt-h5 dcf-mb-1 dcf-font-family">
             {{ content.field_subtitle }}
           </div>
-          <div class = "unl-font-serif" style = "line-height: 1.5; ">
+          <div class = "dcf-font-family dcf-dropcap" style = "line-height: 1.5;">
           {{ content.field_article_text_content }}
           </div>
         </div>
@@ -78,16 +84,17 @@
     <div class = "dcf-col-25%-end" style="font-size: .75em; ">
       <hr class="dcf-l-line dcf-mt-0">
       <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Tags</h2>
-        <div>
+        <div style = "line-height: 1.5;">
         {{ content.field_tags }}
         </div>
     </div>
   </div>
 
-  <div class = "dcf-pt-10">
+  <div class = "">
   <hr class="dcf-l-line dcf-mt-0 ">
   <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
     {{ drupal_view('recent', 'block_1') }}
   </div>
 </article>
+
 
