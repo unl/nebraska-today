@@ -1,1 +1,11 @@
-{% for item in items %}{{ item.content }} {{' '}} {% endfor %} 
+<div class = "dcf-pb-4">
+    <hr class="dcf-l-line dcf-mt-0">
+    <h2 class = "dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style = " color : var(--heading); ">{{label}}</h2>
+    <div class = "dcf-txt-xs dcf-pb-4" >
+       <ul class = "dcf-list-bare dcf-mb-0">
+        {% for item in items %}
+            <li class = "dcf-d-inline-block dcf-mr-1 dcf-mb-0" style = "line-heigth">{{ item.content }}</li>
+        {% endfor %} 
+        </ul>
+    </div>
+</div>

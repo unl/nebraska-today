@@ -37,34 +37,30 @@
   {% endif %}
 
 
-  {# <div class="landing-section dcf-d-grid dcf-ai-center dcf-ji-center dcf-ac-center dcf-jc-center dcf-overflow-hidden" style="max-height: 77vh; width: auto;" >
-      <span class = "dcf-z-2 dcf-txt-center ">
-      <h1 class="landing-section-title dcf-mb-0 unl-bg-darkest-gray dcf-p">{{ label }}</h1>
-      <p class="unl-bg-darkest-gray dcf-p-0.5">7 days ago · 3 min read</p>
-      </span> #}
-     
-    <div class = "dcf-bleed">
-      <div class  = "">
-        <span class ="dcf-txt-h1">
-        {{ label }}
-        </span>
-        <span class = "" >
-        {{ content.field_article_lead_image }}
-        </span>
-      </div>
+  <div class = "dcf-bleed">
+    <div class  = "">
+      <span class = "">
+      {{ content.field_article_lead_image }}
+      </span>
+      <span class ="dcf-txt-h1 dcf-d-block">
+      {{ label }}
+      </span>
     </div>
-  {# </div> #}
+  </div>
 
 
-{# Paragraph #}
-  <div class="dcf-grid dcf-pt-7 dcf-pb-7"  style = "position : abosolute;">
+
+  {# Paragraph #}
+  <div class="dcf-grid dcf-pt-7 dcf-pb-7 "  style = "position : abosolute;">
     {# 75% col #}
     <div class ="dcf-col-75%-start">
-      <div style = "display: grid; grid-template-columns: 33% 67%;">
+      <div style = "display: grid; grid-template-columns: 30% 60%;">
         <div>
           <div class="dcf-sticky dcf-pin-top slide" style="padding: 0 1.58vw; float: left;">
             <hr class="dcf-l-line dcf-mt-0">
-            <div class="field-label dcf-mb-4 dcf-txt-sm dcf-lh-2 dcf-uppercase unl-ls-1 unl-font-sans">Share</div>
+            <div>
+              <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Share</h2>
+            </div>
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aeb64f82863a8b2"></script>
             <div class="addthis_inline_share_toolbox"></div>
@@ -81,20 +77,21 @@
       </div>
     </div>
     {# 25% col #}
-    <div class = "dcf-col-25%-end" style="font-size: .75em; ">
-      <hr class="dcf-l-line dcf-mt-0">
-      <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Tags</h2>
-        <div style = "line-height: 1.5;">
-        {{ content.field_tags }}
-        </div>
-    </div>
+    <div class = "dcf-col-25%-end">
+     {# News Release Contacts #}
+     {{ content.field_article_release_contact }}
+     {{ content.field_article_related_links }}
+     {{ content.field_tags }}
+     </div>
   </div>
 
-  <div class = "">
-  <hr class="dcf-l-line dcf-mt-0 ">
-  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
-    {{ drupal_view('recent', 'block_1') }}
+  {# Recent News #}
+  <div>
+    <hr class="dcf-l-line dcf-mt-0 ">
+    <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
+      {{ drupal_view('recent', 'block_1') }}
   </div>
+
 </article>
 
 

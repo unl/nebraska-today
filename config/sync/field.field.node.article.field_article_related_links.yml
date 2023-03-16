@@ -1,17 +1,17 @@
-uuid: 940acedb-0bc2-44d8-8afd-d7501a38388b
+uuid: df885fd0-4ecc-4b5a-b4ca-b789569d29a9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_article_related_links
     - node.type.article
   module:
     - link
-id: node.article.field_tags
-field_name: field_tags
+id: node.article.field_article_related_links
+field_name: field_article_related_links
 entity_type: node
 bundle: article
-label: Tags
+label: 'Related Links'
 description: ''
 required: false
 translatable: false

@@ -12,27 +12,6 @@
 {{ attach_library('unl_five_news/article') }}
 
 <article{{ attributes.addClass(classes) }}>
-{# 
-  {{ title_prefix }}
-  {% if not page and view_mode != "full" %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %} #}
-
-  {# <div{{ content_attributes }}> #}
     <div >
       {# I need to have hover where I hover it will be var(--hover) #}
       <div class = "dcf-hover-image">
@@ -52,8 +31,5 @@
         </div>
       </div>
     </div>
-
     {# <pre> {{ dd() }}</pre> #}
-  {# </div> #}
-
 </article>

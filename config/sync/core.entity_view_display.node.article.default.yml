@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
     - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_text_content
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -13,6 +14,7 @@ dependencies:
     - field.field.node.article.field_written_by
     - node.type.article
   module:
+    - link
     - text
     - user
 _core:
@@ -38,6 +40,18 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
+  field_article_related_links:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 13
+    region: content
   field_article_text_content:
     type: text_default
     label: hidden
@@ -61,12 +75,16 @@ content:
     weight: 0
     region: content
   field_tags:
-    type: entity_reference_label
-    label: hidden
+    type: link
+    label: above
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 14
     region: content
   field_written_by:
     type: entity_reference_label
