@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_article_blocks
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
+    - field.field.node.article.field_article_release_contacts
     - field.field.node.article.field_article_text_content
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -118,6 +119,16 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_article_release_contacts:
+    type: entity_reference_autocomplete
+    weight: 34
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_article_text_content:
     type: text_textarea_with_summary

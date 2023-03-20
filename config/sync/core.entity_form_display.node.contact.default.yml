@@ -1,48 +1,119 @@
-uuid: 8b709eb4-3588-47e0-83ff-5c140a0df946
+uuid: 0d1c3ebb-b781-4af8-a37c-33f870ae3409
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.contact.body
     - field.field.node.contact.field_contact_email
     - field.field.node.contact.field_contact_name
-    - field.field.node.contact.field_contact_phone
+    - field.field.node.contact.field_contact_number
+    - field.field.node.contact.field_contact_position
+    - field.field.node.contact.field_contact_website
     - node.type.contact
+  module:
+    - link
+    - path
+    - text
 id: node.contact.default
 targetEntityType: node
 bundle: contact
 mode: default
 content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_contact_email:
     type: email_default
-    weight: 1
+    weight: 122
     region: content
     settings:
       placeholder: ''
       size: 60
     third_party_settings: {  }
   field_contact_name:
-    type: options_select
-    weight: 0
+    type: text_textfield
+    weight: 121
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_number:
+    type: text_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_position:
+    type: text_textfield
+    weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_website:
+    type: link_default
+    weight: 124
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_contact_phone:
-    type: number
-    weight: 2
+  promote:
+    type: boolean_checkbox
+    weight: 15
     region: content
     settings:
+      display_label: true
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    weight: 16
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
       placeholder: ''
     third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 50
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  body: true
-  created: true
-  path: true
-  promote: true
   publish_on: true
-  status: true
-  sticky: true
-  title: true
-  uid: true
   unpublish_on: true
-  url_redirects: true

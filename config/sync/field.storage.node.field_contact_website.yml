@@ -1,17 +1,16 @@
-uuid: 62730e54-f3e9-44d7-9f49-cf75519760c2
+uuid: 7dbb3cce-3bae-4354-b9e4-46049663b95d
 langcode: en
 status: true
 dependencies:
   module:
+    - link
     - node
-id: node.field_contact_phone
-field_name: field_contact_phone
+id: node.field_contact_website
+field_name: field_contact_website
 entity_type: node
-type: integer
-settings:
-  unsigned: false
-  size: normal
-module: core
+type: link
+settings: {  }
+module: link
 locked: false
 cardinality: 1
 translatable: true

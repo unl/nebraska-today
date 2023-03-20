@@ -1,15 +1,17 @@
-uuid: 6c105888-c8f3-426e-a8f6-71490e0ef10a
+uuid: 14202fb5-1fed-45f3-b9de-c4a6689569fe
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.contact.body
     - field.field.node.contact.field_contact_email
     - field.field.node.contact.field_contact_name
-    - field.field.node.contact.field_contact_phone
+    - field.field.node.contact.field_contact_number
+    - field.field.node.contact.field_contact_position
+    - field.field.node.contact.field_contact_website
     - node.type.contact
   module:
-    - options
+    - link
+    - text
     - user
 id: node.contact.default
 targetEntityType: node
@@ -18,27 +20,47 @@ mode: default
 content:
   field_contact_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 2
+    weight: 102
     region: content
   field_contact_name:
-    type: list_default
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_contact_number:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_contact_position:
+    type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 105
     region: content
-  field_contact_phone:
-    type: number_integer
-    label: above
+  field_contact_website:
+    type: link
+    label: hidden
     settings:
-      thousand_separator: ''
-      prefix_suffix: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 1
+    weight: 104
     region: content
-hidden:
-  body: true
-  links: true
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

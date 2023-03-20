@@ -1,4 +1,4 @@
-uuid: 8ddb7b3c-7b1a-4e02-b021-6c5b18677eeb
+uuid: 35a84261-c9dd-4303-95f7-a9bdf535da29
 langcode: en
 status: true
 dependencies:
@@ -25,7 +25,7 @@ third_party_settings:
     unpublish_revision: false
 name: Contact
 type: contact
-description: 'This is description for Contact for Article'
+description: 'This is for article Contact'
 help: ''
 new_revision: true
 preview_mode: 1

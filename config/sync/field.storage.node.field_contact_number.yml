@@ -1,12 +1,12 @@
-uuid: c3e18297-e15e-4f26-8f33-b2b91ec77fc4
+uuid: eb945e8a-e69d-4d5a-8691-90149e005396
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-id: node.field_contact_name
-field_name: field_contact_name
+id: node.field_contact_number
+field_name: field_contact_number
 entity_type: node
 type: text
 settings:

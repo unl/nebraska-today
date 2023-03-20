@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_article_blocks
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
+    - field.field.node.article.field_article_release_contacts
     - field.field.node.article.field_article_text_content
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -51,6 +52,15 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_article_release_contacts:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 15
     region: content
   field_article_text_content:
     type: text_default

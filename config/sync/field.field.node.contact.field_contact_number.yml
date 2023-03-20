@@ -1,9 +1,9 @@
-uuid: 67a1620b-4c07-48fe-bcd7-da4cad317e5f
+uuid: 7e3d11e3-78eb-4660-917f-d1aa0408f02b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contact_name
+    - field.storage.node.field_contact_number
     - node.type.contact
   module:
     - allowed_formats
@@ -11,11 +11,11 @@ dependencies:
 third_party_settings:
   allowed_formats:
     allowed_formats: {  }
-id: node.contact.field_contact_name
-field_name: field_contact_name
+id: node.contact.field_contact_number
+field_name: field_contact_number
 entity_type: node
 bundle: contact
-label: 'Contact Name'
+label: 'Contact Number'
 description: ''
 required: false
 translatable: false
