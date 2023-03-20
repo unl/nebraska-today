@@ -38,14 +38,16 @@
 
 
   <div class = "dcf-bleed">
-    <div class  = "">
-      <span class = "">
-      {{ content.field_article_lead_image }}
-      </span>
-      <span class ="dcf-txt-h1 dcf-d-block">
-      {{ label }}
-      </span>
-    </div>
+    {# <div class  = "">
+    <h1 class ="dcf-txt-h1 dcf-d-block">{{ label }}</h1>
+    <span class = "">{{ content.field_article_lead_image }}</span>
+    </div> #}
+     <div class="landing-section dcf-d-grid dcf-ai-center dcf-ji-center dcf-ac-center dcf-jc-center dcf-overflow-hidden">
+        <span class="dcf-z-2 dcf-txt-center ">
+            <h1 class="landing-section-title dcf-mb-0 unl-bg-darkest-gray dcf-p"> {{ label }} </h1>
+        </span>
+        {{ content.field_article_lead_image }}
+      </div>
   </div>
 
 
