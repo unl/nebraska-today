@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
-    - field.field.node.article.field_article_text_content
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
@@ -33,7 +32,6 @@ hidden:
   field_article_lead_image: true
   field_article_related_links: true
   field_article_release_contacts: true
-  field_article_text_content: true
   field_section: true
   field_subtitle: true
   field_tags: true

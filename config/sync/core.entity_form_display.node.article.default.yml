@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
-    - field.field.node.article.field_article_text_content
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
@@ -129,16 +128,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_article_text_content:
-    type: text_textarea_with_summary
-    weight: 26
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
     third_party_settings: {  }
   field_section:
     type: entity_reference_autocomplete
