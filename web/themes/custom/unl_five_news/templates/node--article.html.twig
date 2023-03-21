@@ -38,16 +38,10 @@
 
 
   <div class = "dcf-bleed">
-    {# <div class  = "">
-    <h1 class ="dcf-txt-h1 dcf-d-block">{{ label }}</h1>
-    <span class = "">{{ content.field_article_lead_image }}</span>
-    </div> #}
-     <div class="landing-section dcf-d-grid dcf-ai-center dcf-ji-center dcf-ac-center dcf-jc-center dcf-overflow-hidden">
-        <span class="dcf-z-2 dcf-txt-center ">
-            <h1 class="landing-section-title dcf-mb-0 unl-bg-darkest-gray"> {{ label }} </h1>
-        </span>
-        {{ content.field_article_lead_image }}
-      </div>
+    <div class="dcf-relative dcf-h-max-100vh dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto">
+    <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:50%; left:25%;"><h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1">{{ label }}</h1></div>
+    <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_article_lead_image }}</div> 
+    </div>
   </div>
 
 
