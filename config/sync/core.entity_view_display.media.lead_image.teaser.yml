@@ -26,7 +26,7 @@ content:
         attribute: lazy
     third_party_settings:
       image_class:
-        class: 'dcf-w-100% dcf-h-auto dcf-obj-fit-cover dcf-relative unl-cream'
+        class: 'dcf-w-100% dcf-h-auto dcf-obj-fit-cover dcf-relative unl-cream dcf-hover-image'
     weight: 0
     region: content
   field_media_image_credit:
