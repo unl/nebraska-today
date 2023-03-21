@@ -38,10 +38,11 @@
 
 
   <div class = "dcf-bleed">
-    <div class="dcf-relative dcf-h-min-100vh dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto">
+    {# <div class="dcf-relative dcf-h-min-100vh dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto">
     <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:50%; left:25%;"><h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1">{{ label }}</h1></div>
     <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_article_lead_image }}</div> 
-    </div>
+    </div> #}
+    {{ content.field_article_lead_image }}
   </div>
 
 
