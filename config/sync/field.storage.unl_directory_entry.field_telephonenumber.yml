@@ -1,0 +1,19 @@
+uuid: 02c63f5d-8872-4265-8335-14f526f64981
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+    - telephone
+id: unl_directory_entry.field_telephonenumber
+field_name: field_telephonenumber
+entity_type: unl_directory_entry
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

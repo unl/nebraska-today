@@ -9,7 +9,44 @@ description: 'Data from directory.unl.edu.'
 read_only: true
 generate_aliases: false
 field_mapper_id: simple
-field_mapper_config: null
+field_mapper_config:
+  field_mappings:
+    id:
+      value: uid
+    title:
+      value: displayName
+    field_edupersonprimaryaffiliatio:
+      value: eduPersonPrimaryAffiliation
+    field_imageurl:
+      value: imageURL
+    field_knowledge_bio:
+      value: knowledge/bio
+    field_knowledge_courses:
+      value: knowledge/courses
+    field_knowledge_education:
+      value: knowledge/education
+    field_knowledge_grants:
+      value: knowledge/grants
+    field_knowledge_honors:
+      value: knowledge/honors
+    field_knowledge_papers:
+      value: knowledge/papers
+    field_knowledge_performances:
+      value: knowledge/performances
+    field_knowledge_presentations:
+      value: knowledge/presentations
+    field_mail:
+      value: mail
+    field_telephonenumber:
+      value: telephoneNumber
+    field_title:
+      value: title
+    field_uid:
+      value: uid
+    field_unldirectoryaddress:
+      value: unlDirectoryAddress
+    field_unlhrprimarydepartment:
+      value: unlHRPrimaryDepartment
 storage_client_id: unldirectory
 storage_client_config:
   endpoint: 'https://directory.unl.edu'

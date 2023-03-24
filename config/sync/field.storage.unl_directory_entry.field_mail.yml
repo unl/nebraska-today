@@ -1,0 +1,18 @@
+uuid: 8f019f55-36ac-464d-a6fe-e7bf9037f378
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: unl_directory_entry.field_mail
+field_name: field_mail
+entity_type: unl_directory_entry
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: eaf61354-4a3a-4c5e-827b-6e032aa2d6e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: unl_directory_entry.field_unlhrprimarydepartment
+field_name: field_unlhrprimarydepartment
+entity_type: unl_directory_entry
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
