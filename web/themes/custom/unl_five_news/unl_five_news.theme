@@ -12,8 +12,14 @@ function unl_five_news_preprocess_field(&$variables) {
    $variables['node_title'] = $node->getTitle();
 }
 
+function unl_five_news_preprocess_block_content(&$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  $variables['node_title'] = $node->getTitle();
+}
+
 
 function unl_five_news_preprocess_media(array &$variables) {
    $node = \Drupal::request()->attributes->get('node');
    $variables['node_title'] = $node->getTitle();
 }
+

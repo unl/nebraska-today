@@ -4,19 +4,38 @@ status: true
 dependencies:
   config:
     - block_content.type.parallax_image
-    - field.field.block_content.parallax_image.field_block_lead_image
+    - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_headline_placement
+    - field.field.block_content.parallax_image.field_image
+  module:
+    - options
 id: block_content.parallax_image.default
 targetEntityType: block_content
 bundle: parallax_image
 mode: default
 content:
-  field_block_lead_image:
-    type: entity_reference_entity_view
-    label: hidden
+  field_cutline:
+    type: string
+    label: above
     settings:
-      view_mode: full
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_headline_placement:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden: {  }

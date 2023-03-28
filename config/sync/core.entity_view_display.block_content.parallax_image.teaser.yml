@@ -5,19 +5,23 @@ dependencies:
   config:
     - block_content.type.parallax_image
     - core.entity_view_mode.block_content.teaser
-    - field.field.block_content.parallax_image.field_block_lead_image
+    - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_headline_placement
+    - field.field.block_content.parallax_image.field_image
 id: block_content.parallax_image.teaser
 targetEntityType: block_content
 bundle: parallax_image
 mode: teaser
 content:
-  field_block_lead_image:
+  field_image:
     type: entity_reference_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_cutline: true
+  field_headline_placement: true

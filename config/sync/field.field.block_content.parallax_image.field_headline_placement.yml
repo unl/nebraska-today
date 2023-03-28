@@ -1,0 +1,21 @@
+uuid: 434fa1ea-7d79-4052-9a95-2e16a12e9319
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_image
+    - field.storage.block_content.field_headline_placement
+  module:
+    - options
+id: block_content.parallax_image.field_headline_placement
+field_name: field_headline_placement
+entity_type: block_content
+bundle: parallax_image
+label: 'Headline Placement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

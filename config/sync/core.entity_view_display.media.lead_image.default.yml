@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.lead_image.field_lead_image_heading_placeme
     - field.field.media.lead_image.field_media_image_1
     - field.field.media.lead_image.field_media_image_credit
     - image.style.wide
@@ -10,11 +11,19 @@ dependencies:
   module:
     - image
     - image_class
+    - options
 id: media.lead_image.default
 targetEntityType: media
 bundle: lead_image
 mode: default
 content:
+  field_lead_image_heading_placeme:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_media_image_1:
     type: image
     label: visually_hidden
@@ -25,7 +34,7 @@ content:
         attribute: lazy
     third_party_settings:
       image_class:
-        class: 'dcf-w-100% dcf-h-auto dcf-obj-fit-cover dcf-relative unl-cream'
+        class: ''
     weight: 0
     region: content
   field_media_image_credit:

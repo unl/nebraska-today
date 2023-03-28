@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - block_content.type.parallax_image
-    - field.field.block_content.parallax_image.field_block_lead_image
+    - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_headline_placement
+    - field.field.block_content.parallax_image.field_image
   module:
     - media_library
 id: block_content.parallax_image.default
@@ -12,9 +14,23 @@ targetEntityType: block_content
 bundle: parallax_image
 mode: default
 content:
-  field_block_lead_image:
+  field_cutline:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_headline_placement:
+    type: options_select
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
     type: media_library_widget
-    weight: 0
+    weight: 26
     region: content
     settings:
       media_types: {  }

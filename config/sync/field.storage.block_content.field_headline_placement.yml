@@ -1,0 +1,39 @@
+uuid: fe95493e-14b9-4464-8154-9ac3bb63d644
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_headline_placement
+field_name: field_headline_placement
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'center left'
+      label: 'center left'
+    -
+      value: 'center center'
+      label: 'center center'
+    -
+      value: 'center right'
+      label: 'center right'
+    -
+      value: 'bottom left'
+      label: 'bottom left'
+    -
+      value: 'bottom center'
+      label: 'bottom center'
+    -
+      value: 'bottom right'
+      label: 'bottom right'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

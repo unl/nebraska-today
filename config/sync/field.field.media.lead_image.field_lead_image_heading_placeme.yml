@@ -1,0 +1,23 @@
+uuid: 6fcfdb57-b82c-4eb8-a341-3c3d135b8fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_lead_image_heading_placeme
+    - media.type.lead_image
+  module:
+    - options
+id: media.lead_image.field_lead_image_heading_placeme
+field_name: field_lead_image_heading_placeme
+entity_type: media
+bundle: lead_image
+label: 'Lead Image Heading Placement'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Center Center'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

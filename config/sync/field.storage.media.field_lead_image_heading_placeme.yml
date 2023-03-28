@@ -1,0 +1,39 @@
+uuid: cc84c004-2624-430b-be4a-a461b62366de
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_lead_image_heading_placeme
+field_name: field_lead_image_heading_placeme
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Center Center'
+      label: 'Center Center'
+    -
+      value: 'Center Left'
+      label: 'Center Left'
+    -
+      value: 'Center Right'
+      label: 'Center Right'
+    -
+      value: 'Bottom Center'
+      label: 'Bottom Center'
+    -
+      value: 'Bottom Left'
+      label: 'Bottom Left'
+    -
+      value: 'Bottom Right'
+      label: 'Bottom Right'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
