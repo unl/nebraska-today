@@ -65,6 +65,7 @@
         "drupal/twig_tweak": "^3.2",
         "drush/drush": "^11.5",
         "unl/wdntemplates": "^5.3",
+        "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.1",
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_five": "^10.5.3",
@@ -74,7 +75,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

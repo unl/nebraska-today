@@ -1,0 +1,21 @@
+uuid: 5a6ba478-19cc-4ba5-8e2d-a7472d64c412
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+id: unl_directory_entry.field_title
+field_name: field_title
+entity_type: unl_directory_entry
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

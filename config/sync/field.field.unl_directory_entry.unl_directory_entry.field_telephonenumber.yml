@@ -1,0 +1,21 @@
+uuid: b47ee12f-390e-45a3-8f27-453afa74fe7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.field_telephonenumber
+  module:
+    - external_entities
+    - telephone
+id: unl_directory_entry.unl_directory_entry.field_telephonenumber
+field_name: field_telephonenumber
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: telephoneNumber
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

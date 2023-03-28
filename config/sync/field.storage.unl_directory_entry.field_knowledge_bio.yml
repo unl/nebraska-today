@@ -1,0 +1,19 @@
+uuid: 7c80606d-0a9b-4a76-8c5f-f9cb551643c3
+langcode: en
+status: true
+dependencies:
+  module:
+    - external_entities
+    - text
+id: unl_directory_entry.field_knowledge_bio
+field_name: field_knowledge_bio
+entity_type: unl_directory_entry
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

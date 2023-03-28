@@ -1,0 +1,20 @@
+uuid: e71f9c35-19ce-45a3-8a0f-5c6b37fedaa3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.field_mail
+  module:
+    - external_entities
+id: unl_directory_entry.unl_directory_entry.field_mail
+field_name: field_mail
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: mail
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

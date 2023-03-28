@@ -1,0 +1,25 @@
+uuid: 81f46acd-38ea-406d-8a09-b64a5ce9b485
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.unl_directory_entry.field_knowledge_bio
+  module:
+    - allowed_formats
+    - external_entities
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: unl_directory_entry.unl_directory_entry.field_knowledge_bio
+field_name: field_knowledge_bio
+entity_type: unl_directory_entry
+bundle: unl_directory_entry
+label: knowledge_bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
