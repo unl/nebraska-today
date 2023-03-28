@@ -19,7 +19,7 @@ mode: default
 content:
   field_media_image:
     type: image
-    label: visually_hidden
+    label: hidden
     settings:
       image_link: ''
       image_style: wide
@@ -32,7 +32,7 @@ content:
     region: content
   field_media_image_credit:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

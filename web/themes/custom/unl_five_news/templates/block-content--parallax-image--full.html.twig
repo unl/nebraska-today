@@ -12,42 +12,66 @@
   {{ title_prefix }}
   {{ title_suffix }}
   <div class="block-content__content">
-   {{ dd() }}
-      <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
         {% if content.field_headline_placement.0['#markup'] == 'center left' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:50%;"> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2" style="top:50%; left: 20px; transform: translateY(-50%); width: 50%;"> 
+                <div class="dcf-p-1">
+                <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
             </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
         
         {% elseif content.field_headline_placement.0['#markup'] == 'bottom left' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:90%;"> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2" style="bottom: 5% ; left:2% ; width: 50%;"> 
+                <div class="dcf-p-1">
+                    <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                    <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
             </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
 
         {% elseif content.field_headline_placement.0['#markup'] == 'center right' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:50%; right:0%; "> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-right" style="top:50%; right:0%; width:50%;"> 
+                <div class="dcf-p-1">
+                    <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                    <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
             </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
+        
+        {% elseif content.field_headline_placement.0['#markup'] == 'bottom right' %}
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-left" style="bottom: 5% ; right:2% ; width: 50%;"> 
+                <div class="dcf-p-1">
+                    <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                    <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
+            </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
 
-        {% elseif content.field_headline_placement.value == 'bottom right' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:90%; right:0%;"> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
+        {% elseif content.field_headline_placement.0['#markup'] == 'center center' %}
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="top:50%; left:50%; transform: translate(-50%, -50%);"> 
+                <div class="dcf-p-1">
+                    <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                    <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
             </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
 
-        {% elseif content.field_headline_placement.value == 'center center' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:50%; left:20% "> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
+        {% elseif content.field_headline_placement.0['#markup'] == 'bottom center' %}
+            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="bottom:5% ; left:50%; transform: translateX(-50%);"> 
+                <div class="dcf-p-1">
+                    <h1 class ="dcf-txt-h1" >{{ node_title }}</h1>
+                    <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
+                </div>
             </div>
-
-        {% elseif content.field_headline_placement.value == 'bottom center' %}
-            <div class="dcf-absolute dcf-m-auto dcf-p-1 dcf-z-2" style="top:90%; left:20% "> 
-                <h1 class ="dcf-txt-h1 dcf-d-block unl-bg-darkest-gray dcf-p-1" >{{ node_title }}</h1>
-            </div>
+            <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
+            <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
         {% endif %}
-        <div class="dcf-w-max-100% dcf-h-auto dcf-d-block">{{ content.field_image }}</div> 
-    <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div> 
-    {{ content.field_headline_placement }}
-    {{ content.field_cutline }}
   </div>
 </div>
  
