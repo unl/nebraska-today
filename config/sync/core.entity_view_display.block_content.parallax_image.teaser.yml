@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.parallax_image
     - core.entity_view_mode.block_content.teaser
     - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_description
     - field.field.block_content.parallax_image.field_image
     - field.field.block_content.parallax_image.field_title_placement
 id: block_content.parallax_image.teaser
@@ -24,4 +25,5 @@ content:
     region: content
 hidden:
   field_cutline: true
+  field_description: true
   field_title_placement: true

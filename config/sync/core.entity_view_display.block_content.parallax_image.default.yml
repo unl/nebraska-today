@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.parallax_image
     - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_description
     - field.field.block_content.parallax_image.field_image
     - field.field.block_content.parallax_image.field_title_placement
   module:
@@ -22,6 +23,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_description:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_image:
     type: entity_reference_entity_view
     label: hidden
@@ -33,7 +42,7 @@ content:
     region: content
   field_title_placement:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 5
