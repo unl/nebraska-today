@@ -1,17 +1,17 @@
-uuid: 434fa1ea-7d79-4052-9a95-2e16a12e9319
+uuid: 4a5882d4-1c48-43de-85cc-a9f3c5bcc014
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.parallax_image
-    - field.storage.block_content.field_headline_placement
+    - field.storage.block_content.field_title_placement
   module:
     - options
-id: block_content.parallax_image.field_headline_placement
-field_name: field_headline_placement
+id: block_content.parallax_image.field_title_placement
+field_name: field_title_placement
 entity_type: block_content
 bundle: parallax_image
-label: 'Headline Placement'
+label: 'Title Placement'
 description: ''
 required: false
 translatable: false

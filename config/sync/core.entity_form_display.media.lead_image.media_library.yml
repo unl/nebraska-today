@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
-    - field.field.media.lead_image.field_lead_image_heading_placeme
     - field.field.media.lead_image.field_media_image_1
     - field.field.media.lead_image.field_media_image_credit
     - image.style.thumbnail
@@ -42,7 +41,6 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_lead_image_heading_placeme: true
   path: true
   publish_on: true
   scheduler_settings: true

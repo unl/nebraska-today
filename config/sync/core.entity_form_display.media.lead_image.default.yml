@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.lead_image.field_lead_image_heading_placeme
     - field.field.media.lead_image.field_media_image_1
     - field.field.media.lead_image.field_media_image_credit
     - image.style.thumbnail
@@ -19,12 +18,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_lead_image_heading_placeme:
-    type: options_select
-    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
