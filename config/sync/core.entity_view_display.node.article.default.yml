@@ -8,12 +8,14 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_high_resolution_photos
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
     - field.field.node.article.field_written_by
     - node.type.article
   module:
+    - image
     - link
     - text
     - user
@@ -60,6 +62,17 @@ content:
       link: false
     third_party_settings: {  }
     weight: 15
+    region: content
+  field_high_resolution_photos:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_section:
     type: entity_reference_label

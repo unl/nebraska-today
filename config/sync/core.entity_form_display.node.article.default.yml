@@ -8,14 +8,17 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_high_resolution_photos
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
     - field.field.node.article.field_written_by
+    - image.style.thumbnail
     - node.type.article
   module:
     - autocomplete_deluxe
     - field_group
+    - image
     - inline_entity_form
     - link
     - path
@@ -127,6 +130,14 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_high_resolution_photos:
+    type: image_image
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_section:
     type: entity_reference_autocomplete
