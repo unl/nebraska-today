@@ -33,3 +33,9 @@
 .dcf-font-family {
   font-family: Mercury SSm A, Mercury SSm B, Georgia, serif !important;
 }
+
+.landing-section {
+  max-height: 80vh;
+  width: auto;
+  overflow: hidden;
+}

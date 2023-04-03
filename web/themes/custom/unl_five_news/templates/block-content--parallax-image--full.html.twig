@@ -23,7 +23,9 @@
                     </div>
                     <div class="dcf-col-100% dcf-col-33%-end@sm dcf-col-25%-end@md"> 
                         <hr class="dcf-l-line dcf-mt-0">
-                         <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div>  
+                        {# {{ dd() }} #}
+                        {{ content.field_image.0['#media']['#fields'] }}
+                        {# <div class="dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0"> {{ content.field_media_image_credit }} </div>   #}
                         <div class = "dcf-txt-xs dcf-mb-6">
                             {{ content.field_description }}
                         </div>
@@ -38,7 +40,7 @@
                 <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div>  
+            <div class="landing-section">{{ content.field_image }}</div>  
         
         {% elseif content.field_title_placement.0['#markup'] == 'bottom left' %}
             <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2" style="bottom: 5% ; left:2% ; width: 40%;"> 
@@ -47,7 +49,7 @@
                     <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div> 
+            <div class="landing-section ">{{ content.field_image }}</div> 
 
         {% elseif content.field_title_placement.0['#markup'] == 'center right' %}
             <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-right" style="top:50%; right:2%; width:40%;"> 
@@ -56,7 +58,7 @@
                     <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div> 
+            <div class="landing-section">{{ content.field_image }}</div> 
         
         {% elseif content.field_title_placement.0['#markup'] == 'bottom right' %}
             <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-left" style="bottom: 5% ; right:2% ; width: 40%;"> 
@@ -65,7 +67,7 @@
                     <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div> 
+            <div class="landing-section">{{ content.field_image }}</div> 
 
         {% elseif content.field_title_placement.0['#markup'] == 'center center' %}
             <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="top:50%; left:50%; transform: translate(-50%, -50%);"> 
@@ -74,7 +76,7 @@
                     <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div> 
+            <div class="landing-section">{{ content.field_image }}</div> 
 
         {% elseif content.field_title_placement.0['#markup'] == 'bottom center' %}
             <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="bottom:5% ; left:50%; transform: translateX(-50%);"> 
@@ -83,7 +85,7 @@
                     <div class="dcf-txt-xs">{{ content.field_cutline }}</div>
                 </div>
             </div>
-            <div>{{ content.field_image }}</div> 
+            <div class="landing-section">{{ content.field_image }}</div> 
         {% endif %}
   </div>
 </div>
