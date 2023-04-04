@@ -1,10 +1,6 @@
 <?php
 
-/**
- * @file
- * Contains theme functions for unl_five_news.
- */
-
+use Drupal\media\Entity\Media;
 
 
 function unl_five_news_preprocess_field(&$variables) {
@@ -15,6 +11,15 @@ function unl_five_news_preprocess_field(&$variables) {
 function unl_five_news_preprocess_block_content(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
   $variables['node_title'] = $node->getTitle();
+
+
+  //if ($variables['type'] == 'parallax_image') {
+   $block_content = $variables['elements']['#block_content'];
+   $field_image = $block_content->get('field_image')->getValue();
+   $media_item = Media::load($field_image[0]['target_id']);
+   $variables['credit'] = $media_item->get('field_media_image_credit');
+  //}
+ 
 }
 
 
