@@ -13,12 +13,12 @@ function unl_five_news_preprocess_block_content(&$variables) {
   $variables['node_title'] = $node->getTitle();
 
 
-  //if ($variables['type'] == 'parallax_image') {
+  if ($variables['bundle'] == 'parallax_image') {
    $block_content = $variables['elements']['#block_content'];
    $field_image = $block_content->get('field_image')->getValue();
    $media_item = Media::load($field_image[0]['target_id']);
-   $variables['credit'] = $media_item->get('field_media_image_credit');
-  //}
+   $variables['credit'] = $media_item->get('field_media_image_credit')->value;
+  }
  
 }
 
