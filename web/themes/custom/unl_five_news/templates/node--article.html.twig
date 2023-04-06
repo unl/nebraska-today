@@ -36,19 +36,15 @@
     </footer>
   {% endif %}
 
-
   <div class = "dcf-bleed">
     {{ content.field_article_lead_image }}
   </div>
 
-
-
   {# Paragraph #}
-  <div class="dcf-grid dcf-pt-7 dcf-pb-7 " >
+  <div class="dcf-grid dcf-pt-7 dcf-pb-7 test-media" > 
     {# 75% col #}
-    <div class ="dcf-col-75%-start">
-      <div style = "display: grid; grid-template-columns: 31% 60%;">
-        
+    <div class =" dcf-col-75%-start@md">
+      <div class = "dcf-custome-col">
         <div>
           <div class="dcf-sticky dcf-pin-top slide" style="padding: 0 1.58vw; float: left;">
             <hr class="dcf-l-line dcf-mt-0">
@@ -71,18 +67,21 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> 
 
     {# 25% col #}
-    <div class = "dcf-col-25%-end">
+    <div class = "dcf-col-25%-end@md">
      {# News Release Contacts #}
-      {{ content.field_article_release_contacts }}
+     {{ content.field_article_release_contacts }}
       {{ content.field_article_related_links }}
       {{ content.field_tags }}
       {{ content.field_lead_image_text_placement }}
       {{ content.field_high_resolution_photos }}
      </div>
-  </div>
+  </div> 
+
+
+
 
   {# Recent News #}
   <div>

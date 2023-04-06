@@ -17,25 +17,23 @@
                 <p class="dcf-mb-1 dcf-txt-xs">14 hours ago . 4 min read</p>
                 <h1 class ="dcf-txt-h1 dcf-m-0" >{{ node_title }}</h1>
                 <div class="dcf-uppercase dcf-txt-md dcf-mt-3 dcf-mb-4">{{ content.field_cutline }}</div>
-                    <div style ="display:grid; grid-template-columns: repeat(12,1fr); grid-column-gap:3.16vw;">
+                    <div class="dcf-basic-view">
                         <div class="dcf-col-100% dcf-col-67%-start@sm dcf-col-75%-start@md">
                             <div>{{ content.field_image }}</div> 
                         </div>
                         <div class="dcf-col-100% dcf-col-33%-end@sm dcf-col-25%-end@md"> 
-                            <hr class="dcf-l-line dcf-mt-0 dcf-mb-1">
-                             <div class="dcf-txt-3xs dcf-italic dcf-pr-5 dcf-mt-0 dcf-mb-1"> {{ credit }}</div>
-                            {# {{ dd(content.field_image) }} #}
-                            {# {{ $content['field_image'][0]['#media']['#fields'] }} #}
+                            <hr class="dcf-l-line dcf-mt-0 dcf-mb-1 dcf-basic-view-hr">
+                            <div class="dcf-txt-3xs dcf-italic dcf-pr-5 dcf-mt-0 dcf-mb-1 dcf-credit-text"> {{ credit }}</div>
                             <div class = "dcf-txt-xs dcf-mb-6">
                                 {{ content.field_description }}
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
               
 
         {% elseif content.field_title_placement.0['#markup'] == 'center left' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2" style="top:50%; left: 20px; transform: translateY(-50%); width: 50%;"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-center-left"> 
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-lightest-gray">{{ content.field_cutline }}</div>
@@ -45,7 +43,7 @@
             <div class="ericterst dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1"> {{ credit }}</div>  
         
         {% elseif content.field_title_placement.0['#markup'] == 'bottom left' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2" style="bottom: 5% ; left:2% ; width: 40%;"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-bottom-left" > 
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
@@ -55,7 +53,7 @@
             <div class="ericterst dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1"> {{ credit }}</div>  
 
         {% elseif content.field_title_placement.0['#markup'] == 'center right' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-right" style="top:50%; right:2%; width:40%;"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-center-right" >
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
@@ -65,7 +63,7 @@
             <div class="ericterst dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1"> {{ credit }}</div>  
         
         {% elseif content.field_title_placement.0['#markup'] == 'bottom right' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-left" style="bottom: 5% ; right:2% ; width: 40%;"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-left dcf-title-bottom-right"> 
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
@@ -75,7 +73,7 @@
             <div class="ericterst dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1"> {{ credit }}</div>    
 
         {% elseif content.field_title_placement.0['#markup'] == 'center center' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="top:50%; left:50%; transform: translate(-50%, -50%);"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-center-center" > 
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
@@ -85,7 +83,7 @@
             <div class="ericterst dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1"> {{ credit }}</div>  
 
         {% elseif content.field_title_placement.0['#markup'] == 'bottom center' %}
-            <div class="dcf-absolute dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-txt-center" style="bottom:5% ; left:50%; transform: translateX(-50%);"> 
+            <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2  dcf-title-bottom-center"> 
                 <div class="dcf-p-1">
                     <h1 class ="dcf-txt-h1 unl-cream" >{{ node_title }}</h1>
                     <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
