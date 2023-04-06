@@ -52,9 +52,7 @@
 }
 
 @media only screen and (min-width: 42.09em) {
-  .dcf-credit-text {
-    text-align: left;
-  }
+  /* Heading Placement*/
   .dcf-title-center-left {
     top: 50%;
     left: 20px;
@@ -94,6 +92,22 @@
     position: absolute;
     text-align: center;
   }
+
+  /* Credit */
+  .dcf-credit-text {
+    text-align: left;
+  }
+
+  /* News Column  */
+  .dcf-news-column {
+    max-width: 35.52em;
+    padding: 0 1.58vw;
+  }
+
+  .outer-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 42.09em) {
@@ -102,5 +116,21 @@
   }
   .dcf-credit-text {
     text-align: right;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .inner-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .inner-content-item1 {
+    padding: 0 1.58vw;
+    float: right;
+  }
+
+  .inner-content-item2 {
+    order: -1;
   }
 }

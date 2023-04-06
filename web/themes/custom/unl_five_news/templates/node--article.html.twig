@@ -40,46 +40,33 @@
     {{ content.field_article_lead_image }}
   </div>
 
-  {# Paragraph #}
-  <div class="dcf-grid dcf-pt-7 dcf-pb-7 test-media" > 
-    {# 75% col #}
-    <div class =" dcf-col-75%-start@md">
-      <div class = "dcf-custome-col">
-        <div>
-          <div class="dcf-sticky dcf-pin-top slide" style="padding: 0 1.58vw; float: left;">
-            <hr class="dcf-l-line dcf-mt-0">
-            <div>
-              <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Share</h2>
-            </div>
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aeb64f82863a8b2"></script>
-            <div class="addthis_inline_share_toolbox"></div>
-          </div>
+  <div class ="outer-content dcf-pt-7 dcf-pb-7 ">
+    <div class="inner-content outer-content-item1">
+      <div class = "dcf-news-column inner-content-item1">
+        <div class = "dcf-txt-h4 dcf-mb-1 dcf-font-family">
+          {{ content.field_subtitle }}
         </div>
-
-
-        <div class="dcf-m-auto" style="max-width: 35.52em; padding: 0 1.58vw; float: right">
-          <div  class = "dcf-txt-h5 dcf-mb-1 dcf-font-family">
-            {{ content.field_subtitle }}
-          </div>
-          <div class = "dcf-font-family dcf-dropcap">
+        <div class = "dcf-font-family dcf-dropcap">
           {{ content.body }}
-          </div>
         </div>
       </div>
-    </div> 
-
-    {# 25% col #}
-    <div class = "dcf-col-25%-end@md">
-     {# News Release Contacts #}
-     {{ content.field_article_release_contacts }}
-      {{ content.field_article_related_links }}
-      {{ content.field_tags }}
-      {{ content.field_lead_image_text_placement }}
-      {{ content.field_high_resolution_photos }}
-     </div>
-  </div> 
-
+      <div class="inner-content-item2">
+        <hr class="dcf-l-line dcf-mt-0">
+        <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Share</h2>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5aeb64f82863a8b2"></script> 
+        <div class="addthis_inline_share_toolbox"></div>
+      </div>
+    </div>
+    
+    <div class="outer-content-item2">
+        {{ content.field_article_release_contacts }}
+        {{ content.field_article_related_links }}
+        {{ content.field_tags }}
+        {{ content.field_lead_image_text_placement }}
+        {{ content.field_high_resolution_photos }}
+    </div>
+</div>
+  
 
 
 
