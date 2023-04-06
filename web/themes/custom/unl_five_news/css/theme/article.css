@@ -117,6 +117,14 @@
   .dcf-credit-text {
     text-align: right;
   }
+  .dcf-flex-col-custom {
+    display: flex;
+  }
+  .column-cust {
+    flex: 1;
+    margin: auto;
+    padding: 0 1.58vw;
+  }
 }
 
 @media only screen and (min-width: 40em) {
