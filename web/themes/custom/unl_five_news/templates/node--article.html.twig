@@ -42,12 +42,14 @@
 
   <div class ="outer-content dcf-pt-7 dcf-pb-7 ">
     <div class="inner-content outer-content-item1">
-      <div class = "dcf-news-column inner-content-item1">
-        <div class = "dcf-txt-h4 dcf-mb-1 dcf-font-family">
+      <div class = "dcf-news-column inner-content-item1 dcf-m-auto">
+        <div class = "dcf-txt-h4 dcf-mb-1 dcf-font-family" style= "max-width: 35.52em;">
           {{ content.field_subtitle }}
         </div>
         <div class = "dcf-font-family dcf-dropcap">
           {{ content.body }}
+          {{ content.field_gallery_images }}
+          {# {{ dd(content.field_gallery_images) }} #}
         </div>
       </div>
       <div class="inner-content-item2">
@@ -65,11 +67,8 @@
         {{ content.field_lead_image_text_placement }}
         {{ content.field_high_resolution_photos }}
     </div>
-</div>
+  </div>
   
-
-
-
   {# Recent News #}
   <div >
       {{ drupal_view('recent', 'block_1') }}

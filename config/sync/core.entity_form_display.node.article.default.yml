@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_gallery_images
     - field.field.node.article.field_high_resolution_photos
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -31,7 +32,7 @@ third_party_settings:
       label: 'Site section'
       region: content
       parent_name: ''
-      weight: 9
+      weight: 8
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -47,7 +48,7 @@ third_party_settings:
       label: 'Blocks (for embedding into the Body)'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -65,7 +66,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 4
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -75,7 +76,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -115,7 +116,7 @@ content:
     third_party_settings: {  }
   field_article_related_links:
     type: link_default
-    weight: 18
+    weight: 17
     region: content
     settings:
       placeholder_url: ''
@@ -123,7 +124,7 @@ content:
     third_party_settings: {  }
   field_article_release_contacts:
     type: entity_reference_autocomplete
-    weight: 20
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -131,9 +132,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_gallery_images:
+    type: image_image
+    weight: 21
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
   field_high_resolution_photos:
     type: image_image
-    weight: 26
+    weight: 20
     region: content
     settings:
       progress_indicator: throbber
@@ -141,7 +150,7 @@ content:
     third_party_settings: {  }
   field_section:
     type: entity_reference_autocomplete
-    weight: 17
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -159,7 +168,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: link_default
-    weight: 19
+    weight: 18
     region: content
     settings:
       placeholder_url: ''
@@ -167,7 +176,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: autocomplete_deluxe
-    weight: 6
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -184,38 +193,38 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   scheduler_settings:
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 15
+    weight: 14
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -230,7 +239,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -239,7 +248,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
