@@ -1,14 +1,14 @@
-uuid: 506ad0f6-9226-4002-9e7c-4f77ea766f68
+uuid: 8b27bdd7-4779-4c45-a7f7-d0b6d34e224b
 langcode: en
 status: true
 dependencies:
   module:
+    - block_content
     - file
     - image
-    - node
-id: node.field_gallery_images
-field_name: field_gallery_images
-entity_type: node
+id: block_content.field_images
+field_name: field_images
+entity_type: block_content
 type: image
 settings:
   target_type: file

@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
-    - field.field.node.article.field_gallery_images
     - field.field.node.article.field_high_resolution_photos
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -63,17 +62,6 @@ content:
       link: false
     third_party_settings: {  }
     weight: 15
-    region: content
-  field_gallery_images:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 17
     region: content
   field_high_resolution_photos:
     type: image

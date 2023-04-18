@@ -5,4 +5,4 @@ dependencies: {  }
 id: parallax_image
 label: Parallax-Image-custom-block
 revision: 0
-description: ''
+description: 'Hero Parallax Image'

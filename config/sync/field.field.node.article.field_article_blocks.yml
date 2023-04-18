@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.basic
+    - block_content.type.gallery
     - block_content.type.photo_gallery
     - field.storage.node.field_article_blocks
     - node.type.article
@@ -22,6 +23,7 @@ settings:
   handler_settings:
     target_bundles:
       basic: basic
+      gallery: gallery
       photo_gallery: photo_gallery
     sort:
       field: _none

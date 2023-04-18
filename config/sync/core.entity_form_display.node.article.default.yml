@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
-    - field.field.node.article.field_gallery_images
     - field.field.node.article.field_high_resolution_photos
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -131,14 +130,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_gallery_images:
-    type: image_image
-    weight: 21
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
   field_high_resolution_photos:
     type: image_image

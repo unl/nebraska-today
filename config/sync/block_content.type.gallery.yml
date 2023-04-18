@@ -1,0 +1,8 @@
+uuid: 34015e6b-f4ba-41f0-8ffd-e8aa7719136a
+langcode: en
+status: true
+dependencies: {  }
+id: gallery
+label: Gallery
+revision: 0
+description: 'Set of pictures in Grid layout designs'
