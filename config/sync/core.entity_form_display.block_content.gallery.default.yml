@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.gallery
     - field.field.block_content.gallery.body
+    - field.field.block_content.gallery.field_grid_styling
     - field.field.block_content.gallery.field_images
     - field.field.block_content.gallery.field_title
   module:
@@ -25,9 +26,15 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
+  field_grid_styling:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_images:
     type: image_image
-    weight: 2
+    weight: 3
     region: content
     settings:
       progress_indicator: throbber

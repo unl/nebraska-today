@@ -1,0 +1,21 @@
+uuid: 33c86f81-44a0-4b1c-bd13-66168a344922
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.gallery
+    - field.storage.block_content.field_grid_styling
+  module:
+    - options
+id: block_content.gallery.field_grid_styling
+field_name: field_grid_styling
+entity_type: block_content
+bundle: gallery
+label: Grid-Styling
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

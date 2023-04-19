@@ -1,0 +1,57 @@
+uuid: 92c2ca6b-2f04-4718-a630-16780272a516
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_grid_styling
+field_name: field_grid_styling
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '2 Images-Type 1'
+      label: '2 Images-Type 1'
+    -
+      value: '3 Images-Type 1'
+      label: '3 Images-Type 1'
+    -
+      value: '3 Images-Type 2'
+      label: '3 Images-Type 2'
+    -
+      value: '3 Images-Type 3'
+      label: '3 Images-Type 3'
+    -
+      value: '3 Images-Type 4'
+      label: '3 Images-Type 4'
+    -
+      value: '4 Images-Type 1'
+      label: '4 Images-Type 1'
+    -
+      value: '5 Images-Type 1'
+      label: '5 Images-Type 1'
+    -
+      value: '5 Images-Type 2'
+      label: '5 Images-Type 2'
+    -
+      value: '6 Images-Type 1'
+      label: '6 Images-Type 1'
+    -
+      value: '6 Images-Type 2'
+      label: '6 Images-Type 2'
+    -
+      value: '7 Images-Type 1'
+      label: '7 Images-Type 1'
+    -
+      value: '7 Images-Type 2'
+      label: '7 Images-Type 2'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

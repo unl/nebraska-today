@@ -5,11 +5,13 @@ dependencies:
   config:
     - block_content.type.gallery
     - field.field.block_content.gallery.body
+    - field.field.block_content.gallery.field_grid_styling
     - field.field.block_content.gallery.field_images
     - field.field.block_content.gallery.field_title
   module:
     - image
     - image_class
+    - options
     - text
 id: block_content.gallery.default
 targetEntityType: block_content
@@ -22,6 +24,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_grid_styling:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_images:
     type: image
