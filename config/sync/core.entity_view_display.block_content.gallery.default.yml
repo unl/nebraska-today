@@ -42,7 +42,7 @@ content:
         attribute: lazy
     third_party_settings:
       image_class:
-        class: dcf-obj-fit-cover
+        class: sssssss
     weight: 1
     region: content
   field_title:

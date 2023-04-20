@@ -4,9 +4,9 @@
         <p>{{ content.body.0 }}</p>
     </div>
     
-     {# for 3 images layouyt #}
+     {# for 2 images layouyt #}
     {% if content.field_grid_styling.0['#markup'] == '2 Images-Type 1' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery4x4 ">
             <span class= "dcf-gallery-2-1-type1 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -15,9 +15,19 @@
             </span>
         </div>  
 
+    {% elseif content.field_grid_styling.0['#markup'] == '2 Images-Type 2' %}
+        <div class = "dcf-gallery4x4 ">
+            <span class= "dcf-gallery-2-1-type2 dcf-overflow-hidden ">
+                <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
+            </span>
+            <span class= "dcf-gallery-2-2-type2 dcf-overflow-hidden"> 
+                <span class="grid-img dcf-hover"> {{ content.field_images.1 }}</span>
+            </span>
+        </div>       
+
     {# for 3 images layouyt #}
     {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 1' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery4x4">
             <span class= "dcf-gallery-3-1-type1 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -30,7 +40,7 @@
         </div>   
 
    {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 2' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery4x4 ">
             <span class= "dcf-gallery-3-1-type2 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -43,7 +53,7 @@
         </div>         
 
     {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 3' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery4x4">
             <span class= "dcf-gallery-3-1-type3 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -56,7 +66,7 @@
         </div> 
 
     {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 4' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery4x4 dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-3-1-type4 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -70,7 +80,7 @@
 
     {# for 4 images layout #}
     {% elseif content.field_grid_styling.0['#markup'] == '4 Images-Type 1' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-4-1 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -87,7 +97,7 @@
 
     {# for 5 images layouyt #}
     {% elseif content.field_grid_styling.0['#markup'] == '5 Images-Type 1'%}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8 dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-5-1-type1 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -106,7 +116,7 @@
         </div>
 
     {% elseif content.field_grid_styling.0['#markup'] == '5 Images-Type 2'%}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-5-1-type2 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -126,7 +136,7 @@
 
     {# for 6 images layout #}
     {% elseif content.field_grid_styling.0['#markup'] == '6 Images-Type 1' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-6-1-type1  dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -148,7 +158,7 @@
         </div>
 
     {% elseif content.field_grid_styling.0['#markup'] == '6 Images-Type 2' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-6-1-type2  dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -171,7 +181,7 @@
 
     {# for 7 images layout #}
     {% elseif content.field_grid_styling.0['#markup'] == '7 Images-Type 1' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-7-1-type1 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
@@ -196,7 +206,7 @@
         </div>
 
     {% elseif content.field_grid_styling.0['#markup'] == '7 Images-Type 2' %}
-        <div class = "dcf-gallery dcf-bleed dcf-wrapper">
+        <div class = "dcf-gallery8x8  dcf-bleed dcf-wrapper">
             <span class= "dcf-gallery-7-1-type2 dcf-overflow-hidden ">
                 <span class="grid-img dcf-hover"> {{ content.field_images.0 }}</span>
             </span>
