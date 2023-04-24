@@ -580,6 +580,10 @@
     float: right;
   }
 
+  .outer-content-item2 {
+    padding-left: 2em;
+  }
+
   .inner-content-item2 {
     order: -1;
   }
