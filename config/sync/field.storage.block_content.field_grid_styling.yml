@@ -18,6 +18,12 @@ settings:
       value: '2 Images-Type 2'
       label: '2 Images-Type 2'
     -
+      value: '2 Wide-Images-Type 1'
+      label: '2 Wide-Images-Type 1'
+    -
+      value: '2 Wide-Images-Type 2'
+      label: '2 Wide-Images-Type 2'
+    -
       value: '3 Images-Type 1'
       label: '3 Images-Type 1'
     -
@@ -30,8 +36,23 @@ settings:
       value: '3 Images-Type 4'
       label: '3 Images-Type 4'
     -
+      value: '3 Wide-Images-Type 1'
+      label: '3 Wide-Images-Type 1'
+    -
+      value: '3 Wide-Images-Type 2'
+      label: '3 Wide-Images-Type 2'
+    -
+      value: '3 Wide-Images-Type 3'
+      label: '3 Wide-Images-Type 3'
+    -
+      value: '3 Wide-Images-Type 4'
+      label: '3 Wide-Images-Type 4'
+    -
       value: '4 Images-Type 1'
       label: '4 Images-Type 1'
+    -
+      value: '4 Wide-Images-Type 1'
+      label: '4 Wide-Images-Type 1'
     -
       value: '5 Images-Type 1'
       label: '5 Images-Type 1'
