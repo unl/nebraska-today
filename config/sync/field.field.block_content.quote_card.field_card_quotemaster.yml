@@ -1,0 +1,25 @@
+uuid: dbd52adf-b1ce-42eb-837d-afc52f292384
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.storage.block_content.field_card_quotemaster
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: block_content.quote_card.field_card_quotemaster
+field_name: field_card_quotemaster
+entity_type: block_content
+bundle: quote_card
+label: Quotemaster
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

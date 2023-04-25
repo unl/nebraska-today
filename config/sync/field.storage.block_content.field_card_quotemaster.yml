@@ -1,0 +1,20 @@
+uuid: bbb0091a-8c09-44bd-9e25-a1a060386c0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_card_quotemaster
+field_name: field_card_quotemaster
+entity_type: block_content
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

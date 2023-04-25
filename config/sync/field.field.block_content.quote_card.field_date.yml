@@ -1,0 +1,21 @@
+uuid: c23ef0b8-8ee6-41a5-9d94-ee01690aac48
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.storage.block_content.field_date
+  module:
+    - datetime
+id: block_content.quote_card.field_date
+field_name: field_date
+entity_type: block_content
+bundle: quote_card
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

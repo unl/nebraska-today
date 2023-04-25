@@ -1,0 +1,23 @@
+uuid: 6b25492a-7105-4e83-b385-81965485f494
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.storage.block_content.field_pill_content_link
+  module:
+    - link
+id: block_content.quote_card.field_pill_content_link
+field_name: field_pill_content_link
+entity_type: block_content
+bundle: quote_card
+label: 'Pill Content Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

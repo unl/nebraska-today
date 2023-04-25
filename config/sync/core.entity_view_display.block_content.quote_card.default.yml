@@ -1,0 +1,72 @@
+uuid: b9f94869-603a-4c66-9b09-58613c69f73b
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.field.block_content.quote_card.field_card_float
+    - field.field.block_content.quote_card.field_card_quotemaster
+    - field.field.block_content.quote_card.field_date
+    - field.field.block_content.quote_card.field_pill_content
+    - field.field.block_content.quote_card.field_pill_content_link
+    - field.field.block_content.quote_card.field_quote
+  module:
+    - datetime
+    - link
+    - options
+    - text
+id: block_content.quote_card.default
+targetEntityType: block_content
+bundle: quote_card
+mode: default
+content:
+  field_card_float:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_card_quotemaster:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_pill_content:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_pill_content_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_quote:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

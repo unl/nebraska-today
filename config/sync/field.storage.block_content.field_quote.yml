@@ -1,17 +1,17 @@
-uuid: f9183b8f-7663-49c2-aea3-d00d4aa486ae
+uuid: 731f2ea5-3edf-4ce0-a095-35586458baef
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - media
-id: block_content.field_custome
-field_name: field_custome
+    - text
+id: block_content.field_quote
+field_name: field_quote
 entity_type: block_content
-type: entity_reference
+type: text
 settings:
-  target_type: media
-module: core
+  max_length: 255
+module: text
 locked: false
 cardinality: 1
 translatable: true

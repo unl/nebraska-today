@@ -1,0 +1,8 @@
+uuid: 4a13a57c-45dd-4117-a74c-02f44a5d418b
+langcode: en
+status: true
+dependencies: {  }
+id: quote_card
+label: 'Quote Card'
+revision: 0
+description: 'Quote added in a Card'

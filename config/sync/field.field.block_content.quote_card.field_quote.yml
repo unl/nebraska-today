@@ -1,0 +1,25 @@
+uuid: 44be75aa-5031-4823-8b4a-e3cf95845a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.storage.block_content.field_quote
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: block_content.quote_card.field_quote
+field_name: field_quote
+entity_type: block_content
+bundle: quote_card
+label: Quote
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

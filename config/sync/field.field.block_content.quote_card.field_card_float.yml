@@ -1,0 +1,21 @@
+uuid: ffc6ea51-4286-4219-8294-36d8b1d04be3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote_card
+    - field.storage.block_content.field_card_float
+  module:
+    - options
+id: block_content.quote_card.field_card_float
+field_name: field_card_float
+entity_type: block_content
+bundle: quote_card
+label: 'Card float'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

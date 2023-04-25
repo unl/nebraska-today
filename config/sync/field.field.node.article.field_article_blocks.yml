@@ -7,6 +7,7 @@ dependencies:
     - block_content.type.gallery
     - block_content.type.photo_gallery
     - block_content.type.quote
+    - block_content.type.quote_card
     - field.storage.node.field_article_blocks
     - node.type.article
 id: node.article.field_article_blocks
@@ -27,6 +28,7 @@ settings:
       gallery: gallery
       photo_gallery: photo_gallery
       quote: quote
+      quote_card: quote_card
     sort:
       field: _none
       direction: ASC
