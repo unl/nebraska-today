@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.basic
     - block_content.type.gallery
     - block_content.type.photo_gallery
+    - block_content.type.quote
     - field.storage.node.field_article_blocks
     - node.type.article
 id: node.article.field_article_blocks
@@ -25,6 +26,7 @@ settings:
       basic: basic
       gallery: gallery
       photo_gallery: photo_gallery
+      quote: quote
     sort:
       field: _none
       direction: ASC

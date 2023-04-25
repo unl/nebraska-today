@@ -1,0 +1,28 @@
+uuid: 77728b9f-c620-4e06-ab70-c0516c3610c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote
+    - field.storage.block_content.field_quotemaster
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - basic_html
+      - email_html
+      - plain_text
+id: block_content.quote.field_quotemaster
+field_name: field_quotemaster
+entity_type: block_content
+bundle: quote
+label: Quotemaster
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

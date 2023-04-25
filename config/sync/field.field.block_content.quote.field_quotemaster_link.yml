@@ -1,0 +1,23 @@
+uuid: 5be02463-5ec2-4fb4-bc61-f1237fecdbd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quote
+    - field.storage.block_content.field_quotemaster_link
+  module:
+    - link
+id: block_content.quote.field_quotemaster_link
+field_name: field_quotemaster_link
+entity_type: block_content
+bundle: quote
+label: 'Quotemaster Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link
