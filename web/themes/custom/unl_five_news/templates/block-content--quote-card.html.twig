@@ -1,41 +1,42 @@
 {% if content.field_card_float.0["#markup"] == 'Right' %}
-<div class="dcf-quote-card dcf-ml-3 dcf-mb-3" style="float:right;">
-    <div class="dcf-p-5">
-        <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
-        <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
-        <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
-            <div>#</div>
-            <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+    <div class="dcf-quote-card dcf-ml-3 dcf-mb-3" style="float:right;">
+        <div class="dcf-p-5">
+            <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
+            <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
+            <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
+                <div>#</div>
+                <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+            </div>
+            <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
+            <div class="dcf-credit-title dcf-txt-xs">{{ content.field_card_quotemaster_title }}</div>
         </div>
-        <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
     </div>
-</div>
 
-{% elseif content.field_card_float.0["#markup"] == 'Left' %}
-<div class="dcf-quote-card dcf-mr-3 dcf-mb-3" style="float:left;">
-    <div class="dcf-p-5">
-        <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
-        <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
-        <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
-            <div>#</div>
-            <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+    {% elseif content.field_card_float.0["#markup"] == 'Left' %}
+    <div class="dcf-quote-card dcf-mr-3 dcf-mb-3" style="float:left;">
+        <div class="dcf-p-5">
+            <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
+            <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
+            <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
+                <div>#</div>
+                <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+            </div>
+            <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
+            <div class="dcf-credit-title dcf-txt-xs">{{ content.field_card_quotemaster_title }}</div>
         </div>
-        <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
     </div>
-</div>
 
-{% else %}
-<div class="dcf-quote-card dcf-mt-3 dcf-mb-3">
-    <div class="dcf-p-5">
-        <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
-        <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
-        <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
-            <div>#</div>
-            <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+    {% else %}
+    <div class="dcf-quote-card dcf-mt-3 dcf-mb-3">
+        <div class="dcf-p-5">
+            <a class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
+            <div class="dcf-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
+            <div class="dcf-pb-5 dcf-d-flex  dcf-ai-center dcf-col-gap-1">
+                <div>#</div>
+                <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date }}</div>
+            </div>
+            <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
+            <div class="dcf-credit-title dcf-txt-xs">{{ content.field_card_quotemaster_title }}</div>
         </div>
-        <div class="dcf-credit dcf-txt-xs">{{ content.field_card_quotemaster }}</div>
     </div>
-</div>
-
-
 {% endif %} 

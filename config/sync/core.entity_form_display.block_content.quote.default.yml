@@ -7,6 +7,7 @@ dependencies:
     - field.field.block_content.quote.body
     - field.field.block_content.quote.field_quotemaster
     - field.field.block_content.quote.field_quotemaster_link
+    - field.field.block_content.quote.field_quotemaster_title
   module:
     - link
     - text
@@ -40,6 +41,14 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_quotemaster_title:
+    type: text_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
 hidden:
   info: true

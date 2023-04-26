@@ -6,6 +6,7 @@ dependencies:
     - block_content.type.quote_card
     - field.field.block_content.quote_card.field_card_float
     - field.field.block_content.quote_card.field_card_quotemaster
+    - field.field.block_content.quote_card.field_card_quotemaster_title
     - field.field.block_content.quote_card.field_date
     - field.field.block_content.quote_card.field_pill_content
     - field.field.block_content.quote_card.field_pill_content_link
@@ -21,7 +22,7 @@ mode: default
 content:
   field_card_float:
     type: options_select
-    weight: 26
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -33,9 +34,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_card_quotemaster_title:
+    type: text_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_date:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
