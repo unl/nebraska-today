@@ -1,0 +1,72 @@
+uuid: ba26a8b2-89c7-4627-a70b-75bd5a94525c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_card
+    - field.field.block_content.paragraph_card.field_card_
+    - field.field.block_content.paragraph_card.field_date_card
+    - field.field.block_content.paragraph_card.field_paragraph
+    - field.field.block_content.paragraph_card.field_paragraph_title
+    - field.field.block_content.paragraph_card.field_pill_content__paragraph
+    - field.field.block_content.paragraph_card.field_pill_content_link_para
+  module:
+    - datetime
+    - link
+    - options
+    - text
+id: block_content.paragraph_card.default
+targetEntityType: block_content
+bundle: paragraph_card
+mode: default
+content:
+  field_card_:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_date_card:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_paragraph:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_paragraph_title:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_pill_content__paragraph:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_pill_content_link_para:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden: {  }

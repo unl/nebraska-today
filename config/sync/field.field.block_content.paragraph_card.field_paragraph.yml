@@ -1,0 +1,25 @@
+uuid: 12ce800e-43ec-4cc4-a064-a949d88661a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_card
+    - field.storage.block_content.field_paragraph
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: block_content.paragraph_card.field_paragraph
+field_name: field_paragraph
+entity_type: block_content
+bundle: paragraph_card
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

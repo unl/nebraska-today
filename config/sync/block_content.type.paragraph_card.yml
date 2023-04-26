@@ -1,0 +1,8 @@
+uuid: 8b7d3629-9f5a-4ab2-88f5-75a1fd472f3f
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_card
+label: 'Paragraph Card'
+revision: 0
+description: 'Paragraph added in Card'

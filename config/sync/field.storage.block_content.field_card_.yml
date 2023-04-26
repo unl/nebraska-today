@@ -1,12 +1,12 @@
-uuid: c517198f-3e4b-4657-a54e-27145e9b2b7d
+uuid: 659c6e35-f9ea-4788-9631-1ed53b098b07
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - options
-id: block_content.field_card_float
-field_name: field_card_float
+id: block_content.field_card_
+field_name: field_card_
 entity_type: block_content
 type: list_string
 settings:

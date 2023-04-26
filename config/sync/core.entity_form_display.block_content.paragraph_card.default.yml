@@ -1,0 +1,67 @@
+uuid: 6a8c0ff4-6250-4aa8-9dbb-8a9cecb105f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_card
+    - field.field.block_content.paragraph_card.field_card_
+    - field.field.block_content.paragraph_card.field_date_card
+    - field.field.block_content.paragraph_card.field_paragraph
+    - field.field.block_content.paragraph_card.field_paragraph_title
+    - field.field.block_content.paragraph_card.field_pill_content__paragraph
+    - field.field.block_content.paragraph_card.field_pill_content_link_para
+  module:
+    - datetime
+    - link
+    - text
+id: block_content.paragraph_card.default
+targetEntityType: block_content
+bundle: paragraph_card
+mode: default
+content:
+  field_card_:
+    type: options_select
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_card:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraph:
+    type: text_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph_title:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pill_content__paragraph:
+    type: text_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pill_content_link_para:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  info: true

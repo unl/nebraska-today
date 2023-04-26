@@ -1,0 +1,20 @@
+uuid: 5b67db1e-d619-4602-a157-31403dfb4003
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_pill_content__paragraph
+field_name: field_pill_content__paragraph
+entity_type: block_content
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
