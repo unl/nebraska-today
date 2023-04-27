@@ -1,0 +1,21 @@
+uuid: 25d7bb14-b416-4b84-a63e-087c2f8abf95
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_quote_card
+    - field.storage.block_content.field_quote_image_date
+  module:
+    - datetime
+id: block_content.image_quote_card.field_quote_image_date
+field_name: field_quote_image_date
+entity_type: block_content
+bundle: image_quote_card
+label: 'Quote Image Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

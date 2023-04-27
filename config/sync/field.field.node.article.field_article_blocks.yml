@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - block_content.type.gallery
+    - block_content.type.image_quote_card
     - block_content.type.paragraph_card
     - block_content.type.photo_gallery
     - block_content.type.quote
@@ -27,6 +28,7 @@ settings:
     target_bundles:
       basic: basic
       gallery: gallery
+      image_quote_card: image_quote_card
       paragraph_card: paragraph_card
       photo_gallery: photo_gallery
       quote: quote

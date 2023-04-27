@@ -1,0 +1,21 @@
+uuid: 048d2a23-1b7e-4d00-925c-9af61f3def97
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_quote_card
+    - field.storage.block_content.field_quote_card_placement
+  module:
+    - options
+id: block_content.image_quote_card.field_quote_card_placement
+field_name: field_quote_card_placement
+entity_type: block_content
+bundle: image_quote_card
+label: 'Quote Card Placement'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

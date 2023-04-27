@@ -1,0 +1,8 @@
+uuid: f627b96b-2157-4873-a000-ab83671accd9
+langcode: en
+status: true
+dependencies: {  }
+id: image_quote_card
+label: 'Image Quote Card'
+revision: 0
+description: 'Image and Quote Overlaid on it '

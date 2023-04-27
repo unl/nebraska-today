@@ -1,0 +1,20 @@
+uuid: 1b18f00f-a5e1-4c4a-88a4-5498a34b3af4
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - datetime
+id: block_content.field_quote_image_date
+field_name: field_quote_image_date
+entity_type: block_content
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

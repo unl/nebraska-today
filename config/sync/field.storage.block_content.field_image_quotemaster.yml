@@ -1,0 +1,20 @@
+uuid: 9275a382-f141-4707-b51a-a060d1632a2a
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_image_quotemaster
+field_name: field_image_quotemaster
+entity_type: block_content
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

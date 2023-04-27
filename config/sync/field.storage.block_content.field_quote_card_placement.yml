@@ -1,0 +1,27 @@
+uuid: cf44d2c5-1b3d-452b-b22a-b7c8def2d032
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - options
+id: block_content.field_quote_card_placement
+field_name: field_quote_card_placement
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Left
+      label: Left
+    -
+      value: Right
+      label: Right
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
