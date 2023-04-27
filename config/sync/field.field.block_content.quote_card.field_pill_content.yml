@@ -1,18 +1,10 @@
-uuid: 9608e3eb-48c9-4a0b-926d-4f2ac49dc123
+uuid: 9952663c-da63-444d-93d9-539f550ededb
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.quote_card
     - field.storage.block_content.field_pill_content
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_html
-      - plain_text
 id: block_content.quote_card.field_pill_content
 field_name: field_pill_content
 entity_type: block_content
@@ -24,4 +16,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

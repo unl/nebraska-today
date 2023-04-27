@@ -1,16 +1,10 @@
-uuid: 6affeba1-f18f-4312-aeaf-06b69ed2bb1a
+uuid: 6510e49e-100a-4526-893a-41b244697370
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.quote_card
     - field.storage.block_content.field_card_quotemaster_title
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: block_content.quote_card.field_card_quotemaster_title
 field_name: field_card_quotemaster_title
 entity_type: block_content
@@ -22,4 +16,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

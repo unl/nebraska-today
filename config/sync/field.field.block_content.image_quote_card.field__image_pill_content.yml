@@ -1,15 +1,15 @@
-uuid: 6b26826b-dc3c-460c-91a2-69142191242a
+uuid: 30ed9cb0-aaa1-46b2-b31e-d54925e48133
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.image_quote_card
-    - field.storage.block_content.field_quotemaster_
-id: block_content.image_quote_card.field_quotemaster_
-field_name: field_quotemaster_
+    - field.storage.block_content.field__image_pill_content
+id: block_content.image_quote_card.field__image_pill_content
+field_name: field__image_pill_content
 entity_type: block_content
 bundle: image_quote_card
-label: 'Quotemaster Title'
+label: 'Pill Content'
 description: ''
 required: false
 translatable: false

@@ -24,11 +24,12 @@ content:
     weight: 0
     region: content
   field_quotemaster:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_quotemaster_link:
     type: link
@@ -43,10 +44,11 @@ content:
     weight: 2
     region: content
   field_quotemaster_title:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
 hidden: {  }

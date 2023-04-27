@@ -1,17 +1,18 @@
-uuid: 9275a382-f141-4707-b51a-a060d1632a2a
+uuid: 9d250492-2b67-4cfd-8c9d-74a8969f1dbb
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - text
 id: block_content.field_image_quotemaster
 field_name: field_image_quotemaster
 entity_type: block_content
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

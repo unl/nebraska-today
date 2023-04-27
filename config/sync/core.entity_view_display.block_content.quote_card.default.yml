@@ -29,18 +29,20 @@ content:
     weight: 6
     region: content
   field_card_quotemaster:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 8
     region: content
   field_card_quotemaster_title:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 9
     region: content
   field_date:
     type: datetime_default
@@ -52,11 +54,12 @@ content:
     weight: 4
     region: content
   field_pill_content:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 7
     region: content
   field_pill_content_link:
     type: link

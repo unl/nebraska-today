@@ -1,16 +1,10 @@
-uuid: fcadf9a9-9a13-4801-8206-df5c9c34115f
+uuid: bd59ba21-7c83-4a91-8f14-16f9e50bfbcb
 langcode: en
 status: true
 dependencies:
   config:
     - block_content.type.quote
     - field.storage.block_content.field_quotemaster_title
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: block_content.quote.field_quotemaster_title
 field_name: field_quotemaster_title
 entity_type: block_content
@@ -22,4 +16,4 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

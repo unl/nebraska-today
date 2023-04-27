@@ -1,17 +1,18 @@
-uuid: 1109e87e-063b-4a3a-ae0d-fb8beec2b480
+uuid: 7ffe5d5c-3aa9-4925-9051-1eacdc48bddd
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - text
-id: block_content.field_paragraph_title
-field_name: field_paragraph_title
+id: block_content.field__paragraph_title
+field_name: field__paragraph_title
 entity_type: block_content
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

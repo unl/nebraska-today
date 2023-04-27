@@ -1,0 +1,19 @@
+uuid: ad6841da-b088-4025-805e-0dce196b5af6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_card
+    - field.storage.block_content.field_pill_content__paragr
+id: block_content.paragraph_card.field_pill_content__paragr
+field_name: field_pill_content__paragr
+entity_type: block_content
+bundle: paragraph_card
+label: 'Pill Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

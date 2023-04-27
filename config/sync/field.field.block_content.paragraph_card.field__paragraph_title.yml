@@ -1,0 +1,19 @@
+uuid: 92d34d21-ca6d-40d8-a3f9-46394d7b2854
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.paragraph_card
+    - field.storage.block_content.field__paragraph_title
+id: block_content.paragraph_card.field__paragraph_title
+field_name: field__paragraph_title
+entity_type: block_content
+bundle: paragraph_card
+label: 'Paragraph Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

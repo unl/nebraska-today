@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - block_content.type.paragraph_card
+    - field.field.block_content.paragraph_card.field__paragraph_title
     - field.field.block_content.paragraph_card.field_card_
     - field.field.block_content.paragraph_card.field_date_card
     - field.field.block_content.paragraph_card.field_paragraph
-    - field.field.block_content.paragraph_card.field_paragraph_title
-    - field.field.block_content.paragraph_card.field_pill_content__paragraph
+    - field.field.block_content.paragraph_card.field_pill_content__paragr
     - field.field.block_content.paragraph_card.field_pill_content_link_para
   module:
     - datetime
@@ -20,6 +20,14 @@ targetEntityType: block_content
 bundle: paragraph_card
 mode: default
 content:
+  field__paragraph_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_card_:
     type: list_default
     label: hidden
@@ -43,19 +51,13 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_paragraph_title:
-    type: text_default
+  field_pill_content__paragr:
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 5
-    region: content
-  field_pill_content__paragraph:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_pill_content_link_para:
     type: link

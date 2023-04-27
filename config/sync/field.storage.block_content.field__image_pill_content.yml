@@ -1,17 +1,18 @@
-uuid: 92e9b95f-4317-42fd-883d-ed2499cf48e8
+uuid: af168820-af66-4c02-b273-5d50a5ae11a6
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
-    - text
-id: block_content.field_image_pill_content
-field_name: field_image_pill_content
+id: block_content.field__image_pill_content
+field_name: field__image_pill_content
 entity_type: block_content
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  case_sensitive: false
+  is_ascii: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

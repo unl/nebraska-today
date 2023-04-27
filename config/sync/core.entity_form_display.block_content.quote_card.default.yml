@@ -27,7 +27,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_card_quotemaster:
-    type: text_textfield
+    type: string_textfield
     weight: 3
     region: content
     settings:
@@ -35,7 +35,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_card_quotemaster_title:
-    type: text_textfield
+    type: string_textfield
     weight: 4
     region: content
     settings:
@@ -49,7 +49,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_pill_content:
-    type: text_textfield
+    type: string_textfield
     weight: 0
     region: content
     settings:

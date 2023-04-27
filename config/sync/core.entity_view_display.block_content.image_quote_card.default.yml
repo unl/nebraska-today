@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - block_content.type.image_quote_card
-    - field.field.block_content.image_quote_card.field_image_pill_content
+    - field.field.block_content.image_quote_card.field__image_pill_content
     - field.field.block_content.image_quote_card.field_image_pill_content_link
     - field.field.block_content.image_quote_card.field_image_quote
     - field.field.block_content.image_quote_card.field_image_quote_card
@@ -24,12 +24,13 @@ targetEntityType: block_content
 bundle: image_quote_card
 mode: default
 content:
-  field_image_pill_content:
-    type: text_default
+  field__image_pill_content:
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 9
     region: content
   field_image_pill_content_link:
     type: link_separate
@@ -64,11 +65,12 @@ content:
     weight: 0
     region: content
   field_image_quotemaster:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 10
     region: content
   field_quote_card_placement:
     type: list_default
@@ -79,7 +81,7 @@ content:
     region: content
   field_quote_image_date:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: medium
@@ -87,10 +89,11 @@ content:
     weight: 8
     region: content
   field_quotemaster_:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 7
+    weight: 12
     region: content
 hidden: {  }
