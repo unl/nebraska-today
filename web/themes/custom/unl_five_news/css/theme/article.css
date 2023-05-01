@@ -174,13 +174,19 @@ blockquote p:nth-of-type(3)::after {
 
 /* DCF-Quote Card */
 .dcf-pill div {
-  background-color: var(--b-input-focus);
+  background-color: #007197;
   color: #fefdfa;
   border-radius: 1rem;
   width: fit-content;
   padding: 0.26em 0.56em;
   cursor: default;
 }
+
+.dcf-pill :hover{
+  background-color: #42a7c6;
+}
+
+
 .dcf-quote-card {
   background-color: var(--bg-body);
   max-width: 30ch;
