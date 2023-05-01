@@ -5,8 +5,11 @@ dependencies:
   config:
     - block_content.type.body_parallax_image
     - field.field.block_content.body_parallax_image.field_body_parallax_image
+    - field.field.block_content.body_parallax_image.field_body_parallax_image_size
   module:
     - image
+    - image_class
+    - options
 id: block_content.body_parallax_image.default
 targetEntityType: block_content
 bundle: body_parallax_image
@@ -19,8 +22,17 @@ content:
       image_link: ''
       image_style: ''
       image_loading:
-        attribute: lazy
-    third_party_settings: {  }
+        attribute: eager
+    third_party_settings:
+      image_class:
+        class: ''
     weight: 1
+    region: content
+  field_body_parallax_image_size:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
 hidden: {  }

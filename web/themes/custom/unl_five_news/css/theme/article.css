@@ -227,7 +227,6 @@ blockquote p:nth-of-type(3)::after {
 
 /* Image parallax body */
 .dcf-parallax-image-body {
-  height: 30vh;
   position: relative;
 }
 /* Full screen */
