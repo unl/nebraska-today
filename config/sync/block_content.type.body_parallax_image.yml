@@ -1,0 +1,8 @@
+uuid: 2999b567-d67b-41d7-87b4-4098644ff194
+langcode: en
+status: true
+dependencies: {  }
+id: body_parallax_image
+label: 'Body Parallax Image'
+revision: 0
+description: 'This is a parallax image that can be added in body'

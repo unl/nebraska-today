@@ -1,0 +1,26 @@
+uuid: 0f2543b3-73dd-4816-be14-dd4dd619acaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_parallax_image
+    - field.field.block_content.body_parallax_image.field_body_parallax_image
+  module:
+    - image
+id: block_content.body_parallax_image.default
+targetEntityType: block_content
+bundle: body_parallax_image
+mode: default
+content:
+  field_body_parallax_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }
