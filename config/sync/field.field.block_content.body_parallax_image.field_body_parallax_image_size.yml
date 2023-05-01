@@ -1,0 +1,21 @@
+uuid: 91a5c334-7360-482d-b19a-2449bc996510
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_parallax_image
+    - field.storage.block_content.field_body_parallax_image_size
+  module:
+    - options
+id: block_content.body_parallax_image.field_body_parallax_image_size
+field_name: field_body_parallax_image_size
+entity_type: block_content
+bundle: body_parallax_image
+label: 'Body Parallax Image Size'
+description: 'Body Image Size 30vh = 30%, 60vh = 60%, 100vh = 100 % of screen '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
