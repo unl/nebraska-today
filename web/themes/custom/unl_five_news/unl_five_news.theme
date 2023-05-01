@@ -11,8 +11,6 @@ function unl_five_news_preprocess_field(&$variables) {
 function unl_five_news_preprocess_block_content(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
   $variables['node_title'] = $node->getTitle();
-
-
   if ($variables['bundle'] == 'parallax_image') {
    $block_content = $variables['elements']['#block_content'];
    $field_image = $block_content->get('field_image')->getValue();
