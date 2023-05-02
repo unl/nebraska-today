@@ -1,26 +1,30 @@
 {% if content.field_card_.0["#markup"] == 'Right' %}
    <div class="dcf-paragraph-card dcf-ml-3" style="float:right;">
         <div class="dcf-p-5">
-        <a href="content.field_pill_content_link_para.0["url"]" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr }}</a> 
+        <a href="{{ content.field_pill_content_link_para.0['#url'] }}" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr }}</a> 
         <div class="dcf-pb-5 dcf-pt-5 dcf-bold dcf-txt-lg"> {{ content.field__paragraph_title }} </div>
         <div class="dcf-pb-5">{{ content.field_paragraph }}</div>
+            {% if content.field_date_card.0['#text'] != null %}
             <div class="dcf-d-flex  dcf-ai-center dcf-col-gap-1">
                 <div class="dcf-mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" aria-labelledby="filled-calendar-2-time-title" style="fill:rgb(208, 0, 0);" height="20"><title id="filled-calendar-2-time-title">calendar-2(time)</title><path d="M12 16H16V19H12zM7 16H11V19H7zM12 12H16V15H12zM7 12H11V15H7z"/><path d="M0 23.5C0 23.776.224 24 .5 24h23c.276 0 .5-.224.5-.5V8H0V23.5zM2.5 16C2.224 16 2 15.776 2 15.5S2.224 15 2.5 15H6v-3H2.5C2.224 12 2 11.776 2 11.5S2.224 11 2.5 11H6V9.5C6 9.224 6.224 9 6.5 9S7 9.224 7 9.5V11h4V9.5C11 9.224 11.224 9 11.5 9S12 9.224 12 9.5V11h4V9.5C16 9.224 16.224 9 16.5 9S17 9.224 17 9.5V11h4.5c.276 0 .5.224.5.5S21.776 12 21.5 12H17v3h4.5c.276 0 .5.224.5.5S21.776 16 21.5 16H17v3h4.5c.276 0 .5.224.5.5S21.776 20 21.5 20H17v1.5c0 .276-.224.5-.5.5S16 21.776 16 21.5V20h-4v1.5c0 .276-.224.5-.5.5S11 21.776 11 21.5V20H7v1.5C7 21.776 6.776 22 6.5 22S6 21.776 6 21.5V20H2.5C2.224 20 2 19.776 2 19.5S2.224 19 2.5 19H6v-3H2.5zM23.5 2H20V.5C20 .224 19.776 0 19.5 0h-3C16.224 0 16 .224 16 .5V2H8V.5C8 .224 7.776 0 7.5 0h-3C4.224 0 4 .224 4 .5V2H.5C.224 2 0 2.224 0 2.5V7h24V2.5C24 2.224 23.776 2 23.5 2zM7 4H5V1h2V4zM19 4h-2V1h2V4z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg></div>
                 <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date_card  }}</div>
             </div>
+            {% endif %}
         </div>
     </div>
 
     {% elseif content.field_card_.0["#markup"] == 'Right Bleed' %}
     <div class="dcf-paragraph-card dcf-ml-3 dcf-card-bleed-right">
         <div class="dcf-p-5">
-        <a href="content.field_pill_content_link_para.0["url"]" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
+        <a href="{{ content.field_pill_content_link_para.0['#url'] }}" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
         <div class="dcf-pb-5 dcf-pt-5 dcf-bold dcf-txt-lg"> {{ content.field__paragraph_title }} </div>
         <div class="dcf-pb-5">{{ content.field_paragraph }}</div>
+        {% if content.field_date_card.0['#text'] != null %}
             <div class="dcf-d-flex  dcf-ai-center dcf-col-gap-1">
                 <div class="dcf-mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" aria-labelledby="filled-calendar-2-time-title" style="fill:rgb(208, 0, 0);" height="20"><title id="filled-calendar-2-time-title">calendar-2(time)</title><path d="M12 16H16V19H12zM7 16H11V19H7zM12 12H16V15H12zM7 12H11V15H7z"/><path d="M0 23.5C0 23.776.224 24 .5 24h23c.276 0 .5-.224.5-.5V8H0V23.5zM2.5 16C2.224 16 2 15.776 2 15.5S2.224 15 2.5 15H6v-3H2.5C2.224 12 2 11.776 2 11.5S2.224 11 2.5 11H6V9.5C6 9.224 6.224 9 6.5 9S7 9.224 7 9.5V11h4V9.5C11 9.224 11.224 9 11.5 9S12 9.224 12 9.5V11h4V9.5C16 9.224 16.224 9 16.5 9S17 9.224 17 9.5V11h4.5c.276 0 .5.224.5.5S21.776 12 21.5 12H17v3h4.5c.276 0 .5.224.5.5S21.776 16 21.5 16H17v3h4.5c.276 0 .5.224.5.5S21.776 20 21.5 20H17v1.5c0 .276-.224.5-.5.5S16 21.776 16 21.5V20h-4v1.5c0 .276-.224.5-.5.5S11 21.776 11 21.5V20H7v1.5C7 21.776 6.776 22 6.5 22S6 21.776 6 21.5V20H2.5C2.224 20 2 19.776 2 19.5S2.224 19 2.5 19H6v-3H2.5zM23.5 2H20V.5C20 .224 19.776 0 19.5 0h-3C16.224 0 16 .224 16 .5V2H8V.5C8 .224 7.776 0 7.5 0h-3C4.224 0 4 .224 4 .5V2H.5C.224 2 0 2.224 0 2.5V7h24V2.5C24 2.224 23.776 2 23.5 2zM7 4H5V1h2V4zM19 4h-2V1h2V4z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg></div>
                 <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date_card  }}</div>
             </div>
+        {% endif %}
         </div>
     </div>
 
@@ -28,39 +32,45 @@
     {% elseif content.field_card_.0["#markup"] == 'Left' %}
    <div class="dcf-paragraph-card dcf-mr-3 " style="float:left;">
         <div class="dcf-p-5">
-        <a href="content.field_pill_content_link_para.0["url"]" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
+        <a href="{{ content.field_pill_content_link_para.0['#url'] }}" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
         <div class="dcf-pb-5 dcf-pt-5 dcf-bold dcf-txt-lg"> {{ content.field__paragraph_title }} </div>
         <div class="dcf-pb-5">{{ content.field_paragraph }}</div>
+        {% if content.field_date_card.0['#text'] != null %}
             <div class="dcf-d-flex  dcf-ai-center dcf-col-gap-1">
                 <div class="dcf-mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" aria-labelledby="filled-calendar-2-time-title" style="fill:rgb(208, 0, 0);" height="20"><title id="filled-calendar-2-time-title">calendar-2(time)</title><path d="M12 16H16V19H12zM7 16H11V19H7zM12 12H16V15H12zM7 12H11V15H7z"/><path d="M0 23.5C0 23.776.224 24 .5 24h23c.276 0 .5-.224.5-.5V8H0V23.5zM2.5 16C2.224 16 2 15.776 2 15.5S2.224 15 2.5 15H6v-3H2.5C2.224 12 2 11.776 2 11.5S2.224 11 2.5 11H6V9.5C6 9.224 6.224 9 6.5 9S7 9.224 7 9.5V11h4V9.5C11 9.224 11.224 9 11.5 9S12 9.224 12 9.5V11h4V9.5C16 9.224 16.224 9 16.5 9S17 9.224 17 9.5V11h4.5c.276 0 .5.224.5.5S21.776 12 21.5 12H17v3h4.5c.276 0 .5.224.5.5S21.776 16 21.5 16H17v3h4.5c.276 0 .5.224.5.5S21.776 20 21.5 20H17v1.5c0 .276-.224.5-.5.5S16 21.776 16 21.5V20h-4v1.5c0 .276-.224.5-.5.5S11 21.776 11 21.5V20H7v1.5C7 21.776 6.776 22 6.5 22S6 21.776 6 21.5V20H2.5C2.224 20 2 19.776 2 19.5S2.224 19 2.5 19H6v-3H2.5zM23.5 2H20V.5C20 .224 19.776 0 19.5 0h-3C16.224 0 16 .224 16 .5V2H8V.5C8 .224 7.776 0 7.5 0h-3C4.224 0 4 .224 4 .5V2H.5C.224 2 0 2.224 0 2.5V7h24V2.5C24 2.224 23.776 2 23.5 2zM7 4H5V1h2V4zM19 4h-2V1h2V4z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg></div>
                 <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date_card  }}</div>
             </div>
+        {% endif %}
         </div>
     </div>
 
     {% elseif content.field_card_.0["#markup"] == 'Left Bleed' %}
     <div class="dcf-paragraph-card  dcf-mr-3 dcf-card-bleed-left">
         <div class="dcf-p-5">
-        <a href="content.field_pill_content_link_para.0["url"]" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
+        <a href="{{ content.field_pill_content_link_para.0['#url'] }}" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
         <div class="dcf-pb-5 dcf-pt-5 dcf-bold dcf-txt-lg"> {{ content.field__paragraph_title }} </div>
         <div class="dcf-pb-5">{{ content.field_paragraph }}</div>
+        {% if content.field_date_card.0['#text'] != null %}
             <div class="dcf-d-flex  dcf-ai-center dcf-col-gap-1">
                 <div class="dcf-mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" aria-labelledby="filled-calendar-2-time-title" style="fill:rgb(208, 0, 0);" height="20"><title id="filled-calendar-2-time-title">calendar-2(time)</title><path d="M12 16H16V19H12zM7 16H11V19H7zM12 12H16V15H12zM7 12H11V15H7z"/><path d="M0 23.5C0 23.776.224 24 .5 24h23c.276 0 .5-.224.5-.5V8H0V23.5zM2.5 16C2.224 16 2 15.776 2 15.5S2.224 15 2.5 15H6v-3H2.5C2.224 12 2 11.776 2 11.5S2.224 11 2.5 11H6V9.5C6 9.224 6.224 9 6.5 9S7 9.224 7 9.5V11h4V9.5C11 9.224 11.224 9 11.5 9S12 9.224 12 9.5V11h4V9.5C16 9.224 16.224 9 16.5 9S17 9.224 17 9.5V11h4.5c.276 0 .5.224.5.5S21.776 12 21.5 12H17v3h4.5c.276 0 .5.224.5.5S21.776 16 21.5 16H17v3h4.5c.276 0 .5.224.5.5S21.776 20 21.5 20H17v1.5c0 .276-.224.5-.5.5S16 21.776 16 21.5V20h-4v1.5c0 .276-.224.5-.5.5S11 21.776 11 21.5V20H7v1.5C7 21.776 6.776 22 6.5 22S6 21.776 6 21.5V20H2.5C2.224 20 2 19.776 2 19.5S2.224 19 2.5 19H6v-3H2.5zM23.5 2H20V.5C20 .224 19.776 0 19.5 0h-3C16.224 0 16 .224 16 .5V2H8V.5C8 .224 7.776 0 7.5 0h-3C4.224 0 4 .224 4 .5V2H.5C.224 2 0 2.224 0 2.5V7h24V2.5C24 2.224 23.776 2 23.5 2zM7 4H5V1h2V4zM19 4h-2V1h2V4z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg></div>
                 <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date_card  }}</div>
             </div>
+        {% endif %}
         </div>
     </div>
 
     {% else %}
     <div class="dcf-paragraph-card dcf-mt-3 dcf-mb-3">
         <div class="dcf-p-5">
-        <a href="content.field_pill_content_link_para.0["url"]" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
+        <a href="{{ content.field_pill_content_link_para.0['#url'] }}" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content__paragr  }}</a> 
         <div class="dcf-pb-5 dcf-pt-5 dcf-bold dcf-txt-lg"> {{ content.field__paragraph_title }} </div>
         <div class="dcf-pb-5">{{ content.field_paragraph }}</div>
+        {% if content.field_date_card.0['#text'] != null %}
             <div class="dcf-d-flex  dcf-ai-center dcf-col-gap-1">
                 <div class="dcf-mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" aria-labelledby="filled-calendar-2-time-title" style="fill:rgb(208, 0, 0);" height="20"><title id="filled-calendar-2-time-title">calendar-2(time)</title><path d="M12 16H16V19H12zM7 16H11V19H7zM12 12H16V15H12zM7 12H11V15H7z"/><path d="M0 23.5C0 23.776.224 24 .5 24h23c.276 0 .5-.224.5-.5V8H0V23.5zM2.5 16C2.224 16 2 15.776 2 15.5S2.224 15 2.5 15H6v-3H2.5C2.224 12 2 11.776 2 11.5S2.224 11 2.5 11H6V9.5C6 9.224 6.224 9 6.5 9S7 9.224 7 9.5V11h4V9.5C11 9.224 11.224 9 11.5 9S12 9.224 12 9.5V11h4V9.5C16 9.224 16.224 9 16.5 9S17 9.224 17 9.5V11h4.5c.276 0 .5.224.5.5S21.776 12 21.5 12H17v3h4.5c.276 0 .5.224.5.5S21.776 16 21.5 16H17v3h4.5c.276 0 .5.224.5.5S21.776 20 21.5 20H17v1.5c0 .276-.224.5-.5.5S16 21.776 16 21.5V20h-4v1.5c0 .276-.224.5-.5.5S11 21.776 11 21.5V20H7v1.5C7 21.776 6.776 22 6.5 22S6 21.776 6 21.5V20H2.5C2.224 20 2 19.776 2 19.5S2.224 19 2.5 19H6v-3H2.5zM23.5 2H20V.5C20 .224 19.776 0 19.5 0h-3C16.224 0 16 .224 16 .5V2H8V.5C8 .224 7.776 0 7.5 0h-3C4.224 0 4 .224 4 .5V2H.5C.224 2 0 2.224 0 2.5V7h24V2.5C24 2.224 23.776 2 23.5 2zM7 4H5V1h2V4zM19 4h-2V1h2V4z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg></div>
                 <div class="dcf-txt-2xs dcf-txt-middle dcf-mb-0 ">{{ content.field_date_card  }}</div>
             </div>
+        {% endif %}
         </div>
     </div>
 {% endif %} 
