@@ -1,0 +1,21 @@
+uuid: 3d540a7e-0405-4b8b-88e6-75f6a97ab323
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_pill_content__paragr
+field_name: field_pill_content__paragr
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

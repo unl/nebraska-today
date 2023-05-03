@@ -1,0 +1,19 @@
+uuid: f9a6efea-6b05-4745-8d75-7bfa3156d1f9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_card_quotemaster
+    - paragraphs.paragraphs_type.quote_card
+id: paragraph.quote_card.field_card_quotemaster
+field_name: field_card_quotemaster
+entity_type: paragraph
+bundle: quote_card
+label: Quotemaster
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

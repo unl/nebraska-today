@@ -1,0 +1,21 @@
+uuid: 1f2abb76-ba3b-4f1d-9c42-2f8affc18468
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.quote_card
+  module:
+    - datetime
+id: paragraph.quote_card.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: quote_card
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

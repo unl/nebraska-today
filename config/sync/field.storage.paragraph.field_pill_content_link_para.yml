@@ -1,0 +1,19 @@
+uuid: dd4a5186-8855-400f-b888-309b004ca989
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_pill_content_link_para
+field_name: field_pill_content_link_para
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

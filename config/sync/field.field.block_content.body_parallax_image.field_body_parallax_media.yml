@@ -1,0 +1,29 @@
+uuid: 8ff34473-5be7-4f61-8f33-789e7669a39d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_parallax_image
+    - field.storage.block_content.field_body_parallax_media
+    - media.type.image
+id: block_content.body_parallax_image.field_body_parallax_media
+field_name: field_body_parallax_media
+entity_type: block_content
+bundle: body_parallax_image
+label: 'Body Parallax Media'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,61 @@
+uuid: dde370f1-b74b-402c-a142-c8bcf8b489e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_card.field_date_card
+    - field.field.paragraph.paragraph_card.field_paragraph
+    - field.field.paragraph.paragraph_card.field_paragraph_title
+    - field.field.paragraph.paragraph_card.field_pill_content__paragr
+    - field.field.paragraph.paragraph_card.field_pill_content_link_para
+    - paragraphs.paragraphs_type.paragraph_card
+  module:
+    - datetime
+    - link
+    - text
+id: paragraph.paragraph_card.default
+targetEntityType: paragraph
+bundle: paragraph_card
+mode: default
+content:
+  field_date_card:
+    type: datetime_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_paragraph:
+    type: text_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_paragraph_title:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pill_content__paragr:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pill_content_link_para:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
