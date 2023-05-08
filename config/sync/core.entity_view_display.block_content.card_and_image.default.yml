@@ -1,0 +1,26 @@
+uuid: a549d748-8224-4ee4-880b-8071610b8aaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card_and_image
+    - field.field.block_content.card_and_image.body
+    - field.field.block_content.card_and_image.field_ca
+  module:
+    - entity_reference_revisions
+id: block_content.card_and_image.default
+targetEntityType: block_content
+bundle: card_and_image
+mode: default
+content:
+  field_ca:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true

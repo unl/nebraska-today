@@ -5,6 +5,7 @@ dependencies:
   config:
     - block_content.type.basic
     - block_content.type.body_parallax_image
+    - block_content.type.card_and_image
     - block_content.type.gallery
     - block_content.type.image_quote_card
     - block_content.type.paragraph_card
@@ -29,6 +30,7 @@ settings:
     target_bundles:
       basic: basic
       body_parallax_image: body_parallax_image
+      card_and_image: card_and_image
       gallery: gallery
       image_quote_card: image_quote_card
       paragraph_card: paragraph_card

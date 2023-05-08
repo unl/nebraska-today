@@ -1,14 +1,14 @@
-uuid: 32e6837e-d816-4194-8de7-1d4463a600ea
+uuid: e48c5255-7461-44a5-ba76-ca28aa4aa788
 langcode: en
 status: true
 dependencies:
   module:
+    - block_content
     - entity_reference_revisions
-    - node
     - paragraphs
-id: node.field_media_and_card
-field_name: field_media_and_card
-entity_type: node
+id: block_content.field_ca
+field_name: field_ca
+entity_type: block_content
 type: entity_reference_revisions
 settings:
   target_type: paragraph

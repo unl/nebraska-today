@@ -1,20 +1,20 @@
-uuid: 58bfe4f8-e718-4a8d-8423-8d606f1ae301
+uuid: e6a7f255-cd50-424c-ae51-678b790ffab6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_media_and_card
-    - node.type.article
+    - block_content.type.card_and_image
+    - field.storage.block_content.field_ca
     - paragraphs.paragraphs_type.paragraph_card
     - paragraphs.paragraphs_type.paragraph_media
     - paragraphs.paragraphs_type.quote_card
   module:
     - entity_reference_revisions
-id: node.article.field_media_and_card
-field_name: field_media_and_card
-entity_type: node
-bundle: article
-label: 'Media and Card'
+id: block_content.card_and_image.field_ca
+field_name: field_ca
+entity_type: block_content
+bundle: card_and_image
+label: 'Card and Image'
 description: ''
 required: false
 translatable: false
@@ -31,9 +31,6 @@ settings:
     target_bundles_drag_drop:
       email_article_and_display:
         weight: 7
-        enabled: false
-      news_paragraph:
-        weight: 9
         enabled: false
       paragraph_card:
         weight: 8
