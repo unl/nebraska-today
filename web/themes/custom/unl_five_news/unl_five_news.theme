@@ -6,6 +6,14 @@ use Drupal\media\Entity\Media;
 function unl_five_news_preprocess_field(&$variables) {
    $node = \Drupal::request()->attributes->get('node');
    $variables['node_title'] = $node->getTitle();
+
+   $element = $variables['element'];
+   if ($element['#field_name'] == 'field_media_and_card') {
+      
+      //foreach ($element['items'] as $key => $item) {
+      //   $variables['element']['items'][$key]['type'] = 
+      // }
+   }
 }
 
 function unl_five_news_preprocess_block_content(&$variables) {

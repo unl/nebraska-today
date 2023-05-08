@@ -839,6 +839,51 @@ blockquote p:nth-of-type(3)::after {
   .dcf-image-card-grid-6 div .paragraph {
     padding: 2em;
   }
+
+  /* News Grid */
+  /* .dcf-vertical-text {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    display: block;
+  } */
+
+  /* .dcf-news-grid {
+    display: grid;
+    grid-template-columns: 5.62vw 3.16rem 1rem 2fr 1fr 3.16rem 1rem 3.16vw 3.16rem 1rem 1fr 2fr 3.16rem 1rem 5.62vw;
+    grid-row-gap: 2.37em !important;
+  } */
+  /* 
+  .dcf-news-grid-heading {
+    grid-area: 1 / 2 / 2 / 3;
+  } */
+
+  /* .dcf-news-grid-heading::before {
+    background-color: #c7c8ca;
+    content: "";
+    height: 3.21rem;
+    position: absolute;
+    top: -4.21rem;
+    left: 0.43rem;
+    width: 1px;
+  } */
+  /* 
+  .dcf-news-grid-section1 {
+    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-end: 2;
+    grid-column-end: 7;
+  }
+
+  .dcf-news-grid-section2 {
+    grid-row-start: 1;
+    grid-column-start: 9;
+    grid-row-end: 1;
+    grid-column-end: -2;
+  } */
 }
 
 /* CSS applied for css screen width equal or less than of 42.09em */

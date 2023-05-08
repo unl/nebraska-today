@@ -1,7 +1,10 @@
 
 {# {% for item in items %}
-    {{ item.content }}
-{% endfor %} #}
+    {# {# if item.type == 'paragraph_card #} 
+    {# {{ item.content }}
+{% endfor %} #} 
+
+{{ dd(items.0.content["#paragraph"]) }}
 
 <div class="dcf-bleed dcf-wrapper">
     <div class="dcf-image-card-grid dcf-pl-5 dcf-pr-5">
@@ -13,3 +16,5 @@
         <div class="dcf-image-card-grid-6"> {{ items.5 }} </div>
     </div>
 </div>
+
+
