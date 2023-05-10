@@ -1,5 +1,15 @@
+{% if content.field_quotemaster_link.0["#url"] %}
 <div class="dcf-mb-6 dcf-quote">
     <div class="dcf-quote-box-left-border">{{ content.body }}</div>
-    <div class="dcf-credit dcf-credit-link"><a href="{{ content.field_quotemaster_link.0["#url"] }}">{{ content.field_quotemaster }}</a></div>
+    <div class="dcf-credit dcf-credit-link"><a class="test" href="{{ content.field_quotemaster_link.0["#url"] }}">{{ content.field_quotemaster }}</a></div>
     <span class="dcf-credit-title">{{ content.field_quotemaster_title }}</span>
 </div>
+
+{% else %}
+<div class="dcf-mb-6 dcf-quote">
+    <div class="dcf-quote-box-left-border">{{ content.body }}</div>
+    <div class="dcf-credit ">{{ content.field_quotemaster }}</div>
+    <span class="dcf-credit-title">{{ content.field_quotemaster_title }}</span>
+</div>
+
+{% endif %}

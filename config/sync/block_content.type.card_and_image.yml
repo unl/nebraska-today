@@ -5,4 +5,4 @@ dependencies: {  }
 id: card_and_image
 label: 'Card and Image'
 revision: 0
-description: ''
+description: 'Grid for card and image'
