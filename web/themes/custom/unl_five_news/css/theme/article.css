@@ -241,6 +241,10 @@ blockquote p:nth-of-type(3)::after {
   border-bottom: 5px solid #d00000;
 }
 
+.dcf-paragraph-card ~ p{
+  
+}
+
 /* Image with Quote Card */
 .dcf-image-quote-card {
   background-color: var(--bg-body);
@@ -434,7 +438,6 @@ blockquote p:nth-of-type(3)::after {
   }
 
   /* 8 by 8 grid */
-
   .dcf-gallery8x8 {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -447,6 +450,10 @@ blockquote p:nth-of-type(3)::after {
     grid-template-rows: repeat(8, 5vw);
     grid-gap: 15px;
   }
+
+.dcf-gallery8x8 ~.dcf-gallery8x8 {
+  padding-top: 0;
+}
 
   .dcf-wrapper-custom {
     padding-left: 15.62vw;
@@ -741,11 +748,11 @@ blockquote p:nth-of-type(3)::after {
 
   .dcf-card-bleed-right {
     float: right;
-    margin-right: -3rem;
+    margin-right: -5rem;
   }
   .dcf-card-bleed-left {
     float: left;
-    margin-left: -3rem;
+    margin-left: -5rem;
   }
 
   /* Image Quote Card */
