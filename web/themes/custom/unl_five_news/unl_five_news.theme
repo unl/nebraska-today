@@ -31,3 +31,15 @@ function unl_five_news_preprocess_media(array &$variables) {
    $variables['node_title'] = $node->getTitle();
 }
 
+function hook_custom() {
+  $node_load = Node::load($nids); // Node load
+  $media_field = $node_load->get('media_field_machine_name')->getString(); // Get media ID from your field. 
+  $media_entity_load = Media::load($media_field); // Loading media entity.
+  $uri = $media_entity_load->field_media_video_file->entity->getFileUri(); // It is for image media.
+  $media_url = file_create_url($uri); // Here you will get URL of uploaded image.
+
+  return [
+       '#theme' => 'template_name',
+       '#media_url' => $media_url,
+    ];
+}
