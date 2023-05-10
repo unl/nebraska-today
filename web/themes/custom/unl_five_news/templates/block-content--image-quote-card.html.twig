@@ -1,9 +1,9 @@
 {% if content.field_quote_card_placement.0["#markup"] == "Left" %}
-<div class="dcf-bleed dcf-wrapper dcf-relative">
-    <div class="dcf-image-quote-grid dcf-custom-bleed">
+<div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-5 dcf-pb-5">
+    <div class="dcf-image-quote-grid dcf-custom-bleed dcf-pr-9 dcf-pl-9">
     {# First Image #}
         <div class="dcf-q-image">
-            {{ content.field_image_quote_card }}
+            {{ content.field_media[0] }}
         </div>
     {# Second Card #}
     <div class="dcf-q-card-left dcf-z-2 dcf-pt-7 dcf-pr-7 dcf-pb-5 ">
@@ -28,11 +28,11 @@
 </div>
 
 {% elseif content.field_quote_card_placement.0["#markup"] == "Right" %}
-<div class="dcf-bleed dcf-wrapper dcf-relative">
-    <div class="dcf-image-quote-grid dcf-custom-bleed">
+<div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-5 dcf-pb-5">
+    <div class="dcf-image-quote-grid dcf-custom-bleed dcf-pr-9 dcf-pl-9">
     {# First Image #}
         <div class="dcf-q-image">
-            {{ content.field_image_quote_card }}
+            {{ content.field_media[0] }}
         </div>
     {# Second Card #}
     <div class="dcf-q-card-right dcf-z-2 dcf-pt-7 dcf-pr-7 dcf-pb-5  ">

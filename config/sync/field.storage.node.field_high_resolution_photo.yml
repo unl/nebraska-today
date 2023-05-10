@@ -1,0 +1,20 @@
+uuid: 15603d13-6a81-4401-a0e3-1396608de297
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_high_resolution_photo
+field_name: field_high_resolution_photo
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

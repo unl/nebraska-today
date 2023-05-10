@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
-    - field.field.node.article.field_high_resolution_photos
+    - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
     - field.field.node.article.field_tags
@@ -46,7 +46,7 @@ hidden:
   field_article_blocks: true
   field_article_related_links: true
   field_article_release_contacts: true
-  field_high_resolution_photos: true
+  field_high_resolution_photo: true
   field_subtitle: true
   field_tags: true
   field_written_by: true

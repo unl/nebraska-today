@@ -60,7 +60,7 @@
   opacity: 0.7;
 }
 
-.grid-img img {
+.grid-img div {
   object-fit: cover;
   height: 100%;
   width: 100%;

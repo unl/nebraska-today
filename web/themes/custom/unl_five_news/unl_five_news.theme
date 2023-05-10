@@ -29,8 +29,7 @@ function unl_five_news_preprocess_block_content(&$variables) {
    else{
       $variables['credit'] = null;
    }
-  }
- 
+  } 
 }
 
 

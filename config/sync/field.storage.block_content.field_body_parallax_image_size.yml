@@ -12,11 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: 30vh
-      label: 30vh
+      value: 32vh
+      label: 32vh
     -
-      value: 60vh
-      label: 60vh
+      value: 43vh
+      label: 43vh
+    -
+      value: 56vh
+      label: 56vh
+    -
+      value: 75vh
+      label: 75vh
     -
       value: 100vh
       label: 100vh

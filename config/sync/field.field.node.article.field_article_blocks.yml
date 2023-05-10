@@ -9,7 +9,6 @@ dependencies:
     - block_content.type.gallery
     - block_content.type.image_quote_card
     - block_content.type.paragraph_card
-    - block_content.type.photo_gallery
     - block_content.type.quote
     - block_content.type.quote_card
     - field.storage.node.field_article_blocks
@@ -34,7 +33,6 @@ settings:
       gallery: gallery
       image_quote_card: image_quote_card
       paragraph_card: paragraph_card
-      photo_gallery: photo_gallery
       quote: quote
       quote_card: quote_card
     sort:
