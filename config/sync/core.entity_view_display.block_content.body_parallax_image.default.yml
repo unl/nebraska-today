@@ -4,35 +4,29 @@ status: true
 dependencies:
   config:
     - block_content.type.body_parallax_image
-    - field.field.block_content.body_parallax_image.field_body_parallax_image
     - field.field.block_content.body_parallax_image.field_body_parallax_image_size
+    - field.field.block_content.body_parallax_image.field_body_parallax_media
   module:
-    - image
-    - image_class
     - options
 id: block_content.body_parallax_image.default
 targetEntityType: block_content
 bundle: body_parallax_image
 mode: default
 content:
-  field_body_parallax_image:
-    type: image
-    label: hidden
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: eager
-    third_party_settings:
-      image_class:
-        class: ''
-    weight: 1
-    region: content
   field_body_parallax_image_size:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_body_parallax_media:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 7
     region: content
 hidden: {  }

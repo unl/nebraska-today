@@ -1,0 +1,23 @@
+uuid: 2d7c9218-4568-4ad5-b848-19001c5517d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_pill_content_link_para
+    - paragraphs.paragraphs_type.paragraph_card
+  module:
+    - link
+id: paragraph.paragraph_card.field_pill_content_link_para
+field_name: field_pill_content_link_para
+entity_type: paragraph
+bundle: paragraph_card
+label: 'Pill Content Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

@@ -1,0 +1,29 @@
+uuid: 751209a7-57d9-425f-800c-2a13491ea642
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_quote_card
+    - field.storage.block_content.field_media
+    - media.type.image
+id: block_content.image_quote_card.field_media
+field_name: field_media
+entity_type: block_content
+bundle: image_quote_card
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -12,7 +12,7 @@ field_name: field_body_parallax_image_size
 entity_type: block_content
 bundle: body_parallax_image
 label: 'Body Parallax Image Size'
-description: 'Body Image Size 30vh = 30%, 60vh = 60%, 100vh = 100 % of screen '
+description: 'Body Image Size 100vh (100%), 75vh (75%), 56vh (56%), 43vh (43%) 32vh (32%)'
 required: false
 translatable: false
 default_value: {  }

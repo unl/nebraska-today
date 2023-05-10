@@ -1,4 +1,4 @@
-uuid: 195fd195-2280-4431-beaa-582304528f06
+uuid: e48c5255-7461-44a5-ba76-ca28aa4aa788
 langcode: en
 status: true
 dependencies:
@@ -6,15 +6,15 @@ dependencies:
     - block_content
     - entity_reference_revisions
     - paragraphs
-id: block_content.field_photo_gallery_photos
-field_name: field_photo_gallery_photos
+id: block_content.field_ca
+field_name: field_ca
 entity_type: block_content
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: -1
+cardinality: 6
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

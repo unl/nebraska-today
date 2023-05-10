@@ -1,0 +1,50 @@
+uuid: e6a7f255-cd50-424c-ae51-678b790ffab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.card_and_image
+    - field.storage.block_content.field_ca
+    - paragraphs.paragraphs_type.paragraph_card
+    - paragraphs.paragraphs_type.paragraph_media
+    - paragraphs.paragraphs_type.quote_card
+  module:
+    - entity_reference_revisions
+id: block_content.card_and_image.field_ca
+field_name: field_ca
+entity_type: block_content
+bundle: card_and_image
+label: 'Card and Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_card: paragraph_card
+      paragraph_media: paragraph_media
+      quote_card: quote_card
+    negate: 0
+    target_bundles_drag_drop:
+      email_article_and_display:
+        weight: 7
+        enabled: false
+      paragraph_card:
+        weight: 8
+        enabled: true
+      paragraph_media:
+        weight: 9
+        enabled: true
+      paragraph_photos:
+        weight: 10
+        enabled: false
+      paragraph_video:
+        weight: 11
+        enabled: false
+      quote_card:
+        weight: 12
+        enabled: true
+field_type: entity_reference_revisions

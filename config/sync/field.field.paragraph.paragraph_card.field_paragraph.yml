@@ -1,0 +1,25 @@
+uuid: 53172701-a26e-4b27-91e4-35aee4297329
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.paragraph_card
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats: {  }
+id: paragraph.paragraph_card.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: paragraph_card
+label: Paragraph
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

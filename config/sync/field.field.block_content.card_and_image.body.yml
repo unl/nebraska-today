@@ -1,21 +1,16 @@
-uuid: c5990d74-6443-41cf-8bba-964c3f3be73c
+uuid: 4551ebb3-2081-487e-bb72-36698fdec839
 langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.photo_gallery
+    - block_content.type.card_and_image
     - field.storage.block_content.body
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - basic_html
-id: block_content.photo_gallery.body
+id: block_content.card_and_image.body
 field_name: body
 entity_type: block_content
-bundle: photo_gallery
+bundle: card_and_image
 label: Body
 description: ''
 required: false

@@ -7,16 +7,15 @@ dependencies:
     - field.field.block_content.image_quote_card.field__image_pill_content
     - field.field.block_content.image_quote_card.field_image_pill_content_link
     - field.field.block_content.image_quote_card.field_image_quote
-    - field.field.block_content.image_quote_card.field_image_quote_card
     - field.field.block_content.image_quote_card.field_image_quotemaster
+    - field.field.block_content.image_quote_card.field_media
     - field.field.block_content.image_quote_card.field_quote_card_placement
     - field.field.block_content.image_quote_card.field_quote_image_date
     - field.field.block_content.image_quote_card.field_quotemaster_
-    - image.style.thumbnail
   module:
     - datetime
-    - image
     - link
+    - media_library
     - text
 id: block_content.image_quote_card.default
 targetEntityType: block_content
@@ -47,14 +46,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_image_quote_card:
-    type: image_image
-    weight: 0
-    region: content
-    settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-    third_party_settings: {  }
   field_image_quotemaster:
     type: string_textfield
     weight: 4
@@ -62,6 +53,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
     third_party_settings: {  }
   field_quote_card_placement:
     type: options_select

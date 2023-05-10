@@ -1,0 +1,70 @@
+uuid: 4110958e-194e-4146-9d51-6d74b5646322
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote_card.field_card_quotemaster
+    - field.field.paragraph.quote_card.field_card_quotemaster_title
+    - field.field.paragraph.quote_card.field_date
+    - field.field.paragraph.quote_card.field_pill_content
+    - field.field.paragraph.quote_card.field_pill_content_link
+    - field.field.paragraph.quote_card.field_quote
+    - paragraphs.paragraphs_type.quote_card
+  module:
+    - datetime
+    - link
+    - text
+id: paragraph.quote_card.default
+targetEntityType: paragraph
+bundle: quote_card
+mode: default
+content:
+  field_card_quotemaster:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_card_quotemaster_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date:
+    type: datetime_default
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_pill_content:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pill_content_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_quote:
+    type: text_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,10 @@
+uuid: cafba59b-fe74-4daa-92da-fad790f838ce
+langcode: en
+status: true
+dependencies: {  }
+id: paragraph_card
+label: 'Paragraph Card'
+icon_uuid: null
+icon_default: null
+description: 'Paragraph Card'
+behavior_plugins: {  }

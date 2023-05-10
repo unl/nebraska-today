@@ -1,0 +1,8 @@
+uuid: 1fcc281b-ec29-4626-8b58-9ae1407507d3
+langcode: en
+status: true
+dependencies: {  }
+id: card_and_image
+label: 'Card and Image'
+revision: 0
+description: 'Grid for card and image'
