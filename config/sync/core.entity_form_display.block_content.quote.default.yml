@@ -18,7 +18,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 0
+    weight: 1
     region: content
     settings:
       rows: 9
@@ -28,7 +28,7 @@ content:
     third_party_settings: {  }
   field_quotemaster:
     type: string_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
@@ -36,7 +36,7 @@ content:
     third_party_settings: {  }
   field_quotemaster_link:
     type: link_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
@@ -44,11 +44,18 @@ content:
     third_party_settings: {  }
   field_quotemaster_title:
     type: string_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: '[unl:b:_]'
+    third_party_settings: {  }
+hidden: {  }

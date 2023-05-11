@@ -21,7 +21,7 @@ mode: default
 content:
   field__paragraph_title:
     type: string_textfield
-    weight: 2
+    weight: 3
     region: content
     settings:
       size: 60
@@ -29,19 +29,19 @@ content:
     third_party_settings: {  }
   field_card_:
     type: options_select
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_date_card:
     type: datetime_default
-    weight: 4
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph:
     type: text_textfield
-    weight: 3
+    weight: 4
     region: content
     settings:
       size: 60
@@ -49,7 +49,7 @@ content:
     third_party_settings: {  }
   field_pill_content__paragr:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
@@ -57,11 +57,18 @@ content:
     third_party_settings: {  }
   field_pill_content_link_para:
     type: link_default
-    weight: 1
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: '[unl:b:_]'
+    third_party_settings: {  }
+hidden: {  }

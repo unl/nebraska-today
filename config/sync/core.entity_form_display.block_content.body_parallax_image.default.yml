@@ -15,16 +15,23 @@ mode: default
 content:
   field_body_parallax_image_size:
     type: options_select
-    weight: 1
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_body_parallax_media:
     type: media_library_widget
-    weight: 0
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: '[unl:b:_]'
+    third_party_settings: {  }
+hidden: {  }

@@ -17,7 +17,7 @@ mode: default
 content:
   field_cutline:
     type: string_textfield
-    weight: 1
+    weight: 2
     region: content
     settings:
       size: 60
@@ -25,7 +25,7 @@ content:
     third_party_settings: {  }
   field_description:
     type: string_textfield
-    weight: 26
+    weight: 4
     region: content
     settings:
       size: 60
@@ -33,16 +33,23 @@ content:
     third_party_settings: {  }
   field_image:
     type: media_library_widget
-    weight: 0
+    weight: 1
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_title_placement:
     type: options_select
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  info: true
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: '[unl:b:_]'
+    third_party_settings: {  }
+hidden: {  }
