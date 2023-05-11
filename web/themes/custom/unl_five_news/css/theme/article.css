@@ -21,6 +21,10 @@
   );
 }
 
+.test div p{
+  margin-bottom: .5em;
+}
+
 .slide {
   transition: all ease-in-out 300ms;
 }
@@ -90,11 +94,6 @@
   color: var(--link);
 }
 
-.test div {
-  content: "";
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-}
 
 .dcf-credit div:nth-of-type(1)::before {
   content: "\2014\0020";
