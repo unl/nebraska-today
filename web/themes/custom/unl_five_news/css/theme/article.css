@@ -780,6 +780,17 @@ blockquote p:nth-of-type(3)::after {
     grid-row: 2 / 4;
   }
 
+  .dcf-quote-card-wrapper{
+    padding-right: 4.21em;
+    padding-left: 4.21em;
+  }
+
+  .dcf-quote-card-mobileview{
+    padding-top: 2.37em;
+    padding-right: 2.37em;
+    padding-bottom: 1.33em;
+  }
+
   /* Image Card grid */
   .dcf-image-card-grid {
     display: grid;
