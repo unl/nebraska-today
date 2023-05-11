@@ -21,10 +21,6 @@
   );
 }
 
-.test div p{
-  margin-bottom: .5em;
-}
-
 .slide {
   transition: all ease-in-out 300ms;
 }

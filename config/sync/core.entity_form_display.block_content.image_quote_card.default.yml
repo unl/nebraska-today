@@ -87,6 +87,6 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: '[unl:b:_]'
+      placeholder: ''
     third_party_settings: {  }
 hidden: {  }
