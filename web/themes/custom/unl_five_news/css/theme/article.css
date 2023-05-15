@@ -90,7 +90,6 @@
   color: var(--link);
 }
 
-
 .dcf-credit div:nth-of-type(1)::before {
   content: "\2014\0020";
   color: #d00000;
@@ -210,6 +209,7 @@ blockquote p:nth-of-type(3)::after {
   background-color: var(--bg-body);
   max-width: 30ch;
   height: 100%;
+  padding-bottom: 1em;
   box-shadow: 0px 5px 10px 0px rgba(66, 167, 198, 0.3);
   border-bottom: 5px solid #d00000;
 }
@@ -236,8 +236,7 @@ blockquote p:nth-of-type(3)::after {
   border-bottom: 5px solid #d00000;
 }
 
-.dcf-paragraph-card ~ p{
-  
+.dcf-paragraph-card ~ p {
 }
 
 /* Image with Quote Card */
@@ -775,12 +774,12 @@ blockquote p:nth-of-type(3)::after {
     grid-row: 2 / 4;
   }
 
-  .dcf-quote-card-wrapper{
+  .dcf-quote-card-wrapper {
     padding-right: 4.21em;
     padding-left: 4.21em;
   }
 
-  .dcf-quote-card-mobileview{
+  .dcf-quote-card-mobileview {
     padding-top: 2.37em;
     padding-right: 2.37em;
     padding-bottom: 1.33em;
@@ -826,8 +825,15 @@ blockquote p:nth-of-type(3)::after {
     border-bottom: 5px solid #d00000;
     display: block;
   }
+  .dcf-quote-card-grid {
+    background-color: var(--bg-body);
+    height: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(66, 167, 198, 0.3);
+    border-bottom: 5px solid #d00000;
+    display: block;
+  }
 
-  .dcf-txt-overflow-paragraph-card div{
+  .dcf-txt-overflow-paragraph-card div {
     display: -webkit-box;
     -webkit-line-clamp: 9; /* Number of lines to limit to */
     -webkit-box-orient: vertical;
@@ -835,7 +841,7 @@ blockquote p:nth-of-type(3)::after {
     text-overflow: ellipsis;
   }
 
-  .dcf-txt-overflow-quote-card{
+  .dcf-txt-overflow-quote-card {
     display: -webkit-box;
     -webkit-line-clamp: 7; /* Number of lines to limit to */
     -webkit-box-orient: vertical;
