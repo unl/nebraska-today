@@ -14,6 +14,15 @@ function unl_five_news_preprocess_field(&$variables) {
       //   $variables['element']['items'][$key]['type'] = 
       // }
    }
+
+   if ($element['#field_name'] == 'field_ca') {
+     foreach ($variables['items'] as $key => $item) {
+       $bundle = $item['content']['#paragraph']->bundle();
+       $variables['items'][$key]['news_bundle'] = $bundle;
+       $variables['paratypes'][$bundle]++;
+
+     }
+   }
 }
 
 function unl_five_news_preprocess_block_content(&$variables) {
@@ -30,6 +39,7 @@ function unl_five_news_preprocess_block_content(&$variables) {
       $variables['credit'] = null;
    }
   } 
+
 }
 
 
@@ -49,4 +59,15 @@ function hook_custom() {
        '#theme' => 'template_name',
        '#media_url' => $media_url,
     ];
+}
+
+function unl_five_news_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  // Get the type
+  $bundle = $paragraph->bundle();
+
+     // Add variables here
+     $variables['bundle'] = $bundle;
+
 }
