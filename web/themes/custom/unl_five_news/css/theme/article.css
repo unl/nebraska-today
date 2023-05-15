@@ -795,6 +795,7 @@ blockquote p:nth-of-type(3)::after {
     height: 45em;
   }
 
+  /* 1st and 5th card / 2nd 3rd 4th and 6th image */
   .dcf-image-card-grid-1 {
     grid-area: 1 / 1 / 3 / 3;
   }
@@ -818,6 +819,83 @@ blockquote p:nth-of-type(3)::after {
   .dcf-image-card-grid-6 {
     grid-area: 3 / 7 / 5 / 11;
   }
+
+   /* 2nd and 5th card / 1st 3rd 4th and 6th image */
+  .dcf-image-card-grid-1-2 {
+    grid-area: 1 / 1 / 3 / 5;
+  }
+
+  .dcf-image-card-grid-2-2 {
+    grid-area: 1 / 5 / 3 / 7;
+  }
+
+  .dcf-image-card-grid-3-2 {
+    grid-area: 1 / 7 / 3 / 11;
+  }
+
+  .dcf-image-card-grid-4-2 {
+    grid-area: 3 / 1 / 5 / 5;
+  }
+
+  .dcf-image-card-grid-5-2 {
+    grid-area: 3 / 5 / 5 / 7;
+  }
+
+  .dcf-image-card-grid-6-2 {
+    grid-area: 3 / 7 / 5 / 11;
+  }
+
+/* 3rd and 4th card / 1st 2nd 5th and 6th image */
+  .dcf-image-card-grid-1-3 {
+    grid-area: 1 / 1 / 3 / 5;
+  }
+
+  .dcf-image-card-grid-2-3 {
+    grid-area: 1 / 5 / 3 / 9;
+  }
+
+  .dcf-image-card-grid-3-3 {
+    grid-area: 1 / 9 / 3 / 11;
+  }
+
+  .dcf-image-card-grid-4-3 {
+    grid-area: 3 / 1 / 5 / 3;
+  }
+
+  .dcf-image-card-grid-5-3 {
+    grid-area: 3 / 3 / 5 / 7;
+  }
+
+  .dcf-image-card-grid-6-3 {
+    grid-area: 3 / 7 / 5 / 11;
+  }
+
+
+/* 3rd and 4th card / 1st 2nd 5th and 6th image */
+.dcf-image-card-grid-1-4 {
+  grid-area: 1 / 1 / 3 / 5;
+}
+
+.dcf-image-card-grid-2-4 {
+  grid-area: 1 / 5 / 3 / 9;
+}
+
+.dcf-image-card-grid-3-4 {
+  grid-area: 1 / 9 / 3 / 11;
+}
+
+.dcf-image-card-grid-4-4 {
+  grid-area: 3 / 1 / 5 / 5;
+}
+
+.dcf-image-card-grid-5-4 {
+  grid-area: 3 / 5 / 5 / 7;
+}
+
+.dcf-image-card-grid-6-4 {
+  grid-area: 3 / 7 / 5 / 11;
+}
+
   .dcf-paragraph-card-grid {
     background-color: var(--bg-body);
     height: 100%;
@@ -874,6 +952,25 @@ blockquote p:nth-of-type(3)::after {
     width: auto;
     height: 100%;
   }
+
+  .dcf-image-card-grid-1-2 div, .dcf-image-card-grid-3-2 div , .dcf-image-card-grid-4-2 div, .dcf-image-card-grid-6-2 div{
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  }
+
+  .dcf-image-card-grid-1-3 div, .dcf-image-card-grid-2-3 div , .dcf-image-card-grid-5-3 div, .dcf-image-card-grid-6-3 div{
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  }
+
+  .dcf-image-card-grid-1-4 div, .dcf-image-card-grid-2-4 div , .dcf-image-card-grid-4-4 div, .dcf-image-card-grid-6-4 div{
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  }
+
 
   .dcf-image-card-grid-2 div .paragraph {
     padding: 2em;

@@ -14,7 +14,7 @@ id: block_content.card_and_image.field_ca
 field_name: field_ca
 entity_type: block_content
 bundle: card_and_image
-label: 'Card and Image'
+label: 'Card '
 description: ''
 required: false
 translatable: false
