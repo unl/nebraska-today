@@ -32,7 +32,48 @@
         <div class="dcf-image-card-grid-5-4"> {{ items.4 }} </div>
         <div class="dcf-image-card-grid-6-4"> {{ items.5 }} </div>
 
+    {% elseif (items.1.news_bundle == 'paragraph_media') and (items.2.news_bundle == 'paragraph_media') and (items.3.news_bundle == 'paragraph_media') and (items.4.news_bundle == 'paragraph_media') %}
+        <div class="dcf-image-card-grid-1-5"> {{ items.0 }} </div>
+        <div class="dcf-image-card-grid-2-5"> {{ items.1 }} </div>
+        <div class="dcf-image-card-grid-3-5"> {{ items.2 }} </div>
+        <div class="dcf-image-card-grid-4-5"> {{ items.3 }} </div>
+        <div class="dcf-image-card-grid-5-5"> {{ items.4 }} </div>
+        <div class="dcf-image-card-grid-6-5"> {{ items.5 }} </div>
+
+    {% elseif (items.0.news_bundle == 'paragraph_media') and (items.2.news_bundle == 'paragraph_media') and (items.3.news_bundle == 'paragraph_media') and (items.4.news_bundle == 'paragraph_media') %}
+        <div class="dcf-image-card-grid-1-6"> {{ items.0 }} </div>
+        <div class="dcf-image-card-grid-2-6"> {{ items.1 }} </div>
+        <div class="dcf-image-card-grid-3-6"> {{ items.2 }} </div>
+        <div class="dcf-image-card-grid-4-6"> {{ items.3 }} </div>
+        <div class="dcf-image-card-grid-5-6"> {{ items.4 }} </div>
+        <div class="dcf-image-card-grid-6-6"> {{ items.5 }} </div>
+
+    {% elseif (items.1.news_bundle == 'paragraph_media') and (items.2.news_bundle == 'paragraph_media') and (items.4.news_bundle == 'paragraph_media') and (items.5.news_bundle == 'paragraph_media') %}
+        <div class="dcf-image-card-grid-1-7"> {{ items.0 }} </div>
+        <div class="dcf-image-card-grid-2-7"> {{ items.1 }} </div>
+        <div class="dcf-image-card-grid-3-7"> {{ items.2 }} </div>
+        <div class="dcf-image-card-grid-4-7"> {{ items.3 }} </div>
+        <div class="dcf-image-card-grid-5-7"> {{ items.4 }} </div>
+        <div class="dcf-image-card-grid-6-7"> {{ items.5 }} </div>
+
+    {% elseif (items.0.news_bundle == 'paragraph_media') and (items.1.news_bundle == 'paragraph_media') and (items.3.news_bundle == 'paragraph_media') and (items.4.news_bundle == 'paragraph_media') %}
+        <div class="dcf-image-card-grid-1-8"> {{ items.0 }} </div>
+        <div class="dcf-image-card-grid-2-8"> {{ items.1 }} </div>
+        <div class="dcf-image-card-grid-3-8"> {{ items.2 }} </div>
+        <div class="dcf-image-card-grid-4-8"> {{ items.3 }} </div>
+        <div class="dcf-image-card-grid-5-8"> {{ items.4 }} </div>
+        <div class="dcf-image-card-grid-6-8"> {{ items.5 }} </div>
+
+    {% elseif (items.0.news_bundle == 'paragraph_media') and (items.2.news_bundle == 'paragraph_media') and (items.4.news_bundle == 'paragraph_media') and (items.5.news_bundle == 'paragraph_media') %}
+        <div class="dcf-image-card-grid-1-9"> {{ items.0 }} </div>
+        <div class="dcf-image-card-grid-2-9"> {{ items.1 }} </div>
+        <div class="dcf-image-card-grid-3-9"> {{ items.2 }} </div>
+        <div class="dcf-image-card-grid-4-9"> {{ items.3 }} </div>
+        <div class="dcf-image-card-grid-5-9"> {{ items.4 }} </div>
+        <div class="dcf-image-card-grid-6-9"> {{ items.5 }} </div>
+
     {% endif %}
+
     </div>
 </div>
 
