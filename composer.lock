@@ -3356,11 +3356,17 @@
         },
         {
             "name": "drupal/simplenews",
-            "version": "dev-3.x",
+            "version": "3.0.0-beta5",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simplenews.git",
-                "reference": "4557ac53d8f898b3bec977e550b90bc4eee1b0f4"
+                "reference": "3.0.0-beta5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/simplenews-3.0.0-beta5.zip",
+                "reference": "3.0.0-beta5",
+                "shasum": "628d8a7cf54040350152db91e80e372b2a409d2a"
             },
             "require": {
                 "drupal/core": "^9.3 || ^10"
@@ -3370,15 +3376,12 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
                 "drupal": {
-                    "version": "3.0.0-beta4+4-dev",
-                    "datestamp": "1675334740",
+                    "version": "3.0.0-beta5",
+                    "datestamp": "1681467531",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "message": "Beta releases are not covered by Drupal security advisories."
                     }
                 }
             },
