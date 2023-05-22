@@ -25,6 +25,10 @@
   transition: all ease-in-out 300ms;
 }
 
+.dcf-pin-top {
+  top: 0;
+}
+
 .slide::after {
   content: "";
   float: left;
