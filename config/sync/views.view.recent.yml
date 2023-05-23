@@ -200,7 +200,7 @@ display:
       pager:
         type: some
         options:
-          offset: 1
+          offset: 0
           items_per_page: 4
       defaults:
         pager: false

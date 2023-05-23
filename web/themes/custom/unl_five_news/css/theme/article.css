@@ -297,6 +297,9 @@ blockquote p:nth-of-type(3)::after {
 .custom-hide-subscribe .custom-hide-link {
   display: none;
 }
+.custom-feature-link a {
+  color: #fefdfa;
+}
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/
