@@ -1,4 +1,4 @@
-uuid: f9fe6cc5-3342-49eb-b81a-e3bd10019abb
+uuid: dff61c5f-77d7-469e-8299-76afe0a66d01
 langcode: en
 status: true
 dependencies:
@@ -8,8 +8,8 @@ dependencies:
   module:
     - node
     - user
-id: recent
-label: Recent-news
+id: more_headlines
+label: 'More Headlines'
 module: views
 description: ''
 tag: ''
@@ -22,7 +22,6 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Recent-news
       fields:
         title:
           id: title
@@ -31,35 +30,19 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: false
-            text: ''
             make_link: false
-            path: ''
             absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
+            word_boundary: false
+            ellipsis: false
             strip_tags: false
             trim: false
-            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -90,8 +73,8 @@ display:
       pager:
         type: some
         options:
-          offset: 0
-          items_per_page: 8
+          offset: 6
+          items_per_page: 4
       exposed_form:
         type: basic
         options:
@@ -151,6 +134,11 @@ display:
             article: article
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
@@ -182,28 +170,6 @@ display:
     display_plugin: block
     position: 1
     display_options:
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_2:
-    id: block_2
-    display_title: 'Block 2'
-    display_plugin: block
-    position: 2
-    display_options:
-      pager:
-        type: some
-        options:
-          offset: 0
-          items_per_page: 4
-      defaults:
-        pager: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

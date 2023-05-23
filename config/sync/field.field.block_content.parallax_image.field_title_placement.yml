@@ -13,7 +13,7 @@ entity_type: block_content
 bundle: parallax_image
 label: 'Title Placement'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
