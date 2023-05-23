@@ -1,5 +1,5 @@
 {%
-  set classes = [
+set classes = [
     'block-content',
     'block-content--type-' ~ bundle|clean_class,
     'block-content--' ~ id,
@@ -9,9 +9,9 @@
 %}
 
 <div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
-  <div class="block-content__content">
+{{ title_prefix }}
+{{ title_suffix }}
+<div class="block-content__content">
         {% if content.field_title_placement.0['#markup'] == 'Basic' %}
             <div class="dcf-wrapper">
                 <p class="dcf-mb-1 dcf-txt-xs">14 hours ago . 4 min read</p>
