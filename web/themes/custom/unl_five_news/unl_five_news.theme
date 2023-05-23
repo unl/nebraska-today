@@ -5,7 +5,10 @@ use Drupal\media\Entity\Media;
 
 function unl_five_news_preprocess_field(&$variables) {
    $node = \Drupal::request()->attributes->get('node');
-   $variables['node_title'] = $node->getTitle();
+   if($node){
+       $variables['node_title'] = $node->getTitle();
+   }
+  
 
    $element = $variables['element'];
    if ($element['#field_name'] == 'field_media_and_card') {
@@ -27,7 +30,9 @@ function unl_five_news_preprocess_field(&$variables) {
 
 function unl_five_news_preprocess_block_content(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
-  $variables['node_title'] = $node->getTitle();
+ if($node){
+       $variables['node_title'] = $node->getTitle();
+   }
   if ($variables['bundle'] == 'parallax_image') {
    $block_content = $variables['elements']['#block_content'];
    $field_image = $block_content->get('field_image')->getValue();
@@ -45,7 +50,9 @@ function unl_five_news_preprocess_block_content(&$variables) {
 
 function unl_five_news_preprocess_media(array &$variables) {
    $node = \Drupal::request()->attributes->get('node');
-   $variables['node_title'] = $node->getTitle();
+   if($node){
+       $variables['node_title'] = $node->getTitle();
+   }
 }
 
 function hook_custom() {

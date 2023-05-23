@@ -1,15 +1,15 @@
-uuid: f9fe6cc5-3342-49eb-b81a-e3bd10019abb
+uuid: 5c17409d-414e-4da0-a472-8158eba44764
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.featured
     - node.type.article
   module:
     - node
     - user
-id: recent
-label: Recent-news
+id: main_page_featured
+label: 'Main Page Featured'
 module: views
 description: ''
 tag: ''
@@ -22,7 +22,6 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Recent-news
       fields:
         title:
           id: title
@@ -31,35 +30,19 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: false
-            text: ''
             make_link: false
-            path: ''
             absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
+            word_boundary: false
+            ellipsis: false
             strip_tags: false
             trim: false
-            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -91,7 +74,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 8
+          items_per_page: 1
       exposed_form:
         type: basic
         options:
@@ -151,11 +134,16 @@ display:
             article: article
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: featured
       query:
         type: views_query
         options:
@@ -176,35 +164,14 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_2:
-    id: block_2
-    display_title: 'Block 2'
-    display_plugin: block
-    position: 2
-    display_options:
-      pager:
-        type: some
-        options:
-          offset: 1
-          items_per_page: 4
-      defaults:
-        pager: false
-      display_extenders: {  }
+      path: home
     cache_metadata:
       max-age: -1
       contexts:
