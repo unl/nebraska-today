@@ -284,6 +284,19 @@ blockquote p:nth-of-type(3)::after {
   position: absolute;
   width: 100%;
 }
+
+.custom-hide-subscribe .custom-news-subscribe {
+  display: none !important;
+}
+
+.custom-arrow::after {
+  content: "\2192";
+  padding-left: 0.25em;
+}
+
+.custom-hide-subscribe .custom-hide-link {
+  display: none;
+}
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/
