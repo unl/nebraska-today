@@ -2,16 +2,25 @@
     <div class="custom-heading">
         <h2>Test heading</h2>
         <p>Agriculture</p>
-          <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+        <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
     </div>
     <div class="custom-image">
         {{ content.field_article_lead_image }}
     </div>
 </div>
-<div class="dcf-pt-8 ">
+<div class="dcf-pt-8">
     {{ drupal_view('recent', 'block_2') }}
 </div>
-
+<div class="dcf-pt-8">
+    <div class="dcf-d-flex dcf-bleed">
+        <div class="dcf-1st dcf-ai-center unl-bg-darker-gray" style="width: 45%;">
+            {{ drupal_view('on_campus_view_2', 'block_1') }}
+        </div>
+        <div class="dcf-2nd" style="width: 55%;">
+            {{ drupal_view('on_campus', 'block_1') }}
+        </div>
+    </div>
+</div>
 <div class="dcf-pt-8 ">
     {{ drupal_view('more_headlines', 'block_1') }}
 </div>

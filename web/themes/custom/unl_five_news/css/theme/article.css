@@ -300,6 +300,43 @@ blockquote p:nth-of-type(3)::after {
 .custom-feature-link a {
   color: #fefdfa;
 }
+
+.custom-oncampus-2{
+  display: flex ; 
+  flex-flow: column wrap; 
+  overflow:visible; 
+  position:relative;
+}
+
+.custom-oncampus-title{
+  background-color: rgba(208, 0 , 0, 95);
+  padding: 3vh 5%;
+  position: absolute;
+  width: auto;
+  max-width: 80%;
+  right: 5%;
+  order: 2;
+  z-index: 2;
+  bottom: -1.43em;
+}
+
+.custom-padding{
+  padding: 0 1.58vw;
+}
+
+.custom-oncampus-image{
+  order: 1;
+  width: 100%;
+}
+
+.custom-width-66{
+  width: 66.666%;
+}
+
+.custom-width-33{
+  width: 33.333%;
+}
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/

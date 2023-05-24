@@ -1,15 +1,15 @@
-uuid: f9fe6cc5-3342-49eb-b81a-e3bd10019abb
+uuid: 01dd99c3-5bbc-458c-8e82-f17bb5074820
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.on_campus_
     - node.type.article
   module:
     - node
     - user
-id: recent
-label: Recent-news
+id: on_campus
+label: 'On Campus View 1'
 module: views
 description: ''
 tag: ''
@@ -22,7 +22,6 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Recent-news
       fields:
         title:
           id: title
@@ -31,35 +30,19 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: title
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: false
-            text: ''
             make_link: false
-            path: ''
             absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
+            word_boundary: false
+            ellipsis: false
             strip_tags: false
             trim: false
-            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -90,8 +73,8 @@ display:
       pager:
         type: some
         options:
-          offset: 0
-          items_per_page: 8
+          offset: 1
+          items_per_page: 1
       exposed_form:
         type: basic
         options:
@@ -149,13 +132,62 @@ display:
           plugin_id: bundle
           value:
             article: article
+        delta:
+          id: delta
+          table: node__field_tags
+          field: delta
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: numeric
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: 'On Campus'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: on_campus_
       query:
         type: views_query
         options:
@@ -201,29 +233,7 @@ display:
         type: some
         options:
           offset: 1
-          items_per_page: 4
-      defaults:
-        pager: false
-      display_extenders: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  block_3:
-    id: block_3
-    display_title: 'Block 3'
-    display_plugin: block
-    position: 3
-    display_options:
-      pager:
-        type: some
-        options:
-          offset: 1
-          items_per_page: 4
+          items_per_page: 3
       defaults:
         pager: false
       display_extenders: {  }
