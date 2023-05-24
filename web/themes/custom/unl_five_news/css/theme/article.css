@@ -337,6 +337,11 @@ blockquote p:nth-of-type(3)::after {
   width: 33.333%;
 }
 
+.custom-oncampus-news-3 .views-element-container{
+  padding-top: 3em;
+  padding-left: 4em;
+}
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/
