@@ -369,6 +369,21 @@ blockquote p:nth-of-type(3)::after {
   width: 20em;
 }
 
+.custom-husker-logo::before{
+  background: transparent url(huskers.svg) 50% 100%/contain no-repeat;
+  content: '';
+  opacity: .05;
+  position: absolute;
+  padding: 0;
+  top: 50%;
+  transform: rotate(-90deg);
+  z-index: 0;
+  height: 20.4vw;
+  margin-top: -10.2vw;
+  right: -11.2vw;
+  width: 34vw;
+}
+
 
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
