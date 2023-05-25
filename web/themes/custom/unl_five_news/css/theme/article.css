@@ -351,6 +351,25 @@ blockquote p:nth-of-type(3)::after {
   content: "\279A";
 }
 
+.custom-husker-containeer{
+  position: relative;
+}
+
+.custom-padding-left-athletics{
+  padding-left: 3.56em;
+}
+
+.custom-husker-icon::before{
+  background: transparent url(herbie-husker.svg) 0 0 no-repeat;
+  content: '';
+  height: 3.16em;
+  left: 0;
+  position: absolute;
+  top: -1.5em;
+  width: 20em;
+}
+
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/
