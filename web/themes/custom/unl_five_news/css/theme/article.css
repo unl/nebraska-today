@@ -356,7 +356,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-padding-left-athletics{
-  padding-left: 3.56em;
+  padding-left: 4em;
 }
 
 .custom-husker-icon::before{
@@ -380,7 +380,7 @@ blockquote p:nth-of-type(3)::after {
   z-index: 0;
   height: 20.4vw;
   margin-top: -10.2vw;
-  right: -11.2vw;
+  right: -10.2vw;
   width: 34vw;
 }
 
