@@ -342,6 +342,12 @@ blockquote p:nth-of-type(3)::after {
   padding-left: 4em;
 }
 
+.custom-oncampus-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   /* Heading Placement*/
