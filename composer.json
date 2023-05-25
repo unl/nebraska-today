@@ -47,6 +47,7 @@
         "drupal/core-recommended": "^10.0",
         "drupal/ctools": "^4.0",
         "drupal/diff": "^1.1",
+        "drupal/feeds": "^3.0@beta",
         "drupal/field_group": "^3.4",
         "drupal/image_class": "^2.0",
         "drupal/image_style_warmer": "^1.2@RC",
