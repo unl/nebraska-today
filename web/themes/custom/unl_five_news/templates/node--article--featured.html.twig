@@ -58,6 +58,24 @@
 
 
 {# Athelic #}
+<div class="dcf-pt-8">
+    <hr class="dcf-l-line dcf-mt-0 ">
+    <div class="dcf-d-flex dcf-ai-center ">
+        <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >ATHLETICS</h2>
+        <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
+        </div>
+    </div>
+    <div class="dcf-d-flex dcf-bleed">
+        <div class="dcf-2nd custom-oncampus-news-3 dcf-ai-center unl-bg-darker-gray" style="width: 45%;">
+            {{ drupal_view('on_campus_view_2', 'block_1') }}
+        </div>
+        <div class="dcf-1st" style="width: 55%;">
+            {{ drupal_view('on_campus', 'block_1') }}
+        </div>
+    </div>
+    <div class="dcf-mt-1 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-share" href="/headlines/1/">More on huskers.com</a></div>
+</div>
+
 
 
 {# Oustide news #}
@@ -169,6 +187,7 @@
 
 
 
+
 {# <div id="wdn_calendarDisplay"></div>
 
 <script>
@@ -179,10 +198,10 @@ window.addEventListener('inlineJSReady', function(event) {
 	}
 	window.WDNPluginsExecuting++;
 
-
 	WDN.setPluginParam('events', 'href', 'https://events.unl.edu/');
-	WDN.initializePlugin('events', {
-		limit: 12
+
+WDN.initializePlugin('events', {
+		limit: 12, container: '#wdn_calendarDisplay'
 	}, enableAMDcallback, 'after');
 
 
@@ -194,4 +213,5 @@ window.addEventListener('inlineJSReady', function(event) {
 		}
 	}
 }, false);
- #}
+</script> #}
+
