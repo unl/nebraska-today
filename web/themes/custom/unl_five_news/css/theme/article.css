@@ -1286,7 +1286,8 @@ blockquote p:nth-of-type(3)::after {
   .custom-heading {
     margin-left: 16%;
     margin-right: 16%;
-    width: calc(50% - 16%);
+    /* width: calc(50% - 16%); */
+    width: auto;
     z-index: 2;
   }
 
