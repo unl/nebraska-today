@@ -303,22 +303,18 @@ blockquote p:nth-of-type(3)::after {
 
 .custom-oncampus-2{
   display: flex ; 
-  flex-flow: column wrap; 
-  overflow:visible; 
-  position:relative;
+  flex-direction: column;
 }
 
 .custom-oncampus-title{
   background-color: rgba(208, 0 , 0, 95);
-  padding: 3vh 5%;
-  position: absolute;
   width: auto;
-  max-width: 80%;
-  right: 5%;
+  max-width: 100%;
   order: 2;
-  z-index: 2;
-  bottom: -1.43em;
+  padding: 3vh 5%;
 }
+
+
 
 .custom-padding{
   padding: 0 1.58vw;
@@ -335,11 +331,6 @@ blockquote p:nth-of-type(3)::after {
 
 .custom-width-33{
   width: 33.333%;
-}
-
-.custom-oncampus-news-3 .views-element-container{
-  padding-top: 3em;
-  padding-left: 4em;
 }
 
 .custom-oncampus-image img {
@@ -1308,6 +1299,48 @@ blockquote p:nth-of-type(3)::after {
   .custom-image {
     position: relative;
   }
+  .custom-flex{
+    display: flex;
+  }
+
+  .custom-on-campus-news-3 .views-element-container{
+    padding-top: 1em;
+    padding-left: 4em;
+    align-self: center;
+  }
+
+  .custom-on-campus-news-1{
+    width: 55%;
+  }
+
+  .custom-on-campus-news-2{
+    width: 45%;
+  }
+  
+  .custom-oncampus-2{
+    display: flex;
+    flex-flow: column wrap; 
+    overflow:visible; 
+    position:relative;
+  }
+
+  .custom-oncampus-title{
+    background-color: rgba(208, 0 , 0, 95);
+    padding: 3vh 5%;
+    position: absolute;
+    width: auto;
+    max-width: 80%;
+    right: 5%;
+    order: 2;
+    z-index: 2;
+    bottom: -1.43em;
+  }
+  
+  .custom-pt-pb-5{
+    padding-top: .75em;
+    padding-bottom: 1.33em;
+  }
+
 }
 
 /* CSS applied for css screen width equal or less than of 42.09em */
@@ -1326,6 +1359,28 @@ blockquote p:nth-of-type(3)::after {
     margin: auto;
     padding: 0 1.58vw;
   }
+
+  .custom-on-campus-news-3{
+    padding-bottom: 1em;
+    padding-top: 1em;
+  }
+
+  .custom-pt-pb-5{
+    padding-top: 1.33em;
+    padding-bottom: 1.33em;
+  }
+
+  .custom-athletics-flex{
+    display: flex;
+    flex-direction: column;
+  }
+  .custom-oncampus-2{
+    overflow: hidden;
+    position: relative;
+  }
+
+
+
 }
 
 /* Css is applied for css screen width more than or equal to 40em  */
