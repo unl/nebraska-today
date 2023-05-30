@@ -1,0 +1,23 @@
+uuid: 21f84b38-3852-4d95-9b7f-2ab609b4a950
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feed_story_id
+    - node.type.feed_item
+id: node.feed_item.field_feed_story_id
+field_name: field_feed_story_id
+entity_type: node
+bundle: feed_item
+label: Feed-Story-ID
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
