@@ -65,14 +65,16 @@
         <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
         </div>
     </div>
-    <div class="custom-flex dcf-bleed custom-athletics-flex">
-        <div class="dcf-2nd custom-oncampus-news-3 dcf-ai-center custom-on-campus-news-2 unl-bg-darker-gray custom-husker-logo" >
-            {{ drupal_view('on_campus_view_2', 'block_1') }}
+    <div class="custom-flex dcf-bleed ">
+        <div class="dcf-1st custom-athletic-half" >
+            {{ drupal_view('athletics_news', 'block_1') }}
         </div>
-        <div class="dcf-1st custom-on-campus-news-1" >
-            {{ drupal_view('on_campus', 'block_1') }}
+        <div class="dcf-2nd custom-athletic-half" >
+            {{ drupal_view('athletics_news_2', 'block_1') }}
         </div>
     </div>
+ 
+    
     <div class="dcf-mt-1 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-share" href="/headlines/1/">More on huskers.com</a></div>
 </div>
 

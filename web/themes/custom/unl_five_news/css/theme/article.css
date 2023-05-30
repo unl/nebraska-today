@@ -374,8 +374,53 @@ blockquote p:nth-of-type(3)::after {
   width: 34vw;
 }
 
+.custom-athletics-flex {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.custom-athletics-primary-news-title {
+  background-color: rgba(208, 0, 0, 95);
+  padding: 3vh 5%;
+  position: absolute;
+  order: 2;
+  z-index: 2;
+  bottom: -1.43em;
+}
+
+.custom-athletics-plain-text a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.custom-athletics-primary-news-image img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.custom-athletics-background-color {
+  background-color: #d00000;
+}
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
+  .custom-athletic-half {
+    width: 50%;
+  }
+
+  .custom-athletics-primary-news-title {
+    background-color: rgba(208, 0, 0, 95);
+    padding: 3vh 5%;
+    position: absolute;
+    width: auto;
+    max-width: 80%;
+    left: 5%;
+    order: 2;
+    z-index: 2;
+    bottom: -1.43em;
+  }
+
   /* Heading Placement*/
   .dcf-title-center-left {
     top: 50%;
