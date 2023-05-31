@@ -1,13 +1,13 @@
 {% if content.field_quote_card_placement.0["#markup"] == "Left" %}
 <div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
-    <div class="dcf-image-quote-grid dcf-custom-bleed dcf-quote-card-wrapper">
+    <div class="custom-image-quote-grid dcf-custom-bleed custom-quote-card-wrapper">
     {# First Image #}
-        <div class="dcf-q-image">
+        <div class="custom-quote-image">
             {{ content.field_media[0] }}
         </div>
     {# Second Card #}
-    <div class="dcf-q-card-left dcf-z-2 dcf-quote-card-mobileview">
-            <div class="dcf-image-quote-card   dcf-mb-2 ">
+    <div class="custom-quote-card-left dcf-z-2 custom-quote-card-mobileview">
+            <div class="dcf-image-quote-card  dcf-mb-2 ">
                 <div class="dcf-pt-5 dcf-pr-5 dcf-pl-5">
                     <a href="{{ content.field_image_pill_content_link.0['#url'] }}" target="_blank" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none dcf-pb-5">
                         {{ content.field__image_pill_content }}
@@ -29,13 +29,13 @@
 
 {% elseif content.field_quote_card_placement.0["#markup"] == "Right" %}
 <div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
-    <div class="dcf-image-quote-grid dcf-custom-bleed dcf-quote-card-wrapper">
+    <div class="custom-image-quote-grid dcf-custom-bleed custom-quote-card-wrapper">
     {# First Image #}
-        <div class="dcf-q-image">
+        <div class="custom-quote-image">
             {{ content.field_media[0] }}
         </div>
     {# Second Card #}
-    <div class="dcf-q-card-right dcf-z-2 dcf-quote-card-mobileview">
+    <div class="custom-quote-card-right dcf-z-2 custom-quote-card-mobileview">
             <div class="dcf-image-quote-card dcf-mb-2 ">
                 <div class="dcf-pt-5 dcf-pr-5 dcf-pl-5">
                     <a href="{{ content.field_image_pill_content_link.0['#url'] }}" target="_blank" class="dcf-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none dcf-pb-5">

@@ -78,3 +78,7 @@ function unl_five_news_preprocess_paragraph(&$variables) {
      $variables['bundle'] = $bundle;
 
 }
+
+function calendarIcons(){
+   
+}
