@@ -103,19 +103,19 @@
   color: var(--hover);
 }
 
-.dcf-quote-box-left-border div {
+.custom-quote-box-left-border div {
   margin-left: 1.5rem;
 }
 
-.dcf-quote-box-left-border {
+.custom-quote-box-left-border {
   border-left: 3px solid #d00000;
 }
 
-.dcf-quote-box-left-border div ::after {
+.custom-quote-box-left-border div ::after {
   content: '"';
 }
 
-.dcf-quote::before {
+.custom-quote::before {
   content: "\201c";
   font-size: 8.4em;
   color: #d00000;

@@ -1,7 +1,8 @@
 <div class = "dcf-pb-4">
     <hr class="custom-l-line dcf-mt-0">
     <h2 class = "dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style = " color : var(--heading); ">{{label}}</h2>
-    <a class="dcf-btn-toggle-modal" data-toggles-modal="my-unique-modal-id" type="button" disabled>{{ items.0.content }}</a>
+    {% for item in items %}
+    <a class="dcf-btn-toggle-modal" data-toggles-modal="my-unique-modal-id" type="button" disabled>{{ item.content }}</a>
     <div class="dcf-modal" id="my-unique-modal-id" hidden>
         <div class="dcf-modal-wrapper">
             <div class="dcf-modal-header">
@@ -9,8 +10,10 @@
                 <button class="dcf-btn-close-modal">Close</button>
             </div>
             <div class="dcf-modal-content" >
-                {{ items.0.content }}
+                {{ item.content }}
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
+
