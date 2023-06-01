@@ -1,6 +1,8 @@
 <?php
 
+use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\media\Entity\Media;
+
 
 
 function unl_five_news_preprocess_field(&$variables) {
@@ -79,6 +81,70 @@ function unl_five_news_preprocess_paragraph(&$variables) {
 
 }
 
-function calendarIcons(){
-   
+
+
+function unl_five_news_preprocess_node(&$variables){
+   $view_mode = $variables['view_mode'];
+   if($view_mode == 'featured'){
+      $feed = _unl_five_news_get_rss('https://newsroom.unl.edu/inthenews/rss.php', 60*2);
+      $url = 'https://newsroom.unl.edu/inthenews/recent_quote.php';
+      $data = _unl_five_news_url_cache_callback($url,function($url, $data) {return $data;},60*2);
+      foreach ($feed['item'] as $key=>$post) {
+      if ($key+1 > 4) {
+         continue;
+      }
+      $variables['inthenews'] .= '<li style="list-style:none;" class="custom-in-the-news-padding">
+                                    <a class="dcf-d-block dcf-txt-h6 dcf-lh-2 unl-ls-h dcf-txt-decor-hover" href="'.$post['link'].'">' . $post['title'] . '</a>
+                                    <div class=" dcf-txt-xs unl-dark-gray">'.date('F j, Y', strtotime($post['pubDate'])).'</div>
+                                 </li>';
+      }
+      $variables['quote'] =  $data ;
+   }
 }
+
+
+
+function _unl_five_news_url_cache_callback($url, $callback, $ttl) {
+  $cache_name = md5(__FUNCTION__ . $url);
+  if ($cache = \Drupal::cache()->get($cache_name)) {
+    if (time() < (int)$cache->expire) {
+      return $cache->data;
+    }
+  }
+
+  if (!$data = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))))) {
+    return false;
+  }
+
+  $data = $callback($url, $data);
+
+  
+  \Drupal::cache()->set($cache_name, $data, time() + $ttl  );
+
+  return $data;
+}
+
+function _unl_five_news_get_rss($url, $ttl) {
+  $data = _unl_five_news_url_cache_callback($url, function($url, $data) {
+    return $data;
+  }, $ttl);
+
+  $feed = array();
+
+  if (!$data = simplexml_load_string($data)) {
+    return $feed;
+  }
+
+  $feed = (array)$data->channel;
+
+  $i = 0;
+  foreach($data->channel->item as $item) {
+    $feed['item'][$i] = (array)$item;
+    $i++;
+  }
+
+  return $feed;
+}
+
+
+

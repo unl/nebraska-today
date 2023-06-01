@@ -1,3 +1,5 @@
+{# {% include '../unl_five_news.theme' %} #}
+
 <div class="dcf-bleed custom-page custom-hide-title custom-d-flex">
     <div class="custom-heading">
         <h2>{{ label }}</h2>
@@ -44,6 +46,8 @@
     <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
         <div class="dcf-col-100% dcf-col-67%-start@md">
             {# Calendar icons #}
+            {# {{ calendarIcons() }} #}
+            {# {{ function unl_five_news_preprocess_node(&$variables) }} #}
         </div>
         <div class="dcf-col-100% dcf-col-33%-end@md">
             <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/NebToday" data-widget-id="702998759953698817">Tweets by @NebToday</a>
@@ -90,40 +94,44 @@
                 <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 dcf-mb-6" >in the news</h2>
                 <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-4">
                     <div class="dcf-col-100% dcf-col-33%-start@sm">
-                    <ul class="dcf-list-bare dcf-mb-0 dcf-columns-2 dcf-columns-1@sm unl-font-sans">
-                        <li class="dcf-mb-4">
-                            <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://journalstar.com/opinion/columnists/local-view-forging-farmings-future/article_92af8938-f4ea-11ed-b3ad-471883c4aa5e.html">Lincoln Journal Star: Forging farming's future</a>
-                            <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
-                                May 24, 2023
-                            </div>
-                        </li>
-                        <li class="dcf-mb-4">
-                            <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://theindependent.com/news/i-thought-it-was-a-scam-students-say-nebraska-college-preparatory-academy-is-the-real/article_a66b42de-f9b6-11ed-9caa-0f1682f802b7.html">The Grand Island Independent: Students say NCPA is the real deal</a>
-                            <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
-                                May 24, 2023
-                            </div>
-                        </li>
-                        <li class="dcf-mb-4">
-                            <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://www.klkntv.com/u-s-surgeon-general-says-social-media-is-affecting-youth-mental-health/">KLKN: U.S. surgeon general says social media is affecting youth mental health</a>
-                            <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
-                                May 23, 2023
-                            </div>
-                        </li>
-                        <li class="dcf-mb-4">
-                            <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://ruralradio.com/rrn/news/rural-fellows-begin-10th-year-serving-nebraska-communities/">Rural Radio Network: Rural Fellows begin 10th year serving Nebraska communities</a>
-                            <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
-                                May 23, 2023
-                            </div>
-                        </li>
-                    </ul>
+                        {# <ul class="dcf-list-bare dcf-mb-0 dcf-columns-2 dcf-columns-1@sm unl-font-sans">
+                            <li class="dcf-mb-4">
+                                <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://journalstar.com/opinion/columnists/local-view-forging-farmings-future/article_92af8938-f4ea-11ed-b3ad-471883c4aa5e.html">Lincoln Journal Star: Forging farming's future</a>
+                                <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
+                                    May 24, 2023
+                                </div>
+                            </li>
+                            <li class="dcf-mb-4">
+                                <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://theindependent.com/news/i-thought-it-was-a-scam-students-say-nebraska-college-preparatory-academy-is-the-real/article_a66b42de-f9b6-11ed-9caa-0f1682f802b7.html">The Grand Island Independent: Students say NCPA is the real deal</a>
+                                <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
+                                    May 24, 2023
+                                </div>
+                            </li>
+                            <li class="dcf-mb-4">
+                                <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://www.klkntv.com/u-s-surgeon-general-says-social-media-is-affecting-youth-mental-health/">KLKN: U.S. surgeon general says social media is affecting youth mental health</a>
+                                <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
+                                    May 23, 2023
+                                </div>
+                            </li>
+                            <li class="dcf-mb-4">
+                                <a class="dcf-d-block dcf-txt-h6 dcf-txt-decor-hover" href="https://ruralradio.com/rrn/news/rural-fellows-begin-10th-year-serving-nebraska-communities/">Rural Radio Network: Rural Fellows begin 10th year serving Nebraska communities</a>
+                                <div class="field-name-post-date dcf-txt-xs unl-dark-gray">
+                                    May 23, 2023
+                                </div>
+                            </li>
+                        </ul> #}
+                        {{ inthenews|raw }}
                     </div>
                     <div class="dcf-col-100% dcf-col-67%-end@sm">
-                        <blockquote cite="https://journalstar.com/opinion/columnists/local-view-forging-farmings-future/article_92af8938-f4ea-11ed-b3ad-471883c4aa5e.html">
+                        {# <blockquote cite="https://journalstar.com/opinion/columnists/local-view-forging-farmings-future/article_92af8938-f4ea-11ed-b3ad-471883c4aa5e.html">
                             <p>Throughout IANR, researchers are driving innovations to make ag more efficient, resilient and profitable.</p>
                             <footer>
                                 Mike Boehm, NU vice president, Harlan Vice Chancellor for IANR, <a href="https://journalstar.com/opinion/columnists/local-view-forging-farmings-future/article_92af8938-f4ea-11ed-b3ad-471883c4aa5e.html">Lincoln Journal Star: Forging farming's future</a>
                             </footer>
-                        </blockquote>
+                        </blockquote> #}
+                        <div class="custom-in-the-news-padding">
+                            {{ quote|raw }}
+                        </div>
                     </div>
                 </div>
                 <div class="dcf-mt-1 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More in the News</a></div>
