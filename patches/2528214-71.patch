@@ -1,18 +1,18 @@
 diff --git a/core/modules/filter/filter.module b/core/modules/filter/filter.module
-index fe5615f22..504a8e40d 100644
+index c7a1a14aeb..37e48b12cc 100644
 --- a/core/modules/filter/filter.module
 +++ b/core/modules/filter/filter.module
-@@ -777,6 +777,10 @@ function _filter_html_image_secure_process($text) {
+@@ -774,6 +774,10 @@ function _filter_html_image_secure_process($text) {
    $base_path = base_path();
    $base_path_length = mb_strlen($base_path);
- 
+
 +  // Find the private path.
 +  $private_path = $base_path . 'system/files/';
 +  $private_path_length = mb_strlen($private_path);
 +
    // Find the directory on the server where index.php resides.
    $local_dir = \Drupal::root() . '/';
- 
+
 @@ -791,12 +795,29 @@ function _filter_html_image_secure_process($text) {
      // Verify that $src starts with $base_path.
      // This also ensures that external images cannot be referenced.
@@ -45,29 +45,29 @@ index fe5615f22..504a8e40d 100644
          // The image has the right path. Erroneous images are dealt with below.
          continue;
 diff --git a/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php b/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
-index 148af99bf..698a16c4b 100644
+index 3aa0428cfe..93501aff6f 100644
 --- a/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
 +++ b/core/modules/filter/tests/src/Functional/FilterHtmlImageSecureTest.php
 @@ -4,6 +4,7 @@
- 
+
  use Drupal\Component\Render\FormattableMarkup;
  use Drupal\comment\Tests\CommentTestTrait;
 +use Drupal\Core\StreamWrapper\PrivateStream;
  use Drupal\Core\StreamWrapper\PublicStream;
  use Drupal\filter\Entity\FilterFormat;
  use Drupal\Tests\BrowserTestBase;
-@@ -86,6 +87,7 @@ public function testImageSource() {
+@@ -83,6 +84,7 @@ public function testImageSource() {
      $node = $this->drupalCreateNode();
- 
+
      $public_files_path = PublicStream::basePath();
 +    $private_files_path = PrivateStream::basePath();
- 
+
      $http_base_url = preg_replace('/^https?/', 'http', $base_url);
      $https_base_url = preg_replace('/^https?/', 'https', $base_url);
-@@ -107,6 +109,10 @@ public function testImageSource() {
+@@ -103,6 +105,10 @@ public function testImageSource() {
      $special_uri = str_replace($test_images[0]->filename, $special_filename, $test_images[0]->uri);
      \Drupal::service('file_system')->copy($test_images[0]->uri, $special_uri);
- 
+
 +    // Put a test image in the private files directory.
 +    $private_uri = str_replace('public://', 'private://', $test_images[0]->uri);
 +    \Drupal::service('file_system')->copy($test_images[0]->uri, $private_uri);
@@ -75,7 +75,7 @@ index 148af99bf..698a16c4b 100644
      // Create a list of test image sources.
      // The keys become the value of the IMG 'src' attribute, the values are the
      // expected filter conversions.
-@@ -126,11 +132,15 @@ public function testImageSource() {
+@@ -122,11 +128,15 @@ public function testImageSource() {
        $https_base_url . '/' . $public_files_path . '/' . $test_image => $files_path . '/' . $test_image,
        $http_base_url . '/' . $public_files_path . '/' . $special_image => $files_path . '/' . $special_image,
        $https_base_url . '/' . $public_files_path . '/' . $special_image => $files_path . '/' . $special_image,
