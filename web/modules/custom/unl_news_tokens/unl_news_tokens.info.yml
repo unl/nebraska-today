@@ -1,5 +1,6 @@
 name: UNL News Tokens
 description: Adds Block embed token.
+package: UNL
 type: module
 core_version_requirement: ^8 || ^9 || ^10
 dependencies:

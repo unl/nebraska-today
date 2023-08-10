@@ -1,0 +1,8 @@
+unl_news_migrate.migrator:
+  path: '/admin/unl-news-migrate'
+  defaults:
+    _title: 'Neb Today migrator'
+    _form: '\Drupal\unl_news_migrate\Form\ImportForm'
+  requirements:
+    _role: 'administrator'
+

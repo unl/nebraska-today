@@ -1,0 +1,5 @@
+name: UNL News 7 to 10 Migration
+type: module
+description: Migration of content from the Drupal 7 version of Nebraska Today.
+package: UNL
+core_version_requirement: ^9 || ^10
