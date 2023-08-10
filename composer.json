@@ -166,7 +166,7 @@
         },
         "patches": {
             "drupal/core": {
-                "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-65.patch"
+                "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-71.patch"
             },
             "drupal/config_ignore": {
                 "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"

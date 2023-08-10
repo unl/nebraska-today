@@ -1,11 +1,14 @@
 uuid: 559f4a59-556e-4b49-aca8-60ffa44d2f14
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - file
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
 label: Administrator
 weight: 3
-is_admin: true
-permissions: {  }
+is_admin: false
+permissions:
+  - 'delete own files'

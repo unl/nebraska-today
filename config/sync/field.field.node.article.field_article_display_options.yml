@@ -15,7 +15,11 @@ label: 'Display options for lead story'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: '1'
+  -
+    value: '3'
 default_value_callback: ''
 settings: {  }
 field_type: list_string
