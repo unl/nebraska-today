@@ -73,10 +73,11 @@ class ImportForm extends FormBase {
       $created = (int)$item->created;
       $uuid = (string)$item->uuid;
       $alias = substr($url, strlen($base_url)-1);
+      $summary = (string)$item->summary;
       $tags = (array)$item->tag;
 
       $batch['operations'][] = [
-        ['\Drupal\unl_news_migrate\Form\ImportForm', 'importPage'], [$url, $nid, $changed, $created, $uuid, $alias, $tags]
+        ['\Drupal\unl_news_migrate\Form\ImportForm', 'importPage'], [$url, $nid, $changed, $created, $uuid, $alias, $summary, $tags]
       ];
     }
 
@@ -89,7 +90,7 @@ class ImportForm extends FormBase {
   /**
    * Imports an article node.
    */
-  public static function importPage($url, $nid, $changed, $created, $uuid, $alias, $tags, &$context) {
+  public static function importPage($url, $nid, $changed, $created, $uuid, $alias, $summary, $tags, &$context) {
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
     if (!$body) {
@@ -311,14 +312,14 @@ class ImportForm extends FormBase {
       'created' => $created,
       'status' => 1,
       'path' => [
-        'alias' => $alias,
+        'alias' => str_replace('/newsrooms/today', '', $alias),
         'pathauto' => PathautoState::SKIP,
       ],
       'title' => $title,
-      'body' => [['value' => $body, 'format' => 'basic_html']],
+      'body' => ['summary' => $summary, 'value' => $body, 'format' => 'basic_html'],
       'field_article_lead_image' => $lead_image_block->id(),
       'field_subtitle' => $subtitle,
-      'field_written_by' => [['target_id' => $written_by_term->id()]],
+      'field_written_by' => ['target_id' => $written_by_term->id()],
     ]);
     foreach ($terms as $term) {
       $node->field_tags->appendItem(['target_id' => $term]);
