@@ -58,7 +58,7 @@ class ImportForm extends FormBase {
     $nodes_to_import = simplexml_load_string($body);
 
     $batch = [
-      'title' => t('Importing animals'),
+      'title' => t('Importing articles from news.unl.edu'),
       'operations' => [],
       'init_message' => t('Import process is starting.'),
       'progress_message' => t('Processed @current out of @total. Estimated time: @estimate.'),
@@ -81,7 +81,7 @@ class ImportForm extends FormBase {
     }
 
     batch_set($batch);
-    \Drupal::messenger()->addMessage('Imported ' . count($nodes_to_import) . ' animals!');
+    \Drupal::messenger()->addMessage('Imported ' . count($nodes_to_import) . ' articles!');
 
     $form_state->setRebuild(TRUE);
   }
@@ -117,6 +117,13 @@ class ImportForm extends FormBase {
       $title = $dom->saveHTML($nodes->item(0));
     }
 
+    // Subtitle.
+    $subtitle = null;
+    $nodes = $xpath->query("//header/div[contains(@class, 'field-name-field-subtitle')]//text()");
+    if ($nodes->length > 0) {
+      $subtitle = trim($dom->saveHTML($nodes->item(0)));
+    }
+
     // Written by.
     $written_by_term = null;
     $nodes = $xpath->query("//header/div[contains(@class, 'field-name-field-written-by')]/a//text()");
@@ -125,7 +132,8 @@ class ImportForm extends FormBase {
       $written_by_term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $written_by, 'vid' => 'written_by']);
       $written_by_term = reset($written_by_term);
       if (!$written_by_term) {
-        $written_by_term = Term::create(['name' => $written_by, 'vid' => 'written_by'])->save();
+        $written_by_term = Term::create(['name' => $written_by, 'vid' => 'written_by']);
+        $written_by_term->save();
       }
     }
 
@@ -309,6 +317,7 @@ class ImportForm extends FormBase {
       'title' => $title,
       'body' => [['value' => $body, 'format' => 'basic_html']],
       'field_article_lead_image' => $lead_image_block->id(),
+      'field_subtitle' => $subtitle,
       'field_written_by' => [['target_id' => $written_by_term->id()]],
     ]);
     foreach ($terms as $term) {
