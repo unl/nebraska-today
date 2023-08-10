@@ -1,0 +1,33 @@
+uuid: bbf4bd45-4d30-4fb6-927a-1c2a0bc56d30
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_article_priority
+field_name: field_article_priority
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: lead
+      label: 'Lead story'
+    -
+      value: headline
+      label: 'Headline story'
+    -
+      value: featured
+      label: 'Featured event'
+    -
+      value: long
+      label: 'Long running featured story'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,12 +1,12 @@
-uuid: 7d1935fb-b9fb-4ece-bb36-e2d05a1000d7
+uuid: 7ac314a4-96f8-499c-a123-636b5f23a554
 langcode: en
 status: true
 dependencies:
   module:
-    - block_content
-id: block_content.field_description
-field_name: field_description
-entity_type: block_content
+    - node
+id: node.field_article_event_where
+field_name: field_article_event_where
+entity_type: node
 type: string
 settings:
   max_length: 255

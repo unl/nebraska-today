@@ -5,7 +5,6 @@ dependencies:
   config:
     - block_content.type.parallax_image
     - field.field.block_content.parallax_image.field_cutline
-    - field.field.block_content.parallax_image.field_description
     - field.field.block_content.parallax_image.field_image
     - field.field.block_content.parallax_image.field_title_placement
   module:
@@ -18,14 +17,6 @@ content:
   field_cutline:
     type: string_textfield
     weight: 2
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_description:
-    type: string_textfield
-    weight: 4
     region: content
     settings:
       size: 60

@@ -3,6 +3,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: parallax_image
-label: Parallax-Image-custom-block
+label: 'Lead image'
 revision: 0
-description: 'Hero Parallax Image'
+description: 'Lead image at the top of an Article.'

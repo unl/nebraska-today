@@ -1,0 +1,39 @@
+uuid: 069111d9-2def-4e68-b412-fe9fd2e15121
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_article_display_options
+field_name: field_article_display_options
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Display overlay on left'
+    -
+      value: '2'
+      label: 'Display overlay on right'
+    -
+      value: '3'
+      label: 'Hide summary on web'
+    -
+      value: '4'
+      label: Compact
+    -
+      value: '5'
+      label: 'Vertically align photo top'
+    -
+      value: '6'
+      label: 'Vertically align photo bottom'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

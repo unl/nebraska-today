@@ -1,0 +1,21 @@
+uuid: fccc5cdb-0012-4c18-8d37-28d0ff035f91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_event_date
+    - node.type.article
+  module:
+    - datetime_range
+id: node.article.field_article_event_date
+field_name: field_article_event_date
+entity_type: node
+bundle: article
+label: When
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange
