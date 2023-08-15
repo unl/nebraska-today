@@ -3,148 +3,143 @@
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\media\Entity\Media;
 
-
-
+/**
+ * Implements template_preprocess_field().
+ */
 function unl_five_news_preprocess_field(&$variables) {
-   $node = \Drupal::request()->attributes->get('node');
-   if($node){
-       $variables['node_title'] = $node->getTitle();
-   }
-  
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
 
-   $element = $variables['element'];
-   if ($element['#field_name'] == 'field_media_and_card') {
-      
-      //foreach ($element['items'] as $key => $item) {
-      //   $variables['element']['items'][$key]['type'] = 
-      // }
-   }
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_media_and_card') {
 
-   if ($element['#field_name'] == 'field_ca') {
-     foreach ($variables['items'] as $key => $item) {
-       $bundle = $item['content']['#paragraph']->bundle();
-       $variables['items'][$key]['news_bundle'] = $bundle;
-       $variables['paratypes'][$bundle]++;
+    //foreach ($element['items'] as $key => $item) {
+    //   $variables['element']['items'][$key]['type'] =
+    // }
+  }
 
-     }
-   }
+  if ($element['#field_name'] == 'field_ca') {
+    foreach ($variables['items'] as $key => $item) {
+      $bundle = $item['content']['#paragraph']->bundle();
+      $variables['items'][$key]['news_bundle'] = $bundle;
+      $variables['paratypes'][$bundle]++;
+
+    }
+  }
 }
 
+/**
+ * Implements template_preprocess_block_content().
+ */
 function unl_five_news_preprocess_block_content(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
- if($node){
-       $variables['node_title'] = $node->getTitle();
-   }
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
   if ($variables['bundle'] == 'parallax_image') {
-   $block_content = $variables['elements']['#block_content'];
-   $field_image = $block_content->get('field_image')->getValue();
-   if($field_image[0]['target_id']){
+    $block_content = $variables['elements']['#block_content'];
+    $field_image = $block_content->get('field_image')->getValue();
+    if ($field_image[0]['target_id']) {
       $media_item = Media::load($field_image[0]['target_id']);
       $variables['credit'] = $media_item->get('field_media_image_credit')->value;
-   }
-   else{
-      $variables['credit'] = null;
-   }
-  } 
-
+    }
+    else {
+      $variables['credit'] = NULL;
+    }
+  }
 }
 
-
+/**
+ * Implements template_preprocess_media().
+ */
 function unl_five_news_preprocess_media(array &$variables) {
-   $node = \Drupal::request()->attributes->get('node');
-   if($node){
-       $variables['node_title'] = $node->getTitle();
-   }
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
 }
 
-function hook_custom() {
-  $node_load = Node::load($nids); // Node load
-  $media_field = $node_load->get('media_field_machine_name')->getString(); // Get media ID from your field. 
-  $media_entity_load = Media::load($media_field); // Loading media entity.
-  $uri = $media_entity_load->field_media_video_file->entity->getFileUri(); // It is for image media.
-  $media_url = file_create_url($uri); // Here you will get URL of uploaded image.
-
-  return [
-       '#theme' => 'template_name',
-       '#media_url' => $media_url,
-    ];
-}
-
+/**
+ * Implements template_preprocess_paragraph().
+ */
 function unl_five_news_preprocess_paragraph(&$variables) {
   /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
   $paragraph = $variables['paragraph'];
   // Get the type
   $bundle = $paragraph->bundle();
 
-     // Add variables here
-     $variables['bundle'] = $bundle;
+  // Add variables here
+  $variables['bundle'] = $bundle;
 
 }
 
-
-
-function unl_five_news_preprocess_node(&$variables){
-   $view_mode = $variables['view_mode'];
-   if($view_mode == 'featured'){
-      $feed = _unl_five_news_get_rss('https://newsroom.unl.edu/inthenews/rss.php', 60*2);
-      $url = 'https://newsroom.unl.edu/inthenews/recent_quote.php';
-      $data = _unl_five_news_url_cache_callback($url,function($url, $data) {return $data;},60*2);
-      foreach ($feed['item'] as $key=>$post) {
-      if ($key+1 > 4) {
-         continue;
+/**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function unl_five_news_preprocess_views_view_unformatted(&$vars) {
+  $view = $vars['view'];
+  if ($view->id() == 'main_page_featured') {
+    $feed = _unl_five_news_get_rss('https://newsroom.unl.edu/inthenews/rss.php', 60 * 2);
+    $url = 'https://newsroom.unl.edu/inthenews/recent_quote.php';
+    $data = _unl_five_news_url_cache_callback($url, function ($url, $data) {
+      return $data;
+    }, 60 * 2);
+    foreach ($feed['item'] as $key => $post) {
+      if ($key + 1 > 4) {
+        continue;
       }
-      $variables['inthenews'] .= '<li style="list-style:none;" class="custom-in-the-news-padding">
-                                    <a class="dcf-d-block dcf-txt-h6 dcf-lh-2 unl-ls-h dcf-txt-decor-hover" href="'.$post['link'].'">' . $post['title'] . '</a>
-                                    <div class=" dcf-txt-xs unl-dark-gray">'.date('F j, Y', strtotime($post['pubDate'])).'</div>
+      $vars['inthenews'] .= '<li style="list-style:none;" class="custom-in-the-news-padding">
+                                    <a class="dcf-d-block dcf-txt-h6 dcf-lh-2 unl-ls-h dcf-txt-decor-hover" href="' . $post['link'] . '">' . $post['title'] . '</a>
+                                    <div class=" dcf-txt-xs unl-dark-gray">' . date('F j, Y', strtotime($post['pubDate'])) . '</div>
                                  </li>';
-      }
-      $variables['quote'] =  $data ;
-   }
+    }
+    $vars['quote'] = $data;
+  }
 }
-
-
 
 function _unl_five_news_url_cache_callback($url, $callback, $ttl) {
   $cache_name = md5(__FUNCTION__ . $url);
   if ($cache = \Drupal::cache()->get($cache_name)) {
-    if (time() < (int)$cache->expire) {
+    if (time() < (int) $cache->expire) {
       return $cache->data;
     }
   }
 
-  if (!$data = @file_get_contents($url, false, stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false))))) {
-    return false;
+  if (!$data = @file_get_contents($url, FALSE, stream_context_create([
+    'ssl' => [
+      'verify_peer' => FALSE,
+      'verify_peer_name' => FALSE,
+    ],
+  ]))) {
+    return FALSE;
   }
 
   $data = $callback($url, $data);
-
-  
-  \Drupal::cache()->set($cache_name, $data, time() + $ttl  );
+  \Drupal::cache()->set($cache_name, $data, time() + $ttl);
 
   return $data;
 }
 
 function _unl_five_news_get_rss($url, $ttl) {
-  $data = _unl_five_news_url_cache_callback($url, function($url, $data) {
+  $data = _unl_five_news_url_cache_callback($url, function ($url, $data) {
     return $data;
   }, $ttl);
 
-  $feed = array();
+  $feed = [];
 
   if (!$data = simplexml_load_string($data)) {
     return $feed;
   }
 
-  $feed = (array)$data->channel;
+  $feed = (array) $data->channel;
 
   $i = 0;
-  foreach($data->channel->item as $item) {
-    $feed['item'][$i] = (array)$item;
+  foreach ($data->channel->item as $item) {
+    $feed['item'][$i] = (array) $item;
     $i++;
   }
 
   return $feed;
 }
-
-
-

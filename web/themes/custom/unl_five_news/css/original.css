@@ -818,10 +818,6 @@ blockquote p::after {
     position: static;
 }
 
-.node-type-group .dcf-hero,.node-type-group .ut-hero-section-title {
-    display: none;
-}
-
 @media (min-width:48em) {
     .node-type-group .ut-hero {
         min-height: 25.24em;
