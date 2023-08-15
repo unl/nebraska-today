@@ -175,8 +175,8 @@ class ImportForm extends FormBase {
           // Alt text.
           $alt = $img->getAttribute('alt');
           // Credit.
-          $nodes = $xpath->query("//div[contains(@class, 'field-name-field-credit')]//text()", $item);
-          $credit = $dom->saveHTML($nodes->item(0));
+          $credit_nodes = $xpath->query("div[contains(@class, 'field-name-field-credit')]//text()", $img->parentNode->parentNode);
+          $credit = $dom->saveHTML($credit_nodes->item(0));
 
           $file_data = file_get_contents($src);
           $file = \Drupal::service('file.repository')
@@ -196,8 +196,8 @@ class ImportForm extends FormBase {
         }
 
         // Cutline.
-        $nodes = $xpath->query("//div[contains(@class, 'field-name-field-cutline')]//text()", $item);
-        $cutline = $dom->saveHTML($nodes->item(0));
+        $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode);
+        $cutline = $dom->saveHTML($cutline_nodes->item(0));
 
         // Create a new drupal-media DOM element.
         $drupal_media = $dom->createElement('drupal-media');
