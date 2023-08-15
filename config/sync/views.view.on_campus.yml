@@ -3,13 +3,18 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.on_campus_
+    - core.entity_view_mode.node.teaser
     - node.type.article
+    - taxonomy.vocabulary.news_section
+  content:
+    - 'taxonomy_term:news_section:4e1d4c91-9f1b-4273-b69a-98bb7adfc2da'
   module:
     - node
+    - taxonomy
     - user
+    - views_exclude_previous
 id: on_campus
-label: 'On Campus View 1'
+label: 'On Campus'
 module: views
 description: ''
 tag: ''
@@ -73,7 +78,7 @@ display:
       pager:
         type: some
         options:
-          offset: 1
+          offset: 0
           items_per_page: 1
       exposed_form:
         type: basic
@@ -132,19 +137,18 @@ display:
           plugin_id: bundle
           value:
             article: article
-        delta:
-          id: delta
-          table: node__field_tags
-          field: delta
+          group: 1
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
-          operator: '='
+          plugin_id: taxonomy_index_tid
+          operator: or
           value:
-            min: ''
-            max: ''
-            value: 'On Campus'
+            - 28
           group: 1
           exposed: false
           expose:
@@ -161,9 +165,7 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -176,6 +178,60 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          reduce_duplicates: false
+          vid: news_section
+          type: textfield
+          hierarchy: false
+          limit: true
+          error_message: true
+        views_exclude_previous:
+          id: views_exclude_previous
+          table: node
+          field: views_exclude_previous
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: views_exclude_previous
+          operator: 'not in'
+          value:
+            all: all
+            node_load: node_load
+            node_view: node_view
+            views: views
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -187,7 +243,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: on_campus_
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -205,21 +261,24 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
   block_1:
     id: block_1
-    display_title: Block
+    display_title: 'Block 1'
     display_plugin: block
     position: 1
     display_options:
+      display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -232,7 +291,7 @@ display:
       pager:
         type: some
         options:
-          offset: 1
+          offset: 0
           items_per_page: 3
       defaults:
         pager: false
@@ -242,6 +301,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

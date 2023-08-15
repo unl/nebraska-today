@@ -1,4 +1,4 @@
-uuid: cf4ff051-a5fd-4b93-b5c4-13cb39b30244
+uuid: 988d48df-4c04-4d9e-94f4-5638c4f30fb9
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ field_name: field_cutline
 entity_type: block_content
 type: string
 settings:
-  max_length: 255
+  max_length: 1024
   case_sensitive: false
   is_ascii: false
 module: core

@@ -20,7 +20,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 3
+    weight: 6
     region: content
   field_image:
     type: entity_reference_entity_view

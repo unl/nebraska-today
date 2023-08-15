@@ -52,7 +52,8 @@ class ImportForm extends FormBase {
     $base_url = 'https://news.unl.edu/';
     $base_url = trim($base_url, '/') . '/';
 
-    $url = 'https://localhost.unl.edu/drupal-10-migration-articles.xml';
+    $url = 'https://news.unl.edu/drupal-10-migration-articles.xml';
+    //$url = 'https://localhost.unl.edu/drupal-10-migration-articles.xml';
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
     $nodes_to_import = simplexml_load_string($body);
@@ -317,10 +318,14 @@ class ImportForm extends FormBase {
       ],
       'title' => $title,
       'body' => ['summary' => $summary, 'value' => $body, 'format' => 'basic_html'],
-      'field_article_lead_image' => $lead_image_block->id(),
       'field_subtitle' => $subtitle,
-      'field_written_by' => ['target_id' => $written_by_term->id()],
     ]);
+    if (!empty($lead_image_block)) {
+      $node->field_article_lead_image->appendItem(['target_id' => $lead_image_block->id()]);
+    }
+    if (!empty($written_by_term)) {
+      $node->field_written_by->appendItem(['target_id' => $written_by_term->id()]);
+    }
     foreach ($terms as $term) {
       $node->field_tags->appendItem(['target_id' => $term]);
     }
