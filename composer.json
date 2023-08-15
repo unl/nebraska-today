@@ -32,6 +32,7 @@
     ],
     "require": {
         "php": ">=8.1",
+        "ext-dom": "*",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.3",
@@ -64,6 +65,7 @@
         "drupal/taxonomy_manager": "^2.0",
         "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
+        "drupal/views_exclude_previous": "^2.0@beta",
         "drush/drush": "^11.5",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
@@ -71,8 +73,7 @@
         "unlcms/unl_breadcrumbs": "^1.0",
         "unlcms/unl_five": "^10.5.3",
         "unlcms/unl_user": "^1.4",
-        "webflo/drupal-finder": "^1.2",
-        "ext-dom": "*"
+        "webflo/drupal-finder": "^1.2"
     },
     "conflict": {
         "drupal/drupal": "*"
