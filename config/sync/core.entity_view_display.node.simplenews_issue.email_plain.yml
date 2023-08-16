@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
+    - entity_reference_revisions
     - user
 _core:
   default_config_hash: yLPMU-4Mw-Wl011PDZNQMHzzeilyDjLSQZQ4LLQG08k
@@ -15,8 +16,16 @@ id: node.simplenews_issue.email_plain
 targetEntityType: node
 bundle: simplenews_issue
 mode: email_plain
-content: {  }
+content:
+  field_simplenews_articles:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
-  field_simplenews_articles: true
   links: true
   simplenews_issue: true

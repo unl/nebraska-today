@@ -6,7 +6,7 @@ _core:
   default_config_hash: 6wgXMbTWVfjhYZ3wFXLy3vAISxQeKEJz9SdNqt9SLMY
 name: 'Nebraska Today'
 id: default
-description: 'This is an example newsletter. Change it.'
+description: 'The main Nebraska Today newsletter.'
 format: html
 priority: 0
 receipt: false
@@ -18,5 +18,5 @@ allowed_handlers:
   0: '0'
   simplenews_all: '0'
 new_account: none
-access: hidden
+access: default
 weight: 0

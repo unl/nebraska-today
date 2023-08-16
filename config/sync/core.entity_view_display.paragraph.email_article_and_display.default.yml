@@ -12,19 +12,13 @@ bundle: email_article_and_display
 mode: default
 content:
   field_p_email_article:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: email_default
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_p_email_article_display:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
-hidden: {  }
+hidden:
+  field_p_email_article_display: true

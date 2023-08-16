@@ -1,0 +1,152 @@
+{#
+/**
+ * @file
+ * Theme implementation to format the simplenews newsletter body.
+ *
+ * Available templates:
+ *   simplenews-newsletter-body--[newsletter_id].html.twig
+ *   simplenews-newsletter-body--[view mode].html.twig
+ *   simplenews-newsletter-body--[newsletter_id]--[view mode].html.twig
+ * See README.txt for more details.
+ *
+ * Available variables:
+ * - build: Render array. Use {{ build }} to print it.
+ * - node: object(Drupal\node\Entity\Node)
+ *   The node entity with limited access to object properties and methods.
+ *   * Methods: Only "getter" methods (method names starting with "get", "has", or "is")
+ *     and a few common methods such as "id" and "label" are available.
+ *     {{ node.getTitle }} : the Node title ( == {{ title }} )
+ *     Calling other methods (such as node.delete) will result in an exception.
+ *   * Properties: field values can be accessed as follows:
+ *     {{ node.body.value | raw }} : text of body field
+ * - newsletter: object(Drupal\simplenews\Entity\Newsletter)
+ *     {{ newsletter.from_name }}: string
+ *     {{ newsletter.subject }}: string
+ * - title: Node title
+ * - view_mode: The active display view mode of the node
+ * - key: email key [node|test]
+ * - format: newsletter format [plain|html]
+ * - simplenews_subscriber: object(Drupal\simplenews\Entity\Subscriber)
+ *   The subscriber for which the newsletter is built.
+ *     {{ simplenews_subscriber.getMail  }}: string: subscriber's email address
+ *   Note that depending on the used caching strategy, the generated body might
+ *   be used for multiple subscribers. If you created personalized newsletters
+ *   and can't use tokens for that, make sure to disable caching or write a
+ *   custom caching strategy implemention.
+ *
+ * @see template_preprocess_simplenews_newsletter_body()
+ */
+#}
+
+<!-- Start simplenews-newsletter-body.html.twig -->
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td bgcolor="#FEFDFA" class="wdn-header-top">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="650" class="responsive-table">
+              <tr>
+                <td><a href="https://www.unl.edu/" target="_blank" style="text-decoration: none; color: #d00000;"><img src="https://www.unl.edu/images/email/4-1/41_01.gif" width="320" height="36" alt="" border="0" align="left" style="display: block;"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td style="border-top:1px solid #EAE9E6">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td bgcolor="#FEFDFA">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="650" class="responsive-table">
+              <tr>
+                <td width="77" class="wdn-logo"><a href="https://www.unl.edu/" target="_blank"><img src="https://www.unl.edu/images/email/4-1/41_02.gif" width="77" height="83" alt="" border="0" align="left" style="display: block;"></a></td>
+                <td valign="middle" class="wdn-logo-lockup" style="font-size:27px; line-height:1; font-family:Montserrat,Verdana,sans-serif; font-weight:600; text-transform:uppercase; white-space:nowrap"><a href="https://news.unl.edu/" target="_blank" style="text-decoration: none; color:#474746">{{ newsletter.name }}</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor="#D00000" style="padding: 5px 20px 10px 10px;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" width="610" class="responsive-table" style="font-size:15px;font-family:Montserrat,Verdana,sans-serif;color:#FFFFFF;">
+        <tr>
+          <td class="unltoday-mast" align="left" style="padding:6px 0 0 0;font-family:Montserrat,Verdana,sans-serif; font-weight:600;"><span style="color:#fffffe">{{ node.getCreatedTime|format_date('custom', 'F j, Y') }}</span></td>
+          <td class="unltoday-mast" align="right" style="padding:8px 0 0 0"><img height="15" src="https://www.unl.edu/images/email/4-1/gg.png"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!-- Start main content -->
+{{ build }}
+<!-- End main content -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="line-height: normal;">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td bgcolor="#fefdfa">
+            <table align="center" border="0" cellpadding="20" cellspacing="0" width="650" class="responsive-table">
+              <tr>
+                <td align="center">
+                  <table cellpadding="12" bgcolor="#D00000">
+                    <tr>
+                      <td>
+                        <a href="https://news.unl.edu/" target="_blank" style="text-decoration:none;background:#D00000;font-size:15px;font-family:Montserrat,Verdana,sans-serif;color:#FFFFFF;">&nbsp;&nbsp;&nbsp; Read more stories at news.unl.edu &nbsp;&nbsp;&nbsp;</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="line-height: normal;">
+  <tr>
+    <td bgcolor="#333332" align="center">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td style="padding: 20px 20px 20px 20px;">
+            <table width="610" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+              <tr>
+                <td align="left" valign="middle" style="font-size: 12px; line-height: 16px; font-family: Verdana, sans-serif; color:#adacaa; -webkit-text-size-adjust: none">
+                                    <span class="appleFooter" style="color:#adacaa; -webkit-text-size-adjust: none"><a style="color:#cfcfcf" href="http://newsroom.unl.edu/announce/">Submit Your News</a><br>
+                                    &copy; University of Nebraska&ndash;Lincoln | 1400 R Street | Lincoln, NE 68588<br />
+                                    This email produced and distributed by <a style="color:#cfcfcf" href="https://ucomm.unl.edu/">University Communication</a>
+                                </span></td>
+                <td width="111" valign="top" class="mobile-hide" style="padding-left:20px"><a href="http://www.unl.edu/" target="_blank" style="font-family: Verdana; color: #ffffff; font-size: 14px;"><img alt="University of Nebraska-Lincoln" src="http://www.unl.edu/images/email/4-1/wordmark.gif" width="111" height="43" style="display: block;" border="0"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+{% if not opt_out_hidden %}
+  {% if format == 'html' %}
+    <p class="newsletter-footer"><a
+          href="[simplenews-subscriber:unsubscribe-url]">{{ unsubscribe_text }}</a>
+    </p>
+  {% else %}
+    -- {{ unsubscribe_text }} : [simplenews-subscriber:unsubscribe-url]
+  {% endif %}
+{% endif %}
+
+{% if key == 'test' %}
+  - - - {{ test_message }} - - -
+{% endif %}
+<!-- End simplenews-newsletter-body.html.twig -->

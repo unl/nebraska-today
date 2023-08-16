@@ -65,14 +65,20 @@ function unl_five_news_preprocess_media(array &$variables) {
  * Implements template_preprocess_paragraph().
  */
 function unl_five_news_preprocess_paragraph(&$variables) {
-  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  // Provide a {{ bundle }} variable for the template.
   $paragraph = $variables['paragraph'];
-  // Get the type
   $bundle = $paragraph->bundle();
-
-  // Add variables here
   $variables['bundle'] = $bundle;
 
+  // Change the view mode of the newsletter article reference based on user selection.
+  if ($variables['paragraph']->hasField('field_p_email_article_display')) {
+    $view_mode_string = $variables['paragraph']->field_p_email_article_display->target_id;
+    $view_mode_array = explode('.', $view_mode_string);
+    if (isset($variables['content']['field_p_email_article']['0']['#view_mode'])) {
+      $variables['content']['field_p_email_article']['0']['#view_mode'] = $view_mode_array[1];
+      unset($variables['content']['field_p_email_article']['0']['#cache']['keys']);
+    }
+  }
 }
 
 /**

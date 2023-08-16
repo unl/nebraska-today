@@ -30,11 +30,21 @@ bundle: article
 mode: email_lead
 content:
   body:
-    type: text_default
+    type: text_summary_or_trimmed
     label: hidden
-    settings: {  }
+    settings:
+      trim_length: 600
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_article_lead_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_subtitle:
     type: text_default
@@ -43,28 +53,20 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_written_by:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 1
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 3
     region: content
 hidden:
   field_article_blocks: true
   field_article_display_options: true
   field_article_event_date: true
   field_article_event_where: true
-  field_article_lead_image: true
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
   field_high_resolution_photo: true
   field_section: true
   field_tags: true
+  field_written_by: true

@@ -84,6 +84,13 @@ Navigate to _http://example.unl.edu/nebraska-today/web/_ (or set up a virtual ho
 
 When asked to select an Installation Profile, select _Use existing configuration._
 
+## Additional setup
+
+Some things needed are Drupal "content" and not saved to config/sync. These need to be manually created.
+
+- A subscription to an email address used for testing added at https://news-local.unl.edu/admin/people/simplenews 
+- The Section taxonomy terms at https://news-local.unl.edu/admin/structure/taxonomy/manage/news_section/overview
+
 ## Common Settings for All Sites
 
 Settings that apply to all sites can be included in one of two places:

@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - file
+    - simplenews
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
@@ -11,4 +12,6 @@ label: Administrator
 weight: 3
 is_admin: false
 permissions:
+  - 'administer newsletters'
   - 'delete own files'
+  - 'send newsletter'

@@ -332,7 +332,7 @@ class ImportForm extends FormBase {
     $node->save();
 
     $context['results'][] = $url;
-    $context['message'] = t('Created @title', array('@title' => $url));
+    $context['message'] = t('Imported @title', array('@title' => $url));
   }
 
 }

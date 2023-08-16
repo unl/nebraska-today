@@ -20,7 +20,6 @@ dependencies:
     - field.field.node.article.field_written_by
     - node.type.article
   module:
-    - text
     - user
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
@@ -29,42 +28,31 @@ targetEntityType: node
 bundle: article
 mode: email_secondary
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_subtitle:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
-  field_written_by:
-    type: entity_reference_label
+  field_article_lead_image:
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: teaser
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 1
     region: content
 hidden:
+  body: true
   field_article_blocks: true
   field_article_display_options: true
   field_article_event_date: true
   field_article_event_where: true
-  field_article_lead_image: true
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
   field_high_resolution_photo: true
   field_section: true
+  field_subtitle: true
   field_tags: true
+  field_written_by: true
