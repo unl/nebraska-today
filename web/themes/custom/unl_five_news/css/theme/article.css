@@ -25,7 +25,7 @@
   transition: all ease-in-out 300ms;
 }
 
-.custom-pin-top{
+.custom-pin-top {
   top: 0;
 }
 
@@ -355,13 +355,12 @@ blockquote p:nth-of-type(3)::after {
   width: 20em;
 }
 
-
-.custom-husker-logo::before{
+.custom-husker-logo::before {
   background: transparent url(huskers.svg) 50% 100% / contain no-repeat;
-  content: '';
+  content: "";
   height: 60vw;
   margin-top: -30%;
-  opacity: .05;
+  opacity: 0.05;
   position: absolute;
   padding: 0;
   right: -30vw;
@@ -399,7 +398,7 @@ blockquote p:nth-of-type(3)::after {
   background-color: #d00000;
 }
 
-.custom-athletics-secondary-news{
+.custom-athletics-secondary-news {
   display: flex;
   flex-flow: row wrap;
   overflow: visible;
@@ -407,23 +406,40 @@ blockquote p:nth-of-type(3)::after {
   align-items: center;
 }
 
-.custom-athletics-flex{
+.custom-athletics-flex {
   display: flex;
   flex-direction: column;
 }
 
-.custom-athletics-padding{
+.custom-athletics-padding {
   padding-top: 1.15em;
   padding-bottom: 1em;
 }
 
-.custom-bg-athletics{
+.custom-bg-athletics {
   background-color: #d00000;
 }
 
-.custom-in-the-news-padding{
+.custom-in-the-news-padding {
   margin-bottom: 1em;
-} 
+}
+
+.custom-section-display div {
+  display: inline;
+}
+
+.custom-section-display > div > div > div a::after {
+  content: ",";
+}
+
+.custom-section-display > div > div > div:last-child a:after {
+  content: "";
+}
+
+.custom-section-display::before {
+  content: "in ";
+  padding-left: 5px;
+}
 
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
@@ -1407,7 +1423,6 @@ blockquote p:nth-of-type(3)::after {
     padding-top: 0.75em;
     padding-bottom: 1.33em;
   }
-
 
   .custom-husker-logo::before {
     background: transparent url(huskers.svg) 50% 100% / contain no-repeat;
