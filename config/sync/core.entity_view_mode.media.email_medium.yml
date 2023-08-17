@@ -1,0 +1,10 @@
+uuid: b51b19fe-50de-4fd1-a326-d2b8a8a46c14
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.email_medium
+label: 'Email (Medium)'
+targetEntityType: media
+cache: true

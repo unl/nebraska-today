@@ -1,0 +1,28 @@
+uuid: 59e9e7a1-1b76-49ec-b410-c31bfd136c13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.email_content.body
+    - node.type.email_content
+  module:
+    - text
+    - user
+id: node.email_content.default
+targetEntityType: node
+bundle: email_content
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

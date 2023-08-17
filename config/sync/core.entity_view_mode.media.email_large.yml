@@ -1,0 +1,10 @@
+uuid: 6fbc8912-942f-4609-8f79-dabef1471512
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.email_large
+label: 'Email (Large)'
+targetEntityType: media
+cache: true

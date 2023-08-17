@@ -1,0 +1,30 @@
+uuid: ba3f0a1f-0a88-4905-a063-fc55b10dc340
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.email_content.body
+    - node.type.email_content
+  module:
+    - text
+    - user
+id: node.email_content.teaser
+targetEntityType: node
+bundle: email_content
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

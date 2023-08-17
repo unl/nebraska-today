@@ -1,0 +1,29 @@
+uuid: a0f91bf8-ffb6-47da-9dcd-2e1c41ae3381
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.email_content
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - email_html
+id: node.email_content.body
+field_name: body
+entity_type: node
+bundle: email_content
+label: Body
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

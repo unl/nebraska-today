@@ -1,0 +1,10 @@
+uuid: 9da49d60-19dd-43d6-b63c-76faa0e252e1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.email_small
+label: 'Email (Small)'
+targetEntityType: block_content
+cache: true

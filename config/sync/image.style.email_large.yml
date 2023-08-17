@@ -1,0 +1,15 @@
+uuid: f6866d4c-c1fa-4abd-b9ca-2df21c9a0df6
+langcode: en
+status: true
+dependencies: {  }
+name: email_large
+label: 'Email (620x350)'
+effects:
+  875a766b-1d6f-4b9e-9b58-d7c6631a0ff0:
+    uuid: 875a766b-1d6f-4b9e-9b58-d7c6631a0ff0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 620
+      height: 350
+      anchor: center-center

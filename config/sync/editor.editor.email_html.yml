@@ -1,0 +1,30 @@
+uuid: 2577a60a-4f93-4884-b906-b273c990cfae
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.email_html
+  module:
+    - ckeditor5
+format: email_html
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - link
+      - specialCharacters
+      - sourceEditing
+  plugins:
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+image_upload: {  }

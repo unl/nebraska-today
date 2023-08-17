@@ -1,0 +1,10 @@
+uuid: 2c98b568-a513-4512-b9f3-7ae495199856
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.email_small
+label: 'Email (Small)'
+targetEntityType: media
+cache: true

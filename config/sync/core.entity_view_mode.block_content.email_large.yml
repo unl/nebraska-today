@@ -1,0 +1,10 @@
+uuid: 7eb23ecf-c400-46ab-8422-7a693d1e5401
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.email_large
+label: 'Email (Large)'
+targetEntityType: block_content
+cache: true

@@ -1,0 +1,24 @@
+uuid: fe1a4f9d-1186-4904-ad61-bd00412910fb
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.advertisement.field_advertisement_image
+    - field.field.node.advertisement.field_advertisement_link
+    - node.type.advertisement
+  module:
+    - user
+id: node.advertisement.teaser
+targetEntityType: node
+bundle: advertisement
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_advertisement_image: true
+  field_advertisement_link: true
