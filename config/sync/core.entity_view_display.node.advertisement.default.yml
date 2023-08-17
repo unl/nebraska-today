@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.advertisement.field_advertisement_image
     - field.field.node.advertisement.field_advertisement_link
-    - image.style.wide
+    - image.style.email_advertisement
     - node.type.advertisement
   module:
     - image
@@ -22,7 +22,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: email_advertisement
       image_loading:
         attribute: lazy
     third_party_settings:
