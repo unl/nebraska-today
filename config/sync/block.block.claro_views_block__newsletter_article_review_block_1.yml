@@ -1,0 +1,37 @@
+uuid: 3df1198b-f21d-4517-a81c-15fb83d7c8e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.newsletter_article_review
+  module:
+    - node
+    - system
+    - views
+  theme:
+    - claro
+id: claro_views_block__newsletter_article_review_block_1
+theme: claro
+region: content
+weight: -2
+provider: null
+plugin: 'views_block:newsletter_article_review-block_1'
+settings:
+  id: 'views_block:newsletter_article_review-block_1'
+  label: 'Article review'
+  label_display: visible
+  provider: views
+  views_label: 'Article review'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      simplenews_issue: simplenews_issue
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/node/*/delete\r\n/node/*/revisions\r\n/node/*/simplenews"

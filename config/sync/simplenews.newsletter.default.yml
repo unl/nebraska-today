@@ -11,7 +11,7 @@ format: html
 priority: 0
 receipt: false
 from_name: 'Nebraska Today'
-subject: '[[simplenews-newsletter:name]] for [current-date:custom:M j, Y]'
+subject: '[current-date:custom:M j, Y] | [node:field_simplenews_articles:0:entity:field_p_email_article:0:entity]'
 from_address: today@unl.edu
 hyperlinks: false
 allowed_handlers:

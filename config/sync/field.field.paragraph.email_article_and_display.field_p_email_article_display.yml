@@ -10,7 +10,7 @@ id: paragraph.email_article_and_display.field_p_email_article_display
 field_name: field_p_email_article_display
 entity_type: paragraph
 bundle: email_article_and_display
-label: 'Email article view mode'
+label: 'View mode'
 description: ''
 required: true
 translatable: false

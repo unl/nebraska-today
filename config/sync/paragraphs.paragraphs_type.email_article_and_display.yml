@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 id: email_article_and_display
-label: 'Email article and display'
+label: Item
 icon_uuid: null
 icon_default: null
 description: ''

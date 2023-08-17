@@ -12,7 +12,7 @@ id: node.simplenews_issue.field_simplenews_articles
 field_name: field_simplenews_articles
 entity_type: node
 bundle: simplenews_issue
-label: Articles
+label: 'Newsletter items'
 description: ''
 required: false
 translatable: false
@@ -28,6 +28,9 @@ settings:
       email_article_and_display:
         weight: 5
         enabled: true
+      paragraph_card:
+        weight: 8
+        enabled: false
       paragraph_media:
         weight: 6
         enabled: false
@@ -36,5 +39,8 @@ settings:
         enabled: false
       paragraph_video:
         weight: 8
+        enabled: false
+      quote_card:
+        weight: 12
         enabled: false
 field_type: entity_reference_revisions

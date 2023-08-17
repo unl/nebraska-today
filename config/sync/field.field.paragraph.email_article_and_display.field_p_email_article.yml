@@ -10,7 +10,7 @@ id: paragraph.email_article_and_display.field_p_email_article
 field_name: field_p_email_article
 entity_type: paragraph
 bundle: email_article_and_display
-label: 'Email article reference'
+label: Reference
 description: ''
 required: true
 translatable: false

@@ -1,0 +1,22 @@
+uuid: b72c7c0c-8d8f-4184-82ad-cc66becc5f73
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_newsletter_issue
+label: 'Node: Newsletter issue'
+type: 'canonical_entities:node'
+pattern: '/newsletter/[node:scheduler-publish:html_date]'
+selection_criteria:
+  053e4998-4edb-4267-b6d6-4f112727f98b:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 053e4998-4edb-4267-b6d6-4f112727f98b
+    context_mapping:
+      node: node
+    bundles:
+      simplenews_issue: simplenews_issue
+selection_logic: and
+weight: -5
+relationships: {  }
