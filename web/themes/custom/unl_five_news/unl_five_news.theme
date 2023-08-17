@@ -2,6 +2,7 @@
 
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
 
 /**
  * Implements template_preprocess_field().
@@ -77,6 +78,37 @@ function unl_five_news_preprocess_paragraph(&$variables) {
     if (isset($variables['content']['field_p_email_article']['0']['#view_mode'])) {
       $variables['content']['field_p_email_article']['0']['#view_mode'] = $view_mode_array[1];
       unset($variables['content']['field_p_email_article']['0']['#cache']['keys']);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_region().
+ */
+function unl_five_news_preprocess_region(&$variables) {
+  // Elevate some things from the Article node up to the Hero Region.
+  if ($variables['region'] == 'hero') {
+    $current_route = \Drupal::routeMatch();
+    $node = $current_route->getParameter('node');
+    if ($node instanceof NodeInterface && $node->getType() == 'article') {
+      // Add created/published time to the hero region template, region--hero.html.twig.
+      $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
+      // Add field_subtitle to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_subtitle') && !$node->get('field_subtitle')->isEmpty()) {
+        $variables['field_subtitle'] = $node->get('field_subtitle')->view(['label'=>'hidden', 'type'=>'TextFieldItemList']);
+      }
+      // Add field_written_by to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_written_by') && !$node->get('field_written_by')->isEmpty()) {
+        $variables['field_written_by'] = $node->get('field_written_by')->view(['label'=>'hidden', 'type'=>'EntityReferenceFieldItemList']);
+      }
+      // Add field_title_placement in order to hide the page title if it is going to be shown in block-content--parallax-image--full.html.twig.
+      if ($node->hasField('field_article_lead_image') && !$node->get('field_article_lead_image')->isEmpty()) {
+        $lead_image_blocks = $node->get('field_article_lead_image')->referencedEntities();
+        foreach ($lead_image_blocks as $lead_image_block) {
+          $variables['field_title_placement'] = $lead_image_block->get('field_title_placement')->view(['label'=>'hidden', 'type'=>'FieldItemList']);
+        }
+      }
+
     }
   }
 }

@@ -1,0 +1,35 @@
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+  'dcf-hero',
+  'dcf-hero-default',
+]
+%}
+<!-- InstanceBeginEditable name="hero" -->
+<div{{ attributes.addClass(classes) }}>
+  <!-- InstanceEndEditable -->
+  <div class="dcf-hero-group-1">
+    {{ elements.unl_five_news_breadcrumbs }}
+    <header class="dcf-page-title" id="dcf-page-title">
+      <!-- InstanceBeginEditable name="pagetitle" -->
+      {% if field_title_placement is empty or field_title_placement.0['#markup'] == 'Basic' %}
+        {% if created %}
+          <p class="dcf-txt-sm dcf-mb-1">{{ created }}</p>
+        {% endif %}
+        {{ elements.unl_five_news_page_title }}
+        {% if field_subtitle %}
+          <div class="dcf-uppercase dcf-mt-1 dcf-mb-1">{{ field_subtitle }}</div>
+        {% endif %}
+        {{ field_written_by }}
+      {% endif %}
+      <!-- InstanceEndEditable -->
+    </header>
+    <!-- InstanceBeginEditable name="herogroup1" -->
+    <!-- InstanceEndEditable -->
+  </div>
+  <!-- InstanceBeginEditable name="herogroup2" -->
+  <div class="dcf-hero-group-2">
+  </div>
+  <!-- InstanceEndEditable -->
+</div>

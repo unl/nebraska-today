@@ -1,0 +1,18 @@
+{%
+  set classes = [
+    'dcf-mt-1',
+    'dcf-txt-sm',
+  ]
+%}
+by
+{% if multiple %}
+  <span{{ attributes.addClass(classes) }}>
+    {% for item in items %}
+      <span{{ item.attributes }}>{{ item.content }}</span>
+    {% endfor %}
+  </span>
+{% else %}
+  {% for item in items %}
+    <span{{ attributes.addClass(classes) }}>{{ item.content }}</span>
+  {% endfor %}
+{% endif %}
