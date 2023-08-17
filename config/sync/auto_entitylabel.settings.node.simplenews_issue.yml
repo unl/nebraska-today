@@ -1,0 +1,9 @@
+status: 1
+pattern: 'Nebraska Today for [current-date:custom:F j, Y]'
+escape: false
+preserve_titles: false
+save: true
+chunk: 50
+dependencies:
+  config:
+    - node.type.simplenews_issue
