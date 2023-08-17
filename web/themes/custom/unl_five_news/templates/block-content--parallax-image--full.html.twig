@@ -16,62 +16,68 @@
     <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-center-left">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-lightest-gray">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-lightest-gray">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% elseif content.field_title_placement.0['#markup'] == 'bottom left' %}
     <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-bottom-left">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section ">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% elseif content.field_title_placement.0['#markup'] == 'center right' %}
     <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-center-right">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% elseif content.field_title_placement.0['#markup'] == 'bottom right' %}
     <div
         class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-title-hide dcf-z-2 dcf-txt-left dcf-title-bottom-right">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% elseif content.field_title_placement.0['#markup'] == 'center center' %}
     <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-title-hide dcf-z-2 dcf-title-center-center">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% elseif content.field_title_placement.0['#markup'] == 'bottom center' %}
     <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-hide dcf-title-bottom-center">
       <div class="dcf-p-1">
         <h1 class="dcf-txt-h1 unl-cream">{{ node_title }}</h1>
-        <div class="dcf-txt-xs unl-cream">{{ content.field_cutline }}</div>
+        <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
       </div>
     </div>
     <div class="landing-section">{{ content.field_image }}</div>
-    <div class="custom-hide dcf-txt-3xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+    <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_cutline }}</div>
+    <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
 
   {% else %}
     {# This is "Basic" or not defined. Node title has been moved to region--hero.html.twig using unl_five_news_preprocess_region() #}
