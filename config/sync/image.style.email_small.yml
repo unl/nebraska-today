@@ -1,0 +1,15 @@
+uuid: 8b3c0c0f-ca85-40f6-b4b1-b074d42706b0
+langcode: en
+status: true
+dependencies: {  }
+name: email_small
+label: 'Email (124x74)'
+effects:
+  5ce3cdd9-1f83-43d9-835e-88b6d18da0ac:
+    uuid: 5ce3cdd9-1f83-43d9-835e-88b6d18da0ac
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 124
+      height: 74
+      anchor: center-center

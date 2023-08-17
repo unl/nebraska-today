@@ -1,0 +1,15 @@
+uuid: 590d4dca-2858-4611-807e-37610b220643
+langcode: en
+status: true
+dependencies: {  }
+name: email_medium
+label: 'Email (270x160)'
+effects:
+  7adba877-f7c5-48a6-ada8-49852080b5b0:
+    uuid: 7adba877-f7c5-48a6-ada8-49852080b5b0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 270
+      height: 160
+      anchor: center-center

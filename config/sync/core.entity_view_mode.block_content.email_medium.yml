@@ -1,0 +1,10 @@
+uuid: 312bc76f-1976-4de7-b0c0-b569ff1c1912
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.email_medium
+label: 'Email (Medium)'
+targetEntityType: block_content
+cache: true

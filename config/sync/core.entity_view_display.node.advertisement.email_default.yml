@@ -1,0 +1,51 @@
+uuid: c14a9cfa-8a7a-4a3b-bbed-d24f489765ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_default
+    - field.field.node.advertisement.field_advertisement_image
+    - field.field.node.advertisement.field_advertisement_link
+    - image.style.email_advertisement
+    - node.type.advertisement
+  module:
+    - image
+    - image_class
+    - link
+    - user
+id: node.advertisement.email_default
+targetEntityType: node
+bundle: advertisement
+mode: email_default
+content:
+  field_advertisement_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: email_advertisement
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 1
+    region: content
+  field_advertisement_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

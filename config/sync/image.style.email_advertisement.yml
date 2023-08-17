@@ -1,0 +1,15 @@
+uuid: 5578c182-b3a1-4214-b003-64aa1e9c505d
+langcode: en
+status: true
+dependencies: {  }
+name: email_advertisement
+label: 'Email (620px)'
+effects:
+  75008faa-b07c-4acf-b14e-1bd335ee33e3:
+    uuid: 75008faa-b07c-4acf-b14e-1bd335ee33e3
+    id: image_scale
+    weight: 1
+    data:
+      width: 620
+      height: null
+      upscale: false

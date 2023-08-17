@@ -1,0 +1,29 @@
+uuid: f3dec520-5239-4a75-8f47-8cd55f8768fe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_default
+    - field.field.node.email_content.body
+    - node.type.email_content
+  module:
+    - text
+    - user
+id: node.email_content.email_default
+targetEntityType: node
+bundle: email_content
+mode: email_default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

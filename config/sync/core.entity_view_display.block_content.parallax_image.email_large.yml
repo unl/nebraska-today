@@ -1,0 +1,27 @@
+uuid: a668a287-89d0-40aa-a76a-fbd01d3107f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.parallax_image
+    - core.entity_view_mode.block_content.email_large
+    - field.field.block_content.parallax_image.field_cutline
+    - field.field.block_content.parallax_image.field_image
+    - field.field.block_content.parallax_image.field_title_placement
+id: block_content.parallax_image.email_large
+targetEntityType: block_content
+bundle: parallax_image
+mode: email_large
+content:
+  field_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: email_large
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_cutline: true
+  field_title_placement: true

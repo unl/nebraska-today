@@ -1,0 +1,46 @@
+uuid: edae1b34-749c-40e7-8f1a-98412f73defe
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.email_medium
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_media_image_credit
+    - image.style.email_medium
+    - media.type.image
+  module:
+    - image
+    - image_class
+_core:
+  default_config_hash: 73xaTNkI5J6sfFcBmNYeuk070X3mQS_iwwWaPYyfG2M
+id: media.image.email_medium
+targetEntityType: media
+bundle: image
+mode: email_medium
+content:
+  field_media_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: email_medium
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 0
+    region: content
+  field_media_image_credit:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

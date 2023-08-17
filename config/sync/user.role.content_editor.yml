@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - filter.format.email_html
     - filter.format.simple_html
     - node.type.article
     - node.type.page
@@ -49,6 +50,7 @@ permissions:
   - 'revert all revisions'
   - 'send newsletter'
   - 'use text format basic_html'
+  - 'use text format email_html'
   - 'use text format simple_html'
   - 'view all revisions'
   - 'view own unpublished content'

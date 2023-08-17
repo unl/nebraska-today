@@ -1,10 +1,34 @@
 uuid: d039b09e-cb74-4843-b638-241b59a0e7c9
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - token_filter
 _core:
   default_config_hash: u5MXordtBE3SIs1x4qEUEBUFctQ0jjSn2vbPtgxvXuM
 name: 'Email HTML'
 format: email_html
 weight: 0
-filters: {  }
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <a href>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  token_filter:
+    id: token_filter
+    provider: token_filter
+    status: false
+    weight: 0
+    settings:
+      replace_empty: '0'
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

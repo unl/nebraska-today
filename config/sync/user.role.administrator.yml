@@ -2,8 +2,13 @@ uuid: 559f4a59-556e-4b49-aca8-60ffa44d2f14
 langcode: en
 status: true
 dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.email_html
+    - filter.format.simple_html
   module:
     - file
+    - filter
     - simplenews
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
@@ -15,3 +20,6 @@ permissions:
   - 'administer newsletters'
   - 'delete own files'
   - 'send newsletter'
+  - 'use text format basic_html'
+  - 'use text format email_html'
+  - 'use text format simple_html'
