@@ -43,6 +43,7 @@
 }
 
 .landing-section {
+  min-height: 70vh;;
   max-height: 80vh;
   width: auto;
   overflow: hidden;
@@ -471,7 +472,7 @@ blockquote p:nth-of-type(3)::after {
     position: absolute;
   }
   .dcf-title-bottom-left {
-    bottom: 5%;
+    bottom: 10%;
     left: 2%;
     width: 40%;
     position: absolute;
@@ -483,7 +484,7 @@ blockquote p:nth-of-type(3)::after {
     position: absolute;
   }
   .dcf-title-bottom-right {
-    bottom: 5%;
+    bottom: 10%;
     right: 2%;
     width: 40%;
     position: absolute;
@@ -496,7 +497,7 @@ blockquote p:nth-of-type(3)::after {
     text-align: center;
   }
   .dcf-title-bottom-center {
-    bottom: 5%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
