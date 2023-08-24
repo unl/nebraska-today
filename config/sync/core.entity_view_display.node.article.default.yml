@@ -5,13 +5,16 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
+    - field.field.node.article.field_article_compact_title
     - field.field.node.article.field_article_display_options
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
+    - field.field.node.article.field_article_horizontal_display
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -47,6 +50,13 @@ content:
     third_party_settings: {  }
     weight: 10
     region: content
+  field_article_compact_title:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 20
+    region: content
   field_article_display_options:
     type: list_default
     label: above
@@ -71,6 +81,13 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 16
+    region: content
+  field_article_horizontal_display:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
     region: content
   field_article_lead_image:
     type: entity_reference_entity_view
@@ -108,6 +125,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 8
+    region: content
+  field_article_vertical_display:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
     region: content
   field_high_resolution_photo:
     type: entity_reference_entity_view

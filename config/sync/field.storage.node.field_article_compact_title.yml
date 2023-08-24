@@ -1,22 +1,19 @@
-uuid: 069111d9-2def-4e68-b412-fe9fd2e15121
+uuid: fb48407c-3b61-42f7-9bed-33a2f013e7f9
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_article_display_options
-field_name: field_article_display_options
+id: node.field_article_compact_title
+field_name: field_article_compact_title
 entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
-      value: 'Full Width Lead & View'
-      label: 'Full Width Lead & View'
-    -
-      value: '50/50 Lead & View'
-      label: '50/50 Lead & View'
+      value: Compact
+      label: Compact
   allowed_values_function: ''
 module: options
 locked: false

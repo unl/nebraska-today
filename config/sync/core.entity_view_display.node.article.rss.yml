@@ -6,13 +6,16 @@ dependencies:
     - core.entity_view_mode.node.rss
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
+    - field.field.node.article.field_article_compact_title
     - field.field.node.article.field_article_display_options
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
+    - field.field.node.article.field_article_horizontal_display
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -34,13 +37,16 @@ content:
 hidden:
   body: true
   field_article_blocks: true
+  field_article_compact_title: true
   field_article_display_options: true
   field_article_event_date: true
   field_article_event_where: true
+  field_article_horizontal_display: true
   field_article_lead_image: true
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
+  field_article_vertical_display: true
   field_high_resolution_photo: true
   field_section: true
   field_subtitle: true

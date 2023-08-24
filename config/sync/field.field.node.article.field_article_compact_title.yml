@@ -1,17 +1,17 @@
-uuid: 3d8f290c-b043-4afa-bfac-f5eadbd0dd6f
+uuid: 60d13603-f7c8-4e56-a4c0-05244b1a904d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_article_display_options
+    - field.storage.node.field_article_compact_title
     - node.type.article
   module:
     - options
-id: node.article.field_article_display_options
-field_name: field_article_display_options
+id: node.article.field_article_compact_title
+field_name: field_article_compact_title
 entity_type: node
 bundle: article
-label: 'Display options for lead story'
+label: 'Display options for compact lead title'
 description: ''
 required: false
 translatable: false

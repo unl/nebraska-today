@@ -1,17 +1,17 @@
-uuid: 3d8f290c-b043-4afa-bfac-f5eadbd0dd6f
+uuid: 93047e2b-d129-4d9d-82d1-1fedfee591ab
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_article_display_options
+    - field.storage.node.field_article_horizontal_display
     - node.type.article
   module:
     - options
-id: node.article.field_article_display_options
-field_name: field_article_display_options
+id: node.article.field_article_horizontal_display
+field_name: field_article_horizontal_display
 entity_type: node
 bundle: article
-label: 'Display options for lead story'
+label: 'Display options for horizontal lead title'
 description: ''
 required: false
 translatable: false
