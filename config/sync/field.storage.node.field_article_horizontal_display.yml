@@ -1,22 +1,22 @@
-uuid: 069111d9-2def-4e68-b412-fe9fd2e15121
+uuid: a4919275-687b-4be4-8603-9fafc422edd8
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - options
-id: node.field_article_display_options
-field_name: field_article_display_options
+id: node.field_article_horizontal_display
+field_name: field_article_horizontal_display
 entity_type: node
 type: list_string
 settings:
   allowed_values:
     -
-      value: 'Full Width Lead & View'
-      label: 'Full Width Lead & View'
+      value: 'Display overlay right'
+      label: 'Display overlay right'
     -
-      value: '50/50 Lead & View'
-      label: '50/50 Lead & View'
+      value: 'Display overlay left'
+      label: 'Display overlay left'
   allowed_values_function: ''
 module: options
 locked: false

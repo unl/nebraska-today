@@ -5,13 +5,16 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_blocks
+    - field.field.node.article.field_article_compact_title
     - field.field.node.article.field_article_display_options
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
+    - field.field.node.article.field_article_horizontal_display
     - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -50,6 +53,9 @@ third_party_settings:
         - field_section
         - field_article_priority
         - field_article_display_options
+        - field_article_vertical_display
+        - field_article_horizontal_display
+        - field_article_compact_title
       label: 'Site organization and display options'
       region: content
       parent_name: ''
@@ -165,6 +171,13 @@ content:
       collapsible: false
       collapsed: false
       revision: true
+      removed_reference: optional
+    third_party_settings: {  }
+  field_article_compact_title:
+    type: options_buttons
+    weight: 21
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_article_display_options:
     type: options_buttons
@@ -186,6 +199,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_article_horizontal_display:
+    type: options_buttons
+    weight: 20
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_article_lead_image:
     type: inline_entity_form_complex
     weight: 4
@@ -202,6 +221,7 @@ content:
       collapsible: false
       collapsed: false
       revision: false
+      removed_reference: optional
     third_party_settings: {  }
   field_article_priority:
     type: options_buttons
@@ -233,6 +253,12 @@ content:
       not_found_message: "The term '@term' will be added"
       new_terms: false
       no_empty_message: 'No terms could be found. Please type in order to add a new term.'
+    third_party_settings: {  }
+  field_article_vertical_display:
+    type: options_buttons
+    weight: 19
+    region: content
+    settings: {  }
     third_party_settings: {  }
   field_high_resolution_photo:
     type: media_library_widget

@@ -1,0 +1,30 @@
+uuid: f595d1c5-2ee8-459f-8044-0f689ae07ab8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_article_vertical_display
+field_name: field_article_vertical_display
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Display overlay top'
+      label: 'Display overlay top'
+    -
+      value: 'Display overlay center'
+      label: 'Display overlay center'
+    -
+      value: 'Display overlay bottom'
+      label: 'Display overlay bottom'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

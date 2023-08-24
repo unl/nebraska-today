@@ -303,3 +303,26 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  block_3:
+    id: block_3
+    display_title: 'Block 3 (Front page 50/50)'
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 4
+      defaults:
+        pager: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

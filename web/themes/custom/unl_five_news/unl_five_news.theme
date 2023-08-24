@@ -53,8 +53,11 @@ function unl_five_news_preprocess_block_content(&$variables) {
       $variables['credit'] = NULL;
     }
 
+    // Make some things from the Article available in block-content--parallax-image--full.html.twig.
     if ($node) {
+      $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
       $variables['field_subtitle'] = $node->get('field_subtitle')->view(['label'=>'hidden', 'type'=>'TextFieldItemList']);
+      $variables['field_written_by'] = $node->get('field_written_by')->view(['label'=>'hidden', 'type'=>'EntityReferenceFieldItemList']);
     }
   }
 }
