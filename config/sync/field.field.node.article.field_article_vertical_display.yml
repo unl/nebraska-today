@@ -11,11 +11,13 @@ id: node.article.field_article_vertical_display
 field_name: field_article_vertical_display
 entity_type: node
 bundle: article
-label: 'Display options for vertical lead title'
+label: 'Homepage display options for vertical lead title'
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 'Display overlay center'
 default_value_callback: ''
 settings: {  }
 field_type: list_string

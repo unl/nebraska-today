@@ -12,11 +12,14 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: 'Display overlay right'
-      label: 'Display overlay right'
-    -
       value: 'Display overlay left'
       label: 'Display overlay left'
+    -
+      value: 'Display overlay center'
+      label: 'Display overlay center'
+    -
+      value: 'Display overlay right'
+      label: 'Display overlay right'
   allowed_values_function: ''
 module: options
 locked: false

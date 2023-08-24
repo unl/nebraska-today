@@ -11,9 +11,9 @@ id: node.article.field_article_horizontal_display
 field_name: field_article_horizontal_display
 entity_type: node
 bundle: article
-label: 'Display options for horizontal lead title'
+label: 'Homepage display options for horizontal lead title'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
