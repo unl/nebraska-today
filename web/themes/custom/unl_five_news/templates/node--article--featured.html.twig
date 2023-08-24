@@ -1,12 +1,39 @@
-<div class="dcf-bleed custom-page custom-hide-title custom-d-flex">
-    <div class="custom-heading">
-        <h2>{{ label }}</h2>
-        <p> </p>
-        <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+{# Grid featured lead image and views#}
+<div style = "">
+    <div class="dcf-bleed custom-page custom-hide-title custom-d-flex" style="">
+        <div class="custom-heading">
+            <h2>{{ label }}</h2>
+            <p> </p>
+            <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+        </div>
+        <div class="custom-image">
+            {{ content.field_article_lead_image }}
+        </div>
     </div>
-    <div class="custom-image">
-        {{ content.field_article_lead_image }}
+
+    {# Recent News #}
+    <div class="dcf-pt-8" style="">
+        {{ drupal_view('recent', 'block_2') }}
     </div>
+
+    {{ dd(content.field_article_display_options) }}
+
 </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+{# 
+<div class="dcf-pt-8" style="width: 50%">
+        {{ drupal_view('recent', 'block_3') }}
+    </div> #}
