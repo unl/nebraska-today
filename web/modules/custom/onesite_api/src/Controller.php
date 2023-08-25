@@ -1,11 +1,23 @@
 <?php
 
-use Spatie\ArrayToXml\ArrayToXml;
+namespace Drupal\onesite_api;
 
-/**
- * Defines an API controller.
- */
-class OnesiteApiController {
+use Drupal\Core\Controller\ControllerBase;
+use Spatie\ArrayToXml\ArrayToXml;
+use Symfony\Component\HttpFoundation\Response;
+
+class Controller extends ControllerBase {
+
+  /**
+   * The response to be enforced.
+   *
+   * @var \Symfony\Component\HttpFoundation\Response
+   */
+  protected $response;
+
+  public function __construct() {
+    $this->response = new Response();
+  }
 
   /**
    * Returns API results to a client for articles.
@@ -13,9 +25,9 @@ class OnesiteApiController {
    * @param string $api_version
    *   The version of the API being called.
    */
-  public static function apiResponseArticles($api_version) {
+  public function apiResponseArticles($api_version = 'v1') {
     if ($api_version == 'v1') {
-      drupal_page_is_cacheable(FALSE);
+      \Drupal::service('page_cache_kill_switch')->trigger();
 
       $response = new OnesiteApiReponse();
 
@@ -29,7 +41,7 @@ class OnesiteApiController {
 
         $response->setContentType($prepared_response['http_content_type']);
         $response->setBody($prepared_response['body']);
-        $response->send();
+        $response->send($this->response);
       }
       else {
         $results = $endpoint->performQuery();
@@ -37,11 +49,11 @@ class OnesiteApiController {
 
         $response->setContentType($prepared_response['http_content_type']);
         $response->setBody($prepared_response['body']);
-        $response->send();
+        $response->send($this->response);
       }
     }
     else {
-      throw new Exception('Invalid API version');
+      throw new \Exception('Invalid API version');
     }
   }
 
@@ -51,9 +63,9 @@ class OnesiteApiController {
    * @param string $api_version
    *   The version of the API being called.
    */
-  public static function apiResponseTags($api_version) {
+  public function apiResponseTags($api_version = 'v1') {
     if ($api_version == 'v1') {
-      drupal_page_is_cacheable(FALSE);
+      \Drupal::service('page_cache_kill_switch')->trigger();
 
       $response = new OnesiteApiReponse();
 
@@ -67,7 +79,7 @@ class OnesiteApiController {
 
         $response->setContentType($prepared_response['http_content_type']);
         $response->setBody($prepared_response['body']);
-        $response->send();
+        $response->send($this->response);
       }
       else {
         $results = $endpoint->performQuery();
@@ -75,11 +87,11 @@ class OnesiteApiController {
 
         $response->setContentType($prepared_response['http_content_type']);
         $response->setBody($prepared_response['body']);
-        $response->send();
+        $response->send($this->response);
       }
     }
     else {
-      throw new Exception('Invalid API version');
+      throw new \Exception('Invalid API version');
     }
   }
 

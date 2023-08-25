@@ -1,5 +1,9 @@
 <?php
 
+namespace Drupal\onesite_api;
+
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Defines a response object.
  */
@@ -80,9 +84,10 @@ class OnesiteApiReponse {
   /**
    * Sends the HTTP response.
    */
-  public function send() {
-    drupal_add_http_header('status', $this->code);
-    drupal_add_http_header('Content-Type', $this->contentType);
+  public function send(Response $response) {
+    $response = new Response();
+    $response->headers->set('status', $this->code);
+    $response->headers->set('Content-Type', $this->contentType);
     print $this->body;
   }
 

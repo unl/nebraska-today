@@ -1,5 +1,7 @@
 <?php
 
+namespace Drupal\onesite_api;
+
 /**
  * Defines the Tags endpoint class.
  *

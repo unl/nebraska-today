@@ -1,5 +1,9 @@
 <?php
 
+namespace Drupal\onesite_api;
+
+use Drupal\node\NodeInterface;
+
 /**
  * Defines the Articles endpoint class.
  */
@@ -105,29 +109,28 @@ class OnesiteApiArticles extends OnesiteApiBase {
    * {@inheritdoc}
    */
   public function performQuery() {
-    // Build EFQ query.
-    $query = new EntityFieldQuery();
+    $query = \Drupal::entityQuery('node')
+      ->condition('type', 'article')
+      ->condition('status', NodeInterface::PUBLISHED)
+      ->sort('created', 'DESC')
+      ->accessCheck(FALSE);
 
-    $query->propertyCondition('status', NODE_PUBLISHED);
-    $query->entityCondition('entity_type', 'node');
-    $query->entityCondition('bundle', 'article');
-    $query->propertyOrderBy('created' , 'DESC');
     if ($this->tagIds) {
-      $query->fieldCondition('field_tags', 'tid', $this->tagIds, 'IN');
+      $query->condition('field_tags', $this->tagIds, 'IN');
     }
-    if ($this->sectionIds) {
-      $query->fieldCondition('field_news_section', 'tid', $this->sectionIds, 'IN');
-    }
-    if ($this->authorIds) {
-      $query->fieldCondition('field_written_by', 'tid', $this->authorIds, 'IN');
-    }
-    if ($this->newsRelease == 1) {
-      $query->fieldCondition('field_news_release_contacts', 'target_id', NULL, 'IS NOT NULL');
-    }
-    elseif ($this->newsRelease !== null) {
-      // In D8, the database API has an exists() method.
-      $query->addTag('onesite_api_articles_news_release');
-    }
+//    if ($this->sectionIds) {
+//      $query->condition('field_news_section', 'tid', $this->sectionIds, 'IN');
+//    }
+//    if ($this->authorIds) {
+//      $query->condition('field_written_by', 'tid', $this->authorIds, 'IN');
+//    }
+//    if ($this->newsRelease == 1) {
+//      $query->condition('field_news_release_contacts', 'target_id', NULL, 'IS NOT NULL');
+//    }
+//    elseif ($this->newsRelease !== null) {
+//      // In D8, the database API has an exists() method.
+//      $query->addTag('onesite_api_articles_news_release');
+//    }
 
     // Determine the total number of records.
     $count_query = clone($query);

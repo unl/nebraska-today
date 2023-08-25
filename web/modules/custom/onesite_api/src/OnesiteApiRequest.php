@@ -1,5 +1,8 @@
 <?php
 
+namespace Drupal\onesite_api;
+
+
 /**
  * Defines an API request.
  */
@@ -16,7 +19,8 @@ class OnesiteApiRequest {
    * Creates a new OnesiteApiRequest object.
    */
   public function __construct() {
-    foreach (drupal_get_query_parameters() as $key => $value) {
+    $params = \Drupal::request()->query->all();
+    foreach ($params as $key => $value) {
       $value = trim($value);
       $this->queryParameters[$key] = filter_var($value, FILTER_SANITIZE_STRING);
     }

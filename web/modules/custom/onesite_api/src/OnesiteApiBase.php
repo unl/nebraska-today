@@ -1,5 +1,7 @@
 <?php
 
+namespace Drupal\onesite_api;
+
 /**
  * Defines a base class for API endpoints.
  *
