@@ -60,6 +60,10 @@
     </div>
     
     <div class="outer-content-item2  dcf-pt-7">
+        {% if node.field_article_release_contacts.value is not empty %}
+          <hr class="custom-l-line dcf-mt-0">
+          <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style=" color : var(--heading); ">News Release Contact(s)</h2>
+        {% endif %}
         {{ content.field_article_release_contacts }}
         {{ content.field_article_related_links }}
         {{ content.field_tags }}
