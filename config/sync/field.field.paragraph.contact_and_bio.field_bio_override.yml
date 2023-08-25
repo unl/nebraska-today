@@ -1,0 +1,29 @@
+uuid: a39e418a-715e-4fac-889c-d2f8b503d3a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_bio_override
+    - filter.format.simple_html
+    - paragraphs.paragraphs_type.contact_and_bio
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_html
+id: paragraph.contact_and_bio.field_bio_override
+field_name: field_bio_override
+entity_type: paragraph
+bundle: contact_and_bio
+label: '(Optoinal) Bio override'
+description: "Will override the person's default bio if you want to provide something more specific for a certain topic."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple_html
+field_type: text_long

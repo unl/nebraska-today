@@ -1,5 +1,7 @@
-<div{{ attributes }}>
-  <div{{ content_attributes }}>
+<div{{ attributes.addClass("dcf-pb-4") }}>
+  <hr class="custom-l-line dcf-mt-0">
+  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style=" color : var(--heading); ">News Release Contact(s)</h2>
+  <div{{ content_attributes.addClass("dcf-txt-xs") }}>
 
     {{ title_prefix }}
     <div class="dcf-d-flex dcf-mb-1">
@@ -24,11 +26,11 @@
     {% if node.field_contact_position.value or node.field_unldirectoryreference.entity.field_title.value %}
       <div class="dcf-d-flex dcf-mb-1">
         <svg class="dcf-flex-shrink-0 dcf-mr-1 dcf-fill-current" aria-hidden="true" focusable="false" height="19" width="19" viewBox="0 0 24 24"><path d="M23.501,16.001c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5H18v-1c0-1.103-0.897-2-2-2H9 c-0.552,0-1-0.448-1-1v-4h5.5c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5h-13c-0.276,0-0.5,0.224-0.5,0.5v3 c0,0.276,0.224,0.5,0.5,0.5H7v4c0,1.103,0.897,2,2,2h7c0.552,0,1,0.448,1,1v1h-6.5c-0.276,0-0.5,0.224-0.5,0.5v3 c0,0.276,0.224,0.5,0.5,0.5H17v4h-6.5c-0.276,0-0.5,0.224-0.5,0.5v3c0,0.276,0.224,0.5,0.5,0.5h13.001c0.276,0,0.5-0.224,0.5-0.5 v-3c0-0.276-0.224-0.5-0.5-0.5H18v-4H23.501z M1,1.001h12v2H1V1.001z M23.001,23.001H11v-2h12.001V23.001z M11,13.001h12.001v2H11 V13.001z"></path><g><path fill="none" d="M0 0H24V24H0z"></path></g></svg>
-          {% if node.field_contact_position.value %}
-            <span class="dcf-d-inline-block custom-title-after-comma">{{ content.field_contact_position }}</span>
-          {% else %}
-            <span class="dcf-d-inline-block custom-title-after-comma">{{ node.field_unldirectoryreference.entity.field_title.value }}</span>
-          {%  endif %}
+        {% if node.field_contact_position.value %}
+          <span class="dcf-d-inline-block custom-title-after-comma">{{ content.field_contact_position }}</span>
+        {% else %}
+          <span class="dcf-d-inline-block custom-title-after-comma">{{ node.field_unldirectoryreference.entity.field_title.value }}</span>
+        {%  endif %}
       </div>
     {%  endif %}
 

@@ -5,6 +5,7 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
+    - external_entities
     - filter
     - media
     - search
@@ -20,3 +21,4 @@ permissions:
   - 'search content'
   - 'use text format restricted_html'
   - 'view media'
+  - 'view unl_directory_entry external entity'

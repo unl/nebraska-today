@@ -1,0 +1,10 @@
+uuid: f46542d1-4c6c-43e9-9752-fcb75738cdf9
+langcode: en
+status: true
+dependencies: {  }
+id: contact_and_bio
+label: 'Expert and bio'
+icon_uuid: null
+icon_default: null
+description: 'A Contact node and an optional bio override for use in Field of Expertise.'
+behavior_plugins: {  }

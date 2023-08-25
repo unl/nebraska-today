@@ -7,6 +7,7 @@ dependencies:
     - filter.format.email_html
     - filter.format.simple_html
   module:
+    - external_entities
     - file
     - filter
     - simplenews
@@ -18,8 +19,12 @@ weight: 3
 is_admin: false
 permissions:
   - 'administer newsletters'
+  - 'create unl_directory_entry external entity'
   - 'delete own files'
+  - 'delete unl_directory_entry external entity'
   - 'send newsletter'
+  - 'update unl_directory_entry external entity'
   - 'use text format basic_html'
   - 'use text format email_html'
   - 'use text format simple_html'
+  - 'view unl_directory_entry external entity collection'

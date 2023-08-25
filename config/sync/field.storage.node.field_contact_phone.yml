@@ -1,18 +1,18 @@
-uuid: 7dbb3cce-3bae-4354-b9e4-46049663b95d
+uuid: 42734f97-64b4-4c54-b0a5-1caebb1991d2
 langcode: en
 status: true
 dependencies:
   module:
-    - link
     - node
-id: node.field_contact_website
-field_name: field_contact_website
+    - telephone
+id: node.field_contact_phone
+field_name: field_contact_phone
 entity_type: node
-type: link
+type: telephone
 settings: {  }
-module: link
+module: telephone
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

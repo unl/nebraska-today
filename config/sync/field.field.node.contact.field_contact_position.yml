@@ -1,26 +1,19 @@
-uuid: bb846e2b-0859-4d3d-946d-5c4d6c25ccb7
+uuid: 5aff2bd3-06da-43fc-8cce-ad99ae44eda7
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_contact_position
     - node.type.contact
-  module:
-    - allowed_formats
-    - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - plain_text
 id: node.contact.field_contact_position
 field_name: field_contact_position
 entity_type: node
 bundle: contact
-label: 'Contact Position'
+label: Position
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: text
+field_type: string

@@ -1,0 +1,18 @@
+uuid: 45b2f450-1e14-47ec-8336-d5cc86264180
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.field_of_expertise
+id: node.field_of_expertise.title
+field_name: title
+entity_type: node
+bundle: field_of_expertise
+label: Topic
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -128,6 +128,7 @@ function unl_five_news_preprocess_region(&$variables) {
  */
 function unl_five_news_preprocess_views_view_unformatted(&$vars) {
   $view = $vars['view'];
+
   if ($view->id() == 'main_page_featured') {
     $feed = _unl_five_news_get_rss('https://newsroom.unl.edu/inthenews/rss.php', 60 * 2);
     $url = 'https://newsroom.unl.edu/inthenews/recent_quote.php';
@@ -144,6 +145,11 @@ function unl_five_news_preprocess_views_view_unformatted(&$vars) {
                                  </li>';
     }
     $vars['quote'] = $data;
+  }
+
+  // Break the Experts view up into four chunks for use in columns.
+  if ($view->id() == 'experts') {
+    $vars['row_chunks'] = array_chunk($vars['rows'], ceil(count($vars['rows']) / 4), true);
   }
 }
 

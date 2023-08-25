@@ -1,0 +1,22 @@
+uuid: 702b9880-a15b-4f79-be0d-3598c5994c64
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node_field_of_expertise
+label: 'Node: Field of expertise'
+type: 'canonical_entities:node'
+pattern: '/experts/[node:title]'
+selection_criteria:
+  f8405ac6-f453-48ff-af5d-6e6cceb8f16a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: f8405ac6-f453-48ff-af5d-6e6cceb8f16a
+    context_mapping:
+      node: node
+    bundles:
+      field_of_expertise: field_of_expertise
+selection_logic: and
+weight: -5
+relationships: {  }

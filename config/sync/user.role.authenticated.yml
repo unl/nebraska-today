@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - external_entities
     - file
     - media
     - search
@@ -20,3 +21,4 @@ permissions:
   - 'delete own files'
   - 'search content'
   - 'view media'
+  - 'view unl_directory_entry external entity'

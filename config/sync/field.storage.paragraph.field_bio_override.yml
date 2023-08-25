@@ -1,16 +1,15 @@
-uuid: eb945e8a-e69d-4d5a-8691-90149e005396
+uuid: d7e037fa-54bd-415b-861a-1446f074aa5e
 langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - text
-id: node.field_contact_number
-field_name: field_contact_number
-entity_type: node
-type: text
-settings:
-  max_length: 255
+id: paragraph.field_bio_override
+field_name: field_bio_override
+entity_type: paragraph
+type: text_long
+settings: {  }
 module: text
 locked: false
 cardinality: 1

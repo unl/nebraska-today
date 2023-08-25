@@ -1,4 +1,4 @@
-uuid: 35a84261-c9dd-4303-95f7-a9bdf535da29
+uuid: 0c2d701b-7b67-4a70-99f2-ce32f4a1bd27
 langcode: en
 status: true
 dependencies:
@@ -22,9 +22,9 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Person
-type: contact
-description: 'A person that can be referenced as a <i>Contact</i> in an Article or an <i>Expert</i> in a Field of Expertise topic.'
+name: 'Field of expertise'
+type: field_of_expertise
+description: 'A topic that includes people on campus who are a relevant expert.'
 help: ''
 new_revision: true
 preview_mode: 1

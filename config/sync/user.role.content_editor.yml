@@ -11,6 +11,7 @@ dependencies:
     - taxonomy.vocabulary.tags
   module:
     - contextual
+    - external_entities
     - file
     - filter
     - node
@@ -38,20 +39,24 @@ permissions:
   - 'create article content'
   - 'create page content'
   - 'create terms in tags'
+  - 'create unl_directory_entry external entity'
   - 'create url aliases'
   - 'delete article revisions'
   - 'delete own article content'
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'delete unl_directory_entry external entity'
   - 'edit own article content'
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'send newsletter'
+  - 'update unl_directory_entry external entity'
   - 'use text format basic_html'
   - 'use text format email_html'
   - 'use text format simple_html'
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
+  - 'view unl_directory_entry external entity collection'

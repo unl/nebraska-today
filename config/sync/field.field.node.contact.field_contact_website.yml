@@ -11,7 +11,7 @@ id: node.contact.field_contact_website
 field_name: field_contact_website
 entity_type: node
 bundle: contact
-label: 'Contact Website'
+label: 'Personal website(s)'
 description: ''
 required: false
 translatable: false

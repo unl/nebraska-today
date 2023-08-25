@@ -1,0 +1,39 @@
+uuid: 6f5b7def-c0fc-441e-a9e7-17f7c7b25452
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.field_of_expertise.body
+    - field.field.node.field_of_expertise.field_experts
+    - node.type.field_of_expertise
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.field_of_expertise.default
+targetEntityType: node
+bundle: field_of_expertise
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_experts:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

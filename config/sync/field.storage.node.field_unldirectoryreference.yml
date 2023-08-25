@@ -1,17 +1,16 @@
-uuid: 3e617d11-a6ce-4da3-94d6-2f8ef45b91d7
+uuid: 454b0326-2536-43fe-a8e1-28de0d7906b4
 langcode: en
 status: true
 dependencies:
   module:
+    - external_entities
     - node
-id: node.field_contact_position
-field_name: field_contact_position
+id: node.field_unldirectoryreference
+field_name: field_unldirectoryreference
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: unl_directory_entry
 module: core
 locked: false
 cardinality: 1
