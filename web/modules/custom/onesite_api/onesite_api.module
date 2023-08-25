@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Onesite API module file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function onesite_api_menu() {
+  $items['api/v1/articles'] = array(
+    'title' => 'API Articles',
+    'page callback' => 'onesite_api_init_articles_v1',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+  );
+  $items['api/v1/tags'] = array(
+    'title' => 'API Tags',
+    'page callback' => 'onesite_api_init_tags_v1',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+/**
+ * Callback function for 'api/v1/articles' route.
+ */
+function onesite_api_init_articles_v1() {
+  module_load_include('inc', 'onesite_api', 'includes/api_request');
+  module_load_include('inc', 'onesite_api', 'includes/api_response');
+  module_load_include('inc', 'onesite_api', 'includes/api_results');
+  module_load_include('inc', 'onesite_api', 'includes/api_controller');
+  module_load_include('inc', 'onesite_api', 'includes/api_endpoint_interface');
+  module_load_include('inc', 'onesite_api', 'includes/api_base_endpoint');
+  module_load_include('inc', 'onesite_api', 'includes/api_articles_endpoint');
+
+  OnesiteApiController::apiResponseArticles('v1');
+}
+
+/**
+ * Callback function for 'api/v1/tags' route.
+ */
+function onesite_api_init_tags_v1() {
+  module_load_include('inc', 'onesite_api', 'includes/api_request');
+  module_load_include('inc', 'onesite_api', 'includes/api_response');
+  module_load_include('inc', 'onesite_api', 'includes/api_results');
+  module_load_include('inc', 'onesite_api', 'includes/api_controller');
+  module_load_include('inc', 'onesite_api', 'includes/api_endpoint_interface');
+  module_load_include('inc', 'onesite_api', 'includes/api_base_endpoint');
+  module_load_include('inc', 'onesite_api', 'includes/api_tags_endpoint');
+
+  OnesiteApiController::apiResponseTags('v1');
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Alters queries tagged with 'onesite_api_articles_news_release'.
+ */
+function onesite_api_query_onesite_api_articles_news_release_alter(QueryAlterableInterface $query) {
+  OnesiteApiArticles::queryAlterNewsRelease($query);
+}

@@ -1,0 +1,5 @@
+name = OneSite API
+description = Provides API provider functionality
+core = 7.x
+package = UNL
+version = 7.x-1.0
