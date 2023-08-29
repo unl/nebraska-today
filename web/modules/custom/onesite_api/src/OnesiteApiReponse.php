@@ -82,13 +82,14 @@ class OnesiteApiReponse {
   }
 
   /**
-   * Sends the HTTP response.
+   * Prepares the HTTP response.
    */
-  public function send(Response $response) {
-    $response = new Response();
+  public function prepareResponse(Response $response) {
     $response->headers->set('status', $this->code);
     $response->headers->set('Content-Type', $this->contentType);
-    print $this->body;
+    $response->setContent($this->body);
+
+    return $response;
   }
 
 }

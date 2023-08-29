@@ -56,7 +56,7 @@ class OnesiteApiTags extends OnesiteApiBase {
 
     if (!is_null($results)) {
       // Load entities.
-      $entities = entity_load('taxonomy_term', array_keys($results));
+      $entities = \Drupal::entityManager()->getStorage('taxonomy_term')->loadMultiple(array_keys($results));
     }
     else {
       $entities = [];

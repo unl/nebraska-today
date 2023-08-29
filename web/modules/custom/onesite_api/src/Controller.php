@@ -29,7 +29,7 @@ class Controller extends ControllerBase {
     if ($api_version == 'v1') {
       \Drupal::service('page_cache_kill_switch')->trigger();
 
-      $response = new OnesiteApiReponse();
+      $apiresponse = new OnesiteApiReponse();
 
       $endpoint = new OnesiteApiArticles();
       $endpoint->validateParameters();
@@ -39,22 +39,24 @@ class Controller extends ControllerBase {
         $error = array_values($errors)[0];
         $prepared_response = self::prepareReturn($error['code'], $error['message'], $endpoint);
 
-        $response->setContentType($prepared_response['http_content_type']);
-        $response->setBody($prepared_response['body']);
-        $response->send($this->response);
+        $apiresponse->setContentType($prepared_response['http_content_type']);
+        $apiresponse->setBody($prepared_response['body']);
+        $response = $apiresponse->prepareResponse($this->response);
       }
       else {
         $results = $endpoint->performQuery();
         $prepared_response = self::prepareReturn('200', 'Success', $endpoint, $results);
 
-        $response->setContentType($prepared_response['http_content_type']);
-        $response->setBody($prepared_response['body']);
-        $response->send($this->response);
+        $apiresponse->setContentType($prepared_response['http_content_type']);
+        $apiresponse->setBody($prepared_response['body']);
+        $response = $apiresponse->prepareResponse($this->response);
       }
     }
     else {
       throw new \Exception('Invalid API version');
     }
+
+    return $response;
   }
 
   /**
@@ -67,7 +69,7 @@ class Controller extends ControllerBase {
     if ($api_version == 'v1') {
       \Drupal::service('page_cache_kill_switch')->trigger();
 
-      $response = new OnesiteApiReponse();
+      $apiresponse = new OnesiteApiReponse();
 
       $endpoint = new OnesiteApiTags();
       $endpoint->validateParameters();
@@ -77,22 +79,24 @@ class Controller extends ControllerBase {
         $error = array_values($errors)[0];
         $prepared_response = self::prepareReturn($error['code'], $error['message'], $endpoint);
 
-        $response->setContentType($prepared_response['http_content_type']);
-        $response->setBody($prepared_response['body']);
-        $response->send($this->response);
+        $apiresponse->setContentType($prepared_response['http_content_type']);
+        $apiresponse->setBody($prepared_response['body']);
+        $response = $apiresponse->prepareResponse($this->response);
       }
       else {
         $results = $endpoint->performQuery();
         $prepared_response = self::prepareReturn('200', 'Success', $endpoint, $results);
 
-        $response->setContentType($prepared_response['http_content_type']);
-        $response->setBody($prepared_response['body']);
-        $response->send($this->response);
+        $apiresponse->setContentType($prepared_response['http_content_type']);
+        $apiresponse->setBody($prepared_response['body']);
+        $response = $apiresponse->prepareResponse($this->response);
       }
     }
     else {
       throw new \Exception('Invalid API version');
     }
+
+    return $response;
   }
 
   /**

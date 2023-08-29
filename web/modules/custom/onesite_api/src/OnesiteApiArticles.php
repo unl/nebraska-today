@@ -2,6 +2,8 @@
 
 namespace Drupal\onesite_api;
 
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
 use Drupal\node\NodeInterface;
 
 /**
@@ -144,11 +146,11 @@ class OnesiteApiArticles extends OnesiteApiBase {
     $results = $query->execute();
 
     // Keep just the entity ids.
-    $results = array_shift($results);
+    $results = array_values($results);
 
     if (!is_null($results)) {
       // Load entities.
-      $entities = entity_load('node', array_keys($results));
+      $entities = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple($results);
     }
     else {
       $entities = [];
@@ -158,167 +160,158 @@ class OnesiteApiArticles extends OnesiteApiBase {
     foreach ($entities as $entity) {
       $processed_entity = [];
       // Node ID is used as unique identifier.
-      $processed_entity['id'] = $entity->nid;
+      $processed_entity['id'] = $entity->nid->value;
 
       // Date is provided in ISO 8601 format.
-      $processed_entity['pubDate'] = date("c", $entity->created);
+      $processed_entity['pubDate'] = date("c", $entity->created->value);
 
       // Canonical URL is provided as an absolute URL.
-      $processed_entity['canonicalUrl'] = url('node/' . $entity->nid, ['absolute' => TRUE, 'https' => TRUE]);
+      $processed_entity['canonicalUrl'] = Url::fromUserInput('/node/' . $entity->nid->value, ['absolute' => TRUE, 'https' => TRUE]);
 
       // Title is required.
-      $processed_entity['title'] = strip_tags($entity->title);
+      $processed_entity['title'] = strip_tags($entity->title->value);
 
       // SubTitle is optional.
-      if (isset($entity->field_subtitle[LANGUAGE_NONE][0]['value'])) {
-        $processed_entity['subTitle'] = strip_tags($entity->field_subtitle[LANGUAGE_NONE][0]['value']);
+      if (isset($entity->field_subtitle->value)) {
+        $processed_entity['subTitle'] = strip_tags($entity->field_subtitle->value);
       }
 
       // Author is optional.
-      if (isset($entity->field_written_by[LANGUAGE_NONE][0]['tid'])) {
-        $author_id = $entity->field_written_by[LANGUAGE_NONE][0]['tid'];
+      if (isset($entity->field_written_by)) {
+        $author_id = $entity->field_written_by->first()->target_id;
         $processed_entity['authorId'] = $author_id;
 
-        $author_entity = entity_load('taxonomy_term', [$author_id]);
+        $author_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple([$author_id]);
         $author_name = array_shift($author_entity)->name;
-        $processed_entity['authorName'] = strip_tags($author_name);
+        $processed_entity['authorName'] = $author_name->value;
       }
 
       // Sections are optional.
-      if (isset($entity->field_news_section[LANGUAGE_NONE])) {
-        foreach ($entity->field_news_section[LANGUAGE_NONE] as $section) {
-          $section_entity = entity_load('taxonomy_term', [$section['tid']]);
-          $section_name = array_shift($section_entity)->name;
-          $processed_entity['sections'][] = [
-            'id' => $section['tid'],
-            'label' => strip_tags($section_name),
-          ];
-        }
+      foreach ($entity->field_section->referencedEntities() as $section) {
+        $tid = $section->tid->value;
+        $section_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple([$tid]);
+        $section_name = array_shift($section_entity)->name;
+        $processed_entity['sections'][] = [
+          'id' => $tid,
+          'label' => $section_name->value,
+        ];
       }
 
       // Tags are optional.
-      if (isset($entity->field_tags[LANGUAGE_NONE])) {
-        foreach ($entity->field_tags[LANGUAGE_NONE] as $tag) {
-          $term_entity = entity_load('taxonomy_term', [$tag['tid']]);
-          $term_name = array_shift($term_entity)->name;
-          $processed_entity['tags'][] = [
-            'id' => $tag['tid'],
-            'label' => strip_tags($term_name),
-          ];
-        }
+      foreach ($entity->field_tags->referencedEntities() as $tag) {
+        $tid = $tag->tid->value;
+        $term_entity = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple([$tid]);
+        $term_name = array_shift($term_entity)->name;
+        $processed_entity['tags'][] = [
+          'id' => $tid,
+          'label' => $term_name->value,
+        ];
       }
 
       // News Release Contacts are optional.
       // 'newsRelease' is determined by whether or not there is at least one
       // News Release Contact.
-      if (isset($entity->field_news_release_contacts[LANGUAGE_NONE])) {
+      $processed_entity['newsRelease'] = 0;
+      foreach ($entity->field_article_release_contacts->referencedEntities() as $contact) {
         $processed_entity['newsRelease'] = 1;
-        foreach ($entity->field_news_release_contacts[LANGUAGE_NONE] as $contact) {
-          $contact_node = array_shift(entity_load('node', [$contact['target_id']]));
-          $processed_entity['newsReleaseContacts'][] = [
-            'name' => strip_tags($contact_node->title),
-            'jobTitle' => strip_tags($contact_node->field_job_title[LANGUAGE_NONE][0]['value']),
-            'phone' => strip_tags($contact_node->field_phone[LANGUAGE_NONE][0]['value']),
-            'email' => strip_tags($contact_node->field_email[LANGUAGE_NONE][0]['value']),
-            'websiteUrl' => strip_tags($contact_node->field_website[LANGUAGE_NONE][0]['url']),
-          ];
-        }
+        $target_id = $contact->target_id;
+        $contact_node = \Drupal::entityTypeManager()->getStorage('node')->loadMultiple([$target_id]);
+        $processed_entity['newsReleaseContacts'][] = [
+          'name' => strip_tags($contact_node->title->value),
+          'jobTitle' => strip_tags($contact_node->field_contact_position->value),
+          'phone' => strip_tags($contact_node->field_contact_phone->value),
+          'email' => strip_tags($contact_node->field_contact_email->value),
+          'websiteUrl' => strip_tags($contact_node->field_contact_website->value),
+        ];
       }
-      else {
-        $processed_entity['newsRelease'] = 0;
-      }
+
 
       // News Release Photos are optional.
-      if (isset($entity->field_high_resolution_photos[LANGUAGE_NONE])) {
-        foreach ($entity->field_high_resolution_photos[LANGUAGE_NONE] as $key => $photo) {
-          $processed_entity['newsReleasePhotos'][$key] = [
-            'url' => file_create_url($photo['uri']),
-            'width' => $photo['width'],
-            'height' => $photo['height'],
-            'mimeType' => $photo['filemime'],
-            'size' => $photo['filesize'],
-          ];
-        }
-
-        // Alt text is optional.
-        if (isset($photo['alt'])) {
-          $processed_entity['newsReleasePhotos'][$key]['alt'] = strip_tags($photo['alt']);
-        }
-
-        // Credit is optional.
-        if (isset($entity->field_high_resolution_photos[LANGUAGE_NONE][$key]['field_credit'][LANGUAGE_NONE])) {
-          $processed_entity['newsReleasePhotos'][$key]['credit'] = strip_tags($entity->field_high_resolution_photos[LANGUAGE_NONE][$key]['field_credit'][LANGUAGE_NONE][0]['value']);
-        }
-
-        // Caption is optional.
-        if (isset($entity->field_high_resolution_photos[LANGUAGE_NONE][$key]['field_caption'][LANGUAGE_NONE])) {
-          $processed_entity['newsReleasePhotos'][$key]['caption'] = strip_tags($entity->field_high_resolution_photos[LANGUAGE_NONE][$key]['field_caption'][LANGUAGE_NONE][0]['value']);
-        }
-      }
+//      if (isset($entity->field_high_resolution_photo)) {
+//        foreach ($entity->field_high_resolution_photo->referencedEntities() as $key => $photo) {
+//          $processed_entity['newsReleasePhotos'][$key] = [
+//            'url' => file_create_url($photo['uri']),
+//            'width' => $photo['width'],
+//            'height' => $photo['height'],
+//            'mimeType' => $photo['filemime'],
+//            'size' => $photo['filesize'],
+//          ];
+//        }
+//
+//        // Alt text is optional.
+//        if (isset($photo['alt'])) {
+//          $processed_entity['newsReleasePhotos'][$key]['alt'] = strip_tags($photo['alt']);
+//        }
+//
+//        // Credit is optional.
+//        if (isset($entity->field_high_resolution_photo[LANGUAGE_NONE][$key]['field_credit'][LANGUAGE_NONE])) {
+//          $processed_entity['newsReleasePhotos'][$key]['credit'] = strip_tags($entity->field_high_resolution_photo[LANGUAGE_NONE][$key]['field_credit'][LANGUAGE_NONE][0]['value']);
+//        }
+//
+//        // Caption is optional.
+//        if (isset($entity->field_high_resolution_photo[LANGUAGE_NONE][$key]['field_caption'][LANGUAGE_NONE])) {
+//          $processed_entity['newsReleasePhotos'][$key]['caption'] = strip_tags($entity->field_high_resolution_photo[LANGUAGE_NONE][$key]['field_caption'][LANGUAGE_NONE][0]['value']);
+//        }
+//      }
 
       // Related Links are optional.
-      if (isset($entity->field_related_links[LANGUAGE_NONE])) {
-        foreach ($entity->field_related_links[LANGUAGE_NONE] as $link) {
-          $processed_entity['relatedLinks'][] = [
-            'url' => $link['url'],
-            'title' => strip_tags($link['title']),
-          ];
-        }
-      }
+//      foreach ($entity->field_related_links[LANGUAGE_NONE] as $link) {
+//        $processed_entity['relatedLinks'][] = [
+//          'url' => $link['url'],
+//          'title' => strip_tags($link['title']),
+//        ];
+//      }
 
       // Article Image is optional.
       //
-      // The article hero image is the first field collection item in
-      // $entity->field_media_collection. All other items are media
-      // that are available for embedding.
-      if (isset($entity->field_media_collection[LANGUAGE_NONE][0])) {
-        $field_collection_item = entity_load('field_collection_item', [$entity->field_media_collection[LANGUAGE_NONE][0]['value']]);
-        $field_collection_item = array_shift($field_collection_item);
+      // The article hero image is a media item within a custom block reference.
+      if (isset($entity->field_article_lead_image)) {
+        $block_content = \Drupal::entityTypeManager()->getStorage('block_content')->load($entity->field_article_lead_image->target_id);
+        // https://drupal.stackexchange.com/a/186317
+        $media = $block_content->field_image->first()->get('entity')->getTarget()->getValue();
+        $fid  = $media->field_media_image->target_id;
+        $file = File::load($fid);
 
         $processed_entity['articleImage'] = [
-          'url' => file_create_url($field_collection_item->field_media[LANGUAGE_NONE][0]['uri']),
-          'mimeType' => $field_collection_item->field_media[LANGUAGE_NONE][0]['filemime'],
-          'size' => $field_collection_item->field_media[LANGUAGE_NONE][0]['filesize'],
+          'url' => $file->createFileUrl(FALSE),
+          'mimeType' => $file->get('filemime')->value,
+          'size' => $file->get('filesize')->value,
         ];
 
-        // Width is optional.
-        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['width'])) {
-          $processed_entity['articleImage']['width'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['width'];
-        }
-
-        // Height is optional.
-        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['height'])) {
-          $processed_entity['articleImage']['height'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['height'];
-        }
+//        // Width is optional.
+//        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['width'])) {
+//          $processed_entity['articleImage']['width'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['width'];
+//        }
+//
+//        // Height is optional.
+//        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['height'])) {
+//          $processed_entity['articleImage']['height'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['height'];
+//        }
 
         // Alt text is optional.
-        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['field_caption'][LANGUAGE_NONE][0]['value'])) {
-          $processed_entity['articleImage']['alt'] = strip_tags($field_collection_item->field_media[LANGUAGE_NONE][0]['field_caption'][LANGUAGE_NONE][0]['value']);
+        if (isset($media->field_media_image->alt)) {
+          $processed_entity['articleImage']['alt'] = trim($media->field_media_image->alt);
         }
 
         // Credit is optional.
-        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['field_credit'][LANGUAGE_NONE])) {
-          $processed_entity['articleImage']['credit'] = strip_tags($field_collection_item->field_media[LANGUAGE_NONE][0]['field_credit'][LANGUAGE_NONE][0]['value']);
+        if (isset($media->field_media_image_credit)) {
+          $processed_entity['articleImage']['credit'] = trim($media->field_media_image_credit->value);
         }
 
-        // Caption is optional.
-        if (isset($field_collection_item->field_cutline[LANGUAGE_NONE])) {
-          $processed_entity['articleImage']['caption'] = strip_tags($field_collection_item->field_cutline[LANGUAGE_NONE][0]['value']);
+        // Cutline is optional.
+        if (isset($block_content->field_cutline)) {
+          $processed_entity['articleImage']['caption'] = trim($block_content->field_cutline->value);
         }
       }
 
       // Body is optional.
-      if (isset($entity->body[LANGUAGE_NONE][0]['value'])
-        && !empty(isset($entity->body[LANGUAGE_NONE][0]['value']))
-      ) {
-        $processed_entity['content'] = check_markup($entity->body[LANGUAGE_NONE][0]['value'], $entity->body[LANGUAGE_NONE][0]['format']);
+      if (isset($entity->body->value)) {
+        $processed_entity['content'] = $entity->body->processed;
       }
 
       // Teaser is optional.
-      if (isset($entity->body[LANGUAGE_NONE][0]['safe_summary'])
-        && !empty($entity->body[LANGUAGE_NONE][0]['safe_summary'])
-      ) {
-        $processed_entity['teaser'] = $entity->body[LANGUAGE_NONE][0]['safe_summary'];
+      if (isset($entity->body->summary)) {
+        $processed_entity['teaser'] = $entity->body->summary;
       }
 
       $return_entities[] = $processed_entity;
