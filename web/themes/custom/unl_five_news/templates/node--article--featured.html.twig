@@ -1,39 +1,50 @@
 {# Grid featured lead image and views#}
-<div style = "">
-    <div class="dcf-bleed custom-page custom-hide-title custom-d-flex" style="">
-        <div class="custom-heading">
-            <h2>{{ label }}</h2>
-            <p> </p>
-            <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+
+{% if content.field_article_display_options.0['#markup'] == 'Full Width Lead & View'  %}
+    <div>
+        <div class="dcf-bleed custom-page custom-hide-title custom-d-flex">
+            <div class="custom-heading">
+                <h2>{{ label }}</h2>
+                <p> </p>
+                <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+            </div>
+            <div class="custom-image">
+                {{ content.field_article_lead_image }}
+            </div>
         </div>
-        <div class="custom-image">
-            {{ content.field_article_lead_image }}
+
+        {# Recent News #}
+        <div class="dcf-pt-8">
+            {{ drupal_view('recent', 'block_2') }}
         </div>
     </div>
 
-    {# Recent News #}
-    <div class="dcf-pt-8" style="">
-        {{ drupal_view('recent', 'block_2') }}
+{% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
+    <div class="custom-d-half-grid dcf-bleed">
+        {# <div class="dcf-bleed custom-page custom-hide-title ">
+            <div class="custom-heading">
+                <h2>{{ label }}</h2>
+                <p> </p>
+                <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+            </div>
+            <div class="custom-image">
+                {{ content.field_article_lead_image }}
+            </div>
+        </div> #}
+        <div>
+            {# {{ label }}
+            {{ content.field_article_lead_image }} #}
+        </div>
+
+        {# Recent News #}
+        <div class="dcf-pt-8">
+            {{ drupal_view('recent', 'block_3') }}
+        </div>
     </div>
 
-    {{ dd(content.field_article_display_options) }}
-
-</div>
+{% endif %}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-{# 
-<div class="dcf-pt-8" style="width: 50%">
-        {{ drupal_view('recent', 'block_3') }}
-    </div> #}

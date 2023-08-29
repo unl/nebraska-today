@@ -453,6 +453,38 @@ blockquote p:nth-of-type(3)::after {
   content: " ";
 }
 
+.custom-d-half-grid {
+  display: grid;
+  grid-template-areas: "featureImage recentNews";
+}
+
+.custom-d-half-grid div:nth-child(1) {
+  grid-area: featureImage;
+}
+
+.custom-d-half-grid div:nth-child(2) {
+  grid-area: recentNews;
+}
+
+.recent-block3-grid {
+  display: grid;
+  grid-template-areas: "image titleSection";
+  align-items: center;
+  column-gap: 30px;
+  justify-content: center;
+}
+
+.recent-block3-grid > div:nth-child(1) {
+  grid-area: image;
+  width: 416px;
+  height: 234px;
+}
+
+.recent-block3-grid > div:nth-child(2) {
+  grid-area: titleSection;
+  width: 340px;
+}
+
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
   .custom-athletic-half {
