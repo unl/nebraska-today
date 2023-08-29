@@ -11,11 +11,13 @@ id: node.article.field_article_display_options
 field_name: field_article_display_options
 entity_type: node
 bundle: article
-label: 'Display options for lead story'
+label: 'Homepage display options for lead story'
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: 'Full Width Lead & View'
 default_value_callback: ''
 settings: {  }
 field_type: list_string

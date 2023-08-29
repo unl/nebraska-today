@@ -11,11 +11,13 @@ id: node.article.field_article_compact_title
 field_name: field_article_compact_title
 entity_type: node
 bundle: article
-label: 'Display options for compact lead title'
+label: 'Home Page display options for compact lead title'
 description: ''
-required: false
+required: true
 translatable: false
-default_value: {  }
+default_value:
+  -
+    value: Non-Compact
 default_value_callback: ''
 settings: {  }
 field_type: list_string
