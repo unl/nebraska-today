@@ -1,0 +1,389 @@
+openapi: 3.0.0
+info:
+  title: Nebraska Today API
+  description: An application programming interface for Nebraska Today.
+  version: 1.1.0
+servers:
+  - url: https://news.unl.edu/api/v1
+    description: Production server
+paths:
+  /articles:
+    get:
+      summary: Get articles.
+      description: Returns articles from Nebraska Today
+      parameters:
+        - in: query
+          name: format
+          schema:
+            type: string
+            default: 'json'
+            enum:
+              - json
+              - xml
+          description: The requested return format.
+        - in: query
+          name: pageCount
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 50
+          description: The number of results to include per page.
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: The requested page of results.
+        - in: query
+          name: tagIds
+          schema:
+            type: string
+          description: A list of tag ID's delimited using a plus (+) symbol (e.g "145+678").
+        - in: query
+          name: sectionIds
+          schema:
+            type: string
+          description: A list of section ID's delimited using a plus (+) symbol (e.g "145+678").
+        - in: query
+          name: newsRelease
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 0
+          description: How news releases should be included/excluded. If no value is provided, then both news releases and non-news releases will be included. If "1", then only news releases should be included in return. If "0", then news releases should be excluded from return.
+      responses:
+        '200':
+          description: A JSON object containing pet information 
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/articleResponse'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/articleResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/apiResponse'
+              example:
+                code: '400'
+                message: 'The "tagIds" parameter is invalid. All IDs must be numeric.'
+                apiStatus: 'supported'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/apiResponse'
+              example: |
+                <root>
+                  <apiResponse>
+                    <code>400</code>
+                    <message>The "tagIds" parameter is invalid. All IDs must be numeric.</message>
+                    <apiStatus>supported</apiStatus>
+                  </apiResponse>
+                </root>
+components:
+  schemas:
+    apiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: An HTTP response code
+          example: 200
+        message:
+          type: string
+          description: A description of the response
+          example: 'Success'
+        apiStatus:
+          type: string
+          description: The support status of the current API version
+          enum:
+              - 'supported'
+              - 'deprecated'
+          example: 'supported'
+    resultsSummary:
+      type: object
+      description: A summary of the query results, including pagination information
+      properties:
+        totalRecords:
+          type: integer
+          description: The total number of records returned by the query
+          example: 272
+        recordsPerPage:
+          type: integer
+          description: The maximum number of records returned per page
+          example: 50
+        pages:
+          type: integer
+          description: The number of pages of results
+          example: 5
+        currentPage:
+          type: integer
+          description: The current page of results
+          example: 1
+        recordsThisPage:
+          type: integer
+          description: The number of records returned by the current page
+          example: 50
+    articleResponse:
+      type: object
+      description: An API response for an article request
+      xml:
+        name: root
+      properties:
+        apiResponse:
+          type: object
+          $ref: '#/components/schemas/apiResponse'
+        resultsSummary:
+          type: object
+          $ref: '#/components/schemas/resultsSummary'
+        articles:
+          type: object
+          $ref: '#/components/schemas/articles'
+    articles:
+      type: array
+      description: The articles returned by the current page of query results
+      xml:
+        wrapped : true
+        name: articles
+      items:
+        $ref: '#/components/schemas/article'
+    article:
+      type: object
+      description: An individual article
+      xml:
+        wrapped : true
+        name: article
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for the article
+          example: 12345
+        pubDate:
+          type: string
+          description: The publish date formatted in ISO-8601
+          example: '2019-08-25T23:56:00-05:00'
+        title:
+          type: string
+          description: The title of the article
+          example: The Importance of Punctuation in the Practice of Law
+        subTitle:
+          type: string
+          description: "[optional] The sub-title of the article"
+          example: Professor fights for acceptance of the Oxford Comma
+        canonicalUrl:
+          type: string
+          description: The canonical URL for the article
+          example: 'https://news.unl.edu/newsrooms/today/article/importance-of-punctuation-practice-law/'
+        authorId:
+          type: integer
+          description: "[optional] The unique identifier for the author"
+          example: 2126
+        authorName:
+          type: string
+          description: "[optional] The name of the author"
+          example: Herbie Husker | University Communication
+        sections:
+          type: array
+          description: "[optional] Sections to which the article is assigned"
+          xml:
+            name: sections
+            wrapped: true
+          items:
+            type: object
+            description: An individual section
+            xml:
+              name: section
+            properties:
+              id:
+                type: integer
+                description: The unique identifier for the section
+                example: 447
+              name:
+                type: string
+                description: The name of the section
+                example: Educators in Action
+        tags:
+          type: array
+          description: "[optional] Tags assigned to the article"
+          xml:
+            name: tags
+            wrapped: true
+          items:
+            type: object
+            description: An individual tag
+            xml:
+              name: tag
+            properties:
+              id:
+                type: integer
+                description: The unique identifier for the tag
+                example: 352
+              name:
+                type: string
+                description: The name of the tag
+                example: Oxford Comma
+        newsRelease:
+          type: string
+          description: Whether or not the article is a news release (0 = non-news release; 1 = news release)
+          example: 1
+        newsReleaseContacts:
+          type: array
+          description: "[optional] Contacts for the news release"
+          xml:
+            name: newsReleaseContacts
+            wrapped: true
+          items:
+            type: object
+            description: An individual news release contact
+            xml:
+              name: newsReleaseContact
+            properties:
+              name:
+                type: string
+                description: The name of the contact
+                example: Lil Red
+              jobTitle:
+                type: string
+                description: The job title of the contact
+                example: Chief Punctuation Officer
+              phone:
+                type: string
+                description: The phone number of the contact
+                example: 402-472-1234
+              email:
+                type: string
+                description: The e-mail address of the contact
+                example: lil.red@unl.edu
+              websiteUrl:
+                type: string
+                format: url
+                description: The website of the contact
+                example: https://punctuation.unl.edu
+        newsReleasePhotos:
+          type: array
+          description: Photos for the news release
+          xml:
+            name: newsReleasePhotos
+            wrapped: true
+          items:
+            type: object
+            description: An individual news release photo
+            xml:
+              name: newsReleasePhoto
+            properties:
+              url:
+                type: string
+                format: url
+                description: The URL of the image
+                example: 'https://news.unl.edu/sites/default/files/media/news-release-photo402.jpeg'
+              width:
+                type: integer
+                description: The width of the image in pixels
+                example: 600
+              height:
+                type: integer
+                description: The height of the image in pixels
+                example: 400
+              mimeType:
+                type: string
+                description: The MIME type of the image
+                example: image/jpeg
+              size:
+                type: integer
+                description: The size of the image file in bytes
+                example: 219054
+              alt:
+                type: string
+                description: "[optional] Alternate text for the image"
+                example: Love Library cupola
+              credit:
+                type: string
+                description: "[optional] The photography credit"
+                example: Stan Marsh | University Communication
+              caption:
+                type: string
+                description: "[optional] A caption for the image"
+                example: Students demonstrating for "Freedom of Punctuation"
+        relatedLinks:
+          type: array
+          description: "[optional] Related links for this article"
+          xml:
+            name: relatedLinks
+            wrapped: true
+          items:
+            type: object
+            description: An individual related link
+            xml:
+              name: relatedLink
+            properties:
+              url:
+                type: string
+                format: url
+                description: The URL of the link
+                example: 'https://hr.unl.edu/policies/acceptable-puncuation-policy'
+              title:
+                type: string
+                description: The title of the link
+                example: Acceptable Punctuation Policy
+        articleImage:
+          type: object
+          description: "[optional] The lead image for the article"
+          xml:
+            name: articleImage
+            wrapped: true
+          properties:
+            url:
+              type: string
+              format: url
+              description: The URL of the image
+              example: 'https://news.unl.edu/sites/default/files/media/oxford-comma.jpeg'
+            mimeType:
+              type: string
+              description: The MIME type of the image
+              example: image/jpeg
+            size:
+              type: integer
+              description: The size of the image file in bytes
+              example: 439066
+            width:
+              type: integer
+              description: "[optional] The width of the image in pixels"
+              example: 600
+            height:
+              type: integer
+              description: "[optional] The height of the image in pixels"
+              example: 400
+            alt:
+              type: string
+              description: "[optional] Alternate text for the image"
+              example: A giant, three-dimensional comma eating the AP style guide
+            credit:
+              type: string
+              description: "[optional] The photography credit"
+              example: Joe Smith | University Communication
+            caption:
+              type: string
+              description: "[optional] A caption for the image"
+              example: Professor James attending a pro-Oxford Comma rally in Oxford, England - March 12, 2019
+        content:
+          type: string
+          description: "[optional] The HTML body of the article, encapsulated in CDATA"
+          example: >-
+            <![CDATA[ <p>Professor Rick James has been an advocate for the Oxford Comma for as long as he can
+            remember. "When I was in college, I had my grade docked in an English class by an instructor who
+            had different political views on commas. I refused to back down. The AP style guide is great, but
+            they're simply wrong when it comes to the final comma in a series." Now a law professor in the College
+            of Law, James advocates for the comma in all written communication and documents. "Do you want to be the
+            attorney who left out a comma and lost your client millions of dollars? That has happened."</p> ]]>
+        teaser:
+          type: string
+          description: "[optional] The teaser text for the article, encapsulated in CDATA"
+          example: >-
+            <![CDATA[ <p>Professor Rick James once had an English grade docked due to his impassioned instance on
+            using the Oxford Comma. Now, as faculty at the College of Law, he shares his experience with students and
+            faculty alike</p> ]]>

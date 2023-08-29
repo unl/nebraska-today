@@ -1,0 +1,29 @@
+uuid: a3444d45-ed77-4d4a-9a4d-649d4d3ce00d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_bio
+    - filter.format.simple_html
+    - node.type.contact
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    allowed_formats:
+      - simple_html
+id: node.contact.field_contact_bio
+field_name: field_contact_bio
+entity_type: node
+bundle: contact
+label: Bio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - simple_html
+field_type: text_long

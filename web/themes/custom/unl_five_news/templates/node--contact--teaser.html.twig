@@ -1,0 +1,62 @@
+<div{{ attributes.addClass("dcf-pb-4") }}>
+  <div{{ content_attributes.addClass("dcf-txt-xs") }}>
+
+    {{ title_prefix }}
+    <div class="dcf-d-flex dcf-mb-1">
+      {% if node.field_contact_email.value or node.field_unldirectoryreference.entity.field_mail.value %}
+        <svg aria-hidden="true" class="dcf-flex-shrink-0 dcf-mr-1 dcf-fill-current" height="19" width="19" viewbox="0 0 24 24">
+          <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 01.062-.309l9.625 7.7a.504.504 0 00.625 0l9.625-7.7c.033.099.063.2.063.309v11z"></path>
+        </svg>
+        {% if node.field_contact_email.value %}
+          {% set email = node.field_contact_email.value|lower %}
+        {% else %}
+          {% set email = node.field_unldirectoryreference.entity.field_mail.value|lower %}
+        {%  endif %}
+        <a href="mailto:{{ email }}">
+          <span class="dcf-d-inline-block custom-name-after-comma">{{ label }}</span>
+        </a>
+      {% else %}
+        {{ label }}
+      {% endif %}
+    </div>
+    {{ title_suffix }}
+
+    {% if node.field_contact_position.value or node.field_unldirectoryreference.entity.field_title.value %}
+      <div class="dcf-d-flex dcf-mb-1">
+        <svg class="dcf-flex-shrink-0 dcf-mr-1 dcf-fill-current" aria-hidden="true" focusable="false" height="19" width="19" viewBox="0 0 24 24"><path d="M23.501,16.001c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5H18v-1c0-1.103-0.897-2-2-2H9 c-0.552,0-1-0.448-1-1v-4h5.5c0.276,0,0.5-0.224,0.5-0.5v-3c0-0.276-0.224-0.5-0.5-0.5h-13c-0.276,0-0.5,0.224-0.5,0.5v3 c0,0.276,0.224,0.5,0.5,0.5H7v4c0,1.103,0.897,2,2,2h7c0.552,0,1,0.448,1,1v1h-6.5c-0.276,0-0.5,0.224-0.5,0.5v3 c0,0.276,0.224,0.5,0.5,0.5H17v4h-6.5c-0.276,0-0.5,0.224-0.5,0.5v3c0,0.276,0.224,0.5,0.5,0.5h13.001c0.276,0,0.5-0.224,0.5-0.5 v-3c0-0.276-0.224-0.5-0.5-0.5H18v-4H23.501z M1,1.001h12v2H1V1.001z M23.001,23.001H11v-2h12.001V23.001z M11,13.001h12.001v2H11 V13.001z"></path><g><path fill="none" d="M0 0H24V24H0z"></path></g></svg>
+        {% if node.field_contact_position.value %}
+          <span class="dcf-d-inline-block custom-title-after-comma">{{ content.field_contact_position }}</span>
+        {% else %}
+          <span class="dcf-d-inline-block custom-title-after-comma">{{ node.field_unldirectoryreference.entity.field_title.value }}</span>
+        {%  endif %}
+      </div>
+    {%  endif %}
+
+    {% if node.field_contact_phone.value or node.field_unldirectoryreference.entity.field_telephonenumber.value %}
+      <div class="dcf-d-flex dcf-mb-1">
+        <svg class="dcf-flex-shrink-0 dcf-mr-1 dcf-fill-current" aria-hidden="true" focusable="false" height="19" width="19" viewBox="0 0 24 24">
+          <path d="M16.5 0h-9A2.503 2.503 0 005 2.5v19C5 22.879 6.122 24 7.5 24h9c1.378 0 2.5-1.121 2.5-2.5v-19C19 1.121 17.879 0 16.5 0zM6 5h12v14H6V5zm1.5-4h9c.828 0 1.5.673 1.5 1.5V4H6V2.5C6 1.673 6.673 1 7.5 1zm9 22h-9c-.827 0-1.5-.673-1.5-1.5V20h12v1.5c0 .827-.672 1.5-1.5 1.5z"></path>
+          <path d="M9.5 3h5a.5.5 0 100-1h-5a.5.5 0 000 1zM12 20.5a1.001 1.001 0 000 2 1.001 1.001 0 000-2zm0 1.5v-.5h.001L12 22z"></path>
+        </svg>
+        {% if node.field_contact_phone.value %}
+          {{ content.field_contact_phone }}
+        {% else %}
+          <a class="dcf-txt-decor-hover" href="tel:{{ node.field_unldirectoryreference.entity.field_telephonenumber.value|replace({' ':''})  }}" itemprop="telephone">
+            <span class="dcf-txt-nowrap">{{ node.field_unldirectoryreference.entity.field_telephonenumber.value|replace({ '402472': '402-472-' }) }}</span>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if node.field_contact_website.value %}
+      <div class="dcf-d-flex dcf-mb-1">
+        <svg aria-hidden="true" class="dcf-flex-shrink-0 dcf-mr-1 dcf-fill-current" height="19" width="19" viewbox="0 0 24 24">
+          <path d="M12.001 16.243l-3.183 3.182c-.944.944-2.592.944-3.536 0l-.707-.706a2.484 2.484 0 01-.732-1.768c0-.668.26-1.295.732-1.767l4.597-4.597a2.503 2.503 0 013.536 0l.707.708a.5.5 0 00.707-.707l-.707-.708a3.504 3.504 0 00-4.95 0l-4.597 4.597a3.473 3.473 0 00-1.025 2.474c0 .935.364 1.814 1.025 2.475l.707.706a3.478 3.478 0 002.476 1.025c.935 0 1.814-.364 2.475-1.025l3.183-3.182a.5.5 0 00-.708-.707z"></path>
+          <path d="M20.132 4.575l-.707-.707a3.504 3.504 0 00-4.949 0l-3.182 3.181a.5.5 0 00.707.707l3.182-3.181a2.503 2.503 0 013.535 0l.707.707c.472.472.732 1.1.732 1.768 0 .668-.26 1.296-.732 1.768l-4.596 4.596c-.473.473-1.1.733-1.768.733-.667 0-1.294-.26-1.766-.732a.5.5 0 00-.708.706 3.472 3.472 0 002.474 1.026c.935 0 1.814-.364 2.475-1.026l4.596-4.596a3.477 3.477 0 001.025-2.475c0-.935-.364-1.814-1.025-2.475z"></path>
+        </svg>
+        {{ content.field_contact_website }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

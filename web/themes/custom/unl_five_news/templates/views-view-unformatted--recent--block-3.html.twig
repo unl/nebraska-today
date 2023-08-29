@@ -1,4 +1,4 @@
-<div>
+{# <div>
   <hr class="custom-l-line dcf-mt-0 ">
   <div class="dcf-d-flex dcf-ai-center ">
     <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
@@ -22,4 +22,18 @@
     {% endfor %}
   </div>
   <div class="dcf-mt-7 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More headlines</a></div>
+</div> #}
+<div>
+  <div >
+    {% for row in rows %}
+      {%
+        set row_classes = [
+          default_row_class ? 'views-row dcf-col ',
+        ]
+      %}
+      <div{{ row.attributes.addClass(row_classes) }} >
+        {{- row.content -}}
+      </div>
+    {% endfor %}
+    </div>
 </div>

@@ -1,0 +1,29 @@
+uuid: f02d07d7-4b12-45df-abfb-69e5102d6437
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contact_reference
+    - node.type.contact
+    - paragraphs.paragraphs_type.contact_and_bio
+id: paragraph.contact_and_bio.field_contact_reference
+field_name: field_contact_reference
+entity_type: paragraph
+bundle: contact_and_bio
+label: Contact
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      contact: contact
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

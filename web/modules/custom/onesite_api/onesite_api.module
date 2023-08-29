@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Alters queries tagged with 'onesite_api_articles_news_release'.
+ */
+function onesite_api_query_onesite_api_articles_news_release_alter(QueryAlterableInterface $query) {
+  OnesiteApiArticles::queryAlterNewsRelease($query);
+}
