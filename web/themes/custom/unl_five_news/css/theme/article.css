@@ -455,7 +455,7 @@ blockquote p:nth-of-type(3)::after {
 
 .custom-d-half-grid {
   display: grid;
-  grid-template-areas: "featureImage recentNews";
+  grid-template-areas: "featureImage featureImage recentNews";
 }
 
 .custom-d-half-grid div:nth-child(1) {
@@ -483,6 +483,56 @@ blockquote p:nth-of-type(3)::after {
 .recent-block3-grid > div:nth-child(2) {
   grid-area: titleSection;
   width: 340px;
+}
+
+/* Just for test */
+.custom-d-half-grid  .custom-hide{
+  display: none;
+}
+
+.custom-d-half-grid  .landing-section{
+  width: auto;
+  height: 100%;
+  min-height: unset;
+  max-height: unset;
+}
+
+
+.share-icon-flex{
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.share-icon-flex div{
+  padding: 10px 10px 5px 10px;
+  background-color: #42a7c6;
+  border-radius: 10px;
+  width: 50px;
+}
+
+.share-icon-flex .facebook{
+  background-color: #3b5998;
+}
+
+.share-icon-flex .twitter{
+  background-color: #00acee;
+}
+
+.share-icon-flex .instagram{
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.share-icon-flex .youtube{
+  background-color: #c4302b;
+}
+
+.share-icon-flex .share{
+  background-color: gray;
 }
 
 /* Full screen */
@@ -1482,6 +1532,9 @@ blockquote p:nth-of-type(3)::after {
     right: -10.2vw;
     width: 34vw;
   }
+
+
+
 }
 
 /* CSS applied for css screen width equal or less than of 42.09em */
@@ -1519,6 +1572,13 @@ blockquote p:nth-of-type(3)::after {
     overflow: hidden;
     position: relative;
   }
+
+  .share-icon-flex{
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+  }
+
 }
 
 /* Css is applied for css screen width more than or equal to 40em  */
@@ -1540,4 +1600,5 @@ blockquote p:nth-of-type(3)::after {
   .inner-content-item2 {
     order: -1;
   }
+
 }
