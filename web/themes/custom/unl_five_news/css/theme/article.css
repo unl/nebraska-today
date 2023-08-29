@@ -531,8 +531,20 @@ blockquote p:nth-of-type(3)::after {
   background-color: #c4302b;
 }
 
+.share-icon-flex .linkedin{
+  background-color: #0072b1;
+}
+
+.share-icon-flex .mail{
+  background-color: #d00000;
+}
+
 .share-icon-flex .share{
   background-color: gray;
+}
+
+.share-icon-flex div:hover{
+  opacity: 0.7;
 }
 
 /* Full screen */
@@ -1576,7 +1588,7 @@ blockquote p:nth-of-type(3)::after {
   .share-icon-flex{
     display: flex;
     flex-direction: row;
-    column-gap: 15px;
+    column-gap: 10px;
   }
 
 }
