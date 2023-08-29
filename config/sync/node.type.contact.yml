@@ -7,9 +7,8 @@ dependencies:
     - scheduler
 third_party_settings:
   menu_ui:
-    available_menus:
-      - main
-    parent: 'main:'
+    available_menus: {  }
+    parent: ''
   scheduler:
     expand_fieldset: when_required
     fields_display_mode: vertical_tab
@@ -23,10 +22,10 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-name: Contact
+name: Person
 type: contact
-description: 'This is for article Contact'
+description: 'A person that can be referenced as a <i>Contact</i> in an Article or an <i>Expert</i> in a Field of Expertise topic.'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

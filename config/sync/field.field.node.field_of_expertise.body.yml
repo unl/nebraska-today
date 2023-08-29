@@ -1,0 +1,24 @@
+uuid: dedb7cd6-22cb-42fb-ad7d-949a1ae1bccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.field_of_expertise
+  module:
+    - text
+id: node.field_of_expertise.body
+field_name: body
+entity_type: node
+bundle: field_of_expertise
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

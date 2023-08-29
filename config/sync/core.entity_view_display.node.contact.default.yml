@@ -3,14 +3,20 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.contact.field_contact_bio
     - field.field.node.contact.field_contact_email
-    - field.field.node.contact.field_contact_name
-    - field.field.node.contact.field_contact_number
+    - field.field.node.contact.field_contact_phone
+    - field.field.node.contact.field_contact_photo
     - field.field.node.contact.field_contact_position
     - field.field.node.contact.field_contact_website
+    - field.field.node.contact.field_unldirectoryreference
+    - image.style.large
     - node.type.contact
   module:
+    - image
+    - image_class
     - link
+    - telephone
     - text
     - user
 id: node.contact.default
@@ -18,33 +24,48 @@ targetEntityType: node
 bundle: contact
 mode: default
 content:
+  field_contact_bio:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_contact_email:
-    type: basic_string
+    type: email_mailto
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 102
+    weight: 2
     region: content
-  field_contact_name:
-    type: text_default
+  field_contact_phone:
+    type: telephone_link
     label: hidden
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
-    weight: 101
+    weight: 4
     region: content
-  field_contact_number:
-    type: text_default
+  field_contact_photo:
+    type: image
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 7
     region: content
   field_contact_position:
-    type: text_default
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   field_contact_website:
     type: link
@@ -56,11 +77,20 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 3
+    region: content
+  field_unldirectoryreference:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden: {  }

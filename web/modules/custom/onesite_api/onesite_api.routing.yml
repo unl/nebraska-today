@@ -1,0 +1,15 @@
+onesite_api.articles:
+  path: '/api/v1/articles'
+  defaults:
+    _controller: '\Drupal\onesite_api\Controller::apiResponseArticles'
+    _title: 'API Articles'
+  requirements:
+    _permission: 'access content'
+
+onesite_api.tags:
+  path: '/api/v1/tags'
+  defaults:
+    _controller: '\Drupal\onesite_api\Controller::apiResponseTags'
+    _title: 'API Tags'
+  requirements:
+    _permission: 'access content'

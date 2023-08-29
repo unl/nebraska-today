@@ -1,0 +1,49 @@
+uuid: 15e95007-b200-43ed-a6b3-e0c1ce624b3d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experts
+    - node.type.field_of_expertise
+    - paragraphs.paragraphs_type.contact_and_bio
+  module:
+    - entity_reference_revisions
+id: node.field_of_expertise.field_experts
+field_name: field_experts
+entity_type: node
+bundle: field_of_expertise
+label: Experts
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      contact_and_bio: contact_and_bio
+    negate: 0
+    target_bundles_drag_drop:
+      contact_and_bio:
+        weight: 8
+        enabled: true
+      email_article_and_display:
+        weight: 9
+        enabled: false
+      paragraph_card:
+        weight: 10
+        enabled: false
+      paragraph_media:
+        weight: 11
+        enabled: false
+      paragraph_photos:
+        weight: 12
+        enabled: false
+      paragraph_video:
+        weight: 13
+        enabled: false
+      quote_card:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions

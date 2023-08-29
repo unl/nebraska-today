@@ -13,7 +13,6 @@ editor: ckeditor5
 settings:
   toolbar:
     items:
-      - '|'
       - bold
       - italic
       - strikethrough
