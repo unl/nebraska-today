@@ -166,7 +166,7 @@ class OnesiteApiArticles extends OnesiteApiBase {
       $processed_entity['pubDate'] = date("c", $entity->created->value);
 
       // Canonical URL is provided as an absolute URL.
-      $processed_entity['canonicalUrl'] = Url::fromUserInput('/node/' . $entity->nid->value, ['absolute' => TRUE, 'https' => TRUE]);
+      $processed_entity['canonicalUrl'] = Url::fromUserInput('/node/' . $entity->nid->value, ['absolute' => TRUE, 'https' => TRUE])->toString();
 
       // Title is required.
       $processed_entity['title'] = strip_tags($entity->title->value);
@@ -306,7 +306,7 @@ class OnesiteApiArticles extends OnesiteApiBase {
 
       // Body is optional.
       if (isset($entity->body->value)) {
-        $processed_entity['content'] = $entity->body->processed;
+        $processed_entity['content'] = str_replace('src="/sites', 'src="https://news.unl.edu/sites', $entity->body->processed);
       }
 
       // Teaser is optional.

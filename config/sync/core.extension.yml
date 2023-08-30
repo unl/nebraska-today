@@ -53,6 +53,7 @@ module:
   metatag: 0
   mysql: 0
   node: 0
+  onesite_api: 0
   options: 0
   page_cache: 0
   path: 0

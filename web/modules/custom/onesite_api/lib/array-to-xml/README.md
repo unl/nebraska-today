@@ -2,18 +2,14 @@
 
 [![Latest Version](https://img.shields.io/github/release/spatie/array-to-xml.svg?style=flat-square)](https://github.com/spatie/array-to-xml/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/spatie/array-to-xml/master.svg?style=flat-square)](https://travis-ci.org/spatie/array-to-xml)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/array-to-xml.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/array-to-xml)
-[![StyleCI](https://styleci.io/repos/32388747/shield?branch=master)](https://styleci.io/repos/32388747)
+![Tests](https://github.com/spatie/array-to-xml/workflows/Tests/badge.svg)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/array-to-xml.svg?style=flat-square)](https://packagist.org/packages/spatie/array-to-xml)
 
 This package provides a very simple class to convert an array to an xml string.
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/array-to-xml.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/array-to-xml)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -60,6 +56,7 @@ After running this piece of code `$result` will contain:
     </Bad_guy>
 </root>
 ```
+
 
 ### Setting the name of the root element
 
@@ -122,7 +119,6 @@ This code will result in:
 
 *Note, that the value of the `_value` field must be a string. [(More)](https://github.com/spatie/array-to-xml/issues/75#issuecomment-413726065)* 
 
-
 ### Using reserved characters
 
 It is also possible to wrap the value of a node into a CDATA section. This allows you to use reserved characters.
@@ -161,6 +157,25 @@ This code will result in:
 ```
 
 If your input contains something that cannot be parsed a `DOMException` will be thrown.
+
+
+### Customize the XML declaration
+
+You could specify specific values in for:
+ - encoding as the fourth argument (string)
+ - version as the fifth argument (string)
+ - standalone as sixth argument (boolean)
+
+```php
+$result = ArrayToXml::convert($array, [], true, 'UTF-8', '1.1', [], true);
+```
+
+This will result in:
+
+```xml
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+```
+
 
 ### Adding attributes to the root element
 
@@ -222,6 +237,58 @@ This will result in:
         </Guy>
     </Bad_guys>
 </helloyouluckypeople>
+```
+
+### Using Closure values
+The package can use Closure values:
+
+```php
+$users = [
+    [
+        'name' => 'one',
+        'age' => 10,
+    ],
+    [
+        'name' => 'two',
+        'age' => 12,
+    ],
+];
+
+$array = [
+    'users' => function () use ($users) {
+        $new_users = [];
+        foreach ($users as $user) {
+            $new_users[] = array_merge(
+                $user,
+                [
+                    'double_age' => $user['age'] * 2,
+                ]
+            );
+        }
+
+        return $new_users;
+    },
+];
+
+ArrayToXml::convert($array)
+```
+
+This will result in:
+
+```xml
+<?xml version="1.0"?>
+<root>
+    <users>
+        <name>one</name>
+        <age>10</age>
+        <double_age>20</double_age>
+    </users>
+    <users>
+        <name>two</name>
+        <age>12</age>
+        <double_age>24</double_age>
+    </users>
+</root>
 ```
 
 ### Handling numeric keys
@@ -312,6 +379,44 @@ A custom key contains three, colon-separated parts: "__custom:[custom-tag]:[uniq
   - The string to be rendered as the XML tag.
 - [unique-string]
   - A unique string that avoids overwriting of duplicate keys in PHP arrays.
+
+a colon character can be included within the custom-tag portion by escaping it with a backslash:
+
+```php
+$array = [
+    '__custom:ns\\:custom-key:1' => [
+        'name' => 'Vladimir',
+        'nickname' => 'greeflas',
+    ],
+    '__custom:ns\\:custom-key:2' => [
+        'name' => 'Marina',
+        'nickname' => 'estacet',
+        'tags' => [
+            '__custom:ns\\:tag:1' => 'first-tag',
+            '__custom:ns\\:tag:2' => 'second-tag',
+        ]
+    ],
+];
+```
+This will result in:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <ns:custom-key>
+        <name>Vladimir</name>
+        <nickname>greeflas</nickname>
+    </ns:custom-key>
+    <ns:custom-key>
+        <name>Marina</name>
+        <nickname>estacet</nickname>
+        <tags>
+            <ns:tag>first-tag</ns:tag>
+            <ns:tag>second-tag</ns:tag>
+        </tags>
+    </ns:custom-key>
+</root>
+```
 
 ### Setting DOMDocument properties
 
@@ -424,23 +529,43 @@ This will result in:
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope/"><soap:Header/><soap:Body><soap:key>soap:value</soap:key></soap:Body></soap:Envelope>
 ```
 
+### Adding processing instructions
+
+Call `$arrayToXml->addProcessingInstruction($target, $data)` method on ArrayToXml object to prepend a processing instruction before the root element.
+
+Example:
+
+```php
+$arrayToXml = new ArrayToXml($array);
+$arrayToXml->addProcessingInstruction('xml-stylesheet', 'type="text/xsl" href="base.xsl"');
+$result = $arrayToXml->toXml();
+```
+
+This will result in:
+
+```xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="base.xsl"?>
+<root><Good_guy><name>Luke Skywalker</name><weapon>Lightsaber</weapon></Good_guy><Bad_guy><name>Sauron</name><weapon>Evil Eye</weapon></Bad_guy></root>
+```
+
 ## Testing
 
 ```bash
 vendor/bin/phpunit
 ```
 
-### Changelog
+## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
 
-## Security
+## Security Vulnerabilities
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Postcardware
 

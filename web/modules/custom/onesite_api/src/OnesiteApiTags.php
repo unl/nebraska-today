@@ -33,30 +33,20 @@ class OnesiteApiTags extends OnesiteApiBase {
    * {@inheritdoc}
    */
   public function performQuery() {
-    // Vocabularies to query.
-    $vocabularies = ['tags', 'free_tags'];
-
-    // Build EFQ query to retrieve entity IDs for vocabularies.
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'taxonomy_vocabulary');
-    $query->propertyCondition('machine_name', $vocabularies, 'IN');
-    $results = $query->execute();
-    $results = array_shift($results);
-    $vids = array_keys($results);
 
     // Build EFQ query to query taxonomic terms.
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'taxonomy_term');
-    $query->entityCondition('vid', $vids, 'IN');
-    $query->propertyOrderBy('name', 'ASC');
+    $query = \Drupal::entityQuery('taxonomy_term')
+      ->condition('vid','tags')
+      ->sort('name', 'ASC')
+      ->accessCheck(FALSE);
     $results = $query->execute();
 
     // Keep just the entity ids.
-    $results = array_shift($results);
+    $results = array_values($results);
 
     if (!is_null($results)) {
       // Load entities.
-      $entities = \Drupal::entityManager()->getStorage('taxonomy_term')->loadMultiple(array_keys($results));
+      $entities = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadMultiple($results);
     }
     else {
       $entities = [];
@@ -66,8 +56,8 @@ class OnesiteApiTags extends OnesiteApiBase {
     foreach ($entities as $entity) {
       $processed_entity = [];
       // Tag id (tid) is used as unique identifier.
-      $processed_entity['id'] = $entity->tid;
-      $processed_entity['name'] = strip_tags($entity->name);
+      $processed_entity['id'] = $entity->tid->value;
+      $processed_entity['name'] = strip_tags($entity->name->value);
 
       $return_entities[] = $processed_entity;
     }

@@ -1,5 +1,5 @@
 name: Nebraska Today API
 type: module
-description: Provides API provider functionality
+description: Provides API provider functionality.
 package: UNL
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
