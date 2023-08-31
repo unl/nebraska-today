@@ -477,6 +477,7 @@ blockquote p:nth-of-type(3)::after {
 .custom-d-half-grid > div:nth-child(1) {
   grid-area: featureImage;
   overflow: hidden;
+  max-height: 78vh;
 }
 
 .custom-d-half-grid div:nth-child(2) {
@@ -488,6 +489,13 @@ blockquote p:nth-of-type(3)::after {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+}
+
+@media only screen and (max-width: 42.09em) {
+  .recent-block3-container-flex{
+    padding-left: 5.62vw;
+    padding-right: 5.62vw;
+  }
 }
 
 .recent-block3-grid {
@@ -506,26 +514,18 @@ blockquote p:nth-of-type(3)::after {
     align-items: center;
     justify-content: flex-start;
     margin: 0;
-  }
-
-  .recent-block3-grid > div:nth-child(1) {
-    max-width: 100%;
-    height: auto !important;
+    column-gap: 0px;
   }
 }
 
 
 .recent-block3-grid > div:nth-child(1) {
   grid-area: image;
-  width: 416px;
-  height: 234px;
-  /* width: auto;
-  height: 200px !important; */
 }
 
 .recent-block3-grid > div:nth-child(2) {
   grid-area: titleSection;
-  width: 340px;
+  /* width: 340px; */
 }
 
 /* Just for test */
