@@ -458,6 +458,17 @@ blockquote p:nth-of-type(3)::after {
   grid-template-areas: "featureImage featureImage recentNews";
 }
 
+.custom-dcf-wrapper {
+  padding-left: 5.62vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .custom-dcf-wrapper {
+    padding-left: 5.62vw;
+    padding-right: 5.62vw;
+  }
+}
+
 @media only screen and (max-width: 42.09em) {
   .custom-d-half-grid {
     display: grid;
@@ -465,14 +476,13 @@ blockquote p:nth-of-type(3)::after {
   }
 }
 
-.custom-d-half-grid > div:nth-child(1) div{
+.custom-d-half-grid > div:nth-child(1) div {
   height: 100%;
 }
 
-.custom-d-half-grid > div:nth-child(1) div .dcf-title-hide{
+.custom-d-half-grid > div:nth-child(1) div .dcf-title-hide {
   display: none !important;
 }
-
 
 .custom-d-half-grid > div:nth-child(1) {
   grid-area: featureImage;
@@ -484,110 +494,120 @@ blockquote p:nth-of-type(3)::after {
   grid-area: recentNews;
 }
 
-
-.recent-block3-container-flex{
-  display: flex;
-  flex-direction: column;
-  row-gap: 30px;
-}
-
-@media only screen and (max-width: 42.09em) {
-  .recent-block3-container-flex{
-    padding-left: 5.62vw;
-    padding-right: 5.62vw;
-  }
-}
-
 .recent-block3-grid {
-  display: grid;
-  grid-template-areas: "image titleSection";
+  display: flex;
   align-items: center;
-  column-gap: 30px;
-  justify-content: center;
-  margin: 0 3rem;
+  flex-wrap: row nowrap;
 }
 
 @media only screen and (max-width: 42.09em) {
   .recent-block3-grid {
-    display: grid;
+    /* display: grid;
     grid-template-areas: "image titleSection";
     align-items: center;
     justify-content: flex-start;
     margin: 0;
-    column-gap: 0px;
+    column-gap: 0px; */
+    display: flex;
+    align-items: center;
+    flex-wrap: row nowrap;
   }
 }
 
-
 .recent-block3-grid > div:nth-child(1) {
-  grid-area: image;
+  width: 33.33333333%;
+  padding-right: 1.58vw;
 }
 
 .recent-block3-grid > div:nth-child(2) {
-  grid-area: titleSection;
-  /* width: 340px; */
+  width: 66.66666667%;
+  padding: 0 1.58vw;
 }
 
 /* Just for test */
-.custom-d-half-grid  .custom-hide{
+.custom-d-half-grid .custom-hide {
   display: none;
 }
 
-.custom-d-half-grid  .landing-section{
+.custom-d-half-grid .landing-section {
   width: auto;
   height: 100%;
   min-height: unset;
   max-height: unset;
 }
 
-
-.share-icon-flex{
+.share-icon-flex {
   display: flex;
   flex-direction: column;
   row-gap: 15px;
 }
 
-.share-icon-flex div{
+.share-icon-flex div {
   padding: 10px 10px 5px 10px;
   background-color: #42a7c6;
   border-radius: 10px;
   width: 50px;
 }
 
-.share-icon-flex .facebook{
+.share-icon-flex .facebook {
   background-color: #3b5998;
 }
 
-.share-icon-flex .twitter{
+.share-icon-flex .twitter {
   background-color: #00acee;
 }
 
-.share-icon-flex .instagram{
-  background: #f09433; 
-  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+.share-icon-flex .instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
 }
 
-.share-icon-flex .youtube{
+.share-icon-flex .youtube {
   background-color: #c4302b;
 }
 
-.share-icon-flex .linkedin{
+.share-icon-flex .linkedin {
   background-color: #0072b1;
 }
 
-.share-icon-flex .mail{
+.share-icon-flex .mail {
   background-color: #d00000;
 }
 
-.share-icon-flex .share{
+.share-icon-flex .share {
   background-color: gray;
 }
 
-.share-icon-flex div:hover{
+.share-icon-flex div:hover {
   opacity: 0.7;
+}
+
+.dcf-flex-col-custom .views-row {
+  margin-bottom: 1.78em;
 }
 
 /* Full screen */
@@ -1587,9 +1607,6 @@ blockquote p:nth-of-type(3)::after {
     right: -10.2vw;
     width: 34vw;
   }
-
-
-
 }
 
 /* CSS applied for css screen width equal or less than of 42.09em */
@@ -1628,12 +1645,11 @@ blockquote p:nth-of-type(3)::after {
     position: relative;
   }
 
-  .share-icon-flex{
+  .share-icon-flex {
     display: flex;
     flex-direction: row;
     column-gap: 10px;
   }
-
 }
 
 /* Css is applied for css screen width more than or equal to 40em  */
@@ -1655,5 +1671,4 @@ blockquote p:nth-of-type(3)::after {
   .inner-content-item2 {
     order: -1;
   }
-
 }

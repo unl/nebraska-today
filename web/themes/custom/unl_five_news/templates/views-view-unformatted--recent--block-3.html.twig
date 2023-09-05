@@ -1,6 +1,6 @@
 <div >
-  <hr class="dcf-ml-8 custom-l-line dcf-mt-0 ">
-  <div class="dcf-ml-8 dcf-d-flex dcf-ai-center ">
+  <hr class="custom-l-line dcf-mt-0 ">
+  <div class="dcf-d-flex dcf-ai-center ">
     <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
     <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
       <svg class="dcf-mr-2 dcf-h-5 dcf-w-5 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
@@ -10,7 +10,7 @@
     </div>
   </div>
   {# <div class = "dcf-grid-full@sm dcf-grid-halves@md dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6"> #}
-    <div class="recent-block3-container-flex dcf-flex-col-custom ">
+    <div class="dcf-flex-col-custom dcf-d-flex dcf-flex-col dcf-col-gap-vw">
     {% for row in rows %}
       {%
         set row_classes = [
@@ -22,5 +22,5 @@
       </div>
     {% endfor %}
   </div>
-  <div class="dcf-mt-7 dcf-ml-9 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More headlines</a></div>
+  <div class="dcf-mt-7 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More headlines</a></div>
 </div>
