@@ -1,5 +1,31 @@
 {# Grid featured lead image and views#}
 
+{# Vertical Align Text #}
+{% if content.field_article_vertical_display.0['#markup'] == 'Display overlay center' %}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-center' %}
+{%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay top'%}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-top' %}
+{%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay bottom'%}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-bottom' %}
+{% endif %}
+
+{# Horizontal Align Text #}
+{% if content.field_article_horizontal_display.0['#markup'] == 'Display overlay left' %}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-left' %}
+{%  elseif content.field_article_horizontal_display.0['#markup'] == 'Display overlay right'%}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-right' %}
+{%  elseif content.field_article_horizontal_display.0['#markup'] == 'Display overlay center'%}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-center' %}
+{% endif %}
+
+{# Compact Text #}
+{% if content.field_article_compact_title.0['#markup'] == 'Compact' %}
+   {%  set compact_text_align_class = 'fifthy-fifthy-text-placement-compact' %}
+{%  elseif content.field_article_compact_title.0['#markup'] == 'Non-Compact'%}
+   {%  set compact_text_align_class = 'fifthy-fifthy-text-placement-non-compact' %}
+{% endif %}
+
+
 {% if content.field_article_display_options.0['#markup'] == 'Full Width Lead & View'  %}
     <div>
         <div class="dcf-bleed custom-page custom-hide-title custom-d-flex">
@@ -21,19 +47,13 @@
 
 {% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
     <div class="custom-d-half-grid dcf-bleed">
-        {# <div class="dcf-bleed custom-page custom-hide-title ">
-            <div class="custom-heading">
-                <h2>{{ label }}</h2>
-                <p> </p>
-                <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
+        <div class="dcf-relative">
+            <div class="dcf-z-2 dcf-absolute dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
+                <div class="dcf-txt-h3 dcf-p-1 unl-cream unl-bg-darkest-gray">{{ label }}</div>
             </div>
-            <div class="custom-image">
+            <div>
                 {{ content.field_article_lead_image }}
             </div>
-        </div> #}
-        <div>
-            {# {{ label }} #}
-            {{ content.field_article_lead_image }}
         </div>
 
         {# Recent News #}
