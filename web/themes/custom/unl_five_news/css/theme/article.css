@@ -487,7 +487,6 @@ blockquote p:nth-of-type(3)::after {
 .custom-d-half-grid > div:nth-child(1) {
   grid-area: featureImage;
   overflow: hidden;
-  max-height: 78vh;
 }
 
 .custom-d-half-grid div:nth-child(2) {
@@ -502,12 +501,6 @@ blockquote p:nth-of-type(3)::after {
 
 @media only screen and (max-width: 42.09em) {
   .recent-block3-grid {
-    /* display: grid;
-    grid-template-areas: "image titleSection";
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    column-gap: 0px; */
     display: flex;
     align-items: center;
     flex-wrap: row nowrap;
