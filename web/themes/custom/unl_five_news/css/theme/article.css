@@ -458,6 +458,12 @@ blockquote p:nth-of-type(3)::after {
   grid-template-areas: "featureImage featureImage recentNews";
 }
 
+@media only screen and (min-width: 674px) {
+  .custom-d-half-grid{
+  height: 60vh;
+  }
+}
+
 .custom-dcf-wrapper {
   padding-left: 5.62vw;
 }
