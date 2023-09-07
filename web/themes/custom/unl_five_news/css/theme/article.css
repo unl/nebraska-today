@@ -481,7 +481,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .fifthy-fifthy-text-placement-bottom {
-  top: 70%;
+  bottom: 5%;
 }
 
 .fifthy-fifthy-text-placement-left {
@@ -493,7 +493,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .fifthy-fifthy-text-placement-center {
-  left: calc((100% - 250px) / 2);
+  left: 30%;
 }
 
 .fifthy-fifthy-text-placement-compact {
