@@ -28,7 +28,7 @@
 
 {% if content.field_article_display_options.0['#markup'] == 'Full Width Lead & View'  %}
     <div>
-        <div class="dcf-bleed custom-page custom-hide-title custom-d-flex">
+        <div class="dcf-bleed custom-page custom-hide-title custom-min-height-25 dcf-d-flex dcf-relative dcf-overflow-hidden dcf-flex-wrap dcf-flex-col">
             <div class="custom-heading">
                 <h2>{{ label }}</h2>
                 <p> </p>
@@ -46,11 +46,11 @@
     </div>
 
 {% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
-    <div class="custom-d-half-grid dcf-bleed">
+    <div class="custom-display-half-half-grid dcf-bleed">
         <div class="dcf-relative">
             <div class="dcf-z-2 dcf-absolute dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
                 <div class="dcf-p-2 unl-cream unl-bg-darkest-gray">
-                    <div class="dcf-txt-h3 dcf-mb-3">{{ label }}</div>
+                    <div class="dcf-txt-h3">{{ label }}</div>
                     <div class="dcf-txt-h7">{{ content.field_subtitle }}</div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 {{ content.field_article_lead_image }}
             </div>
         </div>
-
+        
         {# Recent News #}
         <div class="custom-dcf-wrapper">
             {{ drupal_view('recent', 'block_3') }}

@@ -69,7 +69,7 @@
   opacity: 0.7;
 }
 
-.grid-img div {
+.image-gallery-grid div {
   object-fit: cover;
   height: 100%;
   width: 100%;
@@ -311,7 +311,7 @@ blockquote p:nth-of-type(3)::after {
   padding: 3vh 5%;
 }
 
-.custom-padding {
+.custom-athelic-padding {
   padding: 0 1.58vw;
 }
 
@@ -453,13 +453,13 @@ blockquote p:nth-of-type(3)::after {
   content: " ";
 }
 
-.custom-d-half-grid {
+.custom-display-half-half-grid {
   display: grid;
   grid-template-areas: "featureImage featureImage recentNews";
 }
 
 @media only screen and (min-width: 674px) {
-  .custom-d-half-grid{
+  .custom-display-half-half-grid{
   height: 60vh;
   }
 }
@@ -512,26 +512,26 @@ blockquote p:nth-of-type(3)::after {
 }
 
 @media only screen and (max-width: 42.09em) {
-  .custom-d-half-grid {
+  .custom-display-half-half-grid {
     display: grid;
     grid-template-areas: "featureImage" "featureImage" "recentNews";
   }
 }
 
-.custom-d-half-grid > div:nth-child(1) div {
+.custom-display-half-half-grid > div:nth-child(1) div {
   height: 100%;
 }
 
-.custom-d-half-grid > div:nth-child(1) div .dcf-title-hide {
+.custom-display-half-half-grid > div:nth-child(1) div .dcf-title-hide {
   display: none !important;
 }
 
-.custom-d-half-grid > div:nth-child(1) {
+.custom-display-half-half-grid > div:nth-child(1) {
   grid-area: featureImage;
   overflow: hidden;
 }
 
-.custom-d-half-grid div:nth-child(2) {
+.custom-display-half-half-grid div:nth-child(2) {
   grid-area: recentNews;
 }
 
@@ -558,17 +558,7 @@ blockquote p:nth-of-type(3)::after {
   width: 66.66666667%;
   padding: 0 1.58vw;
 }
-
-/* Just for test
-.custom-d-half-grid .custom-hide {
-  display: none;
-} */
-
-/* .custom-test {
-  position: relative;
-} */
-
-.custom-d-half-grid .landing-section {
+.custom-display-half-half-grid .landing-section {
   width: auto;
   height: 100%;
   min-height: unset;
@@ -1569,12 +1559,8 @@ blockquote p:nth-of-type(3)::after {
     padding: 2em;
   }
 
-  .custom-d-flex {
-    display: flex;
-    flex-flow: column wrap;
-    overflow: hidden;
+  .custom-min-height-25 {
     min-height: 25.24em;
-    position: relative;
   }
 
   .custom-heading {
@@ -1654,16 +1640,8 @@ blockquote p:nth-of-type(3)::after {
 
 /* CSS applied for css screen width equal or less than of 42.09em */
 @media only screen and (max-width: 42.09em) {
-  .dcf-basic-view-hr {
-    display: none;
-  }
   .custom-credit-text {
     text-align: right;
-  }
-  .column-cust {
-    flex: 1;
-    margin: auto;
-    padding: 0 1.58vw;
   }
 
   .custom-on-campus-news-3 {

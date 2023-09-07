@@ -1,5 +1,5 @@
 {% if content.field_card_float.0["#markup"] == 'Right' %}
-    <div class="custom-quote-card dcf-ml-3 dcf-mb-3" style="float:right;">
+    <div class="custom-quote-card dcf-ml-3 dcf-mb-3 dcf-float-right">
         <div class="dcf-p-5">
             <a href="{{ content.field_pill_content_link.0['#url'] }}" class="custom-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
             <div class="custom-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
@@ -32,7 +32,7 @@
 
 
     {% elseif content.field_card_float.0["#markup"] == 'Left' %}
-    <div class="custom-quote-card dcf-mr-3 dcf-mb-3" style="float:left;">
+    <div class="custom-quote-card dcf-mr-3 dcf-mb-3 dcf-float-left">
         <div class="dcf-p-5">
             <a href="{{ content.field_pill_content_link.0['#url'] }}"  target="_blank" class="custom-pill dcf-uppercase dcf-txt-2xs dcf-txt-decor-none">{{ content.field_pill_content }}</a>
             <div class="custom-quote-card-quote dcf-pb-5 ">{{ content.field_quote }}</div>
