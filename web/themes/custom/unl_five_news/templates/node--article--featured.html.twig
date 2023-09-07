@@ -2,7 +2,7 @@
 
 {# Vertical Align Text #}
 {% if content.field_article_vertical_display.0['#markup'] == 'Display overlay center' %}
-   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-center' %}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-vertical-center' %}
 {%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay top'%}
    {%  set vertical_align_class = 'fifthy-fifthy-text-placement-top' %}
 {%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay bottom'%}
@@ -49,7 +49,10 @@
     <div class="custom-d-half-grid dcf-bleed">
         <div class="dcf-relative">
             <div class="dcf-z-2 dcf-absolute dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
-                <div class="dcf-txt-h3 dcf-p-1 unl-cream unl-bg-darkest-gray">{{ label }}</div>
+                <div class="dcf-p-2 unl-cream unl-bg-darkest-gray">
+                    <div class="dcf-txt-h3 dcf-mb-3">{{ label }}</div>
+                    <div class="dcf-txt-h7">{{ content.field_subtitle }}</div>
+                </div>
             </div>
             <div>
                 {{ content.field_article_lead_image }}

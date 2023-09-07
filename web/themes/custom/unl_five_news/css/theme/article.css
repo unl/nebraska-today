@@ -472,8 +472,8 @@ blockquote p:nth-of-type(3)::after {
   position: relative;
 }
 
-.fifthy-fifthy-text-placement-center {
-  top: 35%;
+.fifthy-fifthy-text-placement-vertical-center {
+  top: calc((100% - 250px) / 2);;
 }
 
 .fifthy-fifthy-text-placement-top {
@@ -485,15 +485,15 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .fifthy-fifthy-text-placement-left {
-  left: 0;
+  left: 5%;
 }
 
 .fifthy-fifthy-text-placement-right {
-  right: 0;
+  right: 5%;
 }
 
 .fifthy-fifthy-text-placement-center {
-  left: 30%;
+  left: calc((100% - 250px) / 2);
 }
 
 .fifthy-fifthy-text-placement-compact {
@@ -501,7 +501,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .fifthy-fifthy-text-placement-non-compact {
-  width: 100%;
+  width: calc(100% - 25%);
 }
 
 @media only screen and (max-width: 600px) {

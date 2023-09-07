@@ -24,6 +24,7 @@ dependencies:
     - node.type.article
   module:
     - options
+    - text
     - user
 _core:
   default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
@@ -64,10 +65,17 @@ content:
     region: content
   field_article_vertical_display:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_subtitle:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
     region: content
 hidden:
   body: true
@@ -79,7 +87,6 @@ hidden:
   field_article_release_contacts: true
   field_high_resolution_photo: true
   field_section: true
-  field_subtitle: true
   field_tags: true
   field_written_by: true
   links: true
