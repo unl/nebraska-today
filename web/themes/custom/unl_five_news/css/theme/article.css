@@ -459,8 +459,8 @@ blockquote p:nth-of-type(3)::after {
 }
 
 @media only screen and (min-width: 674px) {
-  .custom-display-half-half-grid{
-  height: 60vh;
+  .custom-display-half-half-grid {
+    height: 60vh;
   }
 }
 
@@ -473,7 +473,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .fifthy-fifthy-text-placement-vertical-center {
-  top: calc((100% - 250px) / 2);;
+  top: calc((100% - 250px) / 2);
 }
 
 .fifthy-fifthy-text-placement-top {
@@ -502,6 +502,19 @@ blockquote p:nth-of-type(3)::after {
 
 .fifthy-fifthy-text-placement-non-compact {
   width: calc(100% - 25%);
+}
+
+@media (max-width: 600px) {
+  .custom-display-half-half-grid-mobile-view {
+    display: grid;
+    grid-template-areas: "image" "title";
+  }
+  .custom-display-half-half-grid-mobile-view > div:first-of-type {
+    grid-area: title;
+  }
+  .custom-display-half-half-grid-mobile-view {
+    grid-area: image;
+  }
 }
 
 @media only screen and (max-width: 600px) {

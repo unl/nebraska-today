@@ -47,11 +47,11 @@
 
 {% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
     <div class="custom-display-half-half-grid dcf-bleed">
-        <div class="dcf-relative">
+        <div class="dcf-relative custom-display-half-half-grid-mobile-view">
             <div class="dcf-z-2 dcf-absolute dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
                 <div class="dcf-p-2 unl-cream unl-bg-darkest-gray">
-                    <div class="dcf-txt-h3">{{ label }}</div>
-                    <div class="dcf-txt-h7">{{ content.field_subtitle }}</div>
+                     <h2>{{ label }}</h2>
+                    <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a></div>
                 </div>
             </div>
             <div>
