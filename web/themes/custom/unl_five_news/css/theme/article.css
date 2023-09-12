@@ -504,16 +504,31 @@ blockquote p:nth-of-type(3)::after {
   width: calc(100% - 25%);
 }
 
-@media (max-width: 600px) {
+.custom-position {
+  position: absolute;
+}
+
+@media (max-width: 673px) {
   .custom-display-half-half-grid-mobile-view {
-    display: grid;
-    grid-template-areas: "image" "title";
+    display: flex;
+    flex-direction: column;
   }
-  .custom-display-half-half-grid-mobile-view > div:first-of-type {
-    grid-area: title;
+  .custom-display-half-half-grid-mobile-view div:first-of-type {
+    order: 2;
+    width: 100% !important;
   }
-  .custom-display-half-half-grid-mobile-view {
-    grid-area: image;
+  .custom-display-half-half-grid-mobile-view div:last-of-type {
+    order: 1;
+  }
+  .fifthy-fifthy-text-placement-compact {
+    width: 100% !important;
+  }
+  .custom-position {
+    position: static;
+  }
+
+  .landing-section {
+    min-height: auto;
   }
 }
 
@@ -676,7 +691,7 @@ blockquote p:nth-of-type(3)::after {
 
   /* Heading Placement*/
   .dcf-title-center-left {
-    top: 50%;
+    top: 40%;
     left: 20px;
     transform: translateY(-50%);
     width: 50%;
@@ -689,7 +704,7 @@ blockquote p:nth-of-type(3)::after {
     position: absolute;
   }
   .dcf-title-center-right {
-    top: 50%;
+    top: 40%;
     right: 2%;
     width: 40%;
     position: absolute;
@@ -701,7 +716,7 @@ blockquote p:nth-of-type(3)::after {
     position: absolute;
   }
   .dcf-title-center-center {
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
