@@ -1,0 +1,21 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if name and not page %}
+    <h2><a href="{{ url }}">{{ name }}</a></h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  This is the Section page!
+
+  The lead article view
+
+  {{ drupal_view('taxonomy_term', 'block_1', term.id) }}
+
+  <div>
+    {{ drupal_view('featured', 'block_1') }}
+  </div>
+  <div>
+    {{ drupal_view('featured', 'block_2') }}
+  </div>
+
+</div>

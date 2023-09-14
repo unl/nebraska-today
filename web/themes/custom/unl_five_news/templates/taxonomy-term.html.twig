@@ -1,0 +1,12 @@
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {% if name and not page %}
+    <h2><a href="{{ url }}">{{ name }}</a></h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  This is the general tag page
+
+  {{ drupal_view('taxonomy_term', 'block_1', term.id) }}
+
+</div>

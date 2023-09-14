@@ -105,9 +105,13 @@ display:
             title: All
           title_enable: true
           title: '{{ arguments.tid }}'
-          default_argument_type: fixed
+          default_argument_type: taxonomy_tid
           default_argument_options:
-            argument: ''
+            term_page: '1'
+            node: false
+            limit: false
+            vids: {  }
+            anyall: ','
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -124,7 +128,7 @@ display:
             fail: 'not found'
           validate_options:
             bundles: {  }
-            access: true
+            access: false
             operation: view
             multiple: 0
           break_phrase: false
@@ -259,6 +263,22 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 3
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
   feed_1:
     id: feed_1
     display_title: Feed
@@ -303,6 +323,7 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      enabled: false
       query:
         type: views_query
         options: {  }
