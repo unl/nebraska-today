@@ -741,7 +741,7 @@ blockquote p:nth-of-type(3)::after {
 
   /* News Column  */
   .dcf-news-column {
-    max-width: 35.52em;
+    max-width: 45em;
     padding: 0 1.58vw;
   }
 
@@ -1706,11 +1706,11 @@ blockquote p:nth-of-type(3)::after {
 @media only screen and (min-width: 40em) {
   .inner-content {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
   }
 
   .inner-content-item1 {
-    padding: 0 1.58vw;
+    padding-right: 1.58vw;
     float: right;
   }
 
