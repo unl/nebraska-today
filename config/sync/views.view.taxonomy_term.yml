@@ -238,20 +238,7 @@ display:
       relationships: {  }
       link_display: page_1
       link_url: ''
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: true
-          target: '{{ raw_arguments.tid }}'
-          view_mode: full
-          tokenize: true
-          bypass_access: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
