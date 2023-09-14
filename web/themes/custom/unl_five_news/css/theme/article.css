@@ -441,7 +441,7 @@ blockquote p:nth-of-type(3)::after {
   content: "";
 }
 
-.custom-section-display::before {
+.custom-section-display:has(a)::before {
   content: "in ";
 }
 
@@ -669,6 +669,10 @@ blockquote p:nth-of-type(3)::after {
 
 .share-icon-flex .share {
   background-color: gray;
+}
+
+.custom-main-page-quote blockquote p::before{
+  content: none;
 }
 
 /* Full screen */
