@@ -28,8 +28,8 @@ display:
       pager:
         type: mini
         options:
-          offset: 0
-          items_per_page: 1
+          offset: 1
+          items_per_page: 8
           total_pages: 0
           id: 0
           tags:
@@ -272,13 +272,19 @@ display:
     display_plugin: block
     position: 4
     display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 1
+      defaults:
+        pager: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
-        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
