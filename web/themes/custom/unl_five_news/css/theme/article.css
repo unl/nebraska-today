@@ -508,6 +508,10 @@ blockquote p:nth-of-type(3)::after {
   position: absolute;
 }
 
+.custom-section-heading-padding {
+  padding: 3vh calc(5% + 1em) 3vh 10%;
+}
+
 @media (max-width: 673px) {
   .custom-display-half-half-grid-mobile-view {
     display: flex;
@@ -671,7 +675,7 @@ blockquote p:nth-of-type(3)::after {
   background-color: gray;
 }
 
-.custom-main-page-quote blockquote p::before{
+.custom-main-page-quote blockquote p::before {
   content: none;
 }
 
