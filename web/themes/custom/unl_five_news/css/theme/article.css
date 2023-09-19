@@ -548,6 +548,23 @@ blockquote p:nth-of-type(3)::after {
     display: grid;
     grid-template-areas: "featureImage" "featureImage" "recentNews";
   }
+
+  .custom-section-heading-padding {
+    padding: 4vh 5%;
+  }
+  .custom-section-heading-order {
+    order: 2;
+  }
+}
+
+@media (min-width: 48em) and (max-width: 59.99em) {
+  .custom-section-heading-padding {
+    margin: -7vh 9% 0;
+    padding: 4vh 4%;
+    background-color: var(--bg-lightest-gray);
+    order: 2;
+    z-index: 2;
+  }
 }
 
 .custom-display-half-half-grid > div:nth-child(1) div {
