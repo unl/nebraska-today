@@ -29,7 +29,7 @@ display:
         type: mini
         options:
           offset: 0
-          items_per_page: 10
+          items_per_page: 1
           total_pages: 0
           id: 0
           tags:
@@ -255,6 +255,22 @@ display:
     display_title: Block
     display_plugin: block
     position: 3
+    display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Block 2'
+    display_plugin: block
+    position: 4
     display_options:
       display_extenders: {  }
     cache_metadata:
