@@ -1,18 +1,16 @@
 {# {{ dd() }} #}
 {{ attach_library('unl_five_news/article') }}
 
-
-<div class = "dcf-grid-halves@lg dcf-grid-full@sm dcf-bleed dcf-ai-center">
+<div class = "dcf-grid-halves@lg dcf-grid-full@sm dcf-bleed dcf-ai-center unl-bg-lightest-gray">
     <div class="custom-section-heading-padding">
         <hr class="custom-l-line dcf-mt-0 ">
         <h2>{{ label }}</h2>
-        <div class="dcf-mt-1 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a
-        class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">Read more</a>
+        <div class="dcf-mt-1 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ">
+            <a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/" style="color: var(--bg-btn-primary);">Read more</a>
         </div>
     </div>
     <div>
         {{ content.field_article_lead_image }}
     </div>
 </div>
-
 

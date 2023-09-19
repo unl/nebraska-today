@@ -509,7 +509,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-section-heading-padding {
-  padding: 3vh calc(5% + 1em) 3vh 10%;
+  padding: 3vh calc(5% + 1em) 3vh 22.5%;
 }
 
 @media (max-width: 673px) {

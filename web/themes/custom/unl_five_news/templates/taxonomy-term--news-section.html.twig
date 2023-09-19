@@ -4,17 +4,16 @@
     <h2><a href="{{ url }}">{{ name }}</a></h2>
   {% endif %}
   {{ title_suffix }}
+</div>
 
-  <div>
-     {{ drupal_view('taxonomy_term', 'block_2', term.id) }}
-  </div>
+<div>
+   {{ drupal_view('taxonomy_term', 'block_2', term.id) }}
+</div>
  
-
-  {# <div>
-    {{ drupal_view('featured', 'block_1') }}
-  </div>
+<div class="dcf-p-8 dcf-bleed" >
+  <hr class="custom-l-line dcf-mt-0 ">
+  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
   <div>
-    {{ drupal_view('featured', 'block_2') }}
-  </div> #}
-
+    {{ drupal_view('taxonomy_term', 'block_1', term.id) }}
+  </div>
 </div>
