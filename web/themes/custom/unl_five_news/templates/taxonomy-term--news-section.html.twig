@@ -7,11 +7,16 @@
 </div>
 
 <div>
-   {{ drupal_view('taxonomy_term', 'block_2', term.id) }}
+  {{ drupal_view('taxonomy_term', 'block_2', term.id) }}
 </div>
- 
+
 <div class="dcf-pt-8" >
   <div>
     {{ drupal_view('taxonomy_term', 'block_1', term.id) }}
   </div>
 </div>
+
+
+{{ drupal_view('editors_pick', 'block_1') }}
+
+{{ drupal_view('editors_pick_2', 'block_1') }}
