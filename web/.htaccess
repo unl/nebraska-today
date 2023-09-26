@@ -29,6 +29,7 @@ AddEncoding gzip svgz
 <IfModule mod_php.c>
   php_value session.save_path               /var/www/unl.edu/tmp/
   php_value assert.active                   0
+  php_value memory_limit                    4G
 </IfModule>
 
 # Requires mod_expires to be enabled.
