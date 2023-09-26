@@ -512,6 +512,55 @@ blockquote p:nth-of-type(3)::after {
   padding: 3vh calc(5% + 1em) 3vh 22.5%;
 }
 
+.custom-editor-choice{
+  background-color:#d00000;
+}
+
+.custom-editor-choice{
+  display: flex;
+  flex-direction: column ;
+  position:relative;
+  overflow:visible;
+
+}
+
+.custom-editor-choice .custom-editor-image{
+  
+}
+
+.custom-editor-choice .custom-editor-text{
+  padding: 3vh 5%;
+}
+
+@media (min-width: 80em){
+  .custom-editor-choice .custom-editor-text{
+    width: 80%;
+    position: absolute;
+    right: 5%;
+    bottom: -1.43em;
+    z-index: 2;
+    background-color: #d00000;
+  }
+}
+
+@media screen and (min-width: 40em) and (max-width: 80em) {
+  .custom-editor-choice .custom-editor-text{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: #d00000;
+  }
+}
+
+@media only screen and (max-width: 860px){
+  .custom-editors-order-1{
+    order: 1;
+  }
+  .custom-editors-order-2{
+    order: 2;
+  }
+}
+
 @media (max-width: 673px) {
   .custom-display-half-half-grid-mobile-view {
     display: flex;
@@ -534,6 +583,7 @@ blockquote p:nth-of-type(3)::after {
   .landing-section {
     min-height: auto;
   }
+  
 }
 
 @media only screen and (max-width: 600px) {
