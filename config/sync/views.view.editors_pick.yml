@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.news_section
-  content:
-    - 'taxonomy_term:news_section:4fefb397-993c-4016-a2e6-38740cc27e7c'
+    - core.entity_view_mode.node.teaser
   module:
     - node
-    - taxonomy
+    - options
     - user
 id: editors_pick
 label: 'Editors Pick'
@@ -73,23 +71,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: mini
+        type: some
         options:
           offset: 0
           items_per_page: 1
-          total_pages: null
-          id: 0
-          tags:
-            next: ››
-            previous: ‹‹
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -138,17 +123,21 @@ display:
           group: 1
           expose:
             operator: ''
-        tid:
-          id: tid
-          table: taxonomy_index
-          field: tid
+        field_article_priority_value:
+          id: field_article_priority_value
+          table: node__field_article_priority
+          field: field_article_priority_value
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: taxonomy_index_tid
+          plugin_id: list_field
           operator: or
           value:
-            - 2
+            all: all
+            lead: lead
+            headline: headline
+            featured: featured
+            long: long
           group: 1
           exposed: false
           expose:
@@ -179,11 +168,6 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          vid: news_section
-          type: textfield
-          hierarchy: false
-          limit: true
-          error_message: true
       style:
         type: default
         options:
@@ -192,12 +176,10 @@ display:
           default_row_class: true
           uses_fields: false
       row:
-        type: fields
+        type: 'entity:node'
         options:
-          default_field_elements: true
-          inline: {  }
-          separator: ''
-          hide_empty: false
+          relationship: none
+          view_mode: teaser
       query:
         type: views_query
         options:
@@ -215,8 +197,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -232,8 +212,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url.query_args
-        - user
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

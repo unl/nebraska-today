@@ -47,8 +47,16 @@
   <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
     <div class="dcf-col-100% dcf-col-67%-start@md">
       {# Calendar icons #}
-      {# {{ calendarIcons() }} #}
-      {# {{ function unl_five_news_preprocess_node(&$variables) }} #}
+      {# {{ calendarIcons() }} 
+      {{ function unl_five_news_preprocess_node(&$variables) }} #}
+       <div id="wdn_calendarDisplay"></div>
+            <script>
+                window.addEventListener('inlineJSReady', function(event) {
+                  WDN.setPluginParam('events', 'href', 'https://events.unl.edu/');
+                  WDN.setPluginParam('events', 'limit', 12);
+                  WDN.initializePlugin('events');
+              }, false);
+            </script>
     </div>
     <div class="dcf-col-100% dcf-col-33%-end@md">
       <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/NebToday"
