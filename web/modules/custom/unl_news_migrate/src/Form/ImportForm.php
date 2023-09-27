@@ -92,7 +92,7 @@ class ImportForm extends FormBase {
    * Imports an article node.
    */
   public static function importPage($url, $nid, $changed, $created, $uuid, $alias, $summary, $tags, &$context) {
-    $request = \Drupal::httpClient()->get($url);
+    $request = \Drupal::httpClient()->get($url . '?asdf');
     $body = $request->getBody();
     if (!$body) {
       $context['message'] = t('The page at ' . $url . ' is empty. Ignoring.');
@@ -145,10 +145,10 @@ class ImportForm extends FormBase {
       return false;
     }
 
-    // Deal with images embedded in the body.
-    $nodes = $xpath->query("//div[contains(@class, 'field-name-body')]/div[contains(@class, 'entity')]");
-    foreach($nodes as $item) {
-      foreach($item->getElementsByTagName('img') as $img) {
+    // Deal with Media in the sidebar.
+    $nodes = $xpath->query("//div[contains(@class, 'dcf-col-25%-end@md')]//div[contains(@class, 'entity')]");
+    foreach ($nodes as $item) {
+      foreach ($item->getElementsByTagName('img') as $img) {
         $src = $img->getAttribute('src');
         $src = str_replace('styles/meta/public/', '', $src);
         $file_name = explode("/", $src);
@@ -175,12 +175,15 @@ class ImportForm extends FormBase {
           // Alt text.
           $alt = $img->getAttribute('alt');
           // Credit.
+          $credit = '';
           $credit_nodes = $xpath->query("div[contains(@class, 'field-name-field-credit')]//text()", $img->parentNode->parentNode);
-          $credit = $dom->saveHTML($credit_nodes->item(0));
+          if ($credit_nodes->length) {
+            $credit = $dom->saveHTML($credit_nodes->item(0));
+          }
 
           $file_data = file_get_contents($src);
           $file = \Drupal::service('file.repository')
-            ->writeData($file_data, 'public://media/images/'.$file_name, FileSystemInterface::EXISTS_REPLACE);
+            ->writeData($file_data, 'public://media/images/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
           $media = Media::create([
             'bundle' => 'image',
             'uid' => \Drupal::currentUser()->id(),
@@ -190,7 +193,7 @@ class ImportForm extends FormBase {
             ],
             'field_media_image_credit' => [['value' => $credit]],
           ]);
-          $media->setName($name)
+          $media->setName($file_name)
             ->setPublished(TRUE)
             ->save();
         }
@@ -206,8 +209,144 @@ class ImportForm extends FormBase {
         $drupal_media->setAttribute('data-align', 'center');
         $drupal_media->setAttribute('data-caption', $cutline);
 
-        // Replace the imported field collection HTML with the new drupal-media element.
-        $item->parentNode->replaceChild($drupal_media, $item);
+        // Append this image to the bottom of the body field.
+        $bodyNode->appendChild($drupal_media);
+      }
+    }
+
+
+
+    // Deal with images and videos embedded in the body.
+    foreach(['entity', 'media-item'] as $mediawrapperclass) {
+      $nodes = $xpath->query("//div[contains(@class, 'field-name-body')]/div[contains(@class, $mediawrapperclass)]");
+      foreach ($nodes as $item) {
+        foreach ($item->getElementsByTagName('img') as $img) {
+          if (strpos($img->parentNode->getAttribute('class'), 'metaimage') !== FALSE) {
+            $src = $img->getAttribute('src');
+            $src = str_replace('styles/meta/public/', '', $src);
+            $file_name = explode("/", $src);
+            $file_name = end($file_name);
+            $file_name = explode("?", $file_name);
+            $file_name = $file_name[0];
+
+            // Check if image already exists.
+            $file = \Drupal::entityTypeManager()
+              ->getStorage('file')
+              ->loadByProperties(['filename' => $file_name]);
+
+            if ($file) {
+              // Get existing Media entity.
+              $fileId = array_shift($file)->id();
+              $media = \Drupal::entityTypeManager()
+                ->getStorage('media')
+                ->loadByProperties(['field_media_image' => $fileId]);
+              $media = reset($media);
+            }
+            else {
+              // Download the file and create a new Media entity.
+
+              // Alt text.
+              $alt = $img->getAttribute('alt');
+              // Credit.
+              $credit = '';
+              $credit_nodes = $xpath->query("div[contains(@class, 'field-name-field-credit')]//text()", $img->parentNode->parentNode);
+              if ($credit_nodes->length) {
+                $credit = $dom->saveHTML($credit_nodes->item(0));
+              }
+
+              $file_data = file_get_contents($src);
+              $file = \Drupal::service('file.repository')
+                ->writeData($file_data, 'public://media/images/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+              $media = Media::create([
+                'bundle' => 'image',
+                'uid' => \Drupal::currentUser()->id(),
+                'field_media_image' => [
+                  'target_id' => $file->id(),
+                  'alt' => $alt,
+                ],
+                'field_media_image_credit' => [['value' => $credit]],
+              ]);
+              $media->setName($file_name)
+                ->setPublished(TRUE)
+                ->save();
+            }
+
+            // Cutline.
+            $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode);
+            $cutline = $dom->saveHTML($cutline_nodes->item(0));
+
+            // Alignment.
+            $classes = $img->parentNode->parentNode->parentNode->parentNode->parentNode->getAttribute('class');
+            if (strpos($classes, 'float-') !== FALSE) {
+              if (strpos($classes, 'float-left') !== FALSE) {
+                $data_align = 'left';
+              }
+              else {
+                $data_align = 'right';
+              }
+            }
+            else {
+              $data_align = 'center';
+            }
+
+            // Create a new drupal-media DOM element.
+            $drupal_media = $dom->createElement('drupal-media');
+            $drupal_media->setAttribute('data-entity-type', 'media');
+            $drupal_media->setAttribute('data-entity-uuid', $media->uuid());
+            $drupal_media->setAttribute('data-align', $data_align);
+            $drupal_media->setAttribute('data-caption', $cutline);
+
+            // Replace the imported field collection HTML with the new drupal-media element.
+            $item->parentNode->replaceChild($drupal_media, $item);
+          }
+          elseif (strpos($img->parentNode->getAttribute('class'), 'metavideo') !== FALSE) {
+            $src = $img->getAttribute('src');
+            $videoid = explode("/", $src);
+            $videoid = end($videoid);
+            $videoid = explode(".jpg?", $videoid);
+            $videoid = $videoid[0];
+
+            if (str_contains($src, 'mediahub')) {
+              $video_url = 'https://mediahub.unl.edu/media/' . $videoid;
+            }
+            elseif (str_contains($src, 'youtube')) {
+              $video_url = 'https://www.youtube.com/watch?v=' . $videoid;
+            }
+            elseif (str_contains($src, 'vimeo')) {
+              $video_url = 'https://vimeo.com/' . $videoid;
+            }
+
+            $media = \Drupal::entityTypeManager()
+              ->getStorage('media')
+              ->loadByProperties(['field_media_oembed_video' => $video_url]);
+            $media = reset($media);
+
+            if (!$media) {
+              $media = Media::create([
+                'bundle' => 'remote_video',
+                'uid' => \Drupal::currentUser()->id(),
+                'field_media_oembed_video' => [['value' => $video_url]]
+              ]);
+              $media->setName($video_url)
+                ->setPublished(TRUE)
+                ->save();
+            }
+
+            // Cutline.
+            $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode->parentNode->parentNode);
+            $cutline = $dom->saveHTML($cutline_nodes->item(0));
+
+            // Create a new drupal-media DOM element.
+            $drupal_media = $dom->createElement('drupal-media');
+            $drupal_media->setAttribute('data-entity-type', 'media');
+            $drupal_media->setAttribute('data-entity-uuid', $media->uuid());
+            $drupal_media->setAttribute('data-align', 'center');
+            $drupal_media->setAttribute('data-caption', $cutline);
+
+            // Replace the imported field collection HTML with the new drupal-media element.
+            $item->parentNode->replaceChild($drupal_media, $item);
+          }
+        }
       }
     }
 
@@ -248,10 +387,13 @@ class ImportForm extends FormBase {
         // Download the file and create a new Media entity.
 
         // Alt text.
-        $alt = $nodes->item(0)->getAttribute("alt");
+        $alt = $nodes->item(0)->getAttribute('alt');
         // Credit.
-        $nodes = $xpath->query("//div[contains(@class, 'field-name-field-credit')]//text()");
-        $credit = $dom->saveHTML($nodes->item(0));
+        $credit = '';
+        $credit_nodes = $xpath->query("//div[contains(@class, 'field-name-field-credit')]//text()");
+        if ($credit_nodes->length) {
+          $credit = $dom->saveHTML($nodes->item(0));
+        }
 
         $file_data = file_get_contents($src);
         $file = \Drupal::service('file.repository')

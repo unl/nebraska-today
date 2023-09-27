@@ -1,0 +1,13 @@
+uuid: 8f100ad0-8a0f-499a-bffa-bf027d8c559f
+langcode: en
+status: true
+dependencies:
+  config:
+    - oembed_providers.provider.unl_mediahub
+id: video
+label: 'Remote video'
+description: ''
+providers:
+  - 'UNL Mediahub'
+  - Vimeo
+  - YouTube
