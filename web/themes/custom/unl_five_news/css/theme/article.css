@@ -524,13 +524,25 @@ blockquote p:nth-of-type(3)::after {
 
 }
 
-.custom-editor-choice .custom-editor-image{
-  
-}
-
 .custom-editor-choice .custom-editor-text{
   padding: 3vh 5%;
 }
+
+
+.custom-editors-pick-order{
+  padding-left:calc(6% + 0.7rem);
+}
+
+.custom-editors-pick-three-story{
+  height: 100%;
+}
+
+.custom-editor-choice-padding{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+
 
 @media (min-width: 80em){
   .custom-editor-choice .custom-editor-text{
