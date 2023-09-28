@@ -429,11 +429,11 @@ blockquote p:nth-of-type(3)::after {
   min-width: 90px;
 }
 
-.custom-section-display > div > div > div a::after {
+.custom-section-display > div > div a::after {
   content: ",";
 }
 
-.custom-section-display > div > div > div:last-child a:after {
+.custom-section-display > div  > div:last-child a:after {
   content: "";
 }
 
