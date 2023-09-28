@@ -6,11 +6,12 @@ dependencies:
     - block_content.type.parallax_image
     - field.storage.block_content.field_image
     - media.type.image
+    - media.type.remote_video
 id: block_content.parallax_image.field_image
 field_name: field_image
 entity_type: block_content
 bundle: parallax_image
-label: Image
+label: 'Image or Remote Video'
 description: ''
 required: false
 translatable: false
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      remote_video: remote_video
     sort:
       field: _none
       direction: ASC
     auto_create: true
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference
