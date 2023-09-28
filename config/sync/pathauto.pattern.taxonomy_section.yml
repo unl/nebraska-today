@@ -1,0 +1,22 @@
+uuid: 2e56bc3a-7bb2-41cf-bbd0-690ae0f9c45f
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_section
+label: 'Taxonomy: Section'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'section/[term:name]'
+selection_criteria:
+  1ee38486-c2c9-4d47-b2bc-3b368ee80e0f:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 1ee38486-c2c9-4d47-b2bc-3b368ee80e0f
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      news_section: news_section
+selection_logic: and
+weight: -5
+relationships: {  }

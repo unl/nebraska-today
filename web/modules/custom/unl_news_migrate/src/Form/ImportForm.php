@@ -76,9 +76,12 @@ class ImportForm extends FormBase {
       $alias = substr($url, strlen($base_url)-1);
       $summary = (string)$item->summary;
       $tags = (array)$item->tag;
+      $news_release_contacts = (array)$item->news_release_contacts;
+      $sections = (array)$item->section;
+      $home_page_section = (string)$item->home_page_section;
 
       $batch['operations'][] = [
-        ['\Drupal\unl_news_migrate\Form\ImportForm', 'importPage'], [$url, $nid, $changed, $created, $uuid, $alias, $summary, $tags]
+        ['\Drupal\unl_news_migrate\Form\ImportForm', 'importPage'], [$url, $nid, $changed, $created, $uuid, $alias, $summary, $tags, $news_release_contacts, $sections, $home_page_section]
       ];
     }
 
@@ -91,7 +94,7 @@ class ImportForm extends FormBase {
   /**
    * Imports an article node.
    */
-  public static function importPage($url, $nid, $changed, $created, $uuid, $alias, $summary, $tags, &$context) {
+  public static function importPage($url, $nid, $changed, $created, $uuid, $alias, $summary, $tags, $news_release_contacts, $sections, $home_page_section, &$context) {
     $request = \Drupal::httpClient()->get($url . '?asdf');
     $body = $request->getBody();
     if (!$body) {
@@ -406,7 +409,7 @@ class ImportForm extends FormBase {
         $credit = '';
         $credit_nodes = $xpath->query("//div[contains(@class, 'field-name-field-credit')]//text()");
         if ($credit_nodes->length) {
-          $credit = $dom->saveHTML($nodes->item(0));
+          $credit = $dom->saveHTML($credit_nodes->item(0));
         }
 
         $file_data = file_get_contents($src);
@@ -447,7 +450,6 @@ class ImportForm extends FormBase {
 
 
     // Article Hero if it is a video.
-    $lead_image_block = null;
     $nodes = $xpath->query("//div[contains(@class, 'article-hero')]//iframe");
     if ($nodes->length > 0) {
       $src = $nodes->item(0)->getAttribute('src');
@@ -503,6 +505,60 @@ class ImportForm extends FormBase {
 
 
 
+    // High resolution photos.
+    $high_res_photos = [];
+    $nodes = $xpath->query("//div[contains(@class, 'field-name-field-high-resolution-photos')]");
+    foreach ($nodes as $item) {
+      foreach ($item->getElementsByTagName('img') as $img) {
+        $src = $img->getAttribute('src');
+        $src = str_replace('styles/meta/public/', '', $src);
+        $file_name = explode("/", $src);
+        $file_name = end($file_name);
+        $file_name = explode("?", $file_name);
+        $file_name = $file_name[0];
+
+        // Check if image already exists.
+        $file = \Drupal::entityTypeManager()
+          ->getStorage('file')
+          ->loadByProperties(['filename' => $file_name]);
+
+        if ($file) {
+          // Get existing Media entity.
+          $fileId = array_shift($file)->id();
+          $media = \Drupal::entityTypeManager()
+            ->getStorage('media')
+            ->loadByProperties(['field_media_image' => $fileId]);
+          $media = reset($media);
+        }
+        else {
+          // Download the file and create a new Media entity.
+
+          // Alt text.
+          $alt = $img->getAttribute('alt');
+
+          $file_data = file_get_contents($src);
+          $file = \Drupal::service('file.repository')
+            ->writeData($file_data, 'public://media/images/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+          $media = Media::create([
+            'bundle' => 'image',
+            'uid' => \Drupal::currentUser()->id(),
+            'field_media_image' => [
+              'target_id' => $file->id(),
+              'alt' => $alt,
+            ],
+          ]);
+          $media->setName($file_name)
+            ->setPublished(TRUE)
+            ->save();
+        }
+
+        $high_res_photos[] = $media;
+      }
+    }
+
+
+
+
     // Tags.
     $terms = [];
     $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
@@ -522,6 +578,57 @@ class ImportForm extends FormBase {
       $terms[] = $term->id();
     }
 
+
+    // Section.
+    $section_terms = [];
+    $storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+    foreach ($sections as $section) {
+      $found_terms = $storage->loadByProperties([
+        'name' => $section,
+        'vid' => 'news_section',
+      ]);
+      $term = reset($found_terms);
+      if ($term) {
+        $section_terms[] = $term->id();
+      }
+    }
+
+
+    // Related links.
+    $related_links = [];
+    $nodes = $xpath->query("//div[contains(@class, 'field-name-field-related-links')]");
+    foreach ($nodes as $item) {
+      foreach ($item->getElementsByTagName('a') as $a) {
+        $related_links[] = [
+          'href' => $a->getAttribute('href'),
+          'title' => $a->textContent,
+        ];
+      }
+    }
+
+
+
+    // Home page section.
+    $field_article_priority = '_none';
+    switch ($home_page_section) {
+      case 'Lead Story':
+        $field_article_priority = 'lead';
+        break;
+      case 'Headline Story':
+        $field_article_priority = 'headline';
+        break;
+      case 'Featured Event':
+        $field_article_priority = 'featured';
+        break;
+      case 'Long Running Featured Story':
+        $field_article_priority = 'long';
+        break;
+    }
+
+
+
+
+
     // Create a node.
     $node = Node::create([
       'type' => 'article',
@@ -537,6 +644,7 @@ class ImportForm extends FormBase {
       'title' => $title,
       'body' => ['summary' => $summary, 'value' => $body, 'format' => 'basic_html'],
       'field_subtitle' => $subtitle,
+      'field_article_priority' => $field_article_priority,
     ]);
     if (!empty($lead_image_block)) {
       $node->field_article_lead_image->appendItem(['target_id' => $lead_image_block->id()]);
@@ -544,8 +652,20 @@ class ImportForm extends FormBase {
     if (!empty($written_by_term)) {
       $node->field_written_by->appendItem(['target_id' => $written_by_term->id()]);
     }
+    foreach ($high_res_photos as $high_res_photo) {
+      $node->field_high_resolution_photo->appendItem(['target_id' => $high_res_photo->id()]);
+    }
     foreach ($terms as $term) {
       $node->field_tags->appendItem(['target_id' => $term]);
+    }
+    foreach ($section_terms as $term) {
+      $node->field_section->appendItem(['target_id' => $term]);
+    }
+    foreach ($news_release_contacts as $contact) {
+      $node->field_article_release_contacts->appendItem(['target_id' => $contact]);
+    }
+    foreach ($related_links as $related_link) {
+      $node->field_article_related_links->appendItem(['uri' => $related_link['href'], 'title' => $related_link['title']]);
     }
     $node->save();
 

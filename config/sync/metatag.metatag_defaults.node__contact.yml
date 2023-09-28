@@ -1,0 +1,8 @@
+uuid: bfa69c19-a95c-47f2-bfdf-df6845241db7
+langcode: en
+status: true
+dependencies: {  }
+id: node__contact
+label: 'Content: Person'
+tags:
+  robots: 'noindex, nofollow, noarchive, nosnippet'

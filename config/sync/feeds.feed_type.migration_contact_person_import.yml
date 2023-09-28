@@ -1,0 +1,153 @@
+uuid: 1ddc7770-f386-4340-899f-68a5c53fa9ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.base_field_override.node.contact.title
+    - field.field.node.contact.field_contact_email
+    - field.field.node.contact.field_contact_phone
+    - field.field.node.contact.field_contact_position
+    - field.field.node.contact.field_contact_website
+    - node.type.contact
+  module:
+    - feeds_log
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+label: 'Migration contact person import'
+id: migration_contact_person_import
+description: 'Drupal 7 Contact Person to Drupal 10 Person node migration'
+help: ''
+import_period: -1
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: csv
+parser_configuration:
+  delimiter: ','
+  no_headers: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: contact
+  langcode: en
+  insert_new: 1
+  update_existing: 1
+  update_non_existent: _delete
+  skip_hash_check: false
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  email:
+    value: email
+    label: email
+    machine_name: email
+    type: csv
+  job_title:
+    value: job_title
+    label: job_title
+    machine_name: job_title
+    type: csv
+  nid:
+    value: nid
+    label: nid
+    machine_name: nid
+    type: csv
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: csv
+  phone:
+    value: phone
+    label: phone
+    machine_name: phone
+    type: csv
+  website:
+    value: website
+    label: website
+    machine_name: website
+    type: csv
+  website_title:
+    value: website_title
+    label: website_title
+    machine_name: website_title
+    type: csv
+  updated_date:
+    value: updated_date
+    label: updated_date
+    machine_name: updated_date
+    type: csv
+mappings:
+  -
+    target: field_contact_email
+    map:
+      value: email
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_contact_position
+    map:
+      value: job_title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: nid
+    map:
+      value: nid
+    settings: {  }
+    unique:
+      value: 1
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_contact_phone
+    map:
+      value: phone
+    settings:
+      language: null
+  -
+    target: field_contact_website
+    map:
+      uri: website
+      title: website_title
+    settings:
+      language: null
+  -
+    target: created
+    map:
+      value: updated_date
+    settings:
+      language: null
+      timezone: UTC
