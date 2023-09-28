@@ -1,0 +1,22 @@
+uuid: cbfa8796-8ca0-42a2-9dbf-939d65df07a3
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_written_by
+label: 'Taxonomy: Written by'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'author/[term:name]'
+selection_criteria:
+  2b669a22-e5c4-45e4-be51-ee6cd05ee213:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 2b669a22-e5c4-45e4-be51-ee6cd05ee213
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      written_by: written_by
+selection_logic: and
+weight: -5
+relationships: {  }
