@@ -1,0 +1,8 @@
+uuid: 69fdf262-4c57-49d0-8933-32adacf1c17d
+langcode: en
+status: true
+dependencies: {  }
+id: slideshow
+label: Slideshow
+revision: 0
+description: 'Basic photo slideshow.'

@@ -1,0 +1,23 @@
+{%
+    set classes = [
+    'block-content',
+    'block-content--type-' ~ bundle|clean_class,
+    'block-content--' ~ id,
+    'block-content--view-mode-' ~ view_mode|clean_class
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+  <div class="dcf-slideshow block-content__content">
+    <ul>
+      {{ content.field_slideshow_photos  }}
+    </ul>
+  </div>
+</div>
+<script>
+  window.addEventListener('inlineJSReady', function() {
+    WDN.initializePlugin('slideshows');
+  }, false);
+</script>

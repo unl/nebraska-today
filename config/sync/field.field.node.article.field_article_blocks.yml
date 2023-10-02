@@ -11,6 +11,7 @@ dependencies:
     - block_content.type.paragraph_card
     - block_content.type.quote
     - block_content.type.quote_card
+    - block_content.type.slideshow
     - field.storage.node.field_article_blocks
     - node.type.article
 id: node.article.field_article_blocks
@@ -35,6 +36,7 @@ settings:
       paragraph_card: paragraph_card
       quote: quote
       quote_card: quote_card
+      slideshow: slideshow
     sort:
       field: _none
       direction: ASC

@@ -29,6 +29,19 @@ function unl_five_news_preprocess_field(&$variables) {
 
     }
   }
+
+  // Add loop index to paragraph twig templates.
+  // Being used in paragraph--slideshow--paragraph-media.html.twig
+  // https://www.drupal.org/project/paragraphs/issues/2881460#comment-12986813
+  if (
+    $variables['field_type'] == 'entity_reference_revisions'
+    &&
+    $variables['element']['#items']->getItemDefinition()->getSetting('target_type') == 'paragraph'
+  ) {
+    foreach ($variables['items'] as $idx => $item) {
+      $variables['items'][$idx]['content']['#paragraph']->index = $idx;
+    }
+  }
 }
 
 /**
@@ -197,4 +210,17 @@ function _unl_five_news_get_rss($url, $ttl) {
   }
 
   return $feed;
+}
+
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function unl_five_news_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+  }
 }

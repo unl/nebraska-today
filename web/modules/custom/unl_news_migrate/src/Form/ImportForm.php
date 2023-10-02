@@ -10,6 +10,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\media\Entity\Media;
 use Drupal\node\Entity\Node;
+use Drupal\paragraphs\Entity\Paragraph;
 use Drupal\pathauto\PathautoState;
 use Drupal\taxonomy\Entity\Term;
 
@@ -52,7 +53,7 @@ class ImportForm extends FormBase {
     $base_url = 'https://news.unl.edu/';
     $base_url = trim($base_url, '/') . '/';
 
-    $url = 'https://news.unl.edu/drupal-10-migration-articles.xml';
+    $url = 'https://news.unl.edu/drupal-10-migration-articles.xml?dhgf';
     //$url = 'https://localhost.unl.edu/drupal-10-migration-articles.xml';
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
@@ -151,6 +152,99 @@ class ImportForm extends FormBase {
 
 
 
+
+    // Deal with slideshows.
+    $slideshow_blocks = [];
+    $index = 1;
+    $nodes = $xpath->query("//div[contains(@class, 'node-photo-slideshow')]");
+    foreach ($nodes as $item) {
+      $slideshow_block = BlockContent::create([
+        'info' => 'Slideshow for Article ' . $nid,
+        'type' => 'slideshow',
+        'langcode' => 'en',
+      ]);
+      $slideshow_block->save();
+
+      foreach ($item->getElementsByTagName('img') as $img) {
+        $src = $img->getAttribute('src');
+        $src = str_replace('styles/large_aspect/public/', '', $src);
+        $file_name = explode("/", $src);
+        $file_name = end($file_name);
+        $file_name = explode("?", $file_name);
+        $file_name = $file_name[0];
+
+        // Check if image already exists.
+        $file = \Drupal::entityTypeManager()
+          ->getStorage('file')
+          ->loadByProperties(['filename' => $file_name]);
+
+        if ($file) {
+          // Get existing Media entity.
+          $fileId = array_shift($file)->id();
+          $media = \Drupal::entityTypeManager()
+            ->getStorage('media')
+            ->loadByProperties(['field_media_image' => $fileId]);
+          $media = reset($media);
+        }
+        else {
+          // Download the file and create a new Media entity.
+
+          // Alt text.
+          $alt = $img->getAttribute('alt');
+          $alt = substr($alt, 0, 500);
+          // Credit.
+          $credit = '';
+          $credit_nodes = $xpath->query("//small[contains(@class, 'dcf-txt-xs')]/text()", $img->parentNode->parentNode->parentNode->parentNode->parentNode->parentNode->parentNode);
+          if ($credit_nodes->length) {
+            $credit = trim($dom->saveHTML($credit_nodes->item(0)));
+          }
+
+          $file_data = file_get_contents($src);
+          $file = \Drupal::service('file.repository')
+            ->writeData($file_data, 'public://media/images/' . $file_name, FileSystemInterface::EXISTS_REPLACE);
+          $media = Media::create([
+            'bundle' => 'image',
+            'uid' => \Drupal::currentUser()->id(),
+            'field_media_image' => [
+              'target_id' => $file->id(),
+              'alt' => $alt,
+            ],
+            'field_media_image_credit' => [['value' => $credit]],
+          ]);
+          $media->setName($file_name)
+            ->setPublished(TRUE)
+            ->save();
+        }
+
+        // Cutline.
+        $cutline = '';
+        $cutline_nodes = $xpath->query("figcaption//text()", $img->parentNode->parentNode->parentNode->parentNode->parentNode->parentNode->parentNode);
+        if ($cutline_nodes->length) {
+          $cutline = trim($dom->saveHTML($cutline_nodes->item(0)));
+        }
+
+        $paragraph = Paragraph::create([
+          'type' => 'paragraph_media',
+          'field_p_media_cutline' => ['value' => $cutline],
+          'field_p_media' => ['target_id' => $media->id()],
+        ]);
+        $paragraph->save();
+        $slideshow_block->field_slideshow_photos->appendItem($paragraph);
+        //$slideshow_block->field_slideshow_photos->appendItem(['target_id' => $paragraph->id()]);
+        $slideshow_block->save();
+      }
+
+      $slideshow_blocks[] = $slideshow_block;
+
+      $slideshow_insert = $dom->createTextNode('[unl:b:' . $index . ']');
+      $item->parentNode->replaceChild($slideshow_insert, $item);
+      $index++;
+    }
+
+
+
+
+
     // Deal with images and videos embedded in the body.
     foreach(['entity', 'media-item'] as $mediawrapperclass) {
       $nodes = $xpath->query("//div[contains(@class, 'field-name-body')]/div[contains(@class, $mediawrapperclass)]");
@@ -182,11 +276,12 @@ class ImportForm extends FormBase {
 
               // Alt text.
               $alt = $img->getAttribute('alt');
+              $alt = substr($alt, 0, 500);
               // Credit.
               $credit = '';
               $credit_nodes = $xpath->query("div[contains(@class, 'field-name-field-credit')]//text()", $img->parentNode->parentNode);
               if ($credit_nodes->length) {
-                $credit = $dom->saveHTML($credit_nodes->item(0));
+                $credit = trim($dom->saveHTML($credit_nodes->item(0)));
               }
 
               $file_data = file_get_contents($src);
@@ -210,7 +305,7 @@ class ImportForm extends FormBase {
             $cutline = '';
             $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode);
             if ($cutline_nodes->length) {
-              $cutline = $dom->saveHTML($cutline_nodes->item(0));
+              $cutline = trim($dom->saveHTML($cutline_nodes->item(0)));
             }
 
             // Alignment.
@@ -274,7 +369,7 @@ class ImportForm extends FormBase {
             $cutline = '';
             $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode->parentNode->parentNode);
             if ($cutline_nodes->length) {
-              $cutline = $dom->saveHTML($cutline_nodes->item(0));
+              $cutline = trim($dom->saveHTML($cutline_nodes->item(0)));
             }
 
             // Create a new drupal-media DOM element.
@@ -323,11 +418,12 @@ class ImportForm extends FormBase {
 
           // Alt text.
           $alt = $img->getAttribute('alt');
+          $alt = substr($alt, 0, 500);
           // Credit.
           $credit = '';
           $credit_nodes = $xpath->query("div[contains(@class, 'field-name-field-credit')]//text()", $img->parentNode->parentNode);
           if ($credit_nodes->length) {
-            $credit = $dom->saveHTML($credit_nodes->item(0));
+            $credit = trim($dom->saveHTML($credit_nodes->item(0)));
           }
 
           $file_data = file_get_contents($src);
@@ -351,7 +447,7 @@ class ImportForm extends FormBase {
         $cutline = '';
         $cutline_nodes = $xpath->query("div[contains(@class, 'field-name-field-cutline')]//text()", $img->parentNode->parentNode->parentNode);
         if ($cutline_nodes->length) {
-          $cutline = $dom->saveHTML($cutline_nodes->item(0));
+          $cutline = trim($dom->saveHTML($cutline_nodes->item(0)));
         }
 
         // Create a new drupal-media DOM element.
@@ -405,11 +501,12 @@ class ImportForm extends FormBase {
 
         // Alt text.
         $alt = $nodes->item(0)->getAttribute('alt');
+        $alt = substr($alt, 0, 500);
         // Credit.
         $credit = '';
         $credit_nodes = $xpath->query("//div[contains(@class, 'field-name-field-credit')]//text()");
         if ($credit_nodes->length) {
-          $credit = $dom->saveHTML($credit_nodes->item(0));
+          $credit = trim($dom->saveHTML($credit_nodes->item(0)));
         }
 
         $file_data = file_get_contents($src);
@@ -424,7 +521,7 @@ class ImportForm extends FormBase {
           ],
           'field_media_image_credit' => [['value' => $credit]],
         ]);
-        $media->setName($name)
+        $media->setName($file_name)
           ->setPublished(TRUE)
           ->save();
       }
@@ -433,7 +530,7 @@ class ImportForm extends FormBase {
       $cutline = '';
       $nodes = $xpath->query("//div[contains(@class, 'field-name-field-cutline')]//text()");
       if ($nodes->length) {
-        $cutline = $dom->saveHTML($nodes->item(0));
+        $cutline = trim($dom->saveHTML($nodes->item(0)));
       }
 
       $lead_image_block = BlockContent::create([
@@ -488,7 +585,7 @@ class ImportForm extends FormBase {
       $cutline = '';
       $nodes = $xpath->query("//div[contains(@class, 'field-name-field-cutline')]//text()");
       if ($nodes->length) {
-        $cutline = $dom->saveHTML($nodes->item(0));
+        $cutline = trim($dom->saveHTML($nodes->item(0)));
       }
 
       $lead_image_block = BlockContent::create([
@@ -535,6 +632,7 @@ class ImportForm extends FormBase {
 
           // Alt text.
           $alt = $img->getAttribute('alt');
+          $alt = substr($alt, 0, 500);
 
           $file_data = file_get_contents($src);
           $file = \Drupal::service('file.repository')
@@ -666,6 +764,9 @@ class ImportForm extends FormBase {
     }
     foreach ($related_links as $related_link) {
       $node->field_article_related_links->appendItem(['uri' => $related_link['href'], 'title' => $related_link['title']]);
+    }
+    foreach ($slideshow_blocks as $slideshow) {
+      $node->field_article_blocks->appendItem(['target_id' => $slideshow->id()]);
     }
     $node->save();
 

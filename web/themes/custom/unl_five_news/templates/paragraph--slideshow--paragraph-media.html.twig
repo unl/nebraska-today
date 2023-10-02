@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+]
+%}
+<li{{ attributes.addClass(classes) }}>
+  <figure>
+    <div class="dcf-ratio dcf-ratio-4x3 dcf-ratio-16x9@md">
+      <img class="dcf-d-block dcf-ratio-child dcf-obj-fit-cover"
+           src="{{ paragraph.field_p_media|file_url }}"
+           alt="">
+    </div>
+    <figcaption>
+      {{ content.field_p_media_cutline }}
+      <small class="dcf-txt-xs dcf-txt-nowrap">{{ content.field_p_media[paragraph.index]['#media'].field_media_image_credit.value }}</small>
+    </figcaption>
+  </figure>
+</li>

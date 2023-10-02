@@ -1,0 +1,49 @@
+uuid: b2d70223-2696-456d-ac05-ad68c14e5680
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.slideshow
+    - field.storage.block_content.field_slideshow_photos
+    - paragraphs.paragraphs_type.paragraph_media
+  module:
+    - entity_reference_revisions
+id: block_content.slideshow.field_slideshow_photos
+field_name: field_slideshow_photos
+entity_type: block_content
+bundle: slideshow
+label: 'Slideshow photos'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_media: paragraph_media
+    negate: 0
+    target_bundles_drag_drop:
+      contact_and_bio:
+        weight: 8
+        enabled: false
+      email_article_and_display:
+        weight: 9
+        enabled: false
+      paragraph_card:
+        weight: 10
+        enabled: false
+      paragraph_media:
+        weight: 11
+        enabled: true
+      paragraph_photos:
+        weight: 12
+        enabled: false
+      paragraph_video:
+        weight: 13
+        enabled: false
+      quote_card:
+        weight: 14
+        enabled: false
+field_type: entity_reference_revisions
