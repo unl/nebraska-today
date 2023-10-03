@@ -433,7 +433,7 @@ blockquote p:nth-of-type(3)::after {
   content: ",";
 }
 
-.custom-section-display > div  > div:last-child a:after {
+.custom-section-display > div > div:last-child a:after {
   content: "";
 }
 
@@ -502,32 +502,30 @@ blockquote p:nth-of-type(3)::after {
   padding: 3vh calc(5% + 1em) 3vh 22.5%;
 }
 
-.custom-editor-choice{
-  background-color:#d00000;
+.custom-editor-choice {
+  background-color: #d00000;
 }
 
-.custom-editor-choice{
+.custom-editor-choice {
   display: flex;
-  flex-direction: column ;
-  position:relative;
-  overflow:visible;
-
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
 }
 
-.custom-editor-choice .custom-editor-text{
+.custom-editor-choice .custom-editor-text {
   padding: 3vh 5%;
 }
 
-
-.custom-editors-pick-order{
-  padding-left:calc(6% + 0.7rem);
+.custom-editors-pick-order {
+  padding-left: calc(6% + 0.7rem);
 }
 
-.custom-editors-pick-three-story{
+.custom-editors-pick-three-story {
   height: 100%;
 }
 
-.custom-editor-choice-padding{
+.custom-editor-choice-padding {
   padding-top: 2%;
   padding-bottom: 2%;
 }
@@ -554,8 +552,6 @@ blockquote p:nth-of-type(3)::after {
   align-items: center;
   flex-flow: row nowrap;
 }
-
-
 
 .recent-block3-grid > div:nth-child(1) {
   width: 33.33333333%;
@@ -653,6 +649,40 @@ blockquote p:nth-of-type(3)::after {
 
 .custom-main-page-quote blockquote p::before {
   content: none;
+}
+
+.align-left {
+  max-width: 55%;
+  position: relative;
+  left: -12px;
+  bottom: -12px;
+}
+
+.align-right {
+  max-width: 55%;
+  position: relative;
+  right: -12px;
+  bottom: -12px;
+}
+
+.align-center {
+  max-width: 80%;
+}
+
+@media only screen and (max-width: 42.09em) {
+  .align-left {
+    max-width: 100%;
+    position: static;
+  }
+
+  .align-right {
+    max-width: 100%;
+    position: static;
+  }
+
+  .align-center {
+    max-width: 100%;
+  }
 }
 
 /* Full screen */
@@ -1743,9 +1773,7 @@ blockquote p:nth-of-type(3)::after {
     align-items: center;
     flex-wrap: row nowrap;
   }
-  
 }
-
 
 @media (min-width: 42.09em) and (max-width: 56.12em) {
   .custom-section-heading-padding {
@@ -1758,7 +1786,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 @media screen and (min-width: 42.09em) and (max-width: 74.83em) {
-  .custom-editor-choice .custom-editor-text{
+  .custom-editor-choice .custom-editor-text {
     width: 100%;
     position: absolute;
     z-index: 2;
@@ -1766,17 +1794,17 @@ blockquote p:nth-of-type(3)::after {
   }
 }
 
-@media only screen and (max-width: 56.12em){
-  .custom-editors-order-1{
+@media only screen and (max-width: 56.12em) {
+  .custom-editors-order-1 {
     order: 1;
   }
-  .custom-editors-order-2{
+  .custom-editors-order-2 {
     order: 2;
   }
 }
 
-@media (min-width: 74.83em){
-  .custom-editor-choice .custom-editor-text{
+@media (min-width: 74.83em) {
+  .custom-editor-choice .custom-editor-text {
     width: 80%;
     position: absolute;
     right: 5%;
@@ -1785,5 +1813,3 @@ blockquote p:nth-of-type(3)::after {
     background-color: #d00000;
   }
 }
-
-

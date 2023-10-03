@@ -46,22 +46,22 @@
 
 {% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
     <div class=" dcf-bleed">
-         <div class="custom-display-half-half-grid">
-        <div class="dcf-relative custom-display-half-half-grid-mobile-view">
-            <div class="dcf-z-2 custom-position dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
-                <div class="dcf-p-2 unl-cream unl-bg-darkest-gray">
-                     <h2>{{ label }}</h2>
-                    <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href= "{{ url }}">Read more</a></div>
+        <div class="custom-display-half-half-grid">
+            <div class="dcf-relative custom-display-half-half-grid-mobile-view">
+                <div class="dcf-z-2 custom-position dcf-h-auto  {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
+                    <div class="dcf-p-2 unl-cream unl-bg-darkest-gray">
+                        <h2>{{ label }}</h2>
+                        <div class="dcf-mt-7 custom-hide-link custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans "><a class="dcf-txt-decor-none custom-arrow" href= "{{ url }}">Read more</a></div>
+                    </div>
+                </div>
+                <div>
+                    {{ content.field_article_lead_image }}
                 </div>
             </div>
-            <div>
-                {{ content.field_article_lead_image }}
+            {# Recent News #}
+            <div class="custom-dcf-wrapper">
+                {{ drupal_view('recent', 'block_3') }}
             </div>
-        </div>
-        {# Recent News #}
-        <div class="custom-dcf-wrapper">
-            {{ drupal_view('recent', 'block_3') }}
-        </div>
         </div>
     </div>
 
