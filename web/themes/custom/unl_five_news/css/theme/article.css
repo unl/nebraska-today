@@ -452,6 +452,7 @@ blockquote p:nth-of-type(3)::after {
 .custom-display-half-half-grid {
   display: grid;
   grid-template-areas: "featureImage featureImage recentNews";
+  align-items: center;
 }
 
 .custom-dcf-wrapper {

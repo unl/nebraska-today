@@ -10,11 +10,11 @@
     </div>
   </div>
   {# <div class = "dcf-grid-full@sm dcf-grid-halves@md dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6"> #}
-  <div class="dcf-d-flex dcf-flex-col dcf-col-gap-vw">
+  <div class="dcf-d-flex dcf-flex-col dcf-col-gap-vw ">
     {% for row in rows %}
       {%
         set row_classes = [
-          default_row_class ? 'views-row dcf-col ',
+          default_row_class ? 'views-row dcf-col dcf-pb-3',
         ]
       %}
       <div{{ row.attributes.addClass(row_classes) }}>
@@ -22,5 +22,5 @@
       </div>
     {% endfor %}
   </div>
-  <div class="dcf-mt-7 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more dcf-wrapper "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More headlines</a></div>
+  <div class="custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more dcf-wrapper "><a class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More headlines</a></div>
 </div>
