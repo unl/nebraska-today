@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.field_of_expertise.body
+    - field.field.node.field_of_expertise.feeds_item
     - field.field.node.field_of_expertise.field_experts
     - node.type.field_of_expertise
   module:
@@ -100,5 +101,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   publish_on: true
   unpublish_on: true
