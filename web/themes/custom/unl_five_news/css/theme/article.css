@@ -553,7 +553,18 @@ blockquote p:nth-of-type(3)::after {
   flex-flow: row nowrap;
 }
 
+.half-text-half-image-grid {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+
 .recent-block3-grid > div:nth-child(1) {
+  width: 33.33333333%;
+  padding-right: 1.58vw;
+}
+
+.half-text-half-image-grid > div:nth-child(1) {
   width: 33.33333333%;
   padding-right: 1.58vw;
 }
@@ -562,6 +573,12 @@ blockquote p:nth-of-type(3)::after {
   width: 66.66666667%;
   padding: 0 1.58vw;
 }
+
+.half-text-half-image-grid > div:nth-child(2) {
+  width: 66.66666667%;
+  padding: 0 1.58vw;
+}
+
 .custom-display-half-half-grid .landing-section {
   width: auto;
   height: 100%;
@@ -667,6 +684,32 @@ blockquote p:nth-of-type(3)::after {
 
 .align-center {
   max-width: 80%;
+}
+
+.custom-editors-order-1,
+.custom-editors-order-1 div {
+  height: 100%;
+}
+
+.custom-oncampus-order-1,
+.custom-oncampus-order-1 div {
+  height: 100%;
+}
+
+.custom-editor-text {
+  height: auto !important;
+}
+
+.custom-on-campus-news-3 h5 {
+  margin-bottom: 0.5rem;
+}
+
+.custom-editors-order-2 h5 {
+  margin-bottom: 0.5rem;
+}
+
+.custom-oncampus-order-2 h5 {
+  margin-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 42.09em) {
@@ -1627,8 +1670,6 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .custom-on-campus-news-3 .views-element-container {
-    padding-top: 1em;
-    padding-left: 4em;
     align-self: center;
   }
 
@@ -1652,11 +1693,15 @@ blockquote p:nth-of-type(3)::after {
     padding: 3vh 5%;
     position: absolute;
     width: auto;
-    max-width: 80%;
+    width: 80%;
     right: 5%;
     order: 2;
     z-index: 2;
     bottom: -1.43em;
+  }
+
+  .custom-oncampus-title {
+    height: auto !important;
   }
 
   .custom-pt-pb-5 {
@@ -1773,6 +1818,12 @@ blockquote p:nth-of-type(3)::after {
     align-items: center;
     flex-wrap: row nowrap;
   }
+
+  .half-text-half-image-grid {
+    display: flex;
+    align-items: center;
+    flex-wrap: row nowrap;
+  }
 }
 
 @media (min-width: 42.09em) and (max-width: 56.12em) {
@@ -1799,6 +1850,13 @@ blockquote p:nth-of-type(3)::after {
     order: 1;
   }
   .custom-editors-order-2 {
+    order: 2;
+  }
+  .custom-oncampus-order-1 {
+    order: 1;
+  }
+
+  .custom-oncampus-order-2 {
     order: 2;
   }
 }

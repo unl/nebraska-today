@@ -30,16 +30,14 @@
       <a href="/newsrooms/1/subscribe/">Submit a Story</a>
     </div>
   </div>
-  <div class="custom-flex dcf-bleed">
-    <div class="dcf-2nd  custom-on-campus-news-1">
-      {{ drupal_view('on_campus', 'block_1') }}
-    </div>
-    <div class="dcf-1st dcf-d-flex custom-on-campus-news-3 dcf-ai-center unl-bg-darker-gray custom-on-campus-news-2">
-      {{ drupal_view('on_campus', 'block_2') }}
+  <div >
+    <div class = "dcf-grid-halves@md dcf-grid-full@sm dcf-bleed dcf-ai-center unl-bg-lightest-gray ">
+      <div class="custom-oncampus-order-2  dcf-wrapper custom-editor-choice-padding">{{ drupal_view('on_campus', 'block_2') }}</div>
+      <div class="custom-oncampus-order-1"> {{ drupal_view('on_campus', 'block_1') }}</div>
     </div>
   </div>
   <div class="dcf-mt-1 custom-hide-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a
-        class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More campus News</a></div>
+    class="dcf-txt-decor-none custom-arrow" href="/headlines/1/">More campus News</a></div>
 </div>
 
 {# Tweeter  #}

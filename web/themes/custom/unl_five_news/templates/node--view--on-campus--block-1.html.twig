@@ -1,8 +1,10 @@
+{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+
 <div>
     <div class="custom-oncampus-2">
         <div class="custom-oncampus-title">
             <h3>{{ label }}</h3>
-            <p>12 hours ago</p>
+            <p>{{ createdDate }}</p>
         </div>
         <div class="custom-oncampus-image" >
             {{ content.field_article_lead_image[0]['field_image'] }} 

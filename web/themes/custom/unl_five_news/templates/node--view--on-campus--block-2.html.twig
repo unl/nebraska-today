@@ -1,13 +1,16 @@
-<div class="custom-pt-pb-5"> 
-    <div class="dcf-d-flex dcf-flex-row dcf-pr-5 dcf-ai-center" >
-        <div class="dcf-2nd custom-width-66 dcf-float-right" >
-            <div>
-                <h3 class="dcf-regular dcf-mb-0" style="font-size: 1.3rem; max-width: 85%; ">{{ label }}</h3>
-                <p class="dcf-pt-2">16 hours ago</p>
-            </div>
-        </div>
-        <div class="dcf-1st custom-width-33 dcf-float-left">
-            {{ content.field_article_lead_image[0]['field_image'] }} 
+{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+<div class="half-text-half-image-grid  dcf-mb-4 ">
+    <div>
+    <a href= "{{ url }}">
+      {{ content.field_article_lead_image[0]['field_image'] }} 
+    </a>
+    </div>
+    <div>
+    <h5 class = "dcf-regular dcf-txt-h5">
+        <a href= "{{ url }}"> {{ label }} </a>
+        </h5>
+        <div style = "font-family: 'Gotham SSm A','Gotham SSm B',Verdana,sans-serif; font-weight: 400; font-style: normal; font-size: .75em; " class="dcf-d-flex custom-before-in-text">
+           <div>{{ createdDate }} <span class = "custom-section-display">{{ content.field_section }}</span></div>
         </div>
     </div>
 </div>
