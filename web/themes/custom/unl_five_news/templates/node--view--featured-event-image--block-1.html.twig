@@ -1,7 +1,12 @@
-{{ dd() }}
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
 
-{{ content.field_article_lead_image }}
-{{ label  }}
-{{ createdDate }} 
-{{ content.field_subtitle }}
+<div>
+    <div>{{ content.field_article_lead_image }}</div>
+    <div class="dcf-d-flex dcf-jc-between">
+        <div><h3><a href={{ url }}>{{ label  }}</a></h3></div>
+        <div class="custom-date-circle">{{ createdDate }} </div>
+    </div>
+    <div>
+        {{ content.field_subtitle }}
+    </div>
+</div>
