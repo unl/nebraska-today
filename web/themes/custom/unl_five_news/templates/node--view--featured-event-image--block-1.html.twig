@@ -1,0 +1,7 @@
+{{ dd() }}
+{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+
+{{ content.field_article_lead_image }}
+{{ label  }}
+{{ createdDate }} 
+{{ content.field_subtitle }}

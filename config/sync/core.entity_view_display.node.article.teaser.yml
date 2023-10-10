@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_written_by
     - node.type.article
   module:
+    - text
     - user
 _core:
   default_config_hash: 83jX5ChAGdMzOxiDA_B1NjgebVMuD8lNVDgClg_QVP8
@@ -46,6 +47,13 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+    weight: 2
+    region: content
+  field_subtitle:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
     weight: 1
     region: content
 hidden:
@@ -61,7 +69,6 @@ hidden:
   field_article_release_contacts: true
   field_article_vertical_display: true
   field_high_resolution_photo: true
-  field_subtitle: true
   field_tags: true
   field_written_by: true
   links: true

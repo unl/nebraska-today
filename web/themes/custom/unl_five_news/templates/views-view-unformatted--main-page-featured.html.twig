@@ -42,64 +42,15 @@
 
 {# Tweeter  #}
 <div class="dcf-pt-8">
-  <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
-    <div class="dcf-col-100% dcf-col-67%-start@md">
-      {# Calendar icons #}
-      {# {{ calendarIcons() }} 
-      {{ function unl_five_news_preprocess_node(&$variables) }} #}
-       <div id="wdn_calendarDisplay"></div>
-            <script>
-                window.addEventListener('inlineJSReady', function(event) {
-                  WDN.setPluginParam('events', 'href', 'https://events.unl.edu/');
-                  WDN.setPluginParam('events', 'limit', 12);
-                  WDN.initializePlugin('events');
-              }, false);
-            </script>
-    </div>
-    <div class="dcf-col-100% dcf-col-33%-end@md">
-      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/NebToday"
-        data-widget-id="702998759953698817">Tweets by @NebToday</a>
-      <script>!function (d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-              if (!d.getElementById(id)) {
-                  js = d.createElement(s);
-                  js.id = id;
-                  js.src = p + "://platform.twitter.com/widgets.js";
-                  fjs.parentNode.insertBefore(js, fjs);
-              }
-          }(document, "script", "twitter-wjs");</script>
-    </div>
-  </div>
+<hr class="custom-l-line dcf-mt-0 ">
+<h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1">events</h2>
+  {{ drupal_view('featured_event_image', 'block_1') }}
 </div>
 
 {# More headlines #}
 <div class="dcf-pt-8 ">
   {{ drupal_view('recent', 'block_2') }}
 </div>
-
-
-{# Athelic #}
-{# <div class="dcf-pt-8 custom-husker-containeer">
-  <hr class="custom-l-line dcf-mt-0 ">
-  <div class="dcf-d-flex dcf-ai-center custom-husker-containeer  ">
-    <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 custom-husker-icon custom-padding-left-athletics">
-      ATHLETICS</h2>
-    <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
-    </div>
-  </div>
-  <div class="custom-flex dcf-bleed ">
-    <div class="dcf-1st custom-athletic-half">
-      {{ drupal_view('athletics_news', 'block_1') }}
-    </div>
-    <div class="dcf-2nd custom-athletic-half unl-bg-darker-gray custom-husker-logo">
-      {{ drupal_view('athletics_news_2', 'block_1') }}
-    </div>
-  </div>
-
-  <div class="dcf-mt-1 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more "><a
-      class="dcf-txt-decor-none custom-share" href="/headlines/1/">More on huskers.com</a></div>
-  </div> #}
-
 
 {# Oustide news #}
 <div class="dcf-pt-8">
