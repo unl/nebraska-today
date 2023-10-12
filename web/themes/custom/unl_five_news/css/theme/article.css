@@ -726,6 +726,25 @@ blockquote p:nth-of-type(3)::after {
   right: 0;
   transform: translateY(-7.5em em);
   width: 5.62em;
+  flex-direction: column;
+  color: white;
+}
+
+.custom-events-heading-and-logo {
+  display: grid;
+  grid-template-areas: "title logo";
+}
+.custom-event-title {
+  grid-area: title;
+  width: calc(100% - 4.5em);
+}
+.custom-event-logo {
+  grid-area: logo;
+}
+.custom-featured-events-grid:has(.custom-events-image) {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5vw;
 }
 
 @media only screen and (max-width: 42.09em) {
@@ -1839,6 +1858,10 @@ blockquote p:nth-of-type(3)::after {
     display: flex;
     align-items: center;
     flex-wrap: row nowrap;
+  }
+
+  .custom-featured-events-grid:has(.custom-events-image) {
+    flex-direction: column;
   }
 }
 
