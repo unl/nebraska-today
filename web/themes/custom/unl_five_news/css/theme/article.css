@@ -726,29 +726,35 @@ blockquote p:nth-of-type(3)::after {
   padding: 0;
   right: 0;
   transform: translateY(-7.5em em);
-  color: white;
+  width: 5.62em;
   flex-direction: column;
+  color: white;
 }
 
-.custom-events-heading-and-logo{
+.custom-events-heading-and-logo {
   display: grid;
   grid-template-areas: "title logo";
 }
-
-.custom-event-title{
+.custom-event-title {
   grid-area: title;
   width: calc(100% - 4.5em);
 }
-
-.custom-event-logo{
+.custom-event-logo {
   grid-area: logo;
 }
 
-
-.custom-featured-grid:has(.custom-events-image){
-  display: flex;
-  flex-direction: row;
+.custom-featured-events-grid {
+  display: grid;
   column-gap: 2.5vw;
+  grid-template-areas: "image calender calender calender";
+}
+
+.custom-events-image{
+  grid-area: image;
+}
+
+.custom-events-calender{
+  grid-area: calender;
 }
 
 @media only screen and (max-width: 42.09em) {
@@ -1863,9 +1869,9 @@ blockquote p:nth-of-type(3)::after {
     align-items: center;
     flex-wrap: row nowrap;
   }
-
-  .custom-featured-grid{
-    flex-direction: column;
+  .custom-featured-events-grid {
+    grid-template-areas: "image"
+    "calender";
   }
 }
 

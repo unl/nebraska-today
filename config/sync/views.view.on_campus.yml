@@ -7,7 +7,7 @@ dependencies:
     - node.type.article
     - taxonomy.vocabulary.news_section
   content:
-    - 'taxonomy_term:news_section:4ff6a513-1ae5-4453-b596-6ee8d20edc11'
+    - 'taxonomy_term:news_section:059564bd-6064-422d-bccb-2e849c401085'
   module:
     - node
     - taxonomy
@@ -148,7 +148,7 @@ display:
           plugin_id: taxonomy_index_tid
           operator: or
           value:
-            - 25
+            - 1
           group: 1
           exposed: false
           expose:
