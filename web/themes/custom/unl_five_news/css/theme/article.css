@@ -719,13 +719,36 @@ blockquote p:nth-of-type(3)::after {
   border-radius: 50%;
   box-shadow: 0 0 0 3px #d00000;
   display: flex;
-  height: 5.62em;
+  height: 6em;
+  width: 6em;
   justify-content: center;
   margin: 0;
   padding: 0;
   right: 0;
   transform: translateY(-7.5em em);
-  width: 5.62em;
+  color: white;
+  flex-direction: column;
+}
+
+.custom-events-heading-and-logo{
+  display: grid;
+  grid-template-areas: "title logo";
+}
+
+.custom-event-title{
+  grid-area: title;
+  width: calc(100% - 4.5em);
+}
+
+.custom-event-logo{
+  grid-area: logo;
+}
+
+
+.custom-featured-grid:has(.custom-events-image){
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.5vw;
 }
 
 @media only screen and (max-width: 42.09em) {
@@ -1839,6 +1862,10 @@ blockquote p:nth-of-type(3)::after {
     display: flex;
     align-items: center;
     flex-wrap: row nowrap;
+  }
+
+  .custom-featured-grid{
+    flex-direction: column;
   }
 }
 

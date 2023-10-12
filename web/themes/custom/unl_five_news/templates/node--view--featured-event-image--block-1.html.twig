@@ -1,10 +1,16 @@
-{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+{% set createdDay = node.getCreatedTime|date('j') %}
+{% set createdMonth = node.getCreatedTime|date('M') %}
+{% set createdTime = node.getCreatedTime|date('g:i A') %}
 
 <div>
     <div>{{ content.field_article_lead_image }}</div>
-    <div class="dcf-d-flex dcf-jc-between">
-        <div><h3><a href={{ url }}>{{ label  }}</a></h3></div>
-        <div class="custom-date-circle">{{ createdDate }} </div>
+    <div class="custom-events-heading-and-logo dcf-jc-between">
+        <div class="custom-event-title"><h3><a href={{ url }}>{{ label  }}</a></h3></div>
+        <div class="custom-event-logo custom-date-circle">
+            <div>{{ createdMonth }}</div>
+            <div>{{ createdDay }}</div>
+            <div>{{ createdTime }}</div>
+        </div>
     </div>
     <div>
         {{ content.field_subtitle }}
