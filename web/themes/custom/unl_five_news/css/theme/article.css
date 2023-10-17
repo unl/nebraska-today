@@ -754,17 +754,17 @@ blockquote p:nth-of-type(3)::after {
   grid-area: logo;
 }
 
-.custom-featured-events-grid {
-  display: grid;
+.custom-featured-events-flex {
+  display: flex;
+  flex-direction: row;
   column-gap: 2.5vw;
-  grid-template-areas: "image calender calender calender";
 }
 
-.custom-events-image{
+.custom-events-image {
   grid-area: image;
 }
 
-.custom-events-calender{
+.custom-events-calender {
   grid-area: calender;
 }
 
@@ -1880,9 +1880,8 @@ blockquote p:nth-of-type(3)::after {
     align-items: center;
     flex-wrap: row nowrap;
   }
-  .custom-featured-events-grid {
-    grid-template-areas: "image"
-    "calender";
+  .custom-featured-events-flex {
+    flex-direction: column;
   }
 }
 
