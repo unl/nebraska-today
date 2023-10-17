@@ -2,9 +2,12 @@
 {% set createdMonth = node.getCreatedTime|date('M') %}
 {% set createdTime = node.getCreatedTime|date('g:i A') %}
 <div>
-    <div>{{ content.field_article_lead_image }}</div>
+    <div><a href={{ url }}>{{ content.field_article_lead_image }}</a></div>
     <div class="custom-events-heading-and-logo dcf-jc-between">
-        <div class="custom-event-title"><h3><a href={{ url }}>{{ label  }}</a></h3></div>
+        <div class="custom-event-title">
+        <h3><a href={{ url }}>{{ label  }}</a></h3>
+        <p class="custom-event-location">{{ content.field_article_event_where }}</p>
+        </div>
         <div class="custom-event-logo custom-date-circle">
             <div>{{ createdMonth }}</div>
             <div>{{ createdDay }}</div>

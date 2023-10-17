@@ -1,16 +1,15 @@
-uuid: 35ef4620-ff37-4c2d-b755-7d7a594e00d8
+uuid: a3891d40-dc10-4e3c-8e90-71bc84d9f8e6
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - node.type.article
   module:
-    - datetime
     - node
-    - options
     - user
-id: featured_event_image
-label: 'Featured Event Image'
+id: new_releases
+label: 'New Releases'
 module: views
 description: ''
 tag: ''
@@ -23,6 +22,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: 'New Releases'
       fields:
         title:
           id: title
@@ -72,10 +72,23 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: mini
         options:
           offset: 0
-          items_per_page: 1
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       exposed_form:
         type: basic
         options:
@@ -93,28 +106,19 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: true
-          content: "<div>\r\n  <div>Follow Us in Twitter</div>\r\n</div>\r\n"
-          tokenize: false
+      empty: {  }
       sorts:
-        field_article_event_date_value:
-          id: field_article_event_date_value
-          table: node__field_article_event_date
-          field: field_article_event_date_value
+        created:
+          id: created
+          table: node_field_data
+          field: created
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: datetime
-          order: ASC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
           expose:
             label: ''
             field_identifier: ''
@@ -133,17 +137,19 @@ display:
           group: 1
           expose:
             operator: ''
-        field_article_priority_value:
-          id: field_article_priority_value
-          table: node__field_article_priority
-          field: field_article_priority_value
+        type:
+          id: type
+          table: node_field_data
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: list_field
-          operator: or
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
           value:
-            featured: featured
+            article: article
           group: 1
           exposed: false
           expose:
@@ -173,63 +179,11 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-        field_article_event_date_value:
-          id: field_article_event_date_value
-          table: node__field_article_event_date
-          field: field_article_event_date_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: datetime
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: now
-            type: offset
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
       style:
         type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
       row:
         type: 'entity:node'
         options:
-          relationship: none
           view_mode: teaser
       query:
         type: views_query
@@ -248,21 +202,24 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
+      path: news-releases
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

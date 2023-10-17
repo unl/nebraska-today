@@ -23,6 +23,7 @@ dependencies:
     - field.field.node.article.field_written_by
     - node.type.article
   module:
+    - datetime_range
     - text
     - user
 _core:
@@ -32,6 +33,24 @@ targetEntityType: node
 bundle: article
 mode: teaser
 content:
+  field_article_event_date:
+    type: daterange_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_article_event_where:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_article_lead_image:
     type: entity_reference_entity_view
     label: hidden
@@ -61,8 +80,6 @@ hidden:
   field_article_blocks: true
   field_article_compact_title: true
   field_article_display_options: true
-  field_article_event_date: true
-  field_article_event_where: true
   field_article_horizontal_display: true
   field_article_priority: true
   field_article_related_links: true
