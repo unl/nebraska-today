@@ -760,14 +760,6 @@ blockquote p:nth-of-type(3)::after {
   column-gap: 2.5vw;
 }
 
-.custom-events-image {
-  grid-area: image;
-}
-
-.custom-events-calender {
-  grid-area: calender;
-}
-
 @media only screen and (max-width: 42.09em) {
   .align-left {
     max-width: 100%;
