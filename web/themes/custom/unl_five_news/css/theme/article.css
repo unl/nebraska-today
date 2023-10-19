@@ -760,6 +760,34 @@ blockquote p:nth-of-type(3)::after {
   column-gap: 2.5vw;
 }
 
+.custom-expertise-bg-color{
+  background-color: var(--b-btn-primary);
+  border-top: solid .5rem var(--bg-brand-alpha);
+}
+
+.custom-expertise-photo,
+.custom-expertise-photo div{
+  height: 8rem;
+  width: 8rem;
+}
+
+.custom-expertise-photo img{
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+
+.custom-expertise-icons-flex{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  border-top: solid 1px black;
+}
+
+.custom-expertise-card{
+  max-width: 31.57rem;
+  margin: 0 auto;
+}
+
 @media only screen and (max-width: 42.09em) {
   .align-left {
     max-width: 100%;
@@ -1874,6 +1902,10 @@ blockquote p:nth-of-type(3)::after {
   }
   .custom-featured-events-flex {
     flex-direction: column;
+  }
+  
+  .custom-expertise-icons-flex{
+  justify-content: space-between;
   }
 }
 
