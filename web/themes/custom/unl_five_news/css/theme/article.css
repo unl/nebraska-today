@@ -792,6 +792,47 @@ blockquote p:nth-of-type(3)::after {
   border-bottom: 1px solid var(--bg-inverse);
 }
 
+/* iframe {
+  height: auto;
+  max-width: 100%;
+} */
+
+@media only screen and (max-width: 42.09em) {
+  .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
+    height: 80%;
+  }
+}
+
+@media only screen and (min-width: 42.09em) {
+  .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
+    height: 80%;
+  }
+}
+
+@media only screen and (min-width: 56.12em) {
+  .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
+    height: 76%;
+  }
+}
+
+@media only screen and (min-width: 74.83em) {
+  .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
+    height: 58%;
+  }
+}
+
+@media only screen and (min-width: 99.78em) {
+  .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
+    height: 75%;
+  }
+}
+
+.node--view-mode-teaser:has(iframe),
+.node--view-mode-teaser:has(iframe) div,
+.node--view-mode-teaser:has(iframe) iframe {
+  height: 100%;
+}
+
 @media only screen and (max-width: 42.09em) {
   .align-left {
     max-width: 100%;
