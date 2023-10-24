@@ -48,3 +48,16 @@
 
 # Mac files
 .DS_Store
+
+# Server files
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.config
+.my.cnf
+.mysql_history
+.ssh
+.viminfo
+composer.phar
+
