@@ -54,7 +54,9 @@
 .bash_logout
 .bash_profile
 .bashrc
+.cache
 .config
+.local
 .my.cnf
 .mysql_history
 .ssh
