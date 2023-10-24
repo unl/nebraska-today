@@ -4,12 +4,16 @@
 <div class="custom-expertise-bg-color custom-expertise-card">
     <div class="custom-expertise-photo">{{ content.field_contact_photo }}</div>
     <div class="dcf-p-4">
-        <div>{{ content.field_contact_email }}</div>
-        <div>{{ content.field_contact_website }}</div>
-        <div>{{ content.field_contact_phone }}</div>
-        <div>{{ content.field_contact_position }}</div>
-        <div>{{ content.field_unldirectoryreference }}</div>
-        <div class="custom-expertise-icons-flex dcf-pt-5">
+        <h2>
+            <a href="{{ url }}">{{ label }}</a>
+        </h2>
+        <div class="dcf-mt-3 dcf-mb-3 dcf-txt-2xs dcf-uppercase dcf-italic">{{ content.field_contact_position }}</div>
+        <div class="dcf-mt-3 dcf-mb-3">{{ content.field_unldirectoryreference }}</div>
+        <div class="dcf-mt-3 dcf-mb-3">{{ content.field_contact_website }}</div>
+        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3 ">{{ content.field_contact_phone }}</div>
+        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3 ">{{ content.field_contact_email }}</div>
+    </div>
+     <div class="custom-expertise-icons-flex dcf-pt-5">
             <div class="dcf-d-flex dcf-flex-col dcf-ai-center">
                 <a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-labelledby="outline-id-card-3-users-title" style="fill: rgb(208, 0, 0);"><title id="outline-id-card-3-users-title">id-card-3(users)</title><path d="M23.5,3h-23C0.224,3,0,3.224,0,3.5v16C0,19.776,0.224,20,0.5,20h4C4.776,20,5,19.776,5,19.5v-0.75 c0-0.689,0.561-1.25,1.25-1.25s1.25,0.561,1.25,1.25v0.75C7.5,19.776,7.724,20,8,20h8c0.276,0,0.5-0.224,0.5-0.5v-0.75 c0-0.689,0.561-1.25,1.25-1.25S19,18.061,19,18.75v0.75c0,0.276,0.224,0.5,0.5,0.5h4c0.276,0,0.5-0.224,0.5-0.5v-16 C24,3.224,23.776,3,23.5,3z M23,19h-3v-0.25c0-1.241-1.009-2.25-2.25-2.25s-2.25,1.009-2.25,2.25V19h-7v-0.25 c0-1.241-1.009-2.25-2.25-2.25S4,17.509,4,18.75V19H1V4h22V19z"/><path d="M3.5 14h7c.276 0 .5-.224.5-.5 0-1.241-.629-2.633-2.255-3.215C9.209 9.831 9.5 9.2 9.5 8.5 9.5 7.122 8.378 6 7 6S4.5 7.122 4.5 8.5c0 .7.291 1.331.755 1.785C3.629 10.867 3 12.259 3 13.5 3 13.776 3.224 14 3.5 14zM5.5 8.5C5.5 7.673 6.173 7 7 7s1.5.673 1.5 1.5S7.827 10 7 10 5.5 9.327 5.5 8.5zM7 11c2.213 0 2.803 1.21 2.953 2H4.047C4.197 12.21 4.787 11 7 11zM13 13H21V14H13zM13 11H21V12H13zM13 9H21V10H13zM13 7H17V8H13z"/><g><path fill="none" d="M0 0H24V24H0z"/></g></svg>
@@ -29,7 +33,6 @@
                 <p class="dcf-txt-center dcf-txt-2xs">Print</p>
             </div>
         </div>
-    </div>
 </div>
 
 
