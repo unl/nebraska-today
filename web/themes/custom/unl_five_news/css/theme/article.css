@@ -799,31 +799,31 @@ blockquote p:nth-of-type(3)::after {
 
 @media only screen and (max-width: 42.09em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
-    height: 80%;
+    height: 38vh;
   }
 }
 
 @media only screen and (min-width: 42.09em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
-    height: 80%;
+    height: 60vh;
   }
 }
 
 @media only screen and (min-width: 56.12em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
-    height: 76%;
+    height: 72%;
   }
 }
 
 @media only screen and (min-width: 74.83em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
-    height: 58%;
+    height: 55%;
   }
 }
 
 @media only screen and (min-width: 99.78em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
-    height: 75%;
+    height: 65%;
   }
 }
 
