@@ -797,6 +797,10 @@ blockquote p:nth-of-type(3)::after {
   max-width: 100%;
 } */
 
+.landing-section iframe{
+  width: -webkit-fill-available;
+}
+
 @media only screen and (max-width: 42.09em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
     height: 38vh;
