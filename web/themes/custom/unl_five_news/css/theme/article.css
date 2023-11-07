@@ -761,7 +761,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-expertise-bg-color {
-  background-color: var(--b-btn-primary);
+  background-color: var(--b-btn-inverse-primary);
   border-top: solid 0.5rem var(--bg-brand-alpha);
 }
 
