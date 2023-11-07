@@ -41,49 +41,8 @@
 
 {# webiste #}
 {% set website = content.field_contact_website %}
-{# Name #}
-{% if label != null  %}
-    {% set name = label %}
-{% else %}
-    {% set name = node.field_unldirectoryreference.entity.title.value %} 
-{% endif %}
 
-{# Image #}
-{% if content.field_contact_photo['#title'] != null %}
-    {% set profileImage = content.field_contact_photo %}
-{% else %}
-    {% set profileImage = '<img src="https://directory.unl.edu/avatar/slahey3?s=large"/>'%}
-    {# {% set profileImage = '<img src="../css/theme/defaultImage.webp" />'%} #}
-{% endif %}
-
-{# Affiliation to university #}
-{% set affiliation = node.field_unldirectoryreference.entity.field_edupersonprimaryaffiliatio.value %}
-
-{# Position Title #}
-{% set title = node.field_unldirectoryreference.entity.field_title.value %}
-{% set fieldTitle = content.field_contact_position %}
-
-{# Department #}
-{% set department = node.field_unldirectoryreference.entity.field_unlhrprimarydepartment.value %}
-
-{# Email #}
-{% if content.field_contact_email.0["#title"] != null %}
-    {% set email =  content.field_contact_email  %}
-{% else %}
-    {% set email = node.field_unldirectoryreference.entity.field_mail.value %}
-{% endif %}
-
-{# Phone number #}
-{% if content.field_contact_phone.0["#title"] != null %}
-    {% set phoneNumber = content.field_contact_phone %}
-{% else %}
-    {% set phoneNumber = node.field_unldirectoryreference.entity.field_telephonenumber.value %}
-{% endif %}
-
-{# webiste #}
-{% set website = content.field_contact_website %}
-
- <div class="custom-expertise-bg-color custom-expertise-card">
+<div class="custom-expertise-bg-color custom-expertise-card">
     <div class="custom-expertise-photo">{{ profileImage|raw }}</div>
     <div class="dcf-pt-7 dcf-pb-7 dcf-pl-7 dcf-pr-7">
         {# Name #}
