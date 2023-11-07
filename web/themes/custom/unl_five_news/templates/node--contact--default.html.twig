@@ -1,17 +1,73 @@
 {{ attach_library('unl_five_news/article') }}
 
+{# Name #}
+{% if label != null  %}
+    {% set name = label %}
+{% else %}
+    {% set name = node.field_unldirectoryreference.entity.title.value %} 
+{% endif %}
 
-<div class="custom-expertise-bg-color custom-expertise-card">
-    <div class="custom-expertise-photo">{{ content.field_contact_photo }}</div>
-    <div class="dcf-pt-8 dcf-pb-8 dcf-pl-7 dcf-pr-7">
-        <h2>
-            <a href="{{ url }}">{{ label }}</a>
-        </h2>
-        <div class="dcf-mt-3 dcf-mb-3 dcf-txt-2xs dcf-uppercase dcf-italic">{{ content.field_contact_position }}</div>
-        <div class="dcf-mt-3 dcf-mb-3">{{ content.field_unldirectoryreference }}</div>
-        <div class="dcf-mt-3 dcf-mb-3">{{ content.field_contact_website }}</div>
-        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3 ">{{ content.field_contact_phone }}</div>
-        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3 ">{{ content.field_contact_email }}</div>
+{# Image #}
+{% if content.field_contact_photo['#title'] != null %}
+    {% set profileImage = content.field_contact_photo %}
+{% else %}
+    {% set profileImage = '<img src="https://directory.unl.edu/avatar/slahey3?s=large"/>'%}
+{% endif %}
+
+{# Affiliation to university #}
+{% set affiliation = node.field_unldirectoryreference.entity.field_edupersonprimaryaffiliatio.value %}
+
+{# Position Title #}
+{% set title = node.field_unldirectoryreference.entity.field_title.value %}
+{% set fieldTitle = content.field_contact_position %}
+
+{# Department #}
+{% set department = node.field_unldirectoryreference.entity.field_unlhrprimarydepartment.value %}
+
+{# Email #}
+{% if content.field_contact_email.0["#title"] != null %}
+    {% set email =  content.field_contact_email  %}
+{% else %}
+    {% set email = node.field_unldirectoryreference.entity.field_mail.value %}
+{% endif %}
+
+{# Phone number #}
+{% if content.field_contact_phone.0["#title"] != null %}
+    {% set phoneNumber = content.field_contact_phone %}
+{% else %}
+    {% set phoneNumber = node.field_unldirectoryreference.entity.field_telephonenumber.value %}
+{% endif %}
+
+{# webiste #}
+{% set website = content.field_contact_website %}
+
+ <div class="custom-expertise-bg-color custom-expertise-card">
+    <div class="custom-expertise-photo">{{ profileImage|raw }}</div>
+    <div class="dcf-pt-7 dcf-pb-7 dcf-pl-7 dcf-pr-7">
+        {# Name #}
+        <div>
+            <h2 style="margin-bottom : .25rem">
+                <a href="{{ url }}">{{ name }}</a>
+            </h2>
+            <div class="dcf-mb-3 dcf-txt-2xs dcf-uppercase dcf-italic">{{ affiliation }}</div>
+        </div> 
+        {# title and department #}
+        <div class="dcf-bb-1 unl-bb-light-gray dcf-bb-solid">   
+            <div class="dcf-mb-4">
+                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--bg-kbd);">{{ title }}</div>
+                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--link);  text-decoration: underline;">{{ department }}</div>
+            </div>
+            {% if content.field_contact_position.0["#context"].value != null %}
+            <div class="dcf-mb-4">
+                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--bg-kbd);">{{ fieldTitle }}</div>
+                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--link);  text-decoration: underline;">{{ department }}</div>
+            </div>
+            {% endif %}
+        </div>
+        {# online footprint #}
+        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ website }}</div>
+        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ phoneNumber }}</div>
+        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ email }}</div>
     </div>
      <div class="custom-expertise-icons-flex dcf-pt-5">
             <div class="dcf-d-flex dcf-flex-col dcf-ai-center">
