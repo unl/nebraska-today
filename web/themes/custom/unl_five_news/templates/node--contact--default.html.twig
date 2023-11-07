@@ -69,33 +69,6 @@
         <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ website }}</div>
         <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ phoneNumber }}</div>
         <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ email }}</div>
-<div class="custom-expertise-bg-color custom-expertise-card">
-    <div class="custom-expertise-photo">{{ profileImage|raw }}</div>
-    <div class="dcf-pt-7 dcf-pb-7 dcf-pl-7 dcf-pr-7">
-        {# Name #}
-        <div>
-            <h2 style="margin-bottom : .25rem">
-                <a href="{{ url }}">{{ name }}</a>
-            </h2>
-            <div class="dcf-mb-3 dcf-txt-2xs dcf-uppercase dcf-italic">{{ affiliation }}</div>
-        </div> 
-        {# title and department #}
-        <div class="dcf-bb-1 unl-bb-light-gray dcf-bb-solid">   
-            <div class="dcf-mb-4">
-                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--bg-kbd);">{{ title }}</div>
-                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--link);  text-decoration: underline;">{{ department }}</div>
-            </div>
-            {% if content.field_contact_position.0["#context"].value != null %}
-            <div class="dcf-mb-4">
-                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--bg-kbd);">{{ fieldTitle }}</div>
-                <div class="dcf-uppercase dcf-txt-sm" style="color:var(--link);  text-decoration: underline;">{{ department }}</div>
-            </div>
-            {% endif %}
-        </div>
-        {# online footprint #}
-        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ website }}</div>
-        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ phoneNumber }}</div>
-        <div class="dcf-txt-sm dcf-mt-3 dcf-mb-3" style="color:var(--link);  text-decoration: underline;">{{ email }}</div>
     </div>
     <div class="custom-expertise-icons-flex dcf-pt-5">
             <div class="dcf-d-flex dcf-flex-col dcf-ai-center">
