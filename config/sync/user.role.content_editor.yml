@@ -37,6 +37,7 @@ dependencies:
     - node
     - path
     - scheduler
+    - search
     - simplenews
     - system
     - taxonomy
@@ -58,6 +59,7 @@ permissions:
   - 'access taxonomy manager list'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer block content'
   - 'administer media'
   - 'administer newsletters'
   - 'administer url aliases'
@@ -143,6 +145,7 @@ permissions:
   - 'revert page revisions'
   - 'revert simplenews_issue revisions'
   - 'schedule publishing of nodes'
+  - 'search content'
   - 'send newsletter'
   - 'update unl_directory_entry external entity'
   - 'use text format basic_html'
