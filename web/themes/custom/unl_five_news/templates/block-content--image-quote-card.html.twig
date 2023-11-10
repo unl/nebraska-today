@@ -1,6 +1,6 @@
 {% if content.field_quote_card_placement.0["#markup"] == "Left" %}
-<div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
-    <div class="custom-image-quote-grid dcf-custom-bleed custom-quote-card-wrapper">
+<div class="custom-bleed custom-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
+    <div class="custom-image-quote-grid">
     {# First Image #}
         <div class="custom-quote-image">
             {{ content.field_media[0] }}
@@ -28,8 +28,8 @@
 </div>
 
 {% elseif content.field_quote_card_placement.0["#markup"] == "Right" %}
-<div class="dcf-bleed dcf-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
-    <div class="custom-image-quote-grid dcf-custom-bleed custom-quote-card-wrapper">
+<div class="custom-bleed custom-wrapper dcf-relative dcf-pt-2 dcf-pb-5">
+    <div class="custom-image-quote-grid">
     {# First Image #}
         <div class="custom-quote-image">
             {{ content.field_media[0] }}
