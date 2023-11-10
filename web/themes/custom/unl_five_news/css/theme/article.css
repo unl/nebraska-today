@@ -801,6 +801,15 @@ blockquote p:nth-of-type(3)::after {
   height: auto;
   max-width: 100%;
 } */
+.custom-bleed {
+  left: 50%;
+  margin-left: -45.5vw;
+  margin-right: -55vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+}
+
 
 .landing-section iframe {
   width: -webkit-fill-available;
@@ -809,6 +818,20 @@ blockquote p:nth-of-type(3)::after {
 @media only screen and (max-width: 42.09em) {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
     height: 38vh;
+  }
+
+  .custom-bleed {
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
+
+  .custom-wrapper{
+    padding-left: 5.62vw;
+    padding-right: 5.62vw;
   }
 }
 
@@ -929,7 +952,7 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .outer-content {
-    display: grid;
+    display: grid; 
     grid-template-columns: 3fr 1fr;
   }
 
@@ -1398,8 +1421,8 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .custom-quote-card-wrapper {
-    padding-right: 4.21em;
-    padding-left: 4.21em;
+    padding-right: 4.62vw;
+    padding-left: 12.62vw;
   }
 
   .custom-quote-card-mobileview {
