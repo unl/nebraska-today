@@ -863,6 +863,20 @@ blockquote p:nth-of-type(3)::after {
   .node--view-mode-teaser:has(iframe) .custom-iframe-check-class {
     height: 72%;
   }
+
+   /* Image Quote Card */
+  .custom-image-quote-grid {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-rows: minmax(auto, 17.8em) 10em 1fr;
+  }
+
+
+  .custom-quote-card-mobileview {
+    padding-top: 2.37em;
+    padding-right: 2.37em;
+    padding-bottom: 1.33em;
+  }
 }
 
 @media only screen and (min-width: 74.83em) {
@@ -1409,12 +1423,7 @@ blockquote p:nth-of-type(3)::after {
     margin-left: -5rem;
   }
 
-  /* Image Quote Card */
-  .custom-image-quote-grid {
-    display: grid;
-    grid-template-columns: 3.16em minmax(auto, 42.09em) 1fr;
-    grid-template-rows: minmax(auto, 17.8em) 10em 1fr;
-  }
+ 
   .grid-cont {
     margin-left: -20em;
     margin-right: -20em;
@@ -1441,12 +1450,6 @@ blockquote p:nth-of-type(3)::after {
   .custom-quote-card-wrapper {
     padding-right: 5.62vw;
     padding-left: 5.62vw;
-  }
-
-  .custom-quote-card-mobileview {
-    padding-top: 2.37em;
-    padding-right: 2.37em;
-    padding-bottom: 1.33em;
   }
 
   /* Image Card grid */
