@@ -703,6 +703,7 @@ blockquote p:nth-of-type(3)::after {
 
 .custom-editor-text {
   height: auto !important;
+  color: var(--bg-btn-inverse-primary);
 }
 
 .custom-on-campus-news-3 h5 {
