@@ -3,14 +3,49 @@ langcode: en
 status: true
 dependencies:
   config:
+    - block_content.type.basic
+    - block_content.type.body_parallax_image
+    - block_content.type.card_and_image
+    - block_content.type.gallery
+    - block_content.type.image_quote_card
+    - block_content.type.paragraph_card
+    - block_content.type.parallax_image
+    - block_content.type.quote
+    - block_content.type.quote_card
+    - block_content.type.slideshow
     - filter.format.basic_html
     - filter.format.email_html
     - filter.format.simple_html
+    - media.type.image
+    - media.type.remote_video
+    - node.type.advertisement
+    - node.type.article
+    - node.type.contact
+    - node.type.email_content
+    - node.type.field_of_expertise
+    - node.type.page
+    - node.type.simplenews_issue
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.written_by
   module:
+    - block
+    - block_content
+    - contextual
     - external_entities
     - file
     - filter
+    - media
+    - node
+    - path
+    - scheduler
+    - search
     - simplenews
+    - system
+    - taxonomy
+    - taxonomy_manager
+    - toolbar
+    - unl_breadcrumbs
+    - update
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
@@ -18,13 +53,124 @@ label: Administrator
 weight: 3
 is_admin: false
 permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access taxonomy manager list'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer block content'
+  - 'administer blocks'
+  - 'administer media'
   - 'administer newsletters'
+  - 'administer taxonomy'
+  - 'administer unl breadcrumbs'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'create advertisement content'
+  - 'create article content'
+  - 'create basic block content'
+  - 'create body_parallax_image block content'
+  - 'create card_and_image block content'
+  - 'create contact content'
+  - 'create email_content content'
+  - 'create field_of_expertise content'
+  - 'create gallery block content'
+  - 'create image media'
+  - 'create image_quote_card block content'
+  - 'create page content'
+  - 'create paragraph_card block content'
+  - 'create parallax_image block content'
+  - 'create quote block content'
+  - 'create quote_card block content'
+  - 'create remote_video media'
+  - 'create simplenews_issue content'
+  - 'create slideshow block content'
+  - 'create terms in tags'
+  - 'create terms in written_by'
   - 'create unl_directory_entry external entity'
+  - 'create url aliases'
+  - 'delete any advertisement content'
+  - 'delete any article content'
+  - 'delete any contact content'
+  - 'delete any email_content content'
+  - 'delete any field_of_expertise content'
+  - 'delete any file'
+  - 'delete any image media'
+  - 'delete any page content'
+  - 'delete any remote_video media'
+  - 'delete any simplenews_issue content'
+  - 'delete own advertisement content'
+  - 'delete own article content'
+  - 'delete own contact content'
+  - 'delete own email_content content'
+  - 'delete own field_of_expertise content'
   - 'delete own files'
+  - 'delete own image media'
+  - 'delete own page content'
+  - 'delete own remote_video media'
+  - 'delete own simplenews_issue content'
   - 'delete unl_directory_entry external entity'
+  - 'edit any advertisement content'
+  - 'edit any article content'
+  - 'edit any basic block content'
+  - 'edit any body_parallax_image block content'
+  - 'edit any card_and_image block content'
+  - 'edit any contact content'
+  - 'edit any email_content content'
+  - 'edit any field_of_expertise content'
+  - 'edit any gallery block content'
+  - 'edit any image media'
+  - 'edit any image_quote_card block content'
+  - 'edit any page content'
+  - 'edit any paragraph_card block content'
+  - 'edit any parallax_image block content'
+  - 'edit any quote block content'
+  - 'edit any quote_card block content'
+  - 'edit any remote_video media'
+  - 'edit any simplenews_issue content'
+  - 'edit any slideshow block content'
+  - 'edit own advertisement content'
+  - 'edit own article content'
+  - 'edit own contact content'
+  - 'edit own email_content content'
+  - 'edit own field_of_expertise content'
+  - 'edit own image media'
+  - 'edit own page content'
+  - 'edit own remote_video media'
+  - 'edit own simplenews_issue content'
+  - 'edit terms in tags'
+  - 'edit terms in written_by'
+  - 'revert advertisement revisions'
+  - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert contact revisions'
+  - 'revert email_content revisions'
+  - 'revert field_of_expertise revisions'
+  - 'revert page revisions'
+  - 'revert simplenews_issue revisions'
+  - 'schedule publishing of nodes'
+  - 'search content'
   - 'send newsletter'
   - 'update unl_directory_entry external entity'
   - 'use text format basic_html'
   - 'use text format email_html'
   - 'use text format simple_html'
+  - 'view advertisement revisions'
+  - 'view all revisions'
+  - 'view article revisions'
+  - 'view contact revisions'
+  - 'view email_content revisions'
+  - 'view field_of_expertise revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view scheduled content'
+  - 'view simplenews_issue revisions'
+  - 'view the administration theme'
   - 'view unl_directory_entry external entity collection'
+  - 'view update notifications'
+  - 'view user email addresses'
