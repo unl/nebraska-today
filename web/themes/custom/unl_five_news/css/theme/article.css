@@ -270,9 +270,8 @@ blockquote p:nth-of-type(3)::after {
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0.75) 100%
   );
-  bottom: 0;
+  bottom: 10%;
   content: "";
-  height: 100%;
   left: 0;
   position: absolute;
   width: 100%;
@@ -855,6 +854,18 @@ blockquote p:nth-of-type(3)::after {
 
   .landing-section iframe {
     height: fit-content;
+  }
+
+  .custom-heading{
+    background-color: #333332;
+    color: #fefdfa;
+    line-height: 1.33;
+    order: 2;
+    padding: 4vh 5%;
+  }
+
+  .custom-image::after{
+    background-image:inherit;
   }
 }
 
@@ -1823,9 +1834,10 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .custom-hide-title .custom-heading {
-    bottom: 0;
+    bottom: 10%;
     position: absolute;
     padding: 0 0 1.78em;
+    
   }
 
   .custom-image {
@@ -2018,6 +2030,28 @@ blockquote p:nth-of-type(3)::after {
   }
 }
 
+@media screen and (min-width: 56.12em) and (max-width: 74.83em) {
+  .custom-image::after {
+    background-image: inherit;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .custom-heading{
+    bottom: 30% !important;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0 0 1.78em;
+    position: absolute;
+    text-shadow: 1px 1px 30px #141414;
+    top: auto;
+    width: calc(50% - 10%);
+  }
+}
+
 @media only screen and (max-width: 56.12em) {
   .custom-editors-order-1 {
     order: 1;
@@ -2031,6 +2065,19 @@ blockquote p:nth-of-type(3)::after {
 
   .custom-oncampus-order-2 {
     order: 2;
+  }
+
+  .custom-image::after {
+    background-image: inherit;
+  }
+
+  .custom-heading{
+    background-color: #333332;
+    color: #fefdfa;
+    line-height: 1.33;
+    order: 2;
+    margin: -7vh 9% 0;
+    padding: 4vh 4% !important;
   }
 }
 
