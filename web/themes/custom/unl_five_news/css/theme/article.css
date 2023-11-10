@@ -852,6 +852,10 @@ blockquote p:nth-of-type(3)::after {
     grid-column-gap: 20px;
     grid-row-gap: 1em;
   }
+
+  .landing-section iframe {
+    height: fit-content;
+  }
 }
 
 @media only screen and (min-width: 42.09em) {
