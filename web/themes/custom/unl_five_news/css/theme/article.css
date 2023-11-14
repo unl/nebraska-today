@@ -307,7 +307,7 @@ blockquote p:nth-of-type(3)::after {
   padding: 3vh 5%;
 }
 
-.custom-oncampus-title h3 span{
+.custom-oncampus-title h3 span {
   color: var(--bg-btn-inverse-primary);
 }
 
@@ -821,7 +821,6 @@ blockquote p:nth-of-type(3)::after {
   display: block;
 }
 
-
 .landing-section iframe {
   width: -webkit-fill-available;
 }
@@ -840,7 +839,7 @@ blockquote p:nth-of-type(3)::after {
     width: 100vw;
   }
 
-  .custom-wrapper{
+  .custom-wrapper {
     padding-left: 5.62vw;
     padding-right: 5.62vw;
   }
@@ -856,7 +855,7 @@ blockquote p:nth-of-type(3)::after {
     height: fit-content;
   }
 
-  .custom-heading{
+  .custom-heading {
     background-color: #333332;
     color: #fefdfa;
     line-height: 1.33;
@@ -864,8 +863,8 @@ blockquote p:nth-of-type(3)::after {
     padding: 4vh 5%;
   }
 
-  .custom-image::after{
-    background-image:inherit;
+  .custom-image::after {
+    background-image: inherit;
   }
 }
 
@@ -880,13 +879,12 @@ blockquote p:nth-of-type(3)::after {
     height: 72%;
   }
 
-   /* Image Quote Card */
+  /* Image Quote Card */
   .custom-image-quote-grid {
     display: grid;
     grid-template-columns: 10% 40% 40% 10%;
     grid-template-rows: minmax(auto, 17.8em) 10em 1fr;
   }
-
 
   .custom-quote-card-mobileview {
     padding-top: 2.37em;
@@ -1000,7 +998,7 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .outer-content {
-    display: grid; 
+    display: grid;
     grid-template-columns: 3fr 1fr;
   }
 
@@ -1439,7 +1437,6 @@ blockquote p:nth-of-type(3)::after {
     margin-left: -5rem;
   }
 
- 
   .grid-cont {
     margin-left: -20em;
     margin-right: -20em;
@@ -1703,8 +1700,6 @@ blockquote p:nth-of-type(3)::after {
     grid-area: 3 / 7 / 5 / 11;
   }
 
-
-
   .dcf-txt-overflow-paragraph-card div {
     display: -webkit-box;
     -webkit-line-clamp: 7; /* Number of lines to limit to */
@@ -1837,7 +1832,6 @@ blockquote p:nth-of-type(3)::after {
     bottom: 10%;
     position: absolute;
     padding: 0 0 1.78em;
-    
   }
 
   .custom-image {
@@ -1948,8 +1942,9 @@ blockquote p:nth-of-type(3)::after {
 
   .share-icon-flex {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     column-gap: 10px;
+    flex-direction: inherit;
   }
 
   .custom-display-half-half-grid-mobile-view {
@@ -2040,7 +2035,7 @@ blockquote p:nth-of-type(3)::after {
     width: 100%;
   }
 
-  .custom-heading{
+  .custom-heading {
     bottom: 30% !important;
     margin-left: 10%;
     margin-right: 10%;
@@ -2071,7 +2066,7 @@ blockquote p:nth-of-type(3)::after {
     background-image: inherit;
   }
 
-  .custom-heading{
+  .custom-heading {
     background-color: #333332;
     color: #fefdfa;
     line-height: 1.33;
