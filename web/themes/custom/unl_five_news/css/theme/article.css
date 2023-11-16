@@ -628,10 +628,13 @@ blockquote p:nth-of-type(3)::after {
 
 .share-icon-flex .icon {
   background-color: var(--b-input-hover);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .share-icon-flex .icon:hover {
   background-color: var(--bg-brand-alpha) !important;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--bg-code);
 }
 
 .share-icon-flex .icon svg {
