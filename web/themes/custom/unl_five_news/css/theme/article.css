@@ -605,7 +605,7 @@ blockquote p:nth-of-type(3)::after {
   padding: 10px 10px 5px 10px;
   background-color: #42a7c6;
   border-radius: 10px;
-  width: 50px;
+  width: 45px;
 }
 
 .share-icon-flex .facebook {
@@ -613,7 +613,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .share-icon-flex .icon {
-  background-color: var(--bg-inverse);
+  background-color: var(--b-input-hover);
 }
 
 .share-icon-flex .icon:hover {
