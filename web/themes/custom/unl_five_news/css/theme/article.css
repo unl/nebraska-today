@@ -1,3 +1,7 @@
+.unl .dcf-hero-default {
+  margin-bottom: 0;
+}
+
 .dcf-hover-image {
   border: 1px solid var(--bg-btn-tertiary);
   transition: border 0.5s ease;
@@ -504,7 +508,7 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-section-heading-padding {
-  padding: 3vh calc(5% + 1em) 3vh 22.5%;
+  padding: 3vh calc(5% + 1em) 3vh 5.62vw;
 }
 
 .custom-editor-choice {
