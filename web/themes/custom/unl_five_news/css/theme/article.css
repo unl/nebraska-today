@@ -3,6 +3,7 @@
   background-color: inherit;
 }
 
+
 .custom-first-paragraph-big-font p:first-of-type {
   font-size: 1.33em;
 }
