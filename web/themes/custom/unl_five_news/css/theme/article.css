@@ -16,6 +16,10 @@
   border: 1px solid var(--hover);
 }
 
+.custom-txt-decor-none span a {
+  text-decoration: none;
+}
+
 .custom-l-line {
   height: 1px;
   margin-bottom: 18px;
@@ -162,6 +166,10 @@
 .custom-credit-title div::after {
   color: var(--btn-inverse-primary);
   content: " ) ";
+}
+
+.dcf-figcaption {
+  margin-bottom: 0.56em;
 }
 
 /* DCF-Quote */
