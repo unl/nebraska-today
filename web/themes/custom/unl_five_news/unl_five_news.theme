@@ -49,9 +49,10 @@ function unl_five_news_preprocess_field(&$variables) {
  */
 function unl_five_news_preprocess_block_content(&$variables) {
   // Always make the node title available in a block that's on a node page.
-  $node = \Drupal::request()->attributes->get('node');
+   $node = $variables['elements']['#block_content']->_referringItem->getEntity();
   if ($node) {
     $variables['node_title'] = $node->getTitle();
+    $variables['homepage_display'] = $node->get('field_article_display_options')->value;
   }
 
   // Make the Image Media credit field easy to access as {{ credit }} in the Lead Image custom block.
@@ -75,6 +76,8 @@ function unl_five_news_preprocess_block_content(&$variables) {
     }
   }
 }
+
+
 
 /**
  * Implements template_preprocess_media().
