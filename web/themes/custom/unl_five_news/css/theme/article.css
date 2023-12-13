@@ -1878,6 +1878,15 @@ blockquote p:nth-of-type(3)::after {
     min-height: 25.24em;
   }
 
+
+  .custom-min-height-35 {
+    min-height: 35.24em;
+  }
+
+  .custom-min-height-35 div{
+    height: 35.24em;
+  }
+
   .custom-heading {
     margin-left: 16%;
     margin-right: 16%;
