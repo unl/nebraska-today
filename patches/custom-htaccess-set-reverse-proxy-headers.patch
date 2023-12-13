@@ -1,0 +1,13 @@
+diff --git a/.htaccess b/.htaccess
+index 4031da475c..9ea282a806 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -183,4 +183,8 @@ AddEncoding gzip svgz
+   Header always set X-Content-Type-Options nosniff
+   # Disable Proxy header, since it's an attack vector.
+   RequestHeader unset Proxy
++
++  # Used in conjunction with reverse_proxy settings in news-settings.php.
++  RequestHeader set X-Forwarded-Proto "https"
++  RequestHeader set X-Forwarded-Port 443
+ </IfModule>

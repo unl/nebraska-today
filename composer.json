@@ -104,7 +104,8 @@
     "scripts": {
         "post-drupal-scaffold-cmd": [
             "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
-            "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch"
+            "cd web && patch -p1 < ../patches/custom-htaccess-session-save_path.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-set-reverse-proxy-headers.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
     },

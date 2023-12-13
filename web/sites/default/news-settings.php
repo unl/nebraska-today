@@ -27,19 +27,22 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
 /*
  * Set environment-specific configuration.
  */
-$environment = getenv('UNLCMSENV');
+$environment = $_SERVER['SERVER_NAME'];
 
-if ($environment == 'production') {
+if ($environment == 'news.unl.edu' ||
+    $environment == 'news-test.unl.edu') {
   $config['config_split.config_split.production']['status'] = TRUE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
-  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/nebraska-today';
+
+  // https://www.drupal.org/project/metatag/issues/2842049#comment-13304939
+  $settings['reverse_proxy'] = TRUE;
+  $settings['reverse_proxy_addresses'] = array(@$_SERVER['REMOTE_ADDR']);
 }
 elseif ($environment == 'stage') {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = FALSE;
-  $settings['file_temp_path'] = '/var/www/unl.edu/tmp/nebraska-today';
 }
 // If not production or stage, then assumed to be development.
 else {
