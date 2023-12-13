@@ -35,6 +35,8 @@ if ($environment == 'news.unl.edu' ||
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
 
+  // Used in conjunction with patches/custom-htaccess-set-reverse-proxy-headers.patch
+  // to ensure base_url on production is https instead of http.
   // https://www.drupal.org/project/metatag/issues/2842049#comment-13304939
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = array(@$_SERVER['REMOTE_ADDR']);
