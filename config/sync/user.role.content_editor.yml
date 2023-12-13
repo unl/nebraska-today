@@ -15,7 +15,9 @@ dependencies:
     - file
     - filter
     - node
+    - override_node_options
     - path
+    - scheduler
     - simplenews
     - system
     - taxonomy
@@ -50,7 +52,10 @@ permissions:
   - 'edit own article content'
   - 'edit own page content'
   - 'edit terms in tags'
+  - 'override article authored by option'
+  - 'override article authored on option'
   - 'revert all revisions'
+  - 'schedule publishing of nodes'
   - 'send newsletter'
   - 'update unl_directory_entry external entity'
   - 'use text format basic_html'

@@ -52,11 +52,7 @@ function unl_five_news_preprocess_block_content(&$variables) {
    $node = $variables['elements']['#block_content']->_referringItem->getEntity();
   if ($node) {
     $variables['node_title'] = $node->getTitle();
-<<<<<<< HEAD
-    $variables['home_page_display'] = $node->get('field_article_display_options')->value;
-=======
     $variables['homepage_display'] = $node->get('field_article_display_options')->value;
->>>>>>> 3fd5aadc35c90cf5514a06dda681910ec25f70a9
   }
 
   // Make the Image Media credit field easy to access as {{ credit }} in the Lead Image custom block.
