@@ -19,6 +19,12 @@ filters:
       allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <a href>'
       filter_html_help: false
       filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
   token_filter:
     id: token_filter
     provider: token_filter
@@ -26,9 +32,3 @@ filters:
     weight: 0
     settings:
       replace_empty: '0'
-  filter_htmlcorrector:
-    id: filter_htmlcorrector
-    provider: filter
-    status: true
-    weight: 10
-    settings: {  }

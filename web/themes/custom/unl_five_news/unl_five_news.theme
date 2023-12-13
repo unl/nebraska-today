@@ -52,6 +52,7 @@ function unl_five_news_preprocess_block_content(&$variables) {
   $node = \Drupal::request()->attributes->get('node');
   if ($node) {
     $variables['node_title'] = $node->getTitle();
+    $variables['home_page_display'] = $node->get('field_article_display_options')->value;
   }
 
   // Make the Image Media credit field easy to access as {{ credit }} in the Lead Image custom block.
