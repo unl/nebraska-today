@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - block_content.type.basic
     - block_content.type.body_parallax_image
     - block_content.type.card_and_image
     - block_content.type.gallery
@@ -28,7 +27,6 @@ settings:
   handler: 'default:block_content'
   handler_settings:
     target_bundles:
-      basic: basic
       body_parallax_image: body_parallax_image
       card_and_image: card_and_image
       gallery: gallery
@@ -40,6 +38,6 @@ settings:
     sort:
       field: _none
       direction: ASC
-    auto_create: true
-    auto_create_bundle: basic
+    auto_create: false
+    auto_create_bundle: null
 field_type: entity_reference

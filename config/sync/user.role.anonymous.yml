@@ -8,7 +8,6 @@ dependencies:
     - external_entities
     - filter
     - media
-    - search
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -18,7 +17,6 @@ weight: 0
 is_admin: false
 permissions:
   - 'access content'
-  - 'search content'
   - 'use text format restricted_html'
   - 'view media'
   - 'view unl_directory_entry external entity'
