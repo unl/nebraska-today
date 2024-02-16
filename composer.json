@@ -42,7 +42,7 @@
         "drupal/block_content_template": "^1.5",
         "drupal/cas": "^2.1",
         "drupal/config_filter": "^2.4",
-        "drupal/config_ignore": "^2.4",
+        "drupal/config_ignore": "^3.2",
         "drupal/config_split": "^2.0.0-rc4",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
@@ -173,9 +173,6 @@
         "patches": {
             "drupal/core": {
                 "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-71.patch"
-            },
-            "drupal/config_ignore": {
-                "2857247 - Support for export filtering via Drush": "patches/config_ignore_2857247-75.patch"
             }
         }
     }
