@@ -31,6 +31,7 @@ dependencies:
     - external_entities
     - file
     - filter
+    - help
     - media
     - node
     - override_node_options
@@ -51,6 +52,7 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access help pages'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access toolbar'

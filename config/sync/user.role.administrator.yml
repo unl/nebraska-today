@@ -31,6 +31,7 @@ dependencies:
     - external_entities
     - file
     - filter
+    - help
     - media
     - node
     - path
@@ -51,6 +52,7 @@ permissions:
   - 'access block library'
   - 'access content overview'
   - 'access contextual links'
+  - 'access help pages'
   - 'access media overview'
   - 'access site in maintenance mode'
   - 'access site reports'

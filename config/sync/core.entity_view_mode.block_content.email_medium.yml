@@ -6,5 +6,6 @@ dependencies:
     - block_content
 id: block_content.email_medium
 label: 'Email (Medium)'
+description: ''
 targetEntityType: block_content
 cache: true
