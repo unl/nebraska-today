@@ -70,7 +70,7 @@
         "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/views_exclude_previous": "^2.0@beta",
-        "drush/drush": "^11.5",
+        "drush/drush": "^12.4",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.1",
