@@ -15,6 +15,9 @@ dependencies:
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_status
+    - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -56,6 +59,9 @@ hidden:
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
+  field_article_run_window: true
+  field_article_submission_status: true
+  field_article_submitter: true
   field_article_vertical_display: true
   field_high_resolution_photo: true
   field_section: true

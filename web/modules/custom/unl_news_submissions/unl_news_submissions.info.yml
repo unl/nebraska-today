@@ -1,0 +1,5 @@
+name: UNL News Submissions
+description: Helpers for the submission process.
+package: UNL
+type: module
+core_version_requirement: ^10

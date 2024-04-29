@@ -14,6 +14,9 @@ dependencies:
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_status
+    - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -48,21 +51,21 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 10
+    weight: 8
     region: content
   field_article_compact_title:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 17
     region: content
   field_article_display_options:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 10
     region: content
   field_article_event_date:
     type: daterange_default
@@ -72,7 +75,7 @@ content:
       format_type: medium
       separator: '-'
     third_party_settings: {  }
-    weight: 15
+    weight: 13
     region: content
   field_article_event_where:
     type: string
@@ -80,14 +83,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 16
+    weight: 14
     region: content
   field_article_horizontal_display:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 16
     region: content
   field_article_lead_image:
     type: entity_reference_entity_view
@@ -103,7 +106,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 11
     region: content
   field_article_related_links:
     type: link
@@ -124,14 +127,14 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 7
     region: content
   field_article_vertical_display:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 15
     region: content
   field_high_resolution_photo:
     type: entity_reference_entity_view
@@ -140,7 +143,7 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 11
+    weight: 9
     region: content
   field_section:
     type: entity_reference_label
@@ -163,7 +166,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 14
+    weight: 12
     region: content
   field_written_by:
     type: entity_reference_label
@@ -178,4 +181,7 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
-hidden: {  }
+hidden:
+  field_article_run_window: true
+  field_article_submission_status: true
+  field_article_submitter: true

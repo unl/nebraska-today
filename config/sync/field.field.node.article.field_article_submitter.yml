@@ -1,0 +1,19 @@
+uuid: 6821ac49-5f8b-4d27-ad2b-d74126538b35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_submitter
+    - node.type.article
+id: node.article.field_article_submitter
+field_name: field_article_submitter
+entity_type: node
+bundle: article
+label: Submitter
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

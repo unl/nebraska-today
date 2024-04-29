@@ -69,6 +69,8 @@
         "drupal/taxonomy_manager": "^2.0",
         "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
+        "drupal/views_bulk_edit": "^2.9",
+        "drupal/views_bulk_operations": "^4.2",
         "drupal/views_exclude_previous": "^2.0@beta",
         "drush/drush": "^12.4",
         "unl/wdntemplates": "^5.3",

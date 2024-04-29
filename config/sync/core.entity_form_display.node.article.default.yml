@@ -14,6 +14,9 @@ dependencies:
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_status
+    - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -130,6 +133,23 @@ third_party_settings:
         show_empty_fields: true
         id: ''
         open: false
+        description: ''
+        required_fields: true
+    group_submission_details:
+      children:
+        - field_article_run_window
+        - field_article_submission_status
+        - field_article_submitter
+      label: 'Submission details'
+      region: content
+      parent_name: ''
+      weight: 18
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: true
         description: ''
         required_fields: true
 _core:
@@ -253,6 +273,26 @@ content:
       not_found_message: "The term '@term' will be added"
       new_terms: false
       no_empty_message: 'No terms could be found. Please type in order to add a new term.'
+    third_party_settings: {  }
+  field_article_run_window:
+    type: daterange_default
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_submission_status:
+    type: options_select
+    weight: 27
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_article_submitter:
+    type: string_textfield
+    weight: 28
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_article_vertical_display:
     type: options_buttons

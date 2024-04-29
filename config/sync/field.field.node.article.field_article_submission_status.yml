@@ -1,0 +1,21 @@
+uuid: 01e92c64-5ba9-48cd-9b5d-0e2a4fb72a9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_submission_status
+    - node.type.article
+  module:
+    - options
+id: node.article.field_article_submission_status
+field_name: field_article_submission_status
+entity_type: node
+bundle: article
+label: 'Submission status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

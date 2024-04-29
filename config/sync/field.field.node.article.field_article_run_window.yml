@@ -1,0 +1,26 @@
+uuid: 091e5753-e5b9-4f19-9f77-ad2f8e76883e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_run_window
+    - node.type.article
+  module:
+    - datetime_range
+id: node.article.field_article_run_window
+field_name: field_article_run_window
+entity_type: node
+bundle: article
+label: 'Run window'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+    default_end_date_type: relative
+    default_end_date: '+7 days'
+default_value_callback: ''
+settings: {  }
+field_type: daterange
