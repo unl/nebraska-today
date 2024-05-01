@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.email_default
+    - field.field.node.advertisement.feeds_item
     - field.field.node.advertisement.field_advertisement_image
     - field.field.node.advertisement.field_advertisement_link
     - image.style.email_advertisement
@@ -48,4 +49,5 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  feeds_item: true

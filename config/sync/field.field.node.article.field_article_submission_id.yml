@@ -1,0 +1,23 @@
+uuid: 76dfa05c-0a89-4bd9-8bb9-121e1c5abf87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_submission_id
+    - node.type.article
+id: node.article.field_article_submission_id
+field_name: field_article_submission_id
+entity_type: node
+bundle: article
+label: 'Submission ID'
+description: 'The ID from Announce.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

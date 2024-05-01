@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.advertisement.feeds_item
     - field.field.node.advertisement.field_advertisement_image
     - field.field.node.advertisement.field_advertisement_link
     - image.style.thumbnail
@@ -89,5 +90,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
   publish_on: true
   unpublish_on: true

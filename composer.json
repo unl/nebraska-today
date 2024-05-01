@@ -51,6 +51,8 @@
         "drupal/diff": "^1.1",
         "drupal/external_entities": "2.x@dev",
         "drupal/feeds": "^3.0@beta",
+        "drupal/feeds_ex": "1.x-dev@dev",
+        "drupal/feeds_tamper": "2.x-dev@dev",
         "drupal/field_group": "^3.4",
         "drupal/image_class": "^2.0",
         "drupal/image_style_warmer": "^1.2@RC",

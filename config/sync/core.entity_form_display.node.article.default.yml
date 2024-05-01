@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.feeds_item
     - field.field.node.article.field_article_blocks
     - field.field.node.article.field_article_compact_title
     - field.field.node.article.field_article_display_options
@@ -15,6 +16,7 @@ dependencies:
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
     - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_id
     - field.field.node.article.field_article_submission_status
     - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_vertical_display
@@ -412,5 +414,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  feeds_item: true
+  field_article_submission_id: true
   scheduler_settings: true
   unpublish_on: true

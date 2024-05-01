@@ -1,0 +1,227 @@
+uuid: ca2bfa06-70e1-41a0-937e-463c3c914ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_related_links
+    - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_id
+    - field.field.node.article.field_article_submission_status
+    - field.field.node.article.field_article_submitter
+    - node.type.article
+  module:
+    - feeds_ex
+    - feeds_log
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_log:
+    status: true
+    operations:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+      cleaned: cleaned
+    items:
+      created: created
+      updated: updated
+      deleted: deleted
+      skipped: skipped
+      failed: failed
+    source: true
+  feeds_tamper:
+    tampers:
+      f0a7f973-e151-48a6-8a06-3318e4405511:
+        text: pending
+        uuid: f0a7f973-e151-48a6-8a06-3318e4405511
+        plugin: rewrite
+        source: pending
+        weight: 0
+        label: Rewrite
+      d3bf05b7-68e4-4d51-a0d4-d8ae039a1d27:
+        invert: true
+        uuid: d3bf05b7-68e4-4d51-a0d4-d8ae039a1d27
+        plugin: required
+        source: full_article
+        weight: -10
+        label: Required
+      c7f65e26-adf8-48fb-a5a2-89d2a46b8ba2:
+        text: '[description]'
+        uuid: c7f65e26-adf8-48fb-a5a2-89d2a46b8ba2
+        plugin: rewrite
+        source: full_article
+        weight: -9
+        label: Rewrite
+      ac51876e-a085-4039-a67c-1ce9a4dbcc45:
+        uuid: ac51876e-a085-4039-a67c-1ce9a4dbcc45
+        plugin: unl_news_submissions_create_lead_media
+        source: files
+        weight: 0
+        label: 'Create Lead Media block'
+label: 'Announce submission import'
+id: announce_submission_import
+description: 'Stories submitted by the community to newsroom.unl.edu/announce'
+help: ''
+import_period: 900
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.stories.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: article
+  langcode: en
+  insert_new: 1
+  update_existing: 0
+  update_non_existent: _keep
+  skip_hash_check: false
+  authorize: false
+  revision: false
+  expire: -1
+  owner_feed_author: true
+  owner_id: 0
+custom_sources:
+  full_article:
+    value: full_article
+    label: full_article
+    machine_name: full_article
+    type: json
+  description:
+    value: description
+    label: description
+    machine_name: description
+    type: json
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  pending:
+    value: pending
+    label: pending
+    machine_name: pending
+    type: blank
+  id:
+    value: id
+    label: id
+    machine_name: id
+    type: json
+  uid_created:
+    value: uid_created
+    label: uid_created
+    machine_name: uid_created
+    type: json
+  date_submitted:
+    value: date_submitted
+    label: date_submitted
+    machine_name: date_submitted
+    type: json
+  request_publish_start:
+    value: request_publish_start
+    label: request_publish_start
+    machine_name: request_publish_start
+    type: json
+  request_publish_end:
+    value: request_publish_end
+    label: request_publish_end
+    machine_name: request_publish_end
+    type: json
+  website_uri:
+    value: website
+    label: website
+    machine_name: website_uri
+    type: json
+  website_text:
+    value: website
+    label: website
+    machine_name: website_text
+    type: json
+  files:
+    value: "files[?(@.use_for == 'originalimage')].url"
+    label: files
+    machine_name: files
+    type: json
+mappings:
+  -
+    target: body
+    map:
+      value: full_article
+      summary: description
+    settings:
+      language: ''
+      format: basic_html
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_article_submission_status
+    map:
+      value: pending
+    settings:
+      language: null
+  -
+    target: field_article_submission_id
+    map:
+      value: id
+    settings:
+      language: null
+    unique:
+      value: 1
+  -
+    target: field_article_submitter
+    map:
+      value: uid_created
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: created
+    map:
+      value: date_submitted
+    settings:
+      language: ''
+      timezone: __SITE__
+  -
+    target: field_article_run_window
+    map:
+      value: request_publish_start
+      end_value: request_publish_end
+    settings:
+      language: ''
+      timezone: __SITE__
+  -
+    target: field_article_related_links
+    map:
+      uri: website_uri
+      title: website_text
+    settings:
+      language: null
+  -
+    target: field_article_lead_image
+    map:
+      target_id: files
+    settings:
+      language: ''
+      reference_by: id
+      autocreate: 0
+      autocreate_bundle: parallax_image
