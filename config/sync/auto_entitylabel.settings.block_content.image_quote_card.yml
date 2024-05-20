@@ -1,0 +1,9 @@
+status: 1
+pattern: 'Image Quote Card'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - block_content.type.image_quote_card

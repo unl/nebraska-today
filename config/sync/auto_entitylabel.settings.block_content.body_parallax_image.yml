@@ -1,0 +1,9 @@
+status: 1
+pattern: 'Body Parallax Image'
+escape: false
+preserve_titles: false
+save: false
+chunk: 50
+dependencies:
+  config:
+    - block_content.type.body_parallax_image
