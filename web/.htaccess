@@ -27,7 +27,6 @@ AddEncoding gzip svgz
 # Drupal\Core\DrupalKernel::bootEnvironment() for settings that can be
 # changed at runtime.
 <IfModule mod_php.c>
-  php_value session.save_path               /var/www/unl.edu/tmp/
   php_value assert.active                   0
 </IfModule>
 
