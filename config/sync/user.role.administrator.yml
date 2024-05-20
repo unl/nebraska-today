@@ -28,6 +28,7 @@ dependencies:
     - taxonomy.vocabulary.written_by
   module:
     - block_content
+    - content_lock
     - contextual
     - external_entities
     - file
@@ -71,6 +72,7 @@ permissions:
   - 'administer redirects'
   - 'administer url aliases'
   - 'administer users'
+  - 'break content lock'
   - 'create advertisement content'
   - 'create article content'
   - 'create body_parallax_image block content'
