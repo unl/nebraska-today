@@ -17,6 +17,8 @@ settings:
       - italic
       - strikethrough
       - '|'
+      - heading
+      - '|'
       - link
       - '|'
       - bulletedList
@@ -26,12 +28,9 @@ settings:
       - superscript
       - specialCharacters
       - '|'
-      - heading
-      - '|'
       - blockQuote
       - insertTable
       - drupalMedia
-      - sourceEditing
   plugins:
     ckeditor5_heading:
       enabled_headings:
@@ -45,8 +44,6 @@ settings:
         reversed: false
         startIndex: true
       multiBlock: true
-    ckeditor5_sourceEditing:
-      allowed_tags: {  }
     media_media:
       allow_view_mode_override: true
 image_upload:
