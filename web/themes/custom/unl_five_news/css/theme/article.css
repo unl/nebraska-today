@@ -694,22 +694,32 @@ blockquote p:nth-of-type(3)::after {
   content: none;
 }
 
+.media-credit {
+  display: none;
+}
+.dcf-news-column .media-credit {
+  display: block;
+}
+
 .align-left {
   max-width: 55%;
   position: relative;
-  left: -12px;
-  bottom: -12px;
+  left: -26px;
+  bottom: -6px;
+  padding-bottom: 1em;
 }
 
 .align-right {
   max-width: 55%;
   position: relative;
-  right: -12px;
-  bottom: -12px;
+  right: -16px;
+  bottom: -6px;
+  padding-bottom: 1em;
 }
 
 .align-center {
   max-width: 80%;
+  padding-bottom: 1em;
 }
 
 .custom-editors-order-1,
