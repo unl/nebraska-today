@@ -1,4 +1,4 @@
-uuid: 082969d1-450b-4deb-951b-acbb50123c2c
+uuid: 7257f2f3-1ec1-4b15-9787-86c2b5ac29c4
 langcode: en
 status: true
 dependencies:
@@ -18,16 +18,7 @@ third_party_settings:
     unpublish_enable: false
     unpublish_required: false
     unpublish_revision: false
-_core:
-  default_config_hash: 6Qope5wG7HUpV0tPOBMtDI_GZkHFcF1Xj4hgD9Cu_hM
-id: image
-label: Image
-description: 'A nice photo or other image file.'
-source: image
-queue_thumbnail_downloads: false
-new_revision: false
-source_configuration:
-  source_field: field_media_image
-field_map:
-  name: name
-  mimetype: field_media_image
+name: 'Media tags'
+vid: media_tags
+description: ''
+weight: 0

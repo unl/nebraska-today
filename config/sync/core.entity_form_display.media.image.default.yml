@@ -5,11 +5,11 @@ dependencies:
   config:
     - field.field.media.image.field_media_image
     - field.field.media.image.field_media_image_credit
+    - field.field.media.image.field_media_tags
     - image.style.thumbnail
     - media.type.image
   module:
     - image
-    - path
 _core:
   default_config_hash: JSY4-JPyNZBiYYo6imdRYF6_SdtWQexPndrLvn3-vw4
 id: media.image.default
@@ -17,12 +17,6 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
-  created:
-    type: datetime_timestamp
-    weight: 3
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_media_image:
     type: image_image
     weight: 0
@@ -39,21 +33,8 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 4
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  uid:
-    type: entity_reference_autocomplete
+  field_media_tags:
+    type: entity_reference_autocomplete_tags
     weight: 2
     region: content
     settings:
@@ -63,6 +44,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  created: true
   name: true
+  path: true
   publish_on: true
+  status: true
+  uid: true
   unpublish_on: true
