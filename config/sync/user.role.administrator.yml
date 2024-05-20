@@ -23,6 +23,7 @@ dependencies:
     - node.type.email_content
     - node.type.field_of_expertise
     - node.type.simplenews_issue
+    - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.written_by
   module:
@@ -34,12 +35,15 @@ dependencies:
     - help
     - media
     - node
+    - override_node_options
     - path
     - redirect
     - scheduler
+    - shortcut
     - simplenews
     - system
     - taxonomy
+    - taxonomy_manager
     - toolbar
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
@@ -52,15 +56,21 @@ permissions:
   - 'access block library'
   - 'access content overview'
   - 'access contextual links'
+  - 'access files overview'
   - 'access help pages'
   - 'access media overview'
+  - 'access shortcuts'
   - 'access site in maintenance mode'
   - 'access site reports'
+  - 'access taxonomy manager list'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
   - 'administer block content'
   - 'administer newsletters'
   - 'administer redirects'
   - 'administer url aliases'
+  - 'administer users'
   - 'create advertisement content'
   - 'create article content'
   - 'create body_parallax_image block content'
@@ -78,6 +88,7 @@ permissions:
   - 'create remote_video media'
   - 'create simplenews_issue content'
   - 'create slideshow block content'
+  - 'create terms in media_tags'
   - 'create terms in tags'
   - 'create terms in written_by'
   - 'create unl_directory_entry external entity'
@@ -93,6 +104,7 @@ permissions:
   - 'delete any contact content'
   - 'delete any email_content content'
   - 'delete any field_of_expertise content'
+  - 'delete any file'
   - 'delete any gallery block content'
   - 'delete any gallery block content revisions'
   - 'delete any image media'
@@ -118,6 +130,7 @@ permissions:
   - 'delete own image media'
   - 'delete own remote_video media'
   - 'delete simplenews_issue revisions'
+  - 'delete terms in media_tags'
   - 'delete terms in tags'
   - 'delete terms in written_by'
   - 'delete unl_directory_entry external entity'
@@ -140,8 +153,12 @@ permissions:
   - 'edit any slideshow block content'
   - 'edit own image media'
   - 'edit own remote_video media'
+  - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
+  - 'override article authored by option'
+  - 'override article authored on option'
+  - 'override article published option'
   - 'revert advertisement revisions'
   - 'revert all revisions'
   - 'revert any body_parallax_image block content revisions'
@@ -185,3 +202,4 @@ permissions:
   - 'view simplenews_issue revisions'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity collection'
+  - 'view user email addresses'

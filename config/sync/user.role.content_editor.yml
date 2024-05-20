@@ -23,6 +23,7 @@ dependencies:
     - node.type.email_content
     - node.type.field_of_expertise
     - node.type.simplenews_issue
+    - taxonomy.vocabulary.media_tags
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.written_by
   module:
@@ -37,9 +38,11 @@ dependencies:
     - override_node_options
     - path
     - scheduler
+    - shortcut
     - simplenews
     - system
     - taxonomy
+    - taxonomy_manager
     - toolbar
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
@@ -54,8 +57,12 @@ permissions:
   - 'access files overview'
   - 'access help pages'
   - 'access media overview'
+  - 'access shortcuts'
   - 'access site in maintenance mode'
+  - 'access taxonomy manager list'
+  - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access user profiles'
   - 'administer block content'
   - 'administer newsletters'
   - 'administer url aliases'
@@ -76,6 +83,7 @@ permissions:
   - 'create remote_video media'
   - 'create simplenews_issue content'
   - 'create slideshow block content'
+  - 'create terms in media_tags'
   - 'create terms in tags'
   - 'create terms in written_by'
   - 'create unl_directory_entry external entity'
@@ -100,6 +108,7 @@ permissions:
   - 'delete own files'
   - 'delete own image media'
   - 'delete own remote_video media'
+  - 'delete terms in media_tags'
   - 'delete terms in tags'
   - 'delete terms in written_by'
   - 'delete unl_directory_entry external entity'
@@ -122,10 +131,12 @@ permissions:
   - 'edit any slideshow block content'
   - 'edit own image media'
   - 'edit own remote_video media'
+  - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
   - 'override article authored by option'
   - 'override article authored on option'
+  - 'override article published option'
   - 'revert advertisement revisions'
   - 'revert all revisions'
   - 'revert article revisions'
@@ -151,3 +162,4 @@ permissions:
   - 'view simplenews_issue revisions'
   - 'view the administration theme'
   - 'view unl_directory_entry external entity collection'
+  - 'view user email addresses'
