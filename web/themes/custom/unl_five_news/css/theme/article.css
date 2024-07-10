@@ -64,8 +64,8 @@
 }
 
 .landing-section {
-  min-height: 70vh;
-  max-height: 80vh;
+  min-height: 50vh;
+  max-height: 65vh;
   width: auto;
   overflow: hidden;
 }
