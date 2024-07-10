@@ -40,30 +40,50 @@
   </div>
 </div>
 
-{# Tweeter  #}
+{# Events #}
 <div class="dcf-pt-8">
-<hr class="custom-l-line dcf-mt-0 ">
-<h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1">events</h2>
-  <div class="dcf-grid-halves@md dcf-grid-full@sm dcf-col-gap-8">
-    <div class="custom-events-image">
-      <div class="dcf-pb-5">
+  <hr class="custom-l-line dcf-mt-0 ">
+  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1">Events</h2>
+  <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-4">
+    {% if drupal_view_result('featured_event_image', 'block_1') is not empty %}
+      <div class="dcf-col-100% dcf-col-33%-start@md ">
         {{ drupal_view('featured_event_image', 'block_1') }}
       </div>
-      <div class="dcf-txt-center dcf-pb-5">
-        <div>
-        <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Follow Us in Twitter</h2>
-        </div>
-        <div>
-        <a href="https://twitter.com/UNLincoln?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-          <?xml version="1.0" encoding="utf-8"?>
-          <!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-          <svg version="1.1" id="svg5" xmlns:svg="http://www.w3.org/2000/svg"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1668.56 1221.19"style="enable-background:new 0 0 1668.56 1221.19; width:100px; fill:var(--bg-btn-primary);" xml:space="preserve"><g id="layer1" transform="translate(52.390088,-25.058597)"><path id="path1009" d="M283.94,167.31l386.39,516.64L281.5,1104h87.51l340.42-367.76L984.48,1104h297.8L874.15,558.3l361.92-390.99
-          h-87.51l-313.51,338.7l-253.31-338.7H283.94z M412.63,231.77h136.81l604.13,807.76h-136.81L412.63,231.77z"/></g></svg>
-        </a>
-        </div>
-      </div>
+    {% endif %}
+    <div class="dcf-col-100%{% if drupal_view_result('featured_event_image', 'block_1') is not empty %} dcf-col-67%-end@md{% endif %}">
+      <div id="wdn_calendarDisplay"></div>
+      <script>
+        function initEventsBand() {
+          if (define.amd === undefined) {
+            define.amd = define.origAmd;
+            delete define.origAmd;
+          }
+          window.WDNPluginsExecuting++;
+
+          WDN.setPluginParam('events', 'href', 'https://events.unl.edu/');
+          WDN.initializePlugin(
+            'events',
+            {
+              limit: {% if drupal_view_result('featured_event_image', 'block_1') is not empty %}6{% else %}12{% endif %},
+              rooms: true
+            },
+            enableAMDcallback,
+            'after'
+          );
+
+          function enableAMDcallback() {
+            window.WDNPluginsExecuting--;
+            if (define.origAmd === undefined && window.WDNPluginsExecuting === 0) {
+              define.origAmd = define.amd;
+              delete define.amd;
+            }
+          }
+        }
+        window.addEventListener('inlineJSReady', function(event) {
+          initEventsBand();
+        }, false);
+      </script>
     </div>
-    <div style="background-color: red; height: 300px; width:100%"></div>
   </div>
 </div>
 
