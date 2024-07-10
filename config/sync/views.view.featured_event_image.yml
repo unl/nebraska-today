@@ -93,18 +93,7 @@ display:
       cache:
         type: tag
         options: {  }
-      empty:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text_custom
-          empty: true
-          content: "<div>\r\n  <div>Follow Us in Twitter</div>\r\n</div>\r\n"
-          tokenize: false
+      empty: {  }
       sorts:
         field_article_event_date_value:
           id: field_article_event_date_value
