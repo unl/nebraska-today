@@ -1,4 +1,4 @@
-uuid: a3891d40-dc10-4e3c-8e90-71bc84d9f8e6
+uuid: 3048b752-03a3-4289-a97d-acb69f5081ec
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,10 @@ dependencies:
     - node.type.article
   module:
     - node
+    - options
     - user
-id: new_releases
-label: 'News releases'
+id: headlines
+label: Headlines
 module: views
 description: ''
 tag: ''
@@ -22,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'News Releases'
+      title: Headlines
       fields:
         title:
           id: title
@@ -144,15 +145,23 @@ display:
           id: type
           table: node_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
           entity_type: node
           entity_field: type
           plugin_id: bundle
-          operator: in
           value:
             article: article
+        field_article_priority_value:
+          id: field_article_priority_value
+          table: node__field_article_priority
+          field: field_article_priority_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            lead: lead
+            headline: headline
           group: 1
           exposed: false
           expose:
@@ -182,99 +191,7 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-        delta:
-          id: delta
-          table: node__field_article_release_contacts
-          field: delta
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 2
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-        delta_1:
-          id: delta_1
-          table: node__field_high_resolution_photo
-          field: delta
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: numeric
-          operator: 'not empty'
-          value:
-            min: ''
-            max: ''
-            value: ''
-          group: 2
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            min_placeholder: ''
-            max_placeholder: ''
-            placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-          2: OR
+          reduce_duplicates: false
       style:
         type: default
       row:
@@ -309,7 +226,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: news-releases
+      path: headlines
     cache_metadata:
       max-age: -1
       contexts:
