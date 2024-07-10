@@ -11,7 +11,7 @@ id: node.article.field_article_priority
 field_name: field_article_priority
 entity_type: node
 bundle: article
-label: 'Home page section'
+label: 'Homepage section'
 description: ''
 required: false
 translatable: false

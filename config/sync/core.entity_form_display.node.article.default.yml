@@ -57,10 +57,7 @@ third_party_settings:
       children:
         - field_section
         - field_article_priority
-        - field_article_display_options
-        - field_article_vertical_display
-        - field_article_horizontal_display
-        - field_article_compact_title
+        - group_homepage_display_options
       label: 'Site organization and display options'
       region: content
       parent_name: ''
@@ -154,6 +151,24 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
+    group_homepage_display_options:
+      children:
+        - field_article_display_options
+        - field_article_vertical_display
+        - field_article_horizontal_display
+        - field_article_compact_title
+      label: 'Homepage display options if Lead story'
+      region: content
+      parent_name: group_display_options
+      weight: 18
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: 'If this article is a "Lead Story" then these options affect how it is displayed on the homepage if it is the current lead.'
+        required_fields: true
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
 id: node.article.default
@@ -197,13 +212,13 @@ content:
     third_party_settings: {  }
   field_article_compact_title:
     type: options_buttons
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_display_options:
     type: options_buttons
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -223,7 +238,7 @@ content:
     third_party_settings: {  }
   field_article_horizontal_display:
     type: options_buttons
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -298,7 +313,7 @@ content:
     third_party_settings: {  }
   field_article_vertical_display:
     type: options_buttons
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

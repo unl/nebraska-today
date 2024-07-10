@@ -1,13 +1,19 @@
 {%
   set classes = [
-  'region',
-  'region-' ~ region|clean_class,
-  'dcf-hero',
-  'dcf-hero-default',
-]
+    'region',
+    'region-' ~ region|clean_class,
+    'dcf-hero',
+    'dcf-hero-default',
+  ]
 %}
+{% if field_title_placement is empty or field_title_placement.0['#markup'] == 'Basic' %}
+  {% set hero_type = 'hero-basic' %}
+{% else %}
+  {% set hero_type = 'hero-expanded' %}
+{% endif %}
+
 <!-- InstanceBeginEditable name="hero" -->
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes).addClass(hero_type) }}>
   <!-- InstanceEndEditable -->
   <div class="dcf-hero-group-1">
     {{ elements.unl_five_news_breadcrumbs }}

@@ -14,10 +14,6 @@
   transition: border .3s ease;
 }
 
-.custom-txt-decor-none span a {
-  text-decoration: none;
-}
-
 .custom-l-line {
   height: 1px;
   margin-bottom: 18px;
@@ -2106,4 +2102,17 @@ blockquote p:nth-of-type(3)::after {
     z-index: 2;
     background-color: #d00000;
   }
+}
+
+
+/**
+ * One-off custom things
+ */
+
+.unl-lightest-gray .field-written-by a {
+  color: #f6f6f5 !important;
+}
+
+.hero-expanded #dcf-page-title {
+  display: none;
 }

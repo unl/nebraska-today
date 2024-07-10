@@ -11,7 +11,7 @@ id: node.article.field_article_compact_title
 field_name: field_article_compact_title
 entity_type: node
 bundle: article
-label: 'Home Page display options for compact lead title'
+label: 'Homepage display options for compact lead title'
 description: ''
 required: true
 translatable: false
