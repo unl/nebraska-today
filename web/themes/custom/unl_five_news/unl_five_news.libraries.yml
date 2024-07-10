@@ -3,7 +3,6 @@ global-styling:
   css:
     theme:
       css/new.css: {}
-      css/original.css: {}
       css/wdn-overrides.css: {}
 article:
   version: VERSION

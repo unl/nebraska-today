@@ -5,9 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.media.teaser
     - field.field.media.remote_video.field_media_oembed_video
+    - image.style.lead_image_teaser
     - media.type.remote_video
   module:
     - image
+    - image_class
 _core:
   default_config_hash: zQoBQ0BtnMM_rlDdgftyu6eI4AVs9mo5K8xq7NFO2Zc
 id: media.remote_video.teaser
@@ -20,10 +22,12 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: lead_image_teaser
       image_loading:
         attribute: lazy
-    third_party_settings: {  }
+    third_party_settings:
+      image_class:
+        class: 'dcf-w-100% dcf-h-auto dcf-obj-fit-cover dcf-relative unl-cream dcf-hover-image'
     weight: 0
     region: content
 hidden:

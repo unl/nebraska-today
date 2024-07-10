@@ -75,6 +75,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_section:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_subtitle:
     type: text_default
     label: hidden
@@ -96,7 +104,6 @@ hidden:
   field_article_submission_status: true
   field_article_submitter: true
   field_high_resolution_photo: true
-  field_section: true
   field_tags: true
   field_written_by: true
   links: true

@@ -8,27 +8,26 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
   ]
-
 %}
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
 {{ attach_library('unl_five_news/article') }}
 
 <article{{ attributes.addClass(classes) }}>
-    <div>
-      {# I need to have hover where I hover it will be var(--hover) #}
-      <div class = "dcf-m-auto custom-iframe-check-class">  
-        <a href= "{{ url }}">
-          {{ content.field_article_lead_image }}
-        </a>
-      </div>
-      <div class = "dcf-m-auto">
-        <h5 class = "dcf-regular dcf-txt-h5">
-        <a href= "{{ url }}"> {{ label }} </a>
-        </h5>
-        <div style = "font-family: 'Gotham SSm A','Gotham SSm B',Verdana,sans-serif; font-weight: 400; font-style: normal; font-size: .75em; " class="custom-before-in-text ">
-          <div>{{ createdDate }} <span class = "custom-section-display">{{ content.field_section }}</span></div>
-        </div>
+  <div>
+    {# I need to have hover where I hover it will be var(--hover) #}
+    <div class="dcf-m-auto custom-iframe-check-class">
+      <a href="{{ url }}">
+        {{ content.field_article_lead_image }}
+      </a>
+    </div>
+    <div class="dcf-m-auto">
+      <h5 class="dcf-regular dcf-txt-h5">
+        <a href="{{ url }}">{{ label }}</a>
+      </h5>
+      <div class="custom-before-in-text">
+        <div>{{ createdDate }} <span class="custom-section-display">{{ content.field_section }}</span></div>
       </div>
     </div>
+  </div>
 </article>
 

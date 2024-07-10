@@ -1,27 +1,28 @@
-<div>
-  <hr class="custom-l-line dcf-mt-0 ">
-  <div class="dcf-d-flex dcf-ai-center ">
-    <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
-    <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
-      <svg class="dcf-mr-2 dcf-h-5 dcf-w-5 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
-        <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 01.062-.309l9.625 7.7a.504.504 0 00.625 0l9.625-7.7c.033.099.063.2.063.309v11z"></path>
-      </svg>
-      <a href="/newsrooms/1/subscribe/">Subscribe</a>
-    </div>
-  </div>
-  <div class = "dcf-grid-full@sm dcf-grid-halves@md dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6">
-    {% for row in rows %}
-      {%
-        set row_classes = [
-          default_row_class ? 'views-row dcf-col ',
-        ]
-      %}
-      <div{{ row.attributes.addClass(row_classes) }}>
-        {{- row.content -}}
-      </div>
-    {% endfor %}
-  </div>
-  <div class="dcf-mt-7 custom-hide-link dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans ut-read-more ">
-    <a class="dcf-txt-decor-none custom-arrow" href="headlines">More headlines</a>
+{# Used in 'Full Width Lead & View' section of node--article--featured #}
+
+<hr class="custom-l-line dcf-mt-0 ">
+<div class="dcf-d-flex dcf-ai-center ">
+  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" >Recent News</h2>
+  <div class="dcf-d-flex custom-news-subscribe dcf-mb-5 dcf-ml-6 dcf-txt-xs unl-font-sans unl-dark-gray">
+    <svg class="dcf-mr-2 dcf-h-5 dcf-w-5 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+      <path d="M21 4H3c-1.103 0-2 .896-2 2v11c0 1.103.897 2 2 2h18c1.103 0 2-.897 2-2V6c0-1.104-.897-2-2-2zm0 1c.057 0 .105.023.159.032L12 12.36 2.841 5.032C2.895 5.023 2.943 5 3 5h18zm1 12c0 .551-.449 1-1 1H3c-.551 0-1-.449-1-1V6a1 1 0 01.062-.309l9.625 7.7a.504.504 0 00.625 0l9.625-7.7c.033.099.063.2.063.309v11z"></path>
+    </svg>
+    <a href="/newsrooms/1/subscribe/">Subscribe</a>
   </div>
 </div>
+<div class="dcf-grid-full@sm dcf-grid-halves@md dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6">
+  {% for row in rows %}
+    {%
+      set row_classes = [
+        default_row_class ? 'views-row dcf-col ',
+      ]
+    %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      {{- row.content -}}
+    </div>
+  {% endfor %}
+</div>
+<div class="dcf-mt-7 dcf-txt-right dcf-txt-xs dcf-uppercase unl-font-sans">
+  <a class="dcf-txt-decor-none custom-arrow" href="headlines">More headlines</a>
+</div>
+
