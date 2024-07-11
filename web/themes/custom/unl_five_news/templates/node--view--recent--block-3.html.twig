@@ -7,11 +7,12 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
+    'recent-block3-grid',
   ]
 %}
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
 
-<article{{ attributes.addClass(classes).addClass('recent-block3-grid') }}>
+<article{{ attributes.addClass(classes) }}>
   <div>
     <a href="{{ url }}">
       {{ content.field_article_lead_image }}
