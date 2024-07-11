@@ -12,7 +12,11 @@
 {{ attach_library('classy/node') }}
 {{ attach_library('unl_five_news/article') }}
 
-
+<script>
+  window.addEventListener('inlineJSReady', function() {
+    WDN.initializePlugin('font-serif');
+  }, false);
+</script>
 
 <article{{ attributes.addClass(classes) }}>
 
@@ -36,20 +40,20 @@
     </footer>
   {% endif %}
 
-  <div class = "dcf-bleed">
+  <div class="dcf-bleed">
     {{ content.field_article_lead_image }}
   </div>
 
-  <div class ="outer-content dcf-pb-7 ">
+  <div class="outer-content dcf-pb-7">
     <div class="inner-content outer-content-item1">
-      <div class = "dcf-news-column  dcf-pt-7 inner-content-item1 dcf-m-auto">
-        <div class = "dcf-font-family dcf-dropcap custom-first-paragraph-big-font">
+      <div class="dcf-news-column  dcf-pt-7 inner-content-item1 dcf-m-auto">
+        <div class="unl-font-serif dcf-dropcap custom-first-paragraph-big-font">
           {{ content.body }}
           {{ content.field_gallery_images }}
           {{ content.field_media_and_card }}
         </div>
       </div>
-      <div class="inner-content-item2  dcf-pt-7">
+      <div class="inner-content-item2 dcf-pt-7">
         <div class="dcf-sticky custom-pin-top">
           <hr class="custom-l-line dcf-mt-0">
           <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 field-label">Share</h2>
@@ -64,15 +68,15 @@
     </div>
     
     <div class="outer-content-item2  dcf-pt-7">
-        {% if node.field_article_release_contacts.value is not empty %}
-          <hr class="custom-l-line dcf-mt-0">
-          <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style=" color : var(--heading); ">News Release Contact(s)</h2>
-        {% endif %}
-        {{ content.field_article_release_contacts }}
-        {{ content.field_article_related_links }}
-        {{ content.field_tags }}
-        {{ content.field_lead_image_text_placement }}
-        {{ content.field_high_resolution_photo }}
+      {% if node.field_article_release_contacts.value is not empty %}
+        <hr class="custom-l-line dcf-mt-0">
+        <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style=" color : var(--heading); ">News Release Contact(s)</h2>
+      {% endif %}
+      {{ content.field_article_release_contacts }}
+      {{ content.field_article_related_links }}
+      {{ content.field_tags }}
+      {{ content.field_lead_image_text_placement }}
+      {{ content.field_high_resolution_photo }}
     </div>
   </div>
   
@@ -81,5 +85,3 @@
     {{ drupal_view('recent', 'block_1') }}
   </div>
 </article>
-
-

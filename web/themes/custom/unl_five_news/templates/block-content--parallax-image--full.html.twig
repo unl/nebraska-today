@@ -1,10 +1,16 @@
+{% if content.field_title_placement.0['#markup'] == 'Basic' %}
+  {% set hero_class = 'hero-article-basic' %}
+{% else %}
+  {% set hero_class = 'hero-article-full' %}
+{% endif %}
 {%
   set classes = [
     'block-content',
     'block-content--type-' ~ bundle|clean_class,
     'block-content--' ~ id,
     'block-content--view-mode-' ~ view_mode|clean_class,
-    'dcf-relative dcf-mt-0 dcf-mb-0 dcf-pl-5 dcf-pr-5 dcf-mr-auto dcf-ml-auto'
+    'dcf-relative dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto',
+    hero_class,
   ]
 %}
 
