@@ -1,5 +1,7 @@
-
+#wdn_calendarDisplay > h2 {
+  display: none !important;
+}
 
 .path-frontpage .dcf-hero {
-    display: none;
+  display: none;
 }
