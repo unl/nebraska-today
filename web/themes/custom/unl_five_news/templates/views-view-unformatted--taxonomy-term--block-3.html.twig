@@ -1,12 +1,8 @@
-<hr class="custom-l-line dcf-mt-0">
-<div class="dcf-d-flex dcf-ai-center">
-  <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1">Recent News</h2>
-</div>
 <div class="dcf-grid-full@sm dcf-grid-halves@md dcf-grid-fourths@lg dcf-col-gap-vw dcf-row-gap-6">
   {% for row in rows %}
     {%
       set row_classes = [
-        default_row_class ? 'views-row dcf-col ',
+        default_row_class ? 'views-row dcf-col',
       ]
     %}
     <div{{ row.attributes.addClass(row_classes) }}>
