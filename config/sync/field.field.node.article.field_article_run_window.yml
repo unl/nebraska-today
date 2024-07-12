@@ -12,7 +12,7 @@ field_name: field_article_run_window
 entity_type: node
 bundle: article
 label: 'Run window'
-description: ''
+description: 'The suggested time frame this story would be appropriate for inclusion in the email newsletter.'
 required: true
 translatable: false
 default_value:
