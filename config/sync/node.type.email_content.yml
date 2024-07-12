@@ -26,7 +26,7 @@ third_party_settings:
 name: 'Email content'
 type: email_content
 description: 'Custom content to add to a <i>Newsletter issue</i>.'
-help: ''
+help: null
 new_revision: false
 preview_mode: 0
 display_submitted: false

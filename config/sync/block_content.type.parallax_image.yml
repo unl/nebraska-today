@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: parallax_image
 label: 'Lead media'
-revision: 0
+revision: false
 description: 'Lead media (image or remote video) at the top of an Article.'

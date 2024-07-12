@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: body_parallax_image
 label: 'Body Parallax Image'
-revision: 0
+revision: false
 description: 'This is a parallax image that can be added in body'

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: quote
 label: Quote
-revision: 0
+revision: false
 description: 'Quote block '

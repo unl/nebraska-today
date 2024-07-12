@@ -1,5 +1,6 @@
 _core:
   default_config_hash: us91yAZ2i-PBRNGxbudkfTDsiVfCpbLCNPOGmO78NJ4
+langcode: en
 hash_expiration: 86400
 newsletter:
   issue_tokens: false

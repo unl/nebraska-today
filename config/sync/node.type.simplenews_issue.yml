@@ -27,7 +27,7 @@ _core:
 name: 'Newsletter issue'
 type: simplenews_issue
 description: 'Use <em>Newsletter issue</em> for newsletters.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

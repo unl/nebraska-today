@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: paragraph_card
 label: 'Paragraph Card'
-revision: 0
+revision: false
 description: 'Paragraph added in Card'

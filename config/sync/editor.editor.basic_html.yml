@@ -48,9 +48,3 @@ settings:
       allow_view_mode_override: true
 image_upload:
   status: false
-  scheme: public
-  directory: images/inline
-  max_size: '10 MB'
-  max_dimensions:
-    width: 0
-    height: 0

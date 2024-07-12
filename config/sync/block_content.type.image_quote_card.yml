@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: image_quote_card
 label: 'Image Quote Card'
-revision: 0
+revision: false
 description: 'Image and Quote Overlaid on it '

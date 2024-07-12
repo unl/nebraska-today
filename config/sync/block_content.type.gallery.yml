@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: gallery
 label: Gallery
-revision: 0
+revision: false
 description: 'Set of pictures in Grid layout designs'

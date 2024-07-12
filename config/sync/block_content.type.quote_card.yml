@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: quote_card
 label: 'Quote Card'
-revision: 0
+revision: false
 description: 'Quote added in a Card'
