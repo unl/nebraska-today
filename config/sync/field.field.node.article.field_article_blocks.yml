@@ -18,7 +18,7 @@ field_name: field_article_blocks
 entity_type: node
 bundle: article
 label: Blocks
-description: 'These are not displayed unless added manually. Embed each one individually in the <em>Body</em> text (on its own line) with a shortcode: <code>&#91;unl:b:1&#93;</code> for the first, <code>&#91;unl:b:2&#93;</code> for the second, etc.'
+description: "These are not displayed unless added manually. Embed each one individually in the <em>Body</em> text (on its own line) with a shortcode: <code>&#91;unl:b:1&#93;</code> for the first, <code>&#91;unl:b:2&#93;</code> for the second, etc.\r\n<br><br>\r\n<a target=\"_blank\" href=\"https://uofnelincoln.sharepoint.com/:f:/r/sites/UNL-UCOMM/common/Shared%20Documents/News/Nebraska%20Today%20Web%20CMS%20Documentation?csf=1&web=1&e=V7mcqe\">Link to documentation examples on the UComm Sharepoint</a> (Opens in a new tab)"
 required: false
 translatable: false
 default_value: {  }
@@ -39,5 +39,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: null
+    auto_create_bundle: body_parallax_image
 field_type: entity_reference
