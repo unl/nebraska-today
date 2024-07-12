@@ -7,20 +7,19 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
+    'half-text-half-image-grid',
+    'dcf-mb-4',
   ]
 %}
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
-{{ attach_library('unl_five_news/article') }}
 
 <article{{ attributes.addClass(classes) }}>
-
-  {# I need to have hover where I hover it will be var(--hover) #}
-  <div class="dcf-m-auto ">
+  <div>
     <a href="{{ url }}">
       {{ content.field_article_lead_image }}
     </a>
   </div>
-  <div class="dcf-m-auto">
+  <div>
     <h5 class="dcf-regular dcf-txt-h5">
       <a href="{{ url }}">{{ label }}</a>
     </h5>
@@ -28,5 +27,4 @@
       <div>{{ createdDate }} <span class="custom-section-display">{{ content.field_section }}</span></div>
     </div>
   </div>
-
 </article>

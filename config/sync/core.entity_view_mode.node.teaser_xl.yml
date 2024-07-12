@@ -1,0 +1,11 @@
+uuid: 4ac53b90-ae9c-4aba-8121-6c43547c71de
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_xl
+label: 'Teaser (XL)'
+description: ''
+targetEntityType: node
+cache: true

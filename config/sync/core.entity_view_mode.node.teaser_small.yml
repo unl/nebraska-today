@@ -1,0 +1,11 @@
+uuid: 99193ce2-20ea-4f3f-90ac-8ca7ad9b2e74
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_small
+label: 'Teaser (Small)'
+description: ''
+targetEntityType: node
+cache: true

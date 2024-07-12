@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_large
+    - core.entity_view_mode.node.teaser_small
     - node.type.article
   module:
     - node
@@ -193,7 +194,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_large
       query:
         type: views_query
         options:
@@ -241,8 +242,22 @@ display:
         options:
           offset: 0
           items_per_page: 3
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_small
       defaults:
         pager: false
+        style: false
+        row: false
       display_extenders: {  }
     cache_metadata:
       max-age: -1

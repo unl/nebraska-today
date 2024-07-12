@@ -7,23 +7,19 @@
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'clearfix',
-    'recent-block3-grid',
+    'custom-oncampus-2',
   ]
 %}
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div>
-    <a href="{{ url }}">
-      {{ content.field_article_lead_image }}
+  <div class="custom-oncampus-title" style="color: white;">
+    <a href="{{ url }}" class="dcf-txt-decor-none" style="color:white;">
+        <h3>{{ label }}</h3>
     </a>
+    <p>{{ createdDate }}</p>
   </div>
-  <div>
-    <h5 class="dcf-regular dcf-txt-h5">
-      <a href="{{ url }}">{{ label }}</a>
-    </h5>
-    <div class="dcf-d-flex custom-before-in-text">
-      <div>{{ createdDate }} <span class="custom-section-display">{{ content.field_section }}</span></div>
-    </div>
+  <div class="custom-oncampus-image">
+    <a href="{{ url }}">{{ content.field_article_lead_image }}</a>
   </div>
 </article>

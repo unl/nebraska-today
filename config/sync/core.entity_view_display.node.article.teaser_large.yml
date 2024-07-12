@@ -1,0 +1,84 @@
+uuid: 8d2aa350-ea9e-4800-aad3-9d4505c30c5d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_large
+    - field.field.node.article.body
+    - field.field.node.article.feeds_item
+    - field.field.node.article.field_article_blocks
+    - field.field.node.article.field_article_compact_title
+    - field.field.node.article.field_article_display_options
+    - field.field.node.article.field_article_event_date
+    - field.field.node.article.field_article_event_where
+    - field.field.node.article.field_article_horizontal_display
+    - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_priority
+    - field.field.node.article.field_article_related_links
+    - field.field.node.article.field_article_release_contacts
+    - field.field.node.article.field_article_run_window
+    - field.field.node.article.field_article_submission_id
+    - field.field.node.article.field_article_submission_status
+    - field.field.node.article.field_article_submitter
+    - field.field.node.article.field_article_vertical_display
+    - field.field.node.article.field_high_resolution_photo
+    - field.field.node.article.field_section
+    - field.field.node.article.field_subtitle
+    - field.field.node.article.field_tags
+    - field.field.node.article.field_written_by
+    - node.type.article
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: 7fb0j9HnIXfP9ndewzgPPzzeX_SV532wuYpkscrCMCk
+id: node.article.teaser_large
+targetEntityType: node
+bundle: article
+mode: teaser_large
+content:
+  field_article_lead_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_section:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_subtitle:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  feeds_item: true
+  field_article_blocks: true
+  field_article_compact_title: true
+  field_article_display_options: true
+  field_article_event_date: true
+  field_article_event_where: true
+  field_article_horizontal_display: true
+  field_article_priority: true
+  field_article_related_links: true
+  field_article_release_contacts: true
+  field_article_run_window: true
+  field_article_submission_id: true
+  field_article_submission_status: true
+  field_article_submitter: true
+  field_article_vertical_display: true
+  field_high_resolution_photo: true
+  field_tags: true
+  field_written_by: true
+  links: true

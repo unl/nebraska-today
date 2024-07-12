@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_small
     - node.type.article
   module:
     - node
@@ -314,8 +315,18 @@ display:
         options:
           offset: 0
           items_per_page: 4
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_small
       defaults:
         pager: false
+        style: false
+        row: false
       display_description: ''
       display_extenders: {  }
     cache_metadata:

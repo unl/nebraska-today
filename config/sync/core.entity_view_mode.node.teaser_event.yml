@@ -1,0 +1,11 @@
+uuid: f49354f3-9819-4140-a794-b369cd73d573
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_event
+label: 'Teaser (Event)'
+description: ''
+targetEntityType: node
+cache: true

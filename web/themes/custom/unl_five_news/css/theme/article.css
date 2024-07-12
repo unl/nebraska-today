@@ -513,59 +513,15 @@ blockquote p:nth-of-type(3)::after {
   padding: 3vh calc(5% + 1em) 3vh 5.62vw;
 }
 
-.custom-editor-choice {
-  background-color: #d00000;
-}
-
-.custom-editor-choice {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: visible;
-}
-
-.custom-editor-choice .custom-editor-text {
-  padding: 3vh 5%;
-}
-
-.custom-editors-pick-order {
-  padding-left: calc(6% + 0.7rem);
-}
-
-.custom-editors-pick-three-story {
-  height: 100%;
-}
-
-.custom-editor-choice-padding {
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-.recent-block3-grid {
-  display: flex;
-  align-items: center;
-  flex-flow: row nowrap;
-}
-
 .half-text-half-image-grid {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
 }
 
-.recent-block3-grid > div:nth-child(1) {
-  width: 33.33333333%;
-  padding-right: 1.58vw;
-}
-
 .half-text-half-image-grid > div:nth-child(1) {
   width: 33.33333333%;
   padding-right: 1.58vw;
-}
-
-.recent-block3-grid > div:nth-child(2) {
-  width: 66.66666667%;
-  padding: 0 1.58vw;
 }
 
 .half-text-half-image-grid > div:nth-child(2) {
@@ -687,18 +643,15 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-editors-order-1,
-.custom-editors-order-1 div {
+.custom-editors-order-1 div,
+.custom-editors-order-1 article {
   height: 100%;
 }
 
 .custom-oncampus-order-1,
-.custom-oncampus-order-1 div {
+.custom-oncampus-order-1 div,
+.custom-oncampus-order-1 article {
   height: 100%;
-}
-
-.custom-editor-text {
-  height: auto !important;
-  color: var(--bg-btn-inverse-primary);
 }
 
 .custom-on-campus-news-3 h5 {
@@ -2008,12 +1961,6 @@ blockquote p:nth-of-type(3)::after {
     padding-right: 5.62vw;
   }
 
-  .recent-block3-grid {
-    display: flex;
-    align-items: center;
-    flex-wrap: row nowrap;
-  }
-
   .half-text-half-image-grid {
     display: flex;
     align-items: center;
@@ -2041,21 +1988,8 @@ blockquote p:nth-of-type(3)::after {
     margin: -7vh 9% 0;
     padding: 4vh 4% !important;
   }
-
-  .custom-editor-choice-padding {
-    padding-top: 6%;
-    padding-bottom: 2%;
-  }
 }
 
-@media screen and (min-width: 42.09em) and (max-width: 74.83em) {
-  .custom-editor-choice .custom-editor-text {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    background-color: #d00000;
-  }
-}
 
 @media screen and (min-width: 56.12em) and (max-width: 74.83em) {
   .custom-heading {
@@ -2089,16 +2023,6 @@ blockquote p:nth-of-type(3)::after {
   }
 }
 
-@media (min-width: 74.83em) {
-  .custom-editor-choice .custom-editor-text {
-    width: 80%;
-    position: absolute;
-    right: 5%;
-    bottom: -1.43em;
-    z-index: 2;
-    background-color: #d00000;
-  }
-}
 
 
 /**
