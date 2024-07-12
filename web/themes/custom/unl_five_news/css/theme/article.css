@@ -339,89 +339,6 @@ blockquote p:nth-of-type(3)::after {
   content: "\279A";
 }
 
-.custom-husker-containeer {
-  position: relative;
-}
-
-.custom-padding-left-athletics {
-  padding-left: 4em;
-}
-
-.custom-husker-icon::before {
-  background: transparent url(herbie-husker.svg) 0 0 no-repeat;
-  content: "";
-  height: 3.16em;
-  left: 0;
-  position: absolute;
-  top: -1.5em;
-  width: 20em;
-}
-
-.custom-husker-logo::before {
-  background: transparent url(huskers.svg) 50% 100% / contain no-repeat;
-  content: "";
-  height: 60vw;
-  margin-top: -30%;
-  opacity: 0.05;
-  position: absolute;
-  padding: 0;
-  right: -30vw;
-  top: 50%;
-  transform: rotate(-90deg);
-  width: 100vw;
-  z-index: 0;
-}
-
-.custom-athletics-flex {
-  display: flex;
-  flex-flow: column wrap;
-  width: 100%;
-}
-
-.custom-athletics-primary-news-title {
-  background-color: rgba(208, 0, 0, 95);
-  padding: 3vh 5%;
-  order: 2;
-  z-index: 2;
-  bottom: -1.43em;
-}
-
-.custom-athletics-plain-text a {
-  color: var(--heading);
-  text-decoration: none;
-}
-
-.custom-athletics-primary-news-image img {
-  object-fit: cover;
-  width: 100%;
-  height: auto;
-}
-.custom-athletics-background-color div {
-  background-color: #d00000;
-}
-
-.custom-athletics-secondary-news {
-  display: flex;
-  flex-flow: row wrap;
-  overflow: visible;
-  position: relative;
-  align-items: center;
-}
-
-.custom-athletics-flex {
-  display: flex;
-  flex-direction: column;
-}
-
-.custom-athletics-padding {
-  padding-top: 1.15em;
-  padding-bottom: 1em;
-}
-
-.custom-bg-athletics {
-  background-color: #d00000;
-}
-
 .custom-in-the-news-padding {
   margin-bottom: 1em;
 }
@@ -1142,22 +1059,6 @@ blockquote p:nth-of-type(3)::after {
 
 /* Full screen */
 @media only screen and (min-width: 42.09em) {
-  .custom-athletic-half {
-    width: 50%;
-  }
-
-  .custom-athletics-primary-news-title {
-    background-color: rgba(208, 0, 0, 95);
-    padding: 3vh 5%;
-    position: absolute;
-    width: auto;
-    max-width: 80%;
-    left: 5%;
-    order: 2;
-    z-index: 2;
-    bottom: -1.43em;
-  }
-
   /* Heading Placement*/
   .dcf-title-center-left {
     top: 40%;
@@ -1922,10 +1823,6 @@ blockquote p:nth-of-type(3)::after {
     padding-bottom: 1.33em;
   }
 
-  .custom-athletics-flex {
-    display: flex;
-    flex-direction: column;
-  }
   .custom-oncampus-2 {
     overflow: hidden;
     position: relative;
