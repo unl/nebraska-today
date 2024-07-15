@@ -46,6 +46,7 @@ dependencies:
     - taxonomy
     - taxonomy_manager
     - toolbar
+    - view_unpublished
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
@@ -194,6 +195,7 @@ permissions:
   - 'view any quote block content history'
   - 'view any quote_card block content history'
   - 'view any slideshow block content history'
+  - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'
   - 'view email_content revisions'

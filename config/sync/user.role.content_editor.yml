@@ -45,6 +45,7 @@ dependencies:
     - taxonomy
     - taxonomy_manager
     - toolbar
+    - view_unpublished
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
@@ -154,6 +155,7 @@ permissions:
   - 'use text format simple_html'
   - 'view advertisement revisions'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view article revisions'
   - 'view contact revisions'
   - 'view email_content revisions'
