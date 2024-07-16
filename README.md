@@ -90,6 +90,15 @@ Some things needed are Drupal "content" and not saved to config/sync. These need
 
 - A subscription to an email address used for testing added at https://news-local.unl.edu/admin/people/simplenews 
 - The Section taxonomy terms at https://news-local.unl.edu/admin/structure/taxonomy/manage/news_section/overview
+- The "Main navigation" links at https://news-local.unl.edu/admin/structure/menu/manage/main
+
+### Cron setup
+
+Cron is disabled on /admin/config/system/cron because there isn't an option to run it often enough. Set up a crontab entry to run every 5 minutes so that articles set to publish with Scheduler are promptly published.
+
+```
+*/5 * * * * curl -s "https://news.unl.edu/cron/{{key-that-appear-on-/admin/config/system/cron}}" > /dev/null
+```
 
 ## Common Settings for All Sites
 
