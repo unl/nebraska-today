@@ -86,7 +86,7 @@ When asked to select an Installation Profile, select _Use existing configuration
 
 ## Additional setup
 
-Some things needed are Drupal "content" and not saved to config/sync. These need to be manually created.
+Some things needed are Drupal "content" and not saved to config/sync. These need to be manually created (both on a local instance and an initial production deployment).
 
 - A subscription to an email address used for testing added at https://news-local.unl.edu/admin/people/simplenews 
 - The Section taxonomy terms at https://news-local.unl.edu/admin/structure/taxonomy/manage/news_section/overview
