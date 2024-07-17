@@ -56,7 +56,7 @@ class SubmissionRejectAction extends ViewsBulkOperationsActionBase {
       $can_update = $object->access('update', $account, TRUE);
       $can_edit = $object->access('edit', $account, TRUE);
 
-      return $can_edit->andIf($can_update);
+      return $can_edit->orIf($can_update);
     }
 
     return FALSE;
