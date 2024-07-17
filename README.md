@@ -91,6 +91,7 @@ Some things needed are Drupal "content" and not saved to config/sync. These need
 - A subscription to an email address used for testing added at https://news-local.unl.edu/admin/people/simplenews 
 - The Section taxonomy terms at https://news-local.unl.edu/admin/structure/taxonomy/manage/news_section/overview
 - The "Main navigation" links at https://news-local.unl.edu/admin/structure/menu/manage/main
+- An "Announce submission import" feed at https://news-local.unl.edu/feed/add/announce_submission_import with this as the Feed URL: https://newsroom.unl.edu/announce/todayatunl/submissions?format=json
 
 ### Cron setup
 

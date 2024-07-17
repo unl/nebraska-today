@@ -42,26 +42,18 @@ third_party_settings:
         source: pending
         weight: 0
         label: Rewrite
-      d3bf05b7-68e4-4d51-a0d4-d8ae039a1d27:
-        invert: true
-        uuid: d3bf05b7-68e4-4d51-a0d4-d8ae039a1d27
-        plugin: required
-        source: full_article
-        weight: -10
-        label: Required
-      c7f65e26-adf8-48fb-a5a2-89d2a46b8ba2:
-        text: '[description]'
-        uuid: c7f65e26-adf8-48fb-a5a2-89d2a46b8ba2
-        plugin: rewrite
-        source: full_article
-        weight: -9
-        label: Rewrite
       ac51876e-a085-4039-a67c-1ce9a4dbcc45:
         uuid: ac51876e-a085-4039-a67c-1ce9a4dbcc45
         plugin: unl_news_submissions_create_lead_media
         source: files
-        weight: 0
+        weight: -9
         label: 'Create Lead Media block'
+      80b3a0ef-55ac-450c-9d1f-57c2b7f33450:
+        uuid: 80b3a0ef-55ac-450c-9d1f-57c2b7f33450
+        plugin: skip_on_empty
+        source: files
+        weight: -10
+        label: 'Skip tampers on empty'
 label: 'Announce submission import'
 id: announce_submission_import
 description: 'Stories submitted by the community to newsroom.unl.edu/announce'
