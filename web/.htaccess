@@ -60,6 +60,10 @@ AddEncoding gzip svgz
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
+  # Redirect paths from the old site.
+  RewriteRule ^newsrooms/today/(.*)$ /$1 [R=301,L]
+  RewriteRule ^free-tags/(.*)$ /tag/$1 [R=301,L]
+
   # Enforce HTTPS.
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
