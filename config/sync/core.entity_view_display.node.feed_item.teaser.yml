@@ -5,13 +5,11 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.feed_item.body
-    - field.field.node.feed_item.feeds_item
     - field.field.node.feed_item.field_feed_image
     - field.field.node.feed_item.field_feed_link
     - field.field.node.feed_item.field_feed_story_id
     - node.type.feed_item
   module:
-    - feeds
     - image
     - link
     - text
@@ -28,14 +26,6 @@ content:
       trim_length: 600
     third_party_settings: {  }
     weight: 1
-    region: content
-  feeds_item:
-    type: feeds_item_url
-    label: hidden
-    settings:
-      url_plain: false
-    third_party_settings: {  }
-    weight: 2
     region: content
   field_feed_image:
     type: image

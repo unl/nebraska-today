@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.field_of_expertise.body
-    - field.field.node.field_of_expertise.feeds_item
     - field.field.node.field_of_expertise.field_experts
     - node.type.field_of_expertise
   module:
@@ -37,5 +36,4 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden:
-  feeds_item: true
+hidden: {  }

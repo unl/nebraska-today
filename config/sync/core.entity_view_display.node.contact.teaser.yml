@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.contact.feeds_item
     - field.field.node.contact.field_contact_bio
     - field.field.node.contact.field_contact_email
     - field.field.node.contact.field_contact_phone
@@ -95,5 +94,4 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden:
-  feeds_item: true
+hidden: {  }

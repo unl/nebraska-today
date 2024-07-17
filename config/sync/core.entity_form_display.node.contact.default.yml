@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.contact.feeds_item
     - field.field.node.contact.field_contact_bio
     - field.field.node.contact.field_contact_email
     - field.field.node.contact.field_contact_phone
@@ -174,6 +173,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  feeds_item: true
   publish_on: true
   unpublish_on: true
