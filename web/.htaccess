@@ -62,6 +62,7 @@ AddEncoding gzip svgz
 
   # Redirect paths from the old site.
   RewriteRule ^newsrooms/today/(.*)$ /$1 [R=301,L]
+  RewriteRule ^newsrooms/1/(.*)$ /$1 [R=301,L]
   RewriteRule ^free-tags/(.*)$ /tag/$1 [R=301,L]
 
   # Enforce HTTPS.

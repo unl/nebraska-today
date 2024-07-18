@@ -2,12 +2,13 @@ diff --git a/.htaccess b/.htaccess
 index 4031da475c..5b87af6df3 100644
 --- a/.htaccess
 +++ b/.htaccess
-@@ -60,6 +60,10 @@ AddEncoding gzip svgz
+@@ -60,6 +60,11 @@ AddEncoding gzip svgz
  <IfModule mod_rewrite.c>
    RewriteEngine on
 
 +  # Redirect paths from the old site.
 +  RewriteRule ^newsrooms/today/(.*)$ /$1 [R=301,L]
++  RewriteRule ^newsrooms/1/(.*)$ /$1 [R=301,L]
 +  RewriteRule ^free-tags/(.*)$ /tag/$1 [R=301,L]
 +
    # Set "protossl" to "s" if we were accessed via https://.  This is used later
