@@ -13,11 +13,13 @@
 {% set createdDate = node.getCreatedTime|date('F j, Y') %}
 
 <article{{ attributes.addClass(classes) }}>
-  <div class="custom-oncampus-title" style="color: white;">
-    <a href="{{ url }}" class="dcf-txt-decor-none" style="color:white;">
-        <h3>{{ label }}</h3>
-    </a>
-    <p>{{ createdDate }}</p>
+  <div class="custom-oncampus-title">
+    <h3 class="dcf-txt-h4 dcf-mb-1">
+      <a href="{{ url }}" class="dcf-txt-decor-none">
+        {{ label }}
+      </a>
+    </h3>
+    <p class="dcf-mb-0">{{ createdDate }}</p>
   </div>
   <div class="custom-oncampus-image">
     <a href="{{ url }}">{{ content.field_article_lead_image }}</a>

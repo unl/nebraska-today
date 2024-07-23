@@ -335,7 +335,7 @@ blockquote p:nth-of-type(3)::after {
   width: auto;
   max-width: 100%;
   order: 2;
-  padding: 3vh 5%;
+  padding: 2vh 5%;
 }
 
 .custom-oncampus-title h3 span {
@@ -1780,7 +1780,6 @@ blockquote p:nth-of-type(3)::after {
 
   .custom-oncampus-title {
     background-color: rgba(208, 0, 0, 95);
-    padding: 3vh 5%;
     position: absolute;
     width: auto;
     width: 80%;
