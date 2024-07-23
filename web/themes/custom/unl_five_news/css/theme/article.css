@@ -565,9 +565,9 @@ blockquote p:nth-of-type(3)::after {
   height: 100%;
 }
 
-.custom-oncampus-order-1,
-.custom-oncampus-order-1 div,
-.custom-oncampus-order-1 article {
+.custom-height-100,
+.custom-height-100 div,
+.custom-height-100 article {
   height: 100%;
 }
 
@@ -576,10 +576,6 @@ blockquote p:nth-of-type(3)::after {
 }
 
 .custom-editors-order-2 h5 {
-  margin-bottom: 0.5rem;
-}
-
-.custom-oncampus-order-2 h5 {
   margin-bottom: 0.5rem;
 }
 
@@ -1905,13 +1901,6 @@ blockquote p:nth-of-type(3)::after {
     order: 1;
   }
   .custom-editors-order-2 {
-    order: 2;
-  }
-  .custom-oncampus-order-1 {
-    order: 1;
-  }
-
-  .custom-oncampus-order-2 {
     order: 2;
   }
 
