@@ -1,20 +1,28 @@
-{% set createdDay = node.getCreatedTime|date('j') %}
-{% set createdMonth = node.getCreatedTime|date('M') %}
-{% set createdTime = node.getCreatedTime|date('g:i A') %}
-<div>
-    <div><a href={{ url }}>{{ content.field_article_lead_image }}</a></div>
-    <div class="custom-events-heading-and-logo dcf-jc-between">
-        <div class="custom-event-title">
-        <h3><a href={{ url }}>{{ label  }}</a></h3>
-        <p class="custom-event-location">{{ content.field_article_event_where }}</p>
-        </div>
-        <div class="custom-event-logo custom-date-circle">
-            <div>{{ createdMonth }}</div>
-            <div>{{ createdDay }}</div>
-            <div>{{ createdTime }}</div>
-        </div>
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{% set eventDay = node.field_article_event_date.value|date('j') %}
+{% set eventMonth = node.field_article_event_date.value|date('M') %}
+<article{{ attributes.addClass(classes) }}>
+  <a href="{{ url }}">
+    {{ content.field_article_lead_image }}
+  </a>
+  <div class="custom-events-heading-and-logo dcf-jc-between">
+    <h3 class="custom-event-title dcf-mb-1"><a href={{ url }}>{{ label  }}</a></h3>
+    <div class="custom-event-location">{{ content.field_article_event_where }}</div>
+    <div class="custom-event-circle">
+      <div class="month">{{ eventMonth }}</div>
+      <div class="day">{{ eventDay }}</div>
+      <div class="time"{{ content.field_article_event_date }}</div>
     </div>
-    <div>
-        {{ content.field_subtitle }}
-    </div>
-</div>
+  </div>
+  {{ content.body }}
+</article>
