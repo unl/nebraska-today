@@ -61,7 +61,7 @@ function unl_five_news_preprocess_block_content(&$variables) {
 
     $block_content = $variables['elements']['#block_content'];
     $field_image = $block_content->get('field_image')->getValue();
-    if ($field_image[0]['target_id']) {
+    if (isset($field_image[0]) && isset($field_image[0]['target_id'])) {
       $media_item = Media::load($field_image[0]['target_id']);
       if ($media_item->bundle() == 'image') {
         $variables['credit'] = $media_item->get('field_media_image_credit')->value;
