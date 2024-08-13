@@ -48,17 +48,9 @@ function unl_five_news_preprocess_field(&$variables) {
  * Implements template_preprocess_block_content().
  */
 function unl_five_news_preprocess_block_content(&$variables) {
-  // Always make the node title available in a block that's on a node page.
-   $node = $variables['elements']['#block_content']->_referringItem->getEntity();
-  if ($node) {
-    $variables['node_title'] = $node->getTitle();
-    $variables['homepage_display'] = $node->get('field_article_display_options')->value;
-  }
-
-  // Make the Image Media credit field easy to access as {{ credit }} in the Lead Image custom block.
   if ($variables['bundle'] == 'parallax_image') {
+    // Make the Image Media credit field easy to access as {{ credit }} in the Lead Media custom block.
     $variables['credit'] = '';
-
     $block_content = $variables['elements']['#block_content'];
     $field_image = $block_content->get('field_image')->getValue();
     if (isset($field_image[0]) && isset($field_image[0]['target_id'])) {
@@ -69,7 +61,10 @@ function unl_five_news_preprocess_block_content(&$variables) {
     }
 
     // Make some things from the Article available in block-content--parallax-image--full.html.twig.
+    $node = $variables['elements']['#block_content']->_referringItem->getEntity();
     if ($node) {
+      $variables['node_title'] = $node->getTitle();
+      $variables['homepage_display'] = $node->get('field_article_display_options')->value;
       $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
       $variables['field_subtitle'] = $node->get('field_subtitle')->view(['label'=>'hidden', 'type'=>'TextFieldItemList']);
       $variables['field_written_by'] = $node->get('field_written_by')->view(['label'=>'hidden', 'type'=>'EntityReferenceFieldItemList']);
