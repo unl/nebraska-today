@@ -56,21 +56,21 @@ content:
       view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 8
+    weight: 9
     region: content
   field_article_compact_title:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_article_display_options:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 11
     region: content
   field_article_event_date:
     type: daterange_default
@@ -81,7 +81,7 @@ content:
       from_to: both
       separator: '-'
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_article_event_where:
     type: string
@@ -89,14 +89,14 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   field_article_horizontal_display:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_article_lead_cutline:
     type: string
@@ -119,17 +119,17 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: full
+      view_mode: default
       link: false
     third_party_settings: {  }
-    weight: 18
+    weight: 5
     region: content
   field_article_priority:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_article_related_links:
     type: link
@@ -141,7 +141,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_article_release_contacts:
     type: entity_reference_entity_view
@@ -150,21 +150,21 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_article_title_placement:
     type: list_key
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 21
+    weight: 20
     region: content
   field_article_vertical_display:
     type: list_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_high_resolution_photo:
     type: entity_reference_entity_view
@@ -173,7 +173,7 @@ content:
       view_mode: full
       link: false
     third_party_settings: {  }
-    weight: 9
+    weight: 10
     region: content
   field_section:
     type: entity_reference_label
@@ -181,7 +181,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_subtitle:
     type: text_default
@@ -196,7 +196,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_written_by:
     type: entity_reference_label

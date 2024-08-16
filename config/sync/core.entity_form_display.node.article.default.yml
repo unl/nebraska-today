@@ -89,8 +89,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-        direction: vertical
-        width_breakpoint: 640
     group_scheduling:
       children:
         - status
@@ -125,8 +123,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-        direction: vertical
-        width_breakpoint: 640
     group_event_details:
       children:
         - field_article_event_date
@@ -143,8 +139,6 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
-        direction: vertical
-        width_breakpoint: 640
     group_submission_details:
       children:
         - field_article_run_window
@@ -162,8 +156,6 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
-        direction: vertical
-        width_breakpoint: 640
     group_homepage_display_options:
       children:
         - field_article_display_options
@@ -182,8 +174,6 @@ third_party_settings:
         open: false
         description: 'If this article is a "Lead Story" then these options affect how it is displayed on the homepage if it is the current lead.'
         required_fields: true
-        direction: vertical
-        width_breakpoint: 640
     group_lead_media:
       children:
         - field_article_lead_media
