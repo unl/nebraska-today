@@ -11,7 +11,9 @@ dependencies:
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
     - field.field.node.article.field_article_horizontal_display
+    - field.field.node.article.field_article_lead_cutline
     - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
@@ -19,6 +21,7 @@ dependencies:
     - field.field.node.article.field_article_submission_id
     - field.field.node.article.field_article_submission_status
     - field.field.node.article.field_article_submitter
+    - field.field.node.article.field_article_title_placement
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -95,6 +98,14 @@ content:
     third_party_settings: {  }
     weight: 16
     region: content
+  field_article_lead_cutline:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 19
+    region: content
   field_article_lead_image:
     type: entity_reference_entity_view
     label: hidden
@@ -103,6 +114,15 @@ content:
       link: false
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_article_lead_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: full
+      link: false
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_article_priority:
     type: list_default
@@ -131,6 +151,13 @@ content:
       link: false
     third_party_settings: {  }
     weight: 7
+    region: content
+  field_article_title_placement:
+    type: list_key
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 21
     region: content
   field_article_vertical_display:
     type: list_default

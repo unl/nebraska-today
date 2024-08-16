@@ -21,12 +21,6 @@
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  {% if not page and view_mode != "full" %}
-  {{ node_title }}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
   {{ title_suffix }}
 
   {% if display_submitted %}
@@ -43,6 +37,118 @@
   <div class="dcf-bleed">
     {{ content.field_article_lead_image }}
   </div>
+
+  {% if content.field_article_lead_media.0 %}
+  <div class="dcf-bleed">
+    {% if content.field_article_title_placement.0['#markup'] == 'basic' %}
+      {% set hero_class = 'hero-article-basic' %}
+    {% else %}
+      {% set hero_class = 'hero-article-full' %}
+    {% endif %}
+    <div class="dcf-relative dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto {{ hero_class }}">
+
+      {% if content.field_article_title_placement.0['#markup'] == 'center_left' %}
+        <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-center-left">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-md unl-lightest-gray">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% elseif content.field_article_title_placement.0['#markup'] == 'bottom_left' %}
+        <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-bottom-left">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section ">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% elseif content.field_article_title_placement.0['#markup'] == 'center_right' %}
+        <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-title-hide dcf-p-1 dcf-z-2 dcf-title-center-right">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% elseif content.field_article_title_placement.0['#markup'] == 'bottom_right' %}
+        <div
+            class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-title-hide dcf-z-2 dcf-txt-left dcf-title-bottom-right">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% elseif content.field_article_title_placement.0['#markup'] == 'center_center' %}
+        <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-title-hide dcf-z-2 dcf-title-center-center">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% elseif content.field_article_title_placement.0['#markup'] == 'bottom_center' %}
+        <div class="dcf-m-auto dcf-d-block unl-bg-darkest-gray dcf-p-1 dcf-z-2 dcf-title-hide dcf-title-bottom-center">
+          <div class="dcf-p-1">
+            <h1 class="dcf-txt-h1 unl-cream">{{ label }}</h1>
+            <div class="dcf-txt-sm unl-cream">{{ field_subtitle }}</div>
+            <div class="unl-lightest-gray dcf-mt-1">{{ field_written_by }}</div>
+            <div class="dcf-txt-sm unl-lightest-gray">{{ created }}</div>
+          </div>
+        </div>
+        <div class="landing-section">{{ content.field_article_lead_media }}</div>
+        <div class="custom-hide dcf-txt-sm dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ content.field_article_lead_cutline }}</div>
+        <div class="custom-hide dcf-txt-2xs dcf-italic dcf-txt-right dcf-pr-5 dcf-mb-0 dcf-mt-1">{{ credit }}</div>
+
+      {% else %}
+        {# This is "Basic" or not defined. #}
+        <div class="dcf-wrapper custom-main-page">
+          <div class="dcf-basic-view">
+            <div class="dcf-col-100% dcf-col-67%-start@sm dcf-col-75%-start@md">
+              <div>{{ content.field_article_lead_media }}</div>
+            </div>
+            <div class="dcf-col-100% dcf-col-33%-end@sm dcf-col-25%-end@md">
+              <hr class="custom-l-line dcf-mt-0 dcf-mb-1 dcf-basic-view-hr">
+              <div class="dcf-txt-3xs custom-hide dcf-italic dcf-pr-5 dcf-mt-0 dcf-mb-1 custom-credit-text">
+                {{ credit }}
+              </div>
+              <div class="dcf-txt-xs dcf-mb-6">
+                {{ content.field_article_lead_cutline }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endif %}
 
   <div class="outer-content dcf-pb-7">
     <div class="inner-content outer-content-item1">

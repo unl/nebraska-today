@@ -1,0 +1,42 @@
+uuid: f3f2361b-983c-41bb-9488-dcc0a4031067
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_article_title_placement
+field_name: field_article_title_placement
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: basic
+      label: Basic
+    -
+      value: center_left
+      label: 'center left'
+    -
+      value: center_center
+      label: 'center center'
+    -
+      value: center_right
+      label: 'center right'
+    -
+      value: bottom_left
+      label: 'bottom left'
+    -
+      value: bottom_center
+      label: 'bottom center'
+    -
+      value: bottom_right
+      label: 'bottom right'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

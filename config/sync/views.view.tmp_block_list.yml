@@ -1,19 +1,18 @@
-uuid: 3e26dfcf-757b-4903-8cd8-16f20dd64276
+uuid: 6ca40f60-fe6d-4c6d-996b-7db51a83572d
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - block_content.type.parallax_image
   module:
-    - node
-    - user
-id: topics
-label: Topics
+    - block_content
+id: tmp_block_list
+label: 'Tmp block list'
 module: views
 description: ''
 tag: ''
-base_table: node_field_data
-base_field: nid
+base_table: block_content_field_data
+base_field: id
 display:
   default:
     id: default
@@ -21,28 +20,45 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: Topics
       fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        info:
+          id: info
+          table: block_content_field_data
+          field: info
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
+          entity_type: null
+          entity_field: info
           plugin_id: field
           label: ''
           exclude: false
           alter:
             alter_text: false
+            text: ''
             make_link: false
+            path: ''
             absolute: false
-            word_boundary: false
-            ellipsis: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
             strip_tags: false
             trim: false
+            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
@@ -58,8 +74,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: true
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -100,49 +115,49 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
-        options:
-          perm: 'access content'
+        type: none
+        options: {  }
       cache:
         type: tag
         options: {  }
       empty: {  }
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          order: DESC
-          expose:
-            label: ''
-            field_identifier: ''
-          exposed: false
-          granularity: second
+      sorts: {  }
       arguments: {  }
       filters:
         status:
           id: status
-          table: node_field_data
+          table: block_content_field_data
           field: status
-          entity_type: node
+          entity_type: block_content
           entity_field: status
           plugin_id: boolean
           value: '1'
           group: 1
           expose:
             operator: ''
+        type:
+          id: type
+          table: block_content_field_data
+          field: type
+          entity_type: block_content
+          entity_field: type
+          plugin_id: bundle
+          value:
+            parallax_image: parallax_image
       style:
         type: default
-      row:
-        type: 'entity:node'
         options:
-          view_mode: teaser
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -161,23 +176,4 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
-  page_1:
-    id: page_1
-    display_title: Page
-    display_plugin: page
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: topics
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url.query_args
-        - 'user.node_grants:view'
-        - user.permissions
       tags: {  }

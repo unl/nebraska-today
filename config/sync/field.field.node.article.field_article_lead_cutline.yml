@@ -1,0 +1,19 @@
+uuid: 412a3e0c-eafd-4a88-b6a7-9b0cec520a1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_lead_cutline
+    - node.type.article
+id: node.article.field_article_lead_cutline
+field_name: field_article_lead_cutline
+entity_type: node
+bundle: article
+label: Cutline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

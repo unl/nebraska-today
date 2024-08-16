@@ -1,0 +1,23 @@
+uuid: f118733e-1539-4bf2-af89-e3bbd6b7562a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_title_placement
+    - node.type.article
+  module:
+    - options
+id: node.article.field_article_title_placement
+field_name: field_article_title_placement
+entity_type: node
+bundle: article
+label: 'Title placement'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: basic
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -11,7 +11,9 @@ dependencies:
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
     - field.field.node.article.field_article_horizontal_display
+    - field.field.node.article.field_article_lead_cutline
     - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
@@ -19,6 +21,7 @@ dependencies:
     - field.field.node.article.field_article_submission_id
     - field.field.node.article.field_article_submission_status
     - field.field.node.article.field_article_submitter
+    - field.field.node.article.field_article_title_placement
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -61,7 +64,7 @@ third_party_settings:
       label: 'Site organization and display options'
       region: content
       parent_name: ''
-      weight: 7
+      weight: 8
       format_type: details
       format_settings:
         classes: ''
@@ -77,54 +80,6 @@ third_party_settings:
       label: 'News release'
       region: content
       parent_name: ''
-      weight: 9
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: true
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_scheduling:
-      children:
-        - status
-        - publish_on
-      label: 'Publish status/Scheduling'
-      region: content
-      parent_name: ''
-      weight: 11
-      format_type: details_sidebar
-      format_settings:
-        classes: ''
-        show_empty_fields: true
-        id: ''
-        open: true
-        description: ''
-        required_fields: true
-        weight: 0
-    group_related_links:
-      children:
-        - field_article_related_links
-      label: 'Related links'
-      region: content
-      parent_name: ''
-      weight: 8
-      format_type: details
-      format_settings:
-        classes: ''
-        show_empty_fields: true
-        id: ''
-        open: false
-        description: ''
-        required_fields: true
-    group_event_details:
-      children:
-        - field_article_event_date
-        - field_article_event_where
-      label: 'Event details'
-      region: content
-      parent_name: ''
       weight: 10
       format_type: details
       format_settings:
@@ -134,6 +89,62 @@ third_party_settings:
         open: false
         description: ''
         required_fields: true
+        direction: vertical
+        width_breakpoint: 640
+    group_scheduling:
+      children:
+        - status
+        - publish_on
+      label: 'Publish status/Scheduling'
+      region: content
+      parent_name: ''
+      weight: 12
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: true
+        description: ''
+        required_fields: true
+        weight: 0
+        direction: vertical
+        width_breakpoint: 640
+    group_related_links:
+      children:
+        - field_article_related_links
+      label: 'Related links'
+      region: content
+      parent_name: ''
+      weight: 9
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        direction: vertical
+        width_breakpoint: 640
+    group_event_details:
+      children:
+        - field_article_event_date
+        - field_article_event_where
+      label: 'Event details'
+      region: content
+      parent_name: ''
+      weight: 11
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        direction: vertical
+        width_breakpoint: 640
     group_submission_details:
       children:
         - field_article_run_window
@@ -142,7 +153,7 @@ third_party_settings:
       label: 'Submission details'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: details
       format_settings:
         classes: ''
@@ -151,6 +162,8 @@ third_party_settings:
         open: true
         description: ''
         required_fields: true
+        direction: vertical
+        width_breakpoint: 640
     group_homepage_display_options:
       children:
         - field_article_display_options
@@ -160,7 +173,7 @@ third_party_settings:
       label: 'Homepage display options if Lead story'
       region: content
       parent_name: group_display_options
-      weight: 18
+      weight: 17
       format_type: details
       format_settings:
         classes: ''
@@ -168,6 +181,25 @@ third_party_settings:
         id: ''
         open: false
         description: 'If this article is a "Lead Story" then these options affect how it is displayed on the homepage if it is the current lead.'
+        required_fields: true
+        direction: vertical
+        width_breakpoint: 640
+    group_lead_media:
+      children:
+        - field_article_lead_media
+        - field_article_lead_cutline
+        - field_article_title_placement
+      label: 'Lead media'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        open: false
+        description: ''
         required_fields: true
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
@@ -188,7 +220,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -212,25 +244,25 @@ content:
     third_party_settings: {  }
   field_article_compact_title:
     type: options_buttons
-    weight: 22
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_display_options:
     type: options_buttons
-    weight: 19
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_event_date:
     type: daterange_default
-    weight: 18
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_event_where:
     type: string_textfield
-    weight: 19
+    weight: 21
     region: content
     settings:
       size: 60
@@ -238,9 +270,17 @@ content:
     third_party_settings: {  }
   field_article_horizontal_display:
     type: options_buttons
-    weight: 21
+    weight: 15
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_article_lead_cutline:
+    type: string_textfield
+    weight: 22
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_article_lead_image:
     type: inline_entity_form_complex
@@ -260,15 +300,22 @@ content:
       revision: false
       removed_reference: optional
     third_party_settings: {  }
+  field_article_lead_media:
+    type: media_library_widget
+    weight: 21
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_article_priority:
     type: options_buttons
-    weight: 17
+    weight: 16
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_related_links:
     type: link_default
-    weight: 9
+    weight: 10
     region: content
     settings:
       placeholder_url: ''
@@ -276,7 +323,7 @@ content:
     third_party_settings: {  }
   field_article_release_contacts:
     type: autocomplete_deluxe
-    weight: 20
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -293,40 +340,46 @@ content:
     third_party_settings: {  }
   field_article_run_window:
     type: daterange_default
-    weight: 26
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_submission_status:
     type: options_select
-    weight: 27
+    weight: 23
     region: content
     settings: {  }
     third_party_settings: {  }
   field_article_submitter:
     type: string_textfield
-    weight: 28
+    weight: 24
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_article_title_placement:
+    type: options_select
+    weight: 23
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_article_vertical_display:
     type: options_buttons
-    weight: 20
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_high_resolution_photo:
     type: media_library_widget
-    weight: 21
+    weight: 23
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_section:
     type: options_buttons
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -340,7 +393,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: autocomplete_deluxe
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -357,7 +410,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: autocomplete_deluxe
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -374,20 +427,20 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 17
+    weight: 18
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   publish_on:
     type: datetime_timestamp_no_default
-    weight: 14
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -400,7 +453,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 17
     region: content
     settings:
       display_label: true
@@ -415,7 +468,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 15
+    weight: 16
     region: content
     settings:
       match_operator: CONTAINS
@@ -424,7 +477,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }

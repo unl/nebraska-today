@@ -1,0 +1,21 @@
+uuid: 74b3f953-f591-4578-a82c-2bd2cf0766c8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_article_lead_cutline
+field_name: field_article_lead_cutline
+entity_type: node
+type: string
+settings:
+  max_length: 1024
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

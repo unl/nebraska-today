@@ -12,7 +12,9 @@ dependencies:
     - field.field.node.article.field_article_event_date
     - field.field.node.article.field_article_event_where
     - field.field.node.article.field_article_horizontal_display
+    - field.field.node.article.field_article_lead_cutline
     - field.field.node.article.field_article_lead_image
+    - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
@@ -20,6 +22,7 @@ dependencies:
     - field.field.node.article.field_article_submission_id
     - field.field.node.article.field_article_submission_status
     - field.field.node.article.field_article_submitter
+    - field.field.node.article.field_article_title_placement
     - field.field.node.article.field_article_vertical_display
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
@@ -45,10 +48,19 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_article_lead_media:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: email_small
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
   body: true
@@ -59,6 +71,7 @@ hidden:
   field_article_event_date: true
   field_article_event_where: true
   field_article_horizontal_display: true
+  field_article_lead_cutline: true
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
@@ -66,6 +79,7 @@ hidden:
   field_article_submission_id: true
   field_article_submission_status: true
   field_article_submitter: true
+  field_article_title_placement: true
   field_article_vertical_display: true
   field_high_resolution_photo: true
   field_section: true
