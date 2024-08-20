@@ -14,9 +14,10 @@
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ url }}">
     {{ content.field_article_lead_image }}
+    {{ content.field_article_lead_media }}
   </a>
   <div class="custom-events-heading-and-logo dcf-jc-between">
-    <h3 class="custom-event-title dcf-mb-1"><a href={{ url }}>{{ label  }}</a></h3>
+    <h3 class="custom-event-title dcf-mb-1"><a href={{ url }}>{{ label }}</a></h3>
     <div class="custom-event-location">{{ content.field_article_event_where }}</div>
     <div class="custom-event-circle">
       <div class="month">{{ eventMonth }}</div>
