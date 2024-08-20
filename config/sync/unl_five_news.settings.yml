@@ -1,12 +1,8 @@
-_core:
-  default_config_hash: RzrFjHolQT4-m--ddhSf6ZZ-CQsPcP1Ln3IvgHsWPxk
 features:
-  logo: false
-  slogan: true
-  favicon: 0
   node_user_picture: 0
   comment_user_picture: true
   comment_user_verification: true
+  favicon: 0
 logo:
   use_default: 1
 favicon:
