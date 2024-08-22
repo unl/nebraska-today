@@ -71,6 +71,7 @@
         "drupal/simplenews": "^3.0@dev",
         "drupal/symfony_mailer": "^1.2@RC",
         "drupal/taxonomy_manager": "^2.0",
+        "drupal/term_merge": "^2.0@beta",
         "drupal/token_filter": "^2.0",
         "drupal/twig_tweak": "^3.2",
         "drupal/view_unpublished": "^1.2",

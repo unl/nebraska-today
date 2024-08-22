@@ -45,6 +45,7 @@ dependencies:
     - system
     - taxonomy
     - taxonomy_manager
+    - term_merge
     - toolbar
     - view_unpublished
 _core:
@@ -159,6 +160,7 @@ permissions:
   - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
+  - 'merge taxonomy terms'
   - 'override article authored by option'
   - 'override article authored on option'
   - 'override article published option'
