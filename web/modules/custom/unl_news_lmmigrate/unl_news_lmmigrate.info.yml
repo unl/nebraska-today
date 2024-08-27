@@ -1,0 +1,5 @@
+name: UNL News Lead Media Migration
+type: module
+description: Migration out of parallax_image custom block references and into plain fields.
+package: UNL
+core_version_requirement: ^10

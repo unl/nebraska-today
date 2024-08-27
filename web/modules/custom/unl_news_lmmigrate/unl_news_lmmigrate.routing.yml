@@ -1,0 +1,14 @@
+unl_news_lmmigrate.migrator:
+  path: '/admin/unl-news-lead-media-migrate'
+  defaults:
+    _title: 'Neb Today Lead Media Migrator'
+    _form: '\Drupal\unl_news_lmmigrate\Form\KickOffForm'
+  requirements:
+    _role: 'super_administrator'
+unl_news_lmmigrate.delete_blocks:
+  path: '/admin/unl-news-lead-media-migrate-delete-blocks'
+  defaults:
+    _title: 'Neb Today Lead Media Block Deleter'
+    _form: '\Drupal\unl_news_lmmigrate\Form\DeleteOldBlocks'
+  requirements:
+    _role: 'super_administrator'
