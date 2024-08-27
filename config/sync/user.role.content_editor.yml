@@ -8,7 +8,6 @@ dependencies:
     - block_content.type.gallery
     - block_content.type.image_quote_card
     - block_content.type.paragraph_card
-    - block_content.type.parallax_image
     - block_content.type.quote
     - block_content.type.quote_card
     - block_content.type.slideshow
@@ -81,7 +80,6 @@ permissions:
   - 'create image media'
   - 'create image_quote_card block content'
   - 'create paragraph_card block content'
-  - 'create parallax_image block content'
   - 'create quote block content'
   - 'create quote_card block content'
   - 'create remote_video media'
@@ -103,7 +101,6 @@ permissions:
   - 'delete any image media'
   - 'delete any image_quote_card block content'
   - 'delete any paragraph_card block content'
-  - 'delete any parallax_image block content'
   - 'delete any quote block content'
   - 'delete any quote_card block content'
   - 'delete any remote_video media'
@@ -127,7 +124,6 @@ permissions:
   - 'edit any image media'
   - 'edit any image_quote_card block content'
   - 'edit any paragraph_card block content'
-  - 'edit any parallax_image block content'
   - 'edit any quote block content'
   - 'edit any quote_card block content'
   - 'edit any remote_video media'

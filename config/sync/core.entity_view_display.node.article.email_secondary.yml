@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.article.field_article_event_where
     - field.field.node.article.field_article_horizontal_display
     - field.field.node.article.field_article_lead_cutline
-    - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
@@ -39,15 +38,6 @@ targetEntityType: node
 bundle: article
 mode: email_secondary
 content:
-  field_article_lead_image:
-    type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: email_small
-      link: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
   field_article_lead_media:
     type: entity_reference_entity_view
     label: hidden

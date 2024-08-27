@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
-    - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_run_window
     - field.field.node.article.field_article_submission_id
@@ -42,18 +41,6 @@ third_party_settings:
         source: pending
         weight: 0
         label: Rewrite
-      ac51876e-a085-4039-a67c-1ce9a4dbcc45:
-        uuid: ac51876e-a085-4039-a67c-1ce9a4dbcc45
-        plugin: unl_news_submissions_create_lead_media
-        source: files
-        weight: -9
-        label: 'Create Lead Media block'
-      80b3a0ef-55ac-450c-9d1f-57c2b7f33450:
-        uuid: 80b3a0ef-55ac-450c-9d1f-57c2b7f33450
-        plugin: skip_on_empty
-        source: files
-        weight: -10
-        label: 'Skip tampers on empty'
 label: 'Announce submission import'
 id: announce_submission_import
 description: 'Stories submitted by the community to newsroom.unl.edu/announce'
@@ -208,12 +195,3 @@ mappings:
       title: website_text
     settings:
       language: null
-  -
-    target: field_article_lead_image
-    map:
-      target_id: files
-    settings:
-      language: ''
-      reference_by: id
-      autocreate: 0
-      autocreate_bundle: parallax_image

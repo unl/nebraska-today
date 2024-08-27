@@ -1,8 +1,0 @@
-uuid: e25f5a1c-903f-471d-ad4a-2723a03e175d
-langcode: en
-status: true
-dependencies: {  }
-id: parallax_image
-label: 'Lead media'
-revision: false
-description: 'Lead media (image or remote video) at the top of an Article.'

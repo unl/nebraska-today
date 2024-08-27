@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.article.field_article_event_where
     - field.field.node.article.field_article_horizontal_display
     - field.field.node.article.field_article_lead_cutline
-    - field.field.node.article.field_article_lead_image
     - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
@@ -64,7 +63,7 @@ third_party_settings:
       label: 'Site organization and display options'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 7
       format_type: details
       format_settings:
         classes: ''
@@ -80,7 +79,7 @@ third_party_settings:
       label: 'News release'
       region: content
       parent_name: ''
-      weight: 10
+      weight: 9
       format_type: details
       format_settings:
         classes: ''
@@ -96,7 +95,7 @@ third_party_settings:
       label: 'Publish status/Scheduling'
       region: content
       parent_name: ''
-      weight: 12
+      weight: 11
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -114,7 +113,7 @@ third_party_settings:
       label: 'Related links'
       region: content
       parent_name: ''
-      weight: 9
+      weight: 8
       format_type: details
       format_settings:
         classes: ''
@@ -130,7 +129,7 @@ third_party_settings:
       label: 'Event details'
       region: content
       parent_name: ''
-      weight: 11
+      weight: 10
       format_type: details
       format_settings:
         classes: ''
@@ -147,7 +146,7 @@ third_party_settings:
       label: 'Submission details'
       region: content
       parent_name: ''
-      weight: 19
+      weight: 18
       format_type: details
       format_settings:
         classes: ''
@@ -182,7 +181,7 @@ third_party_settings:
       label: 'Lead media'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 4
       format_type: details
       format_settings:
         classes: ''
@@ -210,7 +209,7 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -271,24 +270,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_article_lead_image:
-    type: inline_entity_form_complex
-    weight: 4
-    region: content
-    settings:
-      form_mode: default
-      override_labels: false
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-      allow_duplicate: false
-      collapsible: false
-      collapsed: false
-      revision: false
-      removed_reference: optional
     third_party_settings: {  }
   field_article_lead_media:
     type: media_library_widget
@@ -383,7 +364,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: autocomplete_deluxe
-    weight: 7
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -400,7 +381,7 @@ content:
     third_party_settings: {  }
   field_written_by:
     type: autocomplete_deluxe
-    weight: 6
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -417,13 +398,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 18
+    weight: 17
     region: content
     settings:
       display_label: true
@@ -443,7 +424,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 17
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -458,7 +439,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 16
+    weight: 15
     region: content
     settings:
       match_operator: CONTAINS
@@ -467,7 +448,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
