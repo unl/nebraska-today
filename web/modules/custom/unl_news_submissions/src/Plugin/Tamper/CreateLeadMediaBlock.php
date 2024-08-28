@@ -13,7 +13,7 @@ use Drupal\tamper\TamperBase;
  *
  * @Tamper(
  *   id = "unl_news_submissions_create_lead_media",
- *   label = @Translation("Create Lead Media block"),
+ *   label = @Translation("Create Lead Media block (old and unused)"),
  *   description = @Translation("Creates a Lead Media block using an image URL."),
  *   category = "Other"
  * )
