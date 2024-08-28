@@ -268,38 +268,40 @@ class OnesiteApiArticles extends OnesiteApiBase {
       if (isset($entity->field_article_lead_media)) {
         // https://drupal.stackexchange.com/a/186317
         $media = $entity->field_article_lead_media->first()->get('entity')->getTarget()->getValue();
-        $fid  = $media->field_media_image->target_id;
-        $file = File::load($fid);
+        if (isset($media->field_media_image)) {
+          $fid = $media->field_media_image->target_id;
+          $file = File::load($fid);
 
-        $processed_entity['articleImage'] = [
-          'url' => $file->createFileUrl(FALSE),
-          'mimeType' => $file->get('filemime')->value,
-          'size' => $file->get('filesize')->value,
-        ];
+          $processed_entity['articleImage'] = [
+            'url' => $file->createFileUrl(FALSE),
+            'mimeType' => $file->get('filemime')->value,
+            'size' => $file->get('filesize')->value,
+          ];
 
-//        // Width is optional.
-//        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['width'])) {
-//          $processed_entity['articleImage']['width'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['width'];
-//        }
-//
-//        // Height is optional.
-//        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['height'])) {
-//          $processed_entity['articleImage']['height'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['height'];
-//        }
+          //        // Width is optional.
+          //        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['width'])) {
+          //          $processed_entity['articleImage']['width'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['width'];
+          //        }
+          //
+          //        // Height is optional.
+          //        if (isset($field_collection_item->field_media[LANGUAGE_NONE][0]['height'])) {
+          //          $processed_entity['articleImage']['height'] = $field_collection_item->field_media[LANGUAGE_NONE][0]['height'];
+          //        }
 
-        // Alt text is optional.
-        if (isset($media->field_media_image->alt)) {
-          $processed_entity['articleImage']['alt'] = trim($media->field_media_image->alt);
-        }
+          // Alt text is optional.
+          if (isset($media->field_media_image->alt)) {
+            $processed_entity['articleImage']['alt'] = trim($media->field_media_image->alt);
+          }
 
-        // Credit is optional.
-        if (isset($media->field_media_image_credit)) {
-          $processed_entity['articleImage']['credit'] = trim($media->field_media_image_credit->value);
-        }
+          // Credit is optional.
+          if (isset($media->field_media_image_credit)) {
+            $processed_entity['articleImage']['credit'] = trim($media->field_media_image_credit->value);
+          }
 
-        // Cutline is optional.
-        if (isset($block_content->field_cutline)) {
-          $processed_entity['articleImage']['caption'] = trim($block_content->field_cutline->value);
+          // Cutline is optional.
+          if (isset($block_content->field_cutline)) {
+            $processed_entity['articleImage']['caption'] = trim($block_content->field_cutline->value);
+          }
         }
       }
 
