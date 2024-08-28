@@ -1,0 +1,37 @@
+uuid: 4116f3bb-37ca-4536-a915-32c376a3da26
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.email_medium
+    - field.field.media.remote_video.field_media_oembed_video
+    - image.style.email_medium
+    - media.type.remote_video
+  module:
+    - image
+    - image_class
+_core:
+  default_config_hash: zQoBQ0BtnMM_rlDdgftyu6eI4AVs9mo5K8xq7NFO2Zc
+id: media.remote_video.email_medium
+targetEntityType: media
+bundle: remote_video
+mode: email_medium
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: email_medium
+      image_loading:
+        attribute: lazy
+    third_party_settings:
+      image_class:
+        class: ''
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_media_oembed_video: true
+  name: true
+  uid: true

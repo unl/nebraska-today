@@ -13,7 +13,6 @@
 {% set eventMonth = node.field_article_event_date.value|date('M') %}
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ url }}">
-    {{ content.field_article_lead_image }}
     {{ content.field_article_lead_media }}
   </a>
   <div class="custom-events-heading-and-logo dcf-jc-between">
