@@ -1,0 +1,11 @@
+uuid: 3c92e95f-3afc-4df6-9666-0d014b772c34
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.teaser_featured
+label: 'Teaser (Featured)'
+description: ''
+targetEntityType: media
+cache: true
