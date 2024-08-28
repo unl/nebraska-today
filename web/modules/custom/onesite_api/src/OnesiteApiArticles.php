@@ -265,10 +265,9 @@ class OnesiteApiArticles extends OnesiteApiBase {
       // Article Image is optional.
       //
       // The article hero image is a media item within a custom block reference.
-      if (isset($entity->field_article_lead_image)) {
-        $block_content = \Drupal::entityTypeManager()->getStorage('block_content')->load($entity->field_article_lead_image->target_id);
+      if (isset($entity->field_article_lead_media)) {
         // https://drupal.stackexchange.com/a/186317
-        $media = $block_content->field_image->first()->get('entity')->getTarget()->getValue();
+        $media = $entity->field_article_lead_media->first()->get('entity')->getTarget()->getValue();
         $fid  = $media->field_media_image->target_id;
         $file = File::load($fid);
 
