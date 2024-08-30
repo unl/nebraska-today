@@ -1,0 +1,24 @@
+uuid: f9374c79-88c1-4616-af60-1a87b8979c75
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_placeholder
+  module:
+    - views
+  theme:
+    - unl_five_news
+id: unl_five_news_views_block__footer_placeholder_block_1_2
+theme: unl_five_news
+region: leftcollinks
+weight: 0
+provider: null
+plugin: 'views_block:footer_placeholder-block_1'
+settings:
+  id: 'views_block:footer_placeholder-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

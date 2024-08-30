@@ -1,0 +1,47 @@
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    <h2 id="dcf-footer-group-1-heading">
+      Contact us
+    </h2>
+
+    <dl>
+      <dt class="dcf-sr-only">Address</dt>
+      <dd>
+        <address itemscope="" itemtype="https://schema.org/PostalAddress" translate="no">
+          <a href="https://maps.unl.edu/L055"><span class="dcf-sr-only"><span itemprop="name">University of Nebraska–Lincoln</span><br></span><span itemprop="streetAddress">1217 Q St.</span><br><span itemprop="addressLocality">Lincoln</span>, <abbr class="dcf-txt-sm" title="Nebraska" itemprop="addressRegion">NE</abbr> <span itemprop="postalCode">68588</span> <abbr class="dcf-d-none" itemprop="addressCountry">US</abbr></a></address>
+      </dd>
+    </dl>
+
+    <ul class="dcf-list-bare dcf-mb-0">
+      <li>
+        <svg class="dcf-mr-2 dcf-h-4 dcf-w-4 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+          <path d="M12.001 16.243l-3.183 3.182c-.944.944-2.592.944-3.536 0l-.707-.706a2.484 2.484 0 01-.732-1.768c0-.668.26-1.295.732-1.767l4.597-4.597a2.503 2.503 0 013.536 0l.707.708a.5.5 0 00.707-.707l-.707-.708a3.504 3.504 0 00-4.95 0l-4.597 4.597a3.473 3.473 0 00-1.025 2.474c0 .935.364 1.814 1.025 2.475l.707.706a3.478 3.478 0 002.476 1.025c.935 0 1.814-.364 2.475-1.025l3.183-3.182a.5.5 0 00-.708-.707z"/>
+          <path d="M20.132 4.575l-.707-.707a3.504 3.504 0 00-4.949 0l-3.182 3.181a.5.5 0 00.707.707l3.182-3.181a2.503 2.503 0 013.535 0l.707.707c.472.472.732 1.1.732 1.768 0 .668-.26 1.296-.732 1.768l-4.596 4.596c-.473.473-1.1.733-1.768.733-.667 0-1.294-.26-1.766-.732a.5.5 0 00-.708.706 3.472 3.472 0 002.474 1.026c.935 0 1.814-.364 2.475-1.026l4.596-4.596a3.477 3.477 0 001.025-2.475c0-.935-.364-1.814-1.025-2.475z"/>
+        </svg><a href="https://ucomm.unl.edu/">About UComm</a>
+      </li>
+      <li>
+        <svg class="dcf-mr-2 dcf-h-4 dcf-w-4 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+          <path d="M17.854 14.147a.499.499 0 00-.545-.108.489.489 0 00-.163.108l-2.5 2.5a.5.5 0 00.707.707L17 15.707V20.5a.5.5 0 001 0v-4.793l1.646 1.647a.502.502 0 00.708 0 .5.5 0 000-.707l-2.5-2.5z"/>
+          <path d="M17.5 11a6.508 6.508 0 00-6.5 6.5c0 3.584 2.916 6.5 6.5 6.5s6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5zm0 12c-3.033 0-5.5-2.467-5.5-5.5s2.467-5.5 5.5-5.5 5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5zM3.5 7H8a.5.5 0 000-1H3.5a.5.5 0 000 1zM12 9.5a.5.5 0 00-.5-.5h-8a.5.5 0 000 1h8a.5.5 0 00.5-.5zm-2 3a.5.5 0 00-.5-.5h-6a.5.5 0 000 1h6a.5.5 0 00.5-.5zM3.5 15a.5.5 0 000 1h5a.5.5 0 000-1h-5z"/>
+          <path d="M10.5 21H1V1h10v4.5a.5.5 0 00.5.5H16v3.5a.5.5 0 001 0v-4a.499.499 0 00-.147-.354L11.854.147a.492.492 0 00-.162-.107A.482.482 0 0011.5 0H.5a.5.5 0 00-.5.5v21a.5.5 0 00.5.5h10a.5.5 0 000-1zM12 1.707L15.293 5H12V1.707z"/>
+        </svg><a href="https://newsroom.unl.edu/announce/todayatunl/submit">Submit a Story</a>
+      </li>
+      <li>
+        <svg class="dcf-mr-2 dcf-h-4 dcf-w-4 dcf-fill-current" aria-hidden="true" focusable="false" height="16" width="16" viewBox="0 0 24 24">
+          <path d="M12.001 16.243l-3.183 3.182c-.944.944-2.592.944-3.536 0l-.707-.706a2.484 2.484 0 01-.732-1.768c0-.668.26-1.295.732-1.767l4.597-4.597a2.503 2.503 0 013.536 0l.707.708a.5.5 0 00.707-.707l-.707-.708a3.504 3.504 0 00-4.95 0l-4.597 4.597a3.473 3.473 0 00-1.025 2.474c0 .935.364 1.814 1.025 2.475l.707.706a3.478 3.478 0 002.476 1.025c.935 0 1.814-.364 2.475-1.025l3.183-3.182a.5.5 0 00-.708-.707z"/>
+          <path d="M20.132 4.575l-.707-.707a3.504 3.504 0 00-4.949 0l-3.182 3.181a.5.5 0 00.707.707l3.182-3.181a2.503 2.503 0 013.535 0l.707.707c.472.472.732 1.1.732 1.768 0 .668-.26 1.296-.732 1.768l-4.596 4.596c-.473.473-1.1.733-1.768.733-.667 0-1.294-.26-1.766-.732a.5.5 0 00-.708.706 3.472 3.472 0 002.474 1.026c.935 0 1.814-.364 2.475-1.026l4.596-4.596a3.477 3.477 0 001.025-2.475c0-.935-.364-1.814-1.025-2.475z"/>
+        </svg><a href="subscribe">Subscribe to the Email Newsletter</a>
+      </li>
+    </ul>
+
+    {{ content }}
+
+  </div>
+{% endif %}
