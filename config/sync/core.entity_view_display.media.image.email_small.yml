@@ -32,16 +32,9 @@ content:
         class: ''
     weight: 0
     region: content
-  field_media_image_credit:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   created: true
+  field_media_image_credit: true
   field_media_tags: true
   name: true
   thumbnail: true
