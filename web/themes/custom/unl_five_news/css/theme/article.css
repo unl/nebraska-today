@@ -563,6 +563,8 @@ blockquote p:nth-of-type(3)::after {
 
 .media-credit {
   display: none;
+  background: linear-gradient(to right,var(--b) 0,rgba(234,233,230,0) 100%) top left/100% 1px no-repeat;
+  color: var(--figcaption);
 }
 .dcf-news-column .media-credit {
   display: block;
