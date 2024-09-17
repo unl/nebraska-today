@@ -38,7 +38,7 @@ content:
       collapsible: false
       collapsed: false
       revision: false
-      removed_reference: optional
+      removed_reference: keep
     third_party_settings: {  }
 hidden:
   created: true
