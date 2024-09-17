@@ -1,0 +1,14 @@
+uuid: cfd3921e-e357-47cf-8b0c-05b6348118b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.expert_expert
+  module:
+    - user
+id: user_remove_role_action.expert_expert
+label: 'Remove the Expert expert role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: expert_expert

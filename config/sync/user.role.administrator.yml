@@ -51,7 +51,7 @@ _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
 label: Administrator
-weight: 3
+weight: -6
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -155,10 +155,17 @@ permissions:
   - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
+  - 'enter contact revision log entry'
+  - 'enter field_of_expertise revision log entry'
   - 'merge taxonomy terms'
   - 'override article authored by option'
   - 'override article authored on option'
   - 'override article published option'
+  - 'override contact published option'
+  - 'override contact revision option'
+  - 'override field_of_expertise promote to front page option'
+  - 'override field_of_expertise published option'
+  - 'override field_of_expertise revision option'
   - 'revert advertisement revisions'
   - 'revert all revisions'
   - 'revert any body_parallax_image block content revisions'

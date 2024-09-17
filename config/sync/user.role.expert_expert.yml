@@ -1,0 +1,76 @@
+uuid: e1f9c8ec-1096-450c-895d-f421a3067814
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.simple_html
+    - media.type.image
+    - media.type.remote_video
+    - node.type.contact
+    - node.type.field_of_expertise
+  module:
+    - content_lock
+    - contextual
+    - external_entities
+    - file
+    - filter
+    - help
+    - media
+    - node
+    - override_node_options
+    - shortcut
+    - system
+    - toolbar
+    - view_unpublished
+id: expert_expert
+label: 'Expert expert'
+weight: -8
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'break content lock'
+  - 'create contact content'
+  - 'create field_of_expertise content'
+  - 'create image media'
+  - 'create remote_video media'
+  - 'create unl_directory_entry external entity'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'edit any contact content'
+  - 'edit any field_of_expertise content'
+  - 'edit any image media'
+  - 'edit any remote_video media'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'enter contact revision log entry'
+  - 'enter field_of_expertise revision log entry'
+  - 'override contact published option'
+  - 'override contact revision option'
+  - 'override field_of_expertise promote to front page option'
+  - 'override field_of_expertise published option'
+  - 'override field_of_expertise revision option'
+  - 'revert contact revisions'
+  - 'revert field_of_expertise revisions'
+  - 'update unl_directory_entry external entity'
+  - 'use text format basic_html'
+  - 'use text format simple_html'
+  - 'view any unpublished contact content'
+  - 'view any unpublished field_of_expertise content'
+  - 'view contact revisions'
+  - 'view field_of_expertise revisions'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view the administration theme'
+  - 'view unl_directory_entry external entity collection'
+  - 'view user email addresses'

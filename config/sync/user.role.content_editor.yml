@@ -50,7 +50,7 @@ _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: Editor
-weight: 2
+weight: -7
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -134,10 +134,17 @@ permissions:
   - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
+  - 'enter contact revision log entry'
+  - 'enter field_of_expertise revision log entry'
   - 'merge taxonomy terms'
   - 'override article authored by option'
   - 'override article authored on option'
   - 'override article published option'
+  - 'override contact published option'
+  - 'override contact revision option'
+  - 'override field_of_expertise promote to front page option'
+  - 'override field_of_expertise published option'
+  - 'override field_of_expertise revision option'
   - 'revert advertisement revisions'
   - 'revert all revisions'
   - 'revert article revisions'
