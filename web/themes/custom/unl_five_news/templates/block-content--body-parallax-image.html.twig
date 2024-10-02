@@ -1,3 +1,10 @@
 <div class="dcf-mt5 dcf-mb-5">
-    <div class="custom-bleed dcf-relative" style="background:url({{ file_url(content.field_body_parallax_media[0]['#media'].field_media_image.entity.uri.value) }});  background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; height:{{ content.field_body_parallax_image_size.0["#markup"] }}; z-index:1;"></div>
+  <div class="custom-bleed dcf-relative" style="
+    background:url({{ file_url(content.field_body_parallax_media[0]['#media'].field_media_image.entity.uri.value) }});
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height:{{ content.field_body_parallax_image_size.0["#markup"] }};
+    z-index:1;"></div>
 </div>
