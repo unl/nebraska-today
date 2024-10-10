@@ -301,7 +301,7 @@ content:
       autocomplete_route_name: autocomplete_deluxe.autocomplete
       size: 60
       selection_handler: default
-      limit: 10
+      match_limit: 10
       min_length: 0
       delimiter: ''
       not_found_message_allow: false
@@ -371,7 +371,7 @@ content:
       autocomplete_route_name: autocomplete_deluxe.autocomplete
       size: 60
       selection_handler: default
-      limit: 10
+      match_limit: 10
       min_length: 0
       delimiter: ''
       not_found_message_allow: true
@@ -388,7 +388,7 @@ content:
       autocomplete_route_name: autocomplete_deluxe.autocomplete
       size: 60
       selection_handler: default
-      limit: 10
+      match_limit: 10
       min_length: 2
       delimiter: ''
       not_found_message_allow: true

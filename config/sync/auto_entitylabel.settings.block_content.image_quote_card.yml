@@ -7,3 +7,4 @@ chunk: 50
 dependencies:
   config:
     - block_content.type.image_quote_card
+new_content_behavior: 1
