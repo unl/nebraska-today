@@ -54,6 +54,21 @@ third_party_settings:
         source: files
         weight: -10
         label: 'Skip tampers on empty'
+      f40d1312-979b-4fec-b658-5b3d66cdb754:
+        uuid: f40d1312-979b-4fec-b658-5b3d66cdb754
+        plugin: skip_on_empty
+        source: full_article
+        weight: -10
+        label: 'Skip tampers on empty'
+      c85d69b5-2a36-42c2-9e17-4e859e993e0f:
+        find: /\r\n/
+        replace: '<br>'
+        limit: null
+        uuid: c85d69b5-2a36-42c2-9e17-4e859e993e0f
+        plugin: find_replace_regex
+        source: full_article
+        weight: -9
+        label: 'Find replace REGEX'
 label: 'Announce submission import'
 id: announce_submission_import
 description: 'Stories submitted by the community to newsroom.unl.edu/announce'
