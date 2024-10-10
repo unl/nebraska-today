@@ -6,11 +6,7 @@ dependencies:
     - block_content.type.paragraph_card
     - field.storage.block_content.field_paragraph
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: block_content.paragraph_card.field_paragraph
 field_name: field_paragraph
 entity_type: block_content

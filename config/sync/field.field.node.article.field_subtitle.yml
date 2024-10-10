@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_subtitle
+    - filter.format.simple_html
     - node.type.article
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_html
 id: node.article.field_subtitle
 field_name: field_subtitle
 entity_type: node
@@ -23,5 +19,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - simple_html
 field_type: text

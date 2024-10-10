@@ -6,11 +6,7 @@ dependencies:
     - field.storage.paragraph.field_quote
     - paragraphs.paragraphs_type.quote_card
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: paragraph.quote_card.field_quote
 field_name: field_quote
 entity_type: paragraph

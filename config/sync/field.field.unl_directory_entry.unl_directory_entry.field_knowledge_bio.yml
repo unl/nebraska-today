@@ -5,12 +5,8 @@ dependencies:
   config:
     - field.storage.unl_directory_entry.field_knowledge_bio
   module:
-    - allowed_formats
     - external_entities
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: unl_directory_entry.unl_directory_entry.field_knowledge_bio
 field_name: field_knowledge_bio
 entity_type: unl_directory_entry

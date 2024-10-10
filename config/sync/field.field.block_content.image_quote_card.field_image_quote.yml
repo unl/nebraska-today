@@ -6,11 +6,7 @@ dependencies:
     - block_content.type.image_quote_card
     - field.storage.block_content.field_image_quote
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: block_content.image_quote_card.field_image_quote
 field_name: field_image_quote
 entity_type: block_content

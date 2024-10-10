@@ -4,14 +4,10 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_p_media_cutline
+    - filter.format.simple_html
     - paragraphs.paragraphs_type.paragraph_video
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats:
-      - simple_html
 id: paragraph.paragraph_video.field_p_media_cutline
 field_name: field_p_media_cutline
 entity_type: paragraph
@@ -23,5 +19,6 @@ translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
-  allowed_formats: {  }
+  allowed_formats:
+    - simple_html
 field_type: text

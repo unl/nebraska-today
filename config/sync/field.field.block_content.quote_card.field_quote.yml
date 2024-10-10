@@ -6,11 +6,7 @@ dependencies:
     - block_content.type.quote_card
     - field.storage.block_content.field_quote
   module:
-    - allowed_formats
     - text
-third_party_settings:
-  allowed_formats:
-    allowed_formats: {  }
 id: block_content.quote_card.field_quote
 field_name: field_quote
 entity_type: block_content
