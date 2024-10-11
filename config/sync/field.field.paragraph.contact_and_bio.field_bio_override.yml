@@ -12,8 +12,8 @@ id: paragraph.contact_and_bio.field_bio_override
 field_name: field_bio_override
 entity_type: paragraph
 bundle: contact_and_bio
-label: '(Optoinal) Bio override'
-description: "Will override the person's default bio if you want to provide something more specific for a certain topic."
+label: '(Optional) Prepend note to bio'
+description: "Will prepend to the person's bio if you want to provide something more specific for a certain topic."
 required: false
 translatable: false
 default_value: {  }

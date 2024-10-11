@@ -1,24 +1,19 @@
-{% if content.field_bio_override.0['#text'] != null %}
-    {% set bio = content.field_bio_override %}
-{% else %}
-    {% set bio = paragraph.field_contact_reference.entity.field_contact_bio.value %}
-{% endif %}
-
-
-{% if content.field_bio_override.0['#text'] != null or paragraph.field_contact_reference.entity.field_contact_bio.value != null %}
-    <div class="dcf-grid-halves@md dcf-grid-full@sm dcf-col-gap-5 dcf-row-gap-5 dcf-mb-8">
-        <div>{{ content.field_contact_reference }}</div>
-        <div>
-            <hr class="custom-l-line dcf-mt-0 ">
-            <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 dcf-mb-5">bio</h2>
-            <div>{{ bio }}</div>
-        </div>
-    </div>
-{% else %}
-    <div class="dcf-grid-halves@md dcf-grid-full@sm dcf-col-gap-5 dcf-row-gap-5 dcf-mb-8">
-        <div>{{ content.field_contact_reference }}</div>
-        <div>
-            <span></span>
-        </div>
-    </div>
-{% endif %}
+<div class="dcf-grid-halves@md dcf-grid-full@sm dcf-col-gap-5 dcf-row-gap-5 dcf-mb-8">
+  <div>
+    {{ content.field_contact_reference }}
+  </div>
+  <div>
+    {% if content.field_bio_override.0['#text'] != null %}
+      <div class="dcf-italic dcf-mb-5">
+        {{ content.field_bio_override }}
+      </div>
+    {% endif %}
+    {% if paragraph.field_contact_reference.entity.field_contact_bio.value != null %}
+      <hr class="custom-l-line dcf-mt-0">
+      <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1 dcf-mb-5">Bio</h2>
+      <div>
+        {{ paragraph.field_contact_reference.entity.field_contact_bio.value }}
+      </div>
+    {% endif %}
+  </div>
+</div>
