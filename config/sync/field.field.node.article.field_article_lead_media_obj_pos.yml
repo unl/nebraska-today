@@ -1,0 +1,21 @@
+uuid: 8672ec09-607c-46d2-8a0b-5ee87fadd768
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_lead_media_obj_pos
+    - node.type.article
+  module:
+    - options
+id: node.article.field_article_lead_media_obj_pos
+field_name: field_article_lead_media_obj_pos
+entity_type: node
+bundle: article
+label: 'Lead image object position'
+description: "Controls how the image is fixed when it is featured on the front page. '50% 0%' pins the image to the top and '50% 100%' pins the image to the bottom."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

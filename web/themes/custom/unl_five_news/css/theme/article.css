@@ -1,4 +1,3 @@
-
 .node--unpublished {
   background-color: #fff4f4;
 }
@@ -1951,6 +1950,18 @@ blockquote p:nth-of-type(3)::after {
   }
 }
 
+.custom_obj_pos_50_0 img {
+  object-position: 50% 0%;
+}
+.custom_obj_pos_50_25 img {
+  object-position: 50% 25%;
+}
+.custom_obj_pos_50_75 img {
+  object-position: 50% 75%;
+}
+.custom_obj_pos_50_100 img {
+  object-position: 50% 100%;
+}
 
 
 /**

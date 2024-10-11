@@ -40,6 +40,19 @@
    {%  set compact_text_align_class = 'fifthy-fifthy-text-placement-non-compact' %}
 {% endif %}
 
+{# Lead image object position #}
+{% if node.field_article_lead_media_obj_pos.value == '50_0' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_0' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_25' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_25' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_75' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_75' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_100' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_100' %}
+{% else %}
+  {%  set obj_pos_class = '' %}
+{% endif %}
+
 
 
 <div{{ attributes.addClass(classes) }}>
@@ -58,7 +71,7 @@
           <a class="dcf-txt-decor-none custom-arrow" href="{{ url }}">Read more</a>
         </div>
       </div>
-      <div class="custom-image dcf-relative custom-min-height-35">
+      <div class="custom-image dcf-relative custom-min-height-35 {{ obj_pos_class }}">
         {{ content.field_article_lead_media }}
       </div>
     </div>

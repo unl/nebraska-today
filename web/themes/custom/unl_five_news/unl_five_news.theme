@@ -45,6 +45,14 @@ function unl_five_news_preprocess_field(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_image().
+ */
+function unl_five_news_preprocess_image(&$variables) {
+
+  $x = 1;
+}
+
+/**
  * Implements template_preprocess_media().
  */
 function unl_five_news_preprocess_media(array &$variables) {
