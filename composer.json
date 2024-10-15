@@ -28,6 +28,21 @@
                     "reference": "5.3"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fancytree/fancytree",
+                "version": "2.38.3",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "jquery.fancytree"
+                },
+                "dist": {
+                    "url": "https://github.com/mar10/fancytree/archive/refs/tags/v2.38.3.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -79,6 +94,7 @@
         "drupal/views_bulk_operations": "^4.2",
         "drupal/views_exclude_previous": "^2.0@beta",
         "drush/drush": "^12.4",
+        "fancytree/fancytree": "^2.38",
         "unl/wdntemplates": "^5.3",
         "unlcms/external_entities_unldirectory": "^2.0",
         "unlcms/project-herbie-composer-plugin": "^1.1",
@@ -181,6 +197,9 @@
         "patches": {
             "drupal/core": {
                 "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-71.patch"
+            },
+            "drupal/taxonomy_manager": {
+                "3474919 - Form element taxonomy_manager_tree broken": "patches/taxonomy_manager-3474919-13.patch"
             }
         }
     }

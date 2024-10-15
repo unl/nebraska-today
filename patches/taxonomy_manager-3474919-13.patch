@@ -1,0 +1,23 @@
+diff --git a/src/Element/TaxonomyManagerTree.php b/src/Element/TaxonomyManagerTree.php
+index e4b94dbd9b..7147872e04 100644
+--- a/src/Element/TaxonomyManagerTree.php
++++ b/src/Element/TaxonomyManagerTree.php
+@@ -5,15 +5,15 @@
+ use Drupal\Component\Utility\Html;
+ use Drupal\Core\Entity\Query\QueryException;
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\Core\Render\Element\FormElementBase;
++use Drupal\Core\Render\Element\FormElement;
+ use Drupal\taxonomy\Entity\Term;
+
+ /**
+  * Taxonomy Manager Tree Form Element.
+  *
+- * @FormElementBase("taxonomy_manager_tree")
++ * @FormElement("taxonomy_manager_tree")
+  */
+-class TaxonomyManagerTree extends FormElementBase {
++class TaxonomyManagerTree extends FormElement {
+
+   /**
+    * {@inheritdoc}

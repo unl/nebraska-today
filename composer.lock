@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77235cb79177d16ea1ca44941a2d7345",
+    "content-hash": "9f163ed4692f4b1bc3b4bd34f418ace0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5185,6 +5185,18 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.16.0"
             },
             "time": "2022-09-18T07:06:19+00:00"
+        },
+        {
+            "name": "fancytree/fancytree",
+            "version": "2.38.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mar10/fancytree/archive/refs/tags/v2.38.3.zip"
+            },
+            "type": "drupal-library",
+            "extra": {
+                "installer-name": "jquery.fancytree"
+            }
         },
         {
             "name": "fileeye/mimemap",
