@@ -20,6 +20,7 @@ module:
   config_split: 0
   content_lock: 0
   contextual: 0
+  csv_serialization: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -66,7 +67,9 @@ module:
   path_alias: 0
   phpass: 0
   redirect: 0
+  rest: 0
   scheduler: 0
+  serialization: 0
   shortcut: 0
   simplenews: 0
   sophron: 0
@@ -94,6 +97,7 @@ module:
   user: 0
   view_unpublished: 0
   views_bulk_operations: 0
+  views_data_export: 0
   views_exclude_previous: 0
   views_ui: 0
   pathauto: 1
