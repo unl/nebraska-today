@@ -23,6 +23,8 @@ dependencies:
     - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_title_placement
     - field.field.node.article.field_article_vertical_display
+    - field.field.node.article.field_domain_access
+    - field.field.node.article.field_domain_all_affiliates
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -348,6 +350,19 @@ content:
     weight: 14
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_domain_access:
+    type: options_buttons
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_domain_all_affiliates:
+    type: boolean_checkbox
+    weight: 41
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_high_resolution_photo:
     type: media_library_widget

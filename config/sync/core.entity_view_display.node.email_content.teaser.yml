@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.email_content.body
+    - field.field.node.email_content.field_domain_access
+    - field.field.node.email_content.field_domain_all_affiliates
     - node.type.email_content
   module:
     - text
@@ -27,4 +29,6 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_domain_access: true
+  field_domain_all_affiliates: true

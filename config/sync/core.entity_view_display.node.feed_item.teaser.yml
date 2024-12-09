@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.feed_item.body
+    - field.field.node.feed_item.field_domain_access
+    - field.field.node.feed_item.field_domain_all_affiliates
     - field.field.node.feed_item.field_feed_image
     - field.field.node.feed_item.field_feed_link
     - field.field.node.feed_item.field_feed_story_id
@@ -64,4 +66,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_domain_access: true
+  field_domain_all_affiliates: true

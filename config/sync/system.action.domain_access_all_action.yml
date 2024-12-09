@@ -1,0 +1,16 @@
+uuid: f26cba0e-56ce-43a1-98ab-59c0a6eab075
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.
+  module:
+    - domain_access
+_core:
+  default_config_hash: 1JWyzsu7w-WFCcw9q6gjKvOnNQweDxZxjQV8slWRIuI
+id: domain_access_all_action
+label: 'Assign content to all affiliates'
+type: node
+plugin: domain_access_all_action
+configuration:
+  domain_id: ''

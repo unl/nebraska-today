@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.simplenews_issue.field_domain_access
+    - field.field.node.simplenews_issue.field_domain_all_affiliates
     - field.field.node.simplenews_issue.field_simplenews_articles
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
@@ -31,4 +33,6 @@ content:
     weight: 1
     region: content
 hidden:
+  field_domain_access: true
+  field_domain_all_affiliates: true
   simplenews_issue: true

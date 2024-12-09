@@ -1,0 +1,14 @@
+uuid: 448a460b-2f9d-4df5-842a-d2df516892eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.ianrnews_unl_edu
+  module:
+    - domain_access
+id: domain_access_add_action.ianrnews_unl_edu
+label: 'Add selected content to the IANR News domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: ianrnews_unl_edu

@@ -12,6 +12,8 @@ dependencies:
   module:
     - content_lock
     - contextual
+    - domain
+    - domain_access
     - external_entities
     - file
     - filter
@@ -40,7 +42,9 @@ permissions:
   - 'access user profiles'
   - 'break content lock'
   - 'create contact content'
+  - 'create contact content on assigned domains'
   - 'create field_of_expertise content'
+  - 'create field_of_expertise content on assigned domains'
   - 'create image media'
   - 'create remote_video media'
   - 'create unl_directory_entry external entity'
@@ -62,12 +66,15 @@ permissions:
   - 'override field_of_expertise revision option'
   - 'revert contact revisions'
   - 'revert field_of_expertise revisions'
+  - 'update contact content on assigned domains'
+  - 'update field_of_expertise content on assigned domains'
   - 'update unl_directory_entry external entity'
   - 'use text format basic_html'
   - 'use text format simple_html'
   - 'view any unpublished contact content'
   - 'view any unpublished field_of_expertise content'
   - 'view contact revisions'
+  - 'view domain list'
   - 'view field_of_expertise revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'

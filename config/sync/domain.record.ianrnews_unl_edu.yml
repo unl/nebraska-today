@@ -1,0 +1,11 @@
+uuid: 7711f7b3-e6be-4a7e-8a5c-34cb0f20f52e
+langcode: en
+status: true
+dependencies: {  }
+id: ianrnews_unl_edu
+domain_id: 14648859
+hostname: ianrnews.unl.edu
+name: 'IANR News'
+scheme: https
+weight: 1
+is_default: false

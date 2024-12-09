@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.contact.field_contact_photo
     - field.field.node.contact.field_contact_position
     - field.field.node.contact.field_contact_website
+    - field.field.node.contact.field_domain_access
+    - field.field.node.contact.field_domain_all_affiliates
     - field.field.node.contact.field_unldirectoryreference
     - image.style.thumbnail
     - node.type.contact
@@ -111,6 +113,19 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_domain_access:
+    type: options_buttons
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_domain_all_affiliates:
+    type: boolean_checkbox
+    weight: 41
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_unldirectoryreference:
     type: entity_reference_autocomplete

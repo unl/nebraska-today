@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.email_content.body
+    - field.field.node.email_content.field_domain_access
+    - field.field.node.email_content.field_domain_all_affiliates
     - node.type.email_content
   module:
     - path
@@ -28,6 +30,19 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_domain_access:
+    type: options_buttons
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_domain_all_affiliates:
+    type: boolean_checkbox
+    weight: 41
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   path:
     type: path

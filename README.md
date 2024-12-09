@@ -148,3 +148,19 @@ CSS and JS aggregation is disabled; and file permission hardening is disabled.  
 ## Drush
 
 Available in the vendor directory: `vendor/bin/drush <drush-commands>`
+
+## Domain Access and IANR News
+
+In a development environment add the following to `web/sites/default/settings.local.php`:
+
+```php
+$config_local = array(
+  'domain.record.news_unl_edu' => array(
+    'hostname' => 'news-local.unl.edu'
+  ),
+  'domain.record.ianrnews_unl_edu' => array(
+    'hostname' => 'ianrnews-local.unl.edu'
+  ),
+);
+$config = array_merge((array)$config, $config_local);
+```

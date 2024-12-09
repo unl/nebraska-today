@@ -24,6 +24,8 @@ dependencies:
     - field.field.node.article.field_article_submitter
     - field.field.node.article.field_article_title_placement
     - field.field.node.article.field_article_vertical_display
+    - field.field.node.article.field_domain_access
+    - field.field.node.article.field_domain_all_affiliates
     - field.field.node.article.field_high_resolution_photo
     - field.field.node.article.field_section
     - field.field.node.article.field_subtitle
@@ -102,6 +104,8 @@ hidden:
   field_article_submitter: true
   field_article_title_placement: true
   field_article_vertical_display: true
+  field_domain_access: true
+  field_domain_all_affiliates: true
   field_high_resolution_photo: true
   field_subtitle: true
   field_tags: true

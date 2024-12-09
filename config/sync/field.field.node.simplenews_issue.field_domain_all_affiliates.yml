@@ -1,0 +1,21 @@
+uuid: 53d3296d-7749-4be9-90fa-28336dce06d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_domain_all_affiliates
+    - node.type.simplenews_issue
+id: node.simplenews_issue.field_domain_all_affiliates
+field_name: field_domain_all_affiliates
+entity_type: node
+bundle: simplenews_issue
+label: 'Send to all affiliates'
+description: 'Make this content available on all domains.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

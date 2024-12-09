@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.simplenews_issue.field_domain_access
+    - field.field.node.simplenews_issue.field_domain_all_affiliates
     - field.field.node.simplenews_issue.field_simplenews_articles
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
@@ -43,6 +45,19 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_domain_access:
+    type: options_buttons
+    weight: 40
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_domain_all_affiliates:
+    type: boolean_checkbox
+    weight: 41
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_simplenews_articles:
     type: paragraphs
