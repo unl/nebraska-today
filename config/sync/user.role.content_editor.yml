@@ -47,12 +47,11 @@ dependencies:
     - taxonomy_manager
     - term_merge
     - toolbar
-    - view_unpublished
 _core:
   default_config_hash: Wur9kcEOwY1Jal81NssKnz3RhVJxAvBwyWQBGcA_1Go
 id: content_editor
 label: Editor
-weight: -7
+weight: -6
 is_admin: false
 permissions:
   - 'access administration pages'
@@ -60,7 +59,6 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access help pages'
-  - 'access inactive domains'
   - 'access media overview'
   - 'access shortcuts'
   - 'access site in maintenance mode'
@@ -110,6 +108,7 @@ permissions:
   - 'delete any contact content'
   - 'delete any email_content content'
   - 'delete any field_of_expertise content'
+  - 'delete any file'
   - 'delete any gallery block content'
   - 'delete any image media'
   - 'delete any image_quote_card block content'
@@ -154,6 +153,7 @@ permissions:
   - 'edit terms in media_tags'
   - 'edit terms in tags'
   - 'edit terms in written_by'
+  - 'enter article revision log entry'
   - 'enter contact revision log entry'
   - 'enter field_of_expertise revision log entry'
   - 'merge taxonomy terms'
@@ -188,8 +188,8 @@ permissions:
   - 'use text format simple_html'
   - 'view advertisement revisions'
   - 'view all revisions'
-  - 'view any unpublished content'
   - 'view article revisions'
+  - 'view assigned domains'
   - 'view contact revisions'
   - 'view domain list'
   - 'view email_content revisions'

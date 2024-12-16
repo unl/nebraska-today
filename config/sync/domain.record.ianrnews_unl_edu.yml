@@ -7,5 +7,5 @@ domain_id: 14648859
 hostname: ianrnews.unl.edu
 name: 'IANR News'
 scheme: https
-weight: 1
+weight: -2
 is_default: false

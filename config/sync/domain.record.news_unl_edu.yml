@@ -7,5 +7,5 @@ domain_id: 4063093
 hostname: news.unl.edu
 name: 'Nebraska Today'
 scheme: https
-weight: 0
+weight: -3
 is_default: true

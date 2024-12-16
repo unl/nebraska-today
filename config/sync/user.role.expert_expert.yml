@@ -73,6 +73,7 @@ permissions:
   - 'use text format simple_html'
   - 'view any unpublished contact content'
   - 'view any unpublished field_of_expertise content'
+  - 'view assigned domains'
   - 'view contact revisions'
   - 'view domain list'
   - 'view field_of_expertise revisions'
