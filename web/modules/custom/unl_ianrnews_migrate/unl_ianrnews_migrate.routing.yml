@@ -1,0 +1,8 @@
+unl_ianrnews_migrate.migrator:
+  path: '/admin/unl-ianrnews-migrate'
+  defaults:
+    _title: 'IANR News migrator'
+    _form: '\Drupal\unl_ianrnews_migrate\Form\ImportForm'
+  requirements:
+    _role: 'administrator'
+
