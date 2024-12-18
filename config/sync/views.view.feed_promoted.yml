@@ -753,7 +753,7 @@ display:
               raw_output: false
             title:
               alias: title
-              raw_output: false
+              raw_output: true
             created:
               alias: pubdate
               raw_output: false
