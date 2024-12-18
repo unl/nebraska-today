@@ -231,7 +231,7 @@ class ImportForm extends FormBase {
     // Create a node.
     $node = Node::create([
       'type' => 'article',
-      'nid' => 100000000+(int)$nid,
+      'nid' => 1000000+(int)$nid,
       'changed' => $changed,
       'created' => $created,
       'status' => 1,
