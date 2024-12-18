@@ -193,21 +193,14 @@ class ImportForm extends FormBase {
       $cutline = '';
       $nodes = $xpath->query("//div[contains(@class, 'field-name-field-image-caption')]//text()");
       if ($nodes->length) {
-        $cutline = trim($dom->saveHTML($nodes->item(0)));
+        foreach ($nodes as $key => $node) {
+          if ($key !== 0) {
+            $cutline .= ' – ';
+          }
+          $cutline .= trim($dom->saveHTML($nodes->item($key)));
+        }
       }
-
-      $lead_image_block = BlockContent::create([
-        'info' => 'Lead image for Legacy IANR Article ' . $nid,
-        'type' => 'parallax_image',
-        'langcode' => 'en',
-        'field_title_placement' => 'Basic',
-        'field_cutline' => [['value' => $cutline]],
-        'field_image' => $media->id(),
-      ]);
-      $lead_image_block->save();
     }
-
-
 
 
 
@@ -248,9 +241,11 @@ class ImportForm extends FormBase {
       ],
       'title' => $title,
       'body' => ['summary' => $summary, 'value' => $body, 'format' => 'basic_html'],
+      'field_domain_access' => ['target_id' => 'ianrnews_unl_edu'],
     ]);
-    if (!empty($lead_image_block)) {
-      $node->field_article_lead_media->appendItem(['target_id' => $lead_image_block->id()]);
+    if (!empty($media)) {
+      $node->field_article_lead_media = $media;
+      $node->field_article_lead_cutline = $cutline;
     }
     if (!empty($written_by_term)) {
       $node->field_written_by->appendItem(['target_id' => $written_by_term->id()]);
