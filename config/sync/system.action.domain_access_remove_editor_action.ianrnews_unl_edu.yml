@@ -1,0 +1,14 @@
+uuid: 7e7928de-b922-446a-8d46-c78025b08b88
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.ianrnews_unl_edu
+  module:
+    - domain_access
+id: domain_access_remove_editor_action.ianrnews_unl_edu
+label: 'Remove editors from the IANR News domain'
+type: user
+plugin: domain_access_remove_editor_action
+configuration:
+  domain_id: ianrnews_unl_edu

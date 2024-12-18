@@ -1,0 +1,14 @@
+uuid: dd073944-6fa7-47e0-9bb8-98216381da1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.ianrnews_unl_edu
+  module:
+    - domain_access
+id: domain_access_remove_action.ianrnews_unl_edu
+label: 'Remove selected content from the IANR News domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: ianrnews_unl_edu

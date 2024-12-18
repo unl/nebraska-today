@@ -1,0 +1,11 @@
+uuid: 844e4984-7787-4fc6-85a5-e011f30e759e
+langcode: en
+status: true
+dependencies: {  }
+id: news_unl_edu
+domain_id: 4063093
+hostname: news.unl.edu
+name: 'Nebraska Today'
+scheme: https
+weight: -3
+is_default: true

@@ -28,6 +28,7 @@ visibility:
     context_mapping:
       user: '@user.current_user_context:current_user'
     roles:
+      editor_ianr: editor_ianr
       content_editor: content_editor
       administrator: administrator
       super_administrator: super_administrator

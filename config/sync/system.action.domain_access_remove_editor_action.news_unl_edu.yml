@@ -1,0 +1,14 @@
+uuid: dd1259e1-0db6-4113-9f0f-5f55f87b6d64
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.news_unl_edu
+  module:
+    - domain_access
+id: domain_access_remove_editor_action.news_unl_edu
+label: 'Remove editors from the Nebraska Today domain'
+type: user
+plugin: domain_access_remove_editor_action
+configuration:
+  domain_id: news_unl_edu

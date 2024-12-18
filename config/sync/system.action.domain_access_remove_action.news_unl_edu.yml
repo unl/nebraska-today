@@ -1,0 +1,14 @@
+uuid: ef8037f8-1f5f-4a50-8c9d-023b6d6c8d97
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.news_unl_edu
+  module:
+    - domain_access
+id: domain_access_remove_action.news_unl_edu
+label: 'Remove selected content from the Nebraska Today domain'
+type: node
+plugin: domain_access_remove_action
+configuration:
+  domain_id: news_unl_edu

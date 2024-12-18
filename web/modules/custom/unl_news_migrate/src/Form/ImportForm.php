@@ -50,10 +50,10 @@ class ImportForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $base_url = 'https://news.unl.edu/';
+    $base_url = 'https://news-old.unl.edu/';
     $base_url = trim($base_url, '/') . '/';
 
-    $url = 'https://news.unl.edu/drupal-10-migration-articles.xml?dhgf';
+    $url = 'https://news-old.unl.edu/drupal-10-migration-articles.xml?ddfhgf';
     //$url = 'https://localhost.unl.edu/drupal-10-migration-articles.xml';
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();

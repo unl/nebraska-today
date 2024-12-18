@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.advertisement.feeds_item
     - field.field.node.advertisement.field_advertisement_image
     - field.field.node.advertisement.field_advertisement_link
+    - field.field.node.advertisement.field_domain_access
+    - field.field.node.advertisement.field_domain_all_affiliates
     - node.type.advertisement
   module:
     - user
@@ -24,3 +26,5 @@ hidden:
   feeds_item: true
   field_advertisement_image: true
   field_advertisement_link: true
+  field_domain_access: true
+  field_domain_all_affiliates: true

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ccb888dae4aafddea50a0becbb6f209",
+    "content-hash": "4b6fd4e67abe0e449f131bc509a2bb98",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2554,6 +2554,104 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/diff",
                 "issues": "https://www.drupal.org/project/issues/diff"
+            }
+        },
+        {
+            "name": "drupal/domain",
+            "version": "2.0.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/domain.git",
+                "reference": "2.0.0-beta2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/domain-2.0.0-beta2.zip",
+                "reference": "2.0.0-beta2",
+                "shasum": "af75edc81a41544296260e4ab21ed1ab8f7531e0"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/domain_access": "*",
+                "drupal/domain_config": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1726699929",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "nonsie",
+                    "homepage": "https://www.drupal.org/user/29899"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Creates domain records within a Drupal installation.",
+            "homepage": "https://www.drupal.org/project/domain",
+            "support": {
+                "source": "https://git.drupalcode.org/project/domain"
+            }
+        },
+        {
+            "name": "drupal/domain_access",
+            "version": "2.0.0-beta2",
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11",
+                "drupal/domain": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.0-beta2",
+                    "datestamp": "1726699929",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "agentrickard",
+                    "homepage": "https://www.drupal.org/user/20975"
+                },
+                {
+                    "name": "nonsie",
+                    "homepage": "https://www.drupal.org/user/29899"
+                },
+                {
+                    "name": "webflo",
+                    "homepage": "https://www.drupal.org/user/254778"
+                }
+            ],
+            "description": "Domain-based access control for content.",
+            "homepage": "https://www.drupal.org/project/domain",
+            "support": {
+                "source": "https://git.drupalcode.org/project/domain"
             }
         },
         {

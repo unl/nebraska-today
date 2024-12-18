@@ -9,6 +9,8 @@ dependencies:
     - field.field.node.contact.field_contact_photo
     - field.field.node.contact.field_contact_position
     - field.field.node.contact.field_contact_website
+    - field.field.node.contact.field_domain_access
+    - field.field.node.contact.field_domain_all_affiliates
     - field.field.node.contact.field_unldirectoryreference
     - image.style.large
     - node.type.contact
@@ -93,4 +95,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-hidden: {  }
+hidden:
+  field_domain_access: true
+  field_domain_all_affiliates: true

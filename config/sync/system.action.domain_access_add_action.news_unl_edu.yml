@@ -1,0 +1,14 @@
+uuid: 029f2d05-3ff3-441e-b285-e55f1f00dd1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - domain.record.news_unl_edu
+  module:
+    - domain_access
+id: domain_access_add_action.news_unl_edu
+label: 'Add selected content to the Nebraska Today domain'
+type: node
+plugin: domain_access_add_action
+configuration:
+  domain_id: news_unl_edu

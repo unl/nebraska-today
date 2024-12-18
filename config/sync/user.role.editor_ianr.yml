@@ -1,0 +1,136 @@
+uuid: 2fbfc6ff-b7d4-4591-81a6-3428c6f28be9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.body_parallax_image
+    - block_content.type.card_and_image
+    - block_content.type.gallery
+    - block_content.type.image_quote_card
+    - block_content.type.paragraph_card
+    - block_content.type.quote
+    - block_content.type.quote_card
+    - block_content.type.slideshow
+    - filter.format.basic_html
+    - filter.format.email_html
+    - filter.format.simple_html
+    - media.type.image
+    - media.type.remote_video
+    - taxonomy.vocabulary.media_tags
+    - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.written_by
+  module:
+    - block_content
+    - content_lock
+    - contextual
+    - domain
+    - domain_access
+    - external_entities
+    - file
+    - filter
+    - help
+    - media
+    - node
+    - override_node_options
+    - path
+    - scheduler
+    - shortcut
+    - system
+    - taxonomy
+    - toolbar
+id: editor_ianr
+label: 'Editor (IANR)'
+weight: -7
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access help pages'
+  - 'access media overview'
+  - 'access shortcuts'
+  - 'access site in maintenance mode'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer block content'
+  - 'assign domain editors'
+  - 'break content lock'
+  - 'create article content on assigned domains'
+  - 'create body_parallax_image block content'
+  - 'create card_and_image block content'
+  - 'create contact content on assigned domains'
+  - 'create field_of_expertise content on assigned domains'
+  - 'create gallery block content'
+  - 'create image media'
+  - 'create image_quote_card block content'
+  - 'create paragraph_card block content'
+  - 'create quote block content'
+  - 'create quote_card block content'
+  - 'create remote_video media'
+  - 'create slideshow block content'
+  - 'create terms in media_tags'
+  - 'create terms in tags'
+  - 'create terms in written_by'
+  - 'create unl_directory_entry external entity'
+  - 'create url aliases'
+  - 'delete any body_parallax_image block content'
+  - 'delete any card_and_image block content'
+  - 'delete any gallery block content'
+  - 'delete any image_quote_card block content'
+  - 'delete any paragraph_card block content'
+  - 'delete any quote block content'
+  - 'delete any quote_card block content'
+  - 'delete any slideshow block content'
+  - 'delete article content on assigned domains'
+  - 'delete contact content on assigned domains'
+  - 'delete domain content'
+  - 'delete field_of_expertise content on assigned domains'
+  - 'delete own files'
+  - 'delete own image media'
+  - 'delete own remote_video media'
+  - 'edit any body_parallax_image block content'
+  - 'edit any card_and_image block content'
+  - 'edit any gallery block content'
+  - 'edit any image media'
+  - 'edit any image_quote_card block content'
+  - 'edit any paragraph_card block content'
+  - 'edit any quote block content'
+  - 'edit any quote_card block content'
+  - 'edit any remote_video media'
+  - 'edit any slideshow block content'
+  - 'edit domain content'
+  - 'edit own image media'
+  - 'edit own remote_video media'
+  - 'enter article revision log entry'
+  - 'enter contact revision log entry'
+  - 'enter field_of_expertise revision log entry'
+  - 'override article authored by option'
+  - 'override article authored on option'
+  - 'override article published option'
+  - 'override contact published option'
+  - 'override contact revision option'
+  - 'override field_of_expertise promote to front page option'
+  - 'override field_of_expertise published option'
+  - 'override field_of_expertise revision option'
+  - 'publish to any assigned domain'
+  - 'revert all revisions'
+  - 'schedule publishing of nodes'
+  - 'update article content on assigned domains'
+  - 'update contact content on assigned domains'
+  - 'update field_of_expertise content on assigned domains'
+  - 'update unl_directory_entry external entity'
+  - 'use text format basic_html'
+  - 'use text format email_html'
+  - 'use text format simple_html'
+  - 'view all revisions'
+  - 'view assigned domains'
+  - 'view domain list'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view scheduled content'
+  - 'view the administration theme'
+  - 'view unl_directory_entry external entity collection'
+  - 'view unpublished domain content'
+  - 'view user email addresses'

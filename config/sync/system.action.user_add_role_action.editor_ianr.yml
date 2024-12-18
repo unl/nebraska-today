@@ -1,0 +1,14 @@
+uuid: 24d2934c-0d18-40b5-8b0a-280bcc5e2251
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.editor_ianr
+  module:
+    - user
+id: user_add_role_action.editor_ianr
+label: 'Add the Editor (IANR) role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editor_ianr

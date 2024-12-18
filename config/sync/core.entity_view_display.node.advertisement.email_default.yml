@@ -7,6 +7,8 @@ dependencies:
     - field.field.node.advertisement.feeds_item
     - field.field.node.advertisement.field_advertisement_image
     - field.field.node.advertisement.field_advertisement_link
+    - field.field.node.advertisement.field_domain_access
+    - field.field.node.advertisement.field_domain_all_affiliates
     - image.style.email_advertisement
     - node.type.advertisement
   module:
@@ -51,3 +53,5 @@ content:
     region: content
 hidden:
   feeds_item: true
+  field_domain_access: true
+  field_domain_all_affiliates: true
