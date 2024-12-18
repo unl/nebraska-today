@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - domain.record.
+    - domain.record.news_unl_edu
   module:
     - domain_access
 _core:
