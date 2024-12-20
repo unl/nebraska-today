@@ -1,0 +1,38 @@
+{# Template for /subscribe #}
+
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes }}>
+    <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-5">
+      <div class="dcf-col-100% dcf-col-50%-start@md">
+        <h2>Nebraska Today</h2>
+        <p><a href="https://mailman.unl.edu/mailman3/lists/today_subscribers.lists.nebraska.edu/">Follow this link to subscribe to Nebraska Today</a></p>
+        <p>Note: If you have a University of Nebraska–Lincoln faculty or staff role, you already receive the Nebraska Today email automatically!</p>
+      </div>
+      <div class="dcf-col-100% dcf-col-50%-end@md">
+        <h2>IANR News Now</h2>
+        <div class="_form_1"></div>
+        <script src="https://unl233.activehosted.com/f/embed.php?id=1" type="text/javascript" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+
+</article>
