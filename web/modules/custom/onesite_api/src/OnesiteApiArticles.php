@@ -114,9 +114,15 @@ class OnesiteApiArticles extends OnesiteApiBase {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED)
-      ->condition('field_domain_access', 'news_unl_edu')
       ->sort('created', 'DESC')
       ->accessCheck(FALSE);
+
+    // Only get Nebraska Today articles which are anything with
+    // the news_unl_edu domain or that value not set.
+    $group = $query->orConditionGroup()
+      ->notExists('field_domain_access')
+      ->condition('field_domain_access', 'news_unl_edu');
+    $query->condition($group);
 
     if ($this->tagIds) {
       $query->condition('field_tags', $this->tagIds, 'IN');
