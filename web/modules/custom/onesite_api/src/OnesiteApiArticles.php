@@ -114,6 +114,7 @@ class OnesiteApiArticles extends OnesiteApiBase {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('field_domain_access', 'news_unl_edu')
       ->sort('created', 'DESC')
       ->accessCheck(FALSE);
 
