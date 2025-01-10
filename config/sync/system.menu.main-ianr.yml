@@ -1,0 +1,8 @@
+uuid: 106a8761-cc23-46af-b145-a05392f2b8c4
+langcode: en
+status: true
+dependencies: {  }
+id: main-ianr
+label: 'Main navigation (IANR)'
+description: 'Site section links'
+locked: false

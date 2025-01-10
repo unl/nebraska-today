@@ -1,25 +1,23 @@
-uuid: a2116710-68b9-4499-ba8b-46a94c8a40f5
+uuid: 236f9d33-8947-4b3e-a95c-ee250acdc9d0
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.main
+    - system.menu.main-ianr
   module:
     - domain
     - system
   theme:
     - unl_five_news
-_core:
-  default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
-id: unl_five_news_main_menu
+id: unl_five_news_main_menu_ianr
 theme: unl_five_news
 region: navlinks
-weight: -4
+weight: 0
 provider: null
-plugin: 'system_menu_block:main'
+plugin: 'system_menu_block:main-ianr'
 settings:
-  id: 'system_menu_block:main'
-  label: 'Main navigation'
+  id: 'system_menu_block:main-ianr'
+  label: 'Main navigation (IANR)'
   label_display: '0'
   provider: system
   level: 1
@@ -32,4 +30,4 @@ visibility:
     context_mapping:
       domain: '@domain.current_domain_context:domain'
     domains:
-      news_unl_edu: news_unl_edu
+      ianrnews_unl_edu: ianrnews_unl_edu
