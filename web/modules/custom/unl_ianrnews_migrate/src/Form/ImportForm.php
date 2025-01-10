@@ -50,10 +50,10 @@ class ImportForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $base_url = 'https://ianrnews.unl.edu/';
+    $base_url = 'https://unlcms.unl.edu/';
     $base_url = trim($base_url, '/') . '/';
 
-    $url = 'https://ianrnews.unl.edu/drupal-10-migration-articles.xml?cachebuster1';
+    $url = 'https://unlcms.unl.edu/educational-media/ianrnews/drupal-10-migration-articles.xml?cachebuster1';
     //$url = 'https://localhost.unl.edu/drupal-10-migration-articles.xml';
     $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
@@ -92,7 +92,15 @@ class ImportForm extends FormBase {
    * Imports an article node.
    */
   public static function importPage($url, $nid, $changed, $created, $alias, $summary, $tags, &$context) {
-    $request = \Drupal::httpClient()->get($url . '?cb1');
+
+    // Check if node alrady exists (from a failed/interrupted attempt) and skip if it does.
+    $values = \Drupal::entityQuery('node')->accessCheck(FALSE)->condition('nid', 1000000+(int)$nid)->execute();
+    $node_exists = !empty($values);
+    if ($node_exists) {
+      return;
+    }
+
+    $request = \Drupal::httpClient()->get($url);
     $body = $request->getBody();
     if (!$body) {
       $context['message'] = t('The page at ' . $url . ' is empty. Ignoring.');
@@ -236,7 +244,7 @@ class ImportForm extends FormBase {
       'created' => $created,
       'status' => 1,
       'path' => [
-        'alias' => $alias,
+        'alias' => str_replace('/educational-media/ianrnews', '', $alias),
         'pathauto' => PathautoState::SKIP,
       ],
       'title' => $title,
