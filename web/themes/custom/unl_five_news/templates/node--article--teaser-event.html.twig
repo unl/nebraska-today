@@ -9,8 +9,8 @@
     'clearfix',
   ]
 %}
-{% set eventDay = node.field_article_event_date.value|date('j') %}
-{% set eventMonth = node.field_article_event_date.value|date('M') %}
+{% set eventDay = node.field_article_event_date.date|date('j') %}
+{% set eventMonth = node.field_article_event_date.date|date('M') %}
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ url }}">
     {{ content.field_article_lead_media }}
