@@ -29,8 +29,7 @@ $settings['file_private_path'] = dirname(debug_backtrace()[0]['file']) . '/files
  */
 $environment = $_SERVER['SERVER_NAME'];
 
-if ($environment == 'news.unl.edu' ||
-    $environment == 'news-test.unl.edu') {
+if ($environment == 'news.unl.edu' || $environment == 'ianrnews.unl.edu') {
   $config['config_split.config_split.production']['status'] = TRUE;
   $config['config_split.config_split.stage']['status'] = FALSE;
   $config['config_split.config_split.development']['status'] = FALSE;
@@ -41,7 +40,7 @@ if ($environment == 'news.unl.edu' ||
   $settings['reverse_proxy'] = TRUE;
   $settings['reverse_proxy_addresses'] = array(@$_SERVER['REMOTE_ADDR']);
 }
-elseif ($environment == 'stage') {
+elseif ($environment == 'news-test.unl.edu' || $environment == 'ianrnews-test.unl.edu') {
   $config['config_split.config_split.production']['status'] = FALSE;
   $config['config_split.config_split.stage']['status'] = TRUE;
   $config['config_split.config_split.development']['status'] = FALSE;
