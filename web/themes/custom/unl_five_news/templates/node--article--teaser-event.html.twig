@@ -9,8 +9,6 @@
     'clearfix',
   ]
 %}
-{% set eventDay = node.field_article_event_date.date|date('j') %}
-{% set eventMonth = node.field_article_event_date.date|date('M') %}
 <article{{ attributes.addClass(classes) }}>
   <a href="{{ url }}">
     {{ content.field_article_lead_media }}
@@ -19,8 +17,8 @@
     <h3 class="custom-event-title dcf-mb-1"><a href={{ url }}>{{ label }}</a></h3>
     <div class="custom-event-location">{{ content.field_article_event_where }}</div>
     <div class="custom-event-circle">
-      <div class="month">{{ eventMonth }}</div>
-      <div class="day">{{ eventDay }}</div>
+      <div class="month">{{ event_date_month }}</div>
+      <div class="day">{{ event_date_day }}</div>
       <div class="time">{{ content.field_article_event_date }}</div>
     </div>
   </div>

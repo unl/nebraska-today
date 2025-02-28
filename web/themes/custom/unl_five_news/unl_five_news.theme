@@ -83,6 +83,13 @@ function unl_five_news_preprocess_node(array &$variables) {
       $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
     }
 
+    // Set the Month and Day variables for the Teaser Event template.
+    if (!$node->field_article_event_date->isEmpty()) {
+      $date = strtotime($node->field_article_event_date->value);
+      $variables['event_date_month'] =  date('M', $date);
+      $variables['event_date_day'] =  date('j', $date);
+    }
+
   }
 }
 
