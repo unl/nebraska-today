@@ -45,7 +45,7 @@ filters:
     status: true
     weight: -50
     settings:
-      allowed_html: '<br> <p> <h2> <h3> <h4> <h5> <h6> <strong> <em> <s> <sub> <sup> <blockquote> <a href> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
+      allowed_html: '<br> <p class="text-align-left text-align-center text-align-right text-align-justify"> <h2 class="text-align-left text-align-center text-align-right text-align-justify"> <h3 class="text-align-left text-align-center text-align-right text-align-justify"> <h4 class="text-align-left text-align-center text-align-right text-align-justify"> <h5 class="text-align-left text-align-center text-align-right text-align-justify"> <h6 class="text-align-left text-align-center text-align-right text-align-justify"> <strong> <em> <s> <sub> <sup> <blockquote> <a href> <ul> <ol start> <li> <table> <tr> <td rowspan colspan> <th rowspan colspan> <thead> <tbody> <tfoot> <caption> <drupal-media data-entity-type data-entity-uuid alt data-view-mode data-caption data-align>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_html_escape:
@@ -98,7 +98,7 @@ filters:
     status: true
     weight: -45
     settings:
-      replace_empty: '0'
+      replace_empty: false
   token_filter_remove_p_wrapper:
     id: token_filter_remove_p_wrapper
     provider: token_filter_remove_p_wrapper

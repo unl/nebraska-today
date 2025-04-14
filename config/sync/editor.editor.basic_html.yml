@@ -18,6 +18,7 @@ settings:
       - strikethrough
       - '|'
       - heading
+      - alignment
       - '|'
       - link
       - '|'
@@ -32,6 +33,12 @@ settings:
       - insertTable
       - drupalMedia
   plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
     ckeditor5_heading:
       enabled_headings:
         - heading2
