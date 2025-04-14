@@ -1150,6 +1150,7 @@ blockquote p:nth-of-type(3)::after {
   }
 
   .outer-content {
+    align-items: start;
     display: grid;
     grid-template-columns: 3fr 1fr;
   }
