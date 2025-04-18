@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\media\Entity\Media;
 use Drupal\node\NodeInterface;
 
@@ -85,9 +86,11 @@ function unl_five_news_preprocess_node(array &$variables) {
 
     // Set the Month and Day variables for the Teaser Event template.
     if (!$node->field_article_event_date->isEmpty()) {
-      $date = strtotime($node->field_article_event_date->value);
-      $variables['event_date_month'] =  date('M', $date);
-      $variables['event_date_day'] =  date('j', $date);
+      // The value coming out of the database is in UTC.
+      $date = new DrupalDateTime($node->field_article_event_date->value, 'UTC');
+      $date->setTimezone(new \DateTimeZone('America/Chicago'));
+      $variables['event_date_month'] = $date->format('M');
+      $variables['event_date_day'] = $date->format('j');
     }
 
   }
