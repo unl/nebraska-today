@@ -36,6 +36,9 @@
 .custom-first-paragraph-big-font p:first-of-type {
   font-size: 1.33em;
 }
+.custom-first-paragraph-big-font li p {
+  font-size: inherit !important;
+}
 
 
 .dcf-hover-image:hover {
