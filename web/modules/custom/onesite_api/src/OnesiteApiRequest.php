@@ -9,6 +9,13 @@ namespace Drupal\onesite_api;
 class OnesiteApiRequest {
 
   /**
+   * The domain the request came from.
+   *
+   * @var string
+   */
+  protected $host;
+
+  /**
    * An array of query string parameters.
    *
    * @var array
@@ -19,11 +26,24 @@ class OnesiteApiRequest {
    * Creates a new OnesiteApiRequest object.
    */
   public function __construct() {
-    $params = \Drupal::request()->query->all();
+    $request = \Drupal::request();
+
+    $this->host = $request->getHost();
+
+    $params = $request->query->all();
     foreach ($params as $key => $value) {
       $value = trim($value);
       $this->queryParameters[$key] = filter_var($value, FILTER_SANITIZE_STRING);
     }
+  }
+
+  /**
+   * Gets the domain.
+   *
+   * @return string
+   */
+  public function getHost() {
+    return $this->host;
   }
 
   /**

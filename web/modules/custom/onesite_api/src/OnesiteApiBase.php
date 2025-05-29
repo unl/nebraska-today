@@ -2,12 +2,21 @@
 
 namespace Drupal\onesite_api;
 
+use Drupal\domain\DomainInterface;
+
 /**
  * Defines a base class for API endpoints.
  *
  * Endpoints should be plugins in Drupal 8.
  */
 abstract class OnesiteApiBase {
+
+  /**
+   * The Domain record that corresponds to the host domain the request came from.
+   *
+   * @var string
+   */
+  protected $domainRecord = 'news_unl_edu';
 
   /**
    * The requested return format (either 'xml' or 'json').
@@ -44,7 +53,28 @@ abstract class OnesiteApiBase {
    * Instantiates an ApiBase object.
    */
   public function __construct() {
+    self::retrieveDomainRecord();
     self::retrieveQueryStringParameters();
+  }
+
+  /**
+   * Retrieves the Domain record that corresponds to the host from the request.
+   */
+  public function retrieveDomainRecord() {
+    $request = new OnesiteApiRequest();
+    $host = $request->getHost();
+
+    $domain_records = \Drupal::entityTypeManager()->getStorage('domain')->loadMultiple();
+
+    foreach ($domain_records as $domain) {
+      if ($domain instanceof DomainInterface) {
+        $domain_hostname = $domain->getHostname();
+        if ($domain_hostname === $host) {
+          $this->domainRecord = $domain->id();
+          break;
+        }
+      }
+    }
   }
 
   /**

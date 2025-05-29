@@ -3,3 +3,5 @@ type: module
 description: Provides API provider functionality.
 package: UNL
 core_version_requirement: ^10
+dependencies:
+  - domain:domain

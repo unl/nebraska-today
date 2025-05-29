@@ -117,12 +117,17 @@ class OnesiteApiArticles extends OnesiteApiBase {
       ->sort('created', 'DESC')
       ->accessCheck(FALSE);
 
-    // Only get Nebraska Today articles which are anything with
-    // the news_unl_edu domain or that value not set.
-    $group = $query->orConditionGroup()
-      ->notExists('field_domain_access')
-      ->condition('field_domain_access', 'news_unl_edu');
-    $query->condition($group);
+    if ($this->domainRecord === 'news_unl_edu') {
+      // Old Nebraska Today articles may not have a value set for
+      //   field_domain_access from before the module was added.
+      $group = $query->orConditionGroup()
+        ->notExists('field_domain_access')
+        ->condition('field_domain_access', 'news_unl_edu');
+      $query->condition($group);
+    }
+    else {
+      $query->condition('field_domain_access', $this->domainRecord);
+    }
 
     if ($this->tagIds) {
       $query->condition('field_tags', $this->tagIds, 'IN');
