@@ -12,6 +12,13 @@ use Drupal\node\NodeInterface;
 class OnesiteApiArticles extends OnesiteApiBase {
 
   /**
+   * Date string of the oldest date of an article that should be included.
+   *
+   * @var string
+   */
+  protected $pubDate = '1970-01-01';
+
+  /**
    * An array of requested section IDs.
    *
    * @var array
@@ -58,6 +65,9 @@ class OnesiteApiArticles extends OnesiteApiBase {
     $request = new OnesiteApiRequest();
     $params = $request->getParameters();
 
+    if (isset($params['pubDate'])) {
+      $this->pubDate = $params['pubDate'];
+    }
     if (isset($params['sectionIds'])) {
       $this->sectionIds = $this->convertQueryStringParameterToArray($params['sectionIds']);
     }
@@ -77,6 +87,14 @@ class OnesiteApiArticles extends OnesiteApiBase {
    */
   public function validateParameters() {
     parent::validateParameters();
+
+    // Validate publication date.
+    if (!is_null($this->pubDate)) {
+      $date = \DateTime::createFromFormat('Y-m-d', $this->pubDate);
+      if (!$date || $date->format('Y-m-d') !== $this->pubDate) {
+        $this->setError('400', 'The "pubDate" parameter is invalid. Date must be in the format "YYY-MM-DD".');
+      }
+    }
 
     // Validate section IDs.
     foreach ($this->sectionIds as $id) {
@@ -114,6 +132,7 @@ class OnesiteApiArticles extends OnesiteApiBase {
     $query = \Drupal::entityQuery('node')
       ->condition('type', 'article')
       ->condition('status', NodeInterface::PUBLISHED)
+      ->condition('created', strtotime($this->pubDate), '>=')
       ->sort('created', 'DESC')
       ->accessCheck(FALSE);
 
