@@ -81,7 +81,7 @@ else {
   // Provides cache.backend.null.
   // Disables Twig caching and enables Twig autoload.
   // Adds debug cacheability headers.
-  $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/development.services.yml';
+  $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
   // Disable CSS and JS preprocessing.
   $config['system.performance']['css']['preprocess'] = FALSE;
