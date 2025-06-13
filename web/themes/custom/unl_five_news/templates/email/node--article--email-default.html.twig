@@ -14,12 +14,7 @@
 
                       <tr>
                         <td colspan="2" class="unltoday-head" align="left" style="font-size:24px;font-family:Montserrat,Verdana,sans-serif;color:#d00000;padding:15px 0 8px 0;">
-                          <a href="{{ url|merge({'query': {
-                            'utm_source': 'newsletter',
-                            'utm_medium': 'email',
-                            'utm_campaign': 'newsletter_' ~ 'now'|date('Y-m-d'),
-                            'utm_content': 'format_default'
-                          }}) }}" style="color:#d00000;text-decoration:none;"><span style="color:#d00001;">{{ label }}</span></a>
+                          <a href="{{ url ~ '?utm_source=newsletter&utm_medium=email&utm_content=format_default&utm_campaign=newsletter_' ~ 'now'|date('Y-m-d') }}" style="color:#d00000;text-decoration:none;"><span style="color:#d00001;">{{ label }}</span></a>
                         </td>
                       </tr>
                       {% if content.field_subtitle is not empty %}

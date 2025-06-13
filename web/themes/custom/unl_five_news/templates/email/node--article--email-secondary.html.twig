@@ -15,12 +15,7 @@
                       <tr>
                         <td class="unltoday-body" align="top" width="124" style="padding:8px 0 8px 0;">{{ content.field_article_lead_media }}</td>
                         <td class="unltoday-head" align="left" width="496" style="padding:0 0 0 20px;margin:0;font-size:18px;font-family:Montserrat,Verdana,sans-serif;color:#d00000;">
-                          <a href="{{ url|merge({'query': {
-                            'utm_source': 'newsletter',
-                            'utm_medium': 'email',
-                            'utm_campaign': 'newsletter_' ~ 'now'|date('Y-m-d'),
-                            'utm_content': 'format_secondary'
-                          }}) }}" style="color:#d00000;text-decoration:none;"><span style="color:#d00001;">{{ label }}</span></a>
+                          <a href="{{ url ~ '?utm_source=newsletter&utm_medium=email&utm_content=format_secondary&utm_campaign=newsletter_' ~ 'now'|date('Y-m-d') }}" style="color:#d00000;text-decoration:none;"><span style="color:#d00001;">{{ label }}</span></a>
                         </td>
                       </tr>
 
