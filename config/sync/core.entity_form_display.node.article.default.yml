@@ -191,7 +191,8 @@ third_party_settings:
         classes: ''
         show_empty_fields: true
         id: ''
-        open: false
+        label_as_html: false
+        open: true
         description: ''
         required_fields: true
 _core:

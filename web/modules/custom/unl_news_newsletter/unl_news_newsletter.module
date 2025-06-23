@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ */
+function unl_news_newsletter_field_widget_single_element_form_alter(&$element, FormStateInterface $form_state, $context) {
+  // Limit the View Mode options shown in the field_p_email_article_display Entity Reference field.
+  if (isset($context['items']) && $context['items']->getFieldDefinition()->getName() === 'field_p_email_article_display') {
+    $allowed_view_modes = [
+      'node.email_default' => t('Email (Default)'),
+      'node.email_featured' => t('Email (Featured)'),
+      'node.email_lead' => t('Email (Lead)'),
+      'node.email_secondary' => t('Email (Secondary)'),
+    ];
+
+    if (isset($element['#type']) && isset($element['#options'])) {
+      $element['#options'] = $allowed_view_modes;
+    }
+  }
+}

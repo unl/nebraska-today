@@ -911,7 +911,7 @@ display:
             publish_on: publish_on
             unpublish_on: unpublish_on
             operations: operations
-          default: '-1'
+          default: publish_on
           info:
             node_bulk_form:
               align: ''

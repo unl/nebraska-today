@@ -1,0 +1,7 @@
+name: UNL News Newsletter
+description: Things related to Simple News and sending email newsletters.
+package: UNL
+type: module
+core_version_requirement: ^8 || ^9 || ^10 || ^11
+dependencies:
+  - simplenews:simplenews
