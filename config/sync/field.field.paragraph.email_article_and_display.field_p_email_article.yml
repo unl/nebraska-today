@@ -4,9 +4,6 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_p_email_article
-    - node.type.advertisement
-    - node.type.article
-    - node.type.email_content
     - paragraphs.paragraphs_type.email_article_and_display
 id: paragraph.email_article_and_display.field_p_email_article
 field_name: field_p_email_article
@@ -19,15 +16,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: views
   handler_settings:
-    target_bundles:
-      article: article
-      advertisement: advertisement
-      email_content: email_content
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: advertisement
+    view:
+      view_name: unreferenced_articles
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

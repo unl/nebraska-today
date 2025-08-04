@@ -1,6 +1,9 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 
 /**
  * Implements hook_field_widget_single_element_form_alter().
@@ -17,6 +20,56 @@ function unl_news_newsletter_field_widget_single_element_form_alter(&$element, F
 
     if (isset($element['#type']) && isset($element['#options'])) {
       $element['#options'] = $allowed_view_modes;
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function unl_news_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  // This view is used as the "Reference method" on the field_p_email_article field.
+  if ($view->id() == 'unreferenced_articles' && $view->current_display == 'entity_reference_1') {
+    // Load the other view that returns the node IDs that have already been
+    // used in a newsletter that should be excluded.
+    $excluded_view = \Drupal\views\Views::getView('referenced_articles');
+    if ($excluded_view) {
+      $excluded_view->setDisplay('entity_reference_1');
+      $excluded_view->execute();
+
+      // Get the result rows and extract node IDs.
+      $excluded_nids = [];
+      foreach ($excluded_view->result as $row) {
+        $excluded_nids[] = $row->node_field_data_paragraph__field_p_email_article_nid;
+      }
+
+      // Load node being edited, compile existing referenced articles, and
+      // take them out of the exclusion list.
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', trim($current_path, '/'));
+
+      if (isset($path_args[0]) && $path_args[0] === 'node' && is_numeric($path_args[1] ?? NULL) && ($path_args[2] ?? '') === 'edit') {
+        $editing_nid = (int) $path_args[1];
+        $node = Node::load($editing_nid);
+
+        if ($node && $node->hasField('field_simplenews_articles')) {
+          foreach ($node->get('field_simplenews_articles') as $paragraph_item) {
+            $paragraph = $paragraph_item->entity;
+            if ($paragraph && $paragraph->hasField('field_p_email_article')) {
+              foreach ($paragraph->get('field_p_email_article') as $ref) {
+                $referenced_nid = $ref->target_id;
+                // Remove referenced nid from exclusion list.
+                $excluded_nids = array_diff($excluded_nids, [$referenced_nid]);
+              }
+            }
+          }
+        }
+      }
+
+      if (!empty($excluded_nids)) {
+        // Alter the query to exclude those node IDs.
+        $query->addWhere('AND', 'node_field_data.nid', $excluded_nids, 'NOT IN');
+      }
     }
   }
 }
