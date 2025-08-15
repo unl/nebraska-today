@@ -92,7 +92,6 @@ function unl_five_news_preprocess_node(array &$variables) {
       $variables['event_date_month'] = $date->format('M');
       $variables['event_date_day'] = $date->format('j');
     }
-
   }
 }
 
@@ -127,6 +126,8 @@ function unl_five_news_preprocess_region(&$variables) {
     if ($node instanceof NodeInterface && $node->getType() == 'article') {
       // Add created/published time to the hero region template, region--hero.html.twig.
       $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
+      // Add helper variable for the old article notice.
+      $variables['is_fresh'] = ($node->getCreatedTime() > strtotime('-1 year'));
       // Add field_subtitle to the hero region template, region--hero.html.twig.
       if ($node->hasField('field_subtitle') && !$node->get('field_subtitle')->isEmpty()) {
         $variables['field_subtitle'] = $node->get('field_subtitle')->view(['label'=>'hidden', 'type'=>'TextFieldItemList']);
