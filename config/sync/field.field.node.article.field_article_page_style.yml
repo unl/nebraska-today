@@ -1,0 +1,21 @@
+uuid: 933fc5da-0aed-42ca-90de-77b613f9cf0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_page_style
+    - node.type.article
+  module:
+    - options
+id: node.article.field_article_page_style
+field_name: field_article_page_style
+entity_type: node
+bundle: article
+label: 'Alternative article page style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

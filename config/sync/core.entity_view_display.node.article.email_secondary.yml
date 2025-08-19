@@ -15,6 +15,7 @@ dependencies:
     - field.field.node.article.field_article_lead_cutline
     - field.field.node.article.field_article_lead_media
     - field.field.node.article.field_article_lead_media_obj_pos
+    - field.field.node.article.field_article_page_style
     - field.field.node.article.field_article_priority
     - field.field.node.article.field_article_related_links
     - field.field.node.article.field_article_release_contacts
@@ -66,6 +67,7 @@ hidden:
   field_article_horizontal_display: true
   field_article_lead_cutline: true
   field_article_lead_media_obj_pos: true
+  field_article_page_style: true
   field_article_priority: true
   field_article_related_links: true
   field_article_release_contacts: true
