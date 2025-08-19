@@ -140,6 +140,10 @@ function unl_five_news_preprocess_region(&$variables) {
       if ($node->hasField('field_article_lead_media') && !$node->get('field_article_lead_media')->isEmpty()) {
         $variables['field_title_placement'] = $node->get('field_article_title_placement')->view(['label'=>'hidden', 'type'=>'FieldItemList']);
       }
+      // Add field_article_page_style to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_article_page_style') && !$node->get('field_article_page_style')->isEmpty()) {
+        $variables['field_article_page_style'] = $node->get('field_article_page_style')->value;
+      }
 
     }
   }
@@ -220,7 +224,21 @@ function _unl_five_news_get_rss($url, $ttl) {
   return $feed;
 }
 
-
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node templates.
+ */
+function unl_five_news_theme_suggestions_node_alter(&$suggestions, $variables) {
+  $node = $variables['elements']['#node'];
+  if ($node->bundle() === 'article') {
+    if ($node->hasField('field_article_page_style') && !$node->get('field_article_page_style')->isEmpty()) {
+      $style = $node->get('field_article_page_style')->value;
+      // Sanitize for template suggestion (replace dashes/spaces).
+      $style_suggestion = strtr($style, ['-' => '_', ' ' => '_']);
+      // Add a new theme suggestion. Prepend so it's checked first.
+      $suggestions[] = 'node__article__' . $style_suggestion;
+    }
+  }
+}
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().

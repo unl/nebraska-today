@@ -1,0 +1,114 @@
+{%
+  set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'clearfix',
+]
+%}
+{{ attach_library('classy/node') }}
+{{ attach_library('unl_five_news/article') }}
+
+<style>
+    a.custom-no-icon:after {
+        display:none !important;
+    }
+    .field-written-by {
+        display: inline !important;
+    }
+    .field-written-by:after {
+        content: '·';
+        font-size: 0.8em;
+        padding: 0 1px 0 4px;
+    }
+    .field-written-by a {
+        color: var(--body) !important;
+        text-decoration: none !important;
+        font-style: italic;
+    }
+    .custom-campus-life {
+        text-decoration: none;
+        position: absolute;
+        right: .5em;
+        bottom: -82px;
+        font-size: 77pt;
+        font-weight: bold;
+        -webkit-text-stroke: 1px #d00;
+        /*writing-mode: vertical-lr;
+        transform: scale(-1,-1); */
+    }
+</style>
+
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+
+  <div class="dcf-bleed dcf-pt-5 dcf-pb-5">
+    <div class="dcf-relative dcf-mt-0 dcf-mb-0 dcf-mr-auto dcf-ml-auto hero-article-basic">
+
+
+      <div class="dcf-wrapper custom-main-page">
+        <div class="dcf-basic-view">
+          <div style="grid-column: 1/3;">
+
+          </div>
+
+          <div class="" style="grid-column: 3/10">
+            <div>{{ content.field_article_lead_media }}</div>
+          </div>
+
+          <div style="grid-column: 10/-1; display: flex;
+  flex-direction: column;
+  justify-content: flex-end;">
+
+            <div class="dcf-txt-3xs custom-hide dcf-italic dcf-pr-5 dcf-mt-0 dcf-mb-1 custom-credit-text">
+              {{ credit }}
+            </div>
+            <div class="dcf-txt-xs dcf-mb-6">
+              {{ content.field_article_lead_cutline }}
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="dcf-basic-view dcf-mt-8 dcf-pb-7">
+    <div style="grid-column: 1/3;">
+      {{ content.field_tags }}
+    </div>
+    <div style="grid-column: 3/10">
+      <div class="dcf-dropcap">
+        {{ content.body }}
+        {{ content.field_gallery_images }}
+        {{ content.field_media_and_card }}
+      </div>
+    </div>
+
+    <div style="grid-column: 10/-1">
+
+
+      {% if node.field_article_release_contacts.value is not empty %}
+        <hr class="custom-l-line dcf-mt-0">
+        <h2 class="dcf-txt-sm dcf-regular dcf-uppercase unl-ls-1" style=" color : var(--heading); ">News Release Contact(s)</h2>
+      {% endif %}
+      {{ content.field_article_release_contacts }}
+      {{ content.field_article_related_links }}
+      {{ content.field_lead_image_text_placement }}
+      {{ content.field_high_resolution_photo }}
+    </div>
+  </div>
+
+  {# Recent News #}
+  <div class="custom-hide-subscribe">
+    {{ drupal_view('recent', 'block_1') }}
+  </div>
+</article>
