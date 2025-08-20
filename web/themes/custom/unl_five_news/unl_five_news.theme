@@ -229,7 +229,8 @@ function _unl_five_news_get_rss($url, $ttl) {
  */
 function unl_five_news_theme_suggestions_node_alter(&$suggestions, $variables) {
   $node = $variables['elements']['#node'];
-  if ($node->bundle() === 'article') {
+  $view_mode = $variables['elements']['#view_mode'];
+  if ($node->bundle() === 'article' && $view_mode === 'full') {
     if ($node->hasField('field_article_page_style') && !$node->get('field_article_page_style')->isEmpty()) {
       $style = $node->get('field_article_page_style')->value;
       // Sanitize for template suggestion (replace dashes/spaces).
