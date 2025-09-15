@@ -75,7 +75,7 @@
         "drupal/google_analytics": "^4.0",
         "drupal/image_class": "^2.0",
         "drupal/image_style_warmer": "^1.2@RC",
-        "drupal/imagemagick": "^3.4",
+        "drupal/imagemagick": "^4.0",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/masquerade": "^2.0@RC",
         "drupal/metatag": "^2.1",
