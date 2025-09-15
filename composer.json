@@ -78,7 +78,7 @@
         "drupal/imagemagick": "^3.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drupal/masquerade": "^2.0@RC",
-        "drupal/metatag": "^1.22",
+        "drupal/metatag": "^2.1",
         "drupal/oembed_providers": "^2.1",
         "drupal/override_node_options": "^2.7",
         "drupal/paragraphs": "^1.15",
