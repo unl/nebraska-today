@@ -6,9 +6,10 @@ dependencies:
     - domain.record.ianrnews_unl_edu
   module:
     - domain_access
-id: domain_access_add_editor_action.ianrnews_unl_edu
+id: domain_access_add_editor_action_ianrnews_unl_edu
 label: 'Add editors to the IANR News domain'
 type: user
 plugin: domain_access_add_editor_action
 configuration:
-  domain_id: ianrnews_unl_edu
+  domain_id:
+    - ianrnews_unl_edu

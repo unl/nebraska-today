@@ -50,7 +50,7 @@
         "ext-dom": "*",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.3",
+        "drupal/admin_toolbar": "^3.6",
         "drupal/allowed_formats": "^3.0",
         "drupal/auto_entitylabel": "^3.0",
         "drupal/autocomplete_deluxe": "^2.0",
@@ -64,7 +64,7 @@
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
         "drupal/ctools": "^4.0",
-        "drupal/diff": "^1.1",
+        "drupal/diff": "^2.0@beta",
         "drupal/domain_access": "^2.0@beta",
         "drupal/external_entities": "2.x@dev",
         "drupal/feeds": "^3.0@beta",
@@ -201,9 +201,6 @@
         "patches": {
             "drupal/core": {
                 "2528214 - Restrict images to this site blocks image style derivatives": "patches/2528214-71.patch"
-            },
-            "drupal/taxonomy_manager": {
-                "3474919 - Form element taxonomy_manager_tree broken": "patches/taxonomy_manager-3474919-13.patch"
             }
         }
     }

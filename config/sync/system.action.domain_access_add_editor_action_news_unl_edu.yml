@@ -6,9 +6,10 @@ dependencies:
     - domain.record.news_unl_edu
   module:
     - domain_access
-id: domain_access_add_editor_action.news_unl_edu
+id: domain_access_add_editor_action_news_unl_edu
 label: 'Add editors to the Nebraska Today domain'
 type: user
 plugin: domain_access_add_editor_action
 configuration:
-  domain_id: news_unl_edu
+  domain_id:
+    - news_unl_edu
