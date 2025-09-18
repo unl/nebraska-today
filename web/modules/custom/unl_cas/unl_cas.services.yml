@@ -3,3 +3,7 @@ services:
     class: Drupal\unl_cas\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  unl_cas.login_redirect.subscriber:
+    class: Drupal\unl_cas\Subscriber\UnlCasRedirectSubscriber
+    tags:
+      - { name: event_subscriber }
