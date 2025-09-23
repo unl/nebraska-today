@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.article.field_article_submission_id
     - field.field.node.article.field_article_submission_status
     - field.field.node.article.field_article_submitter
+    - field.field.node.article.field_domain_access
     - node.type.article
   module:
     - feeds_ex
@@ -69,6 +70,14 @@ third_party_settings:
         source: full_article
         weight: -9
         label: 'Find replace REGEX'
+      33376665-3f7a-4268-b758-8c7ae1db15f7:
+        default_value: news_unl_edu
+        only_if_empty: false
+        uuid: 33376665-3f7a-4268-b758-8c7ae1db15f7
+        plugin: default_value
+        source: domain_access
+        weight: 0
+        label: 'Set value to news_unl_edu'
 label: 'Announce submission import'
 id: announce_submission_import
 description: 'Stories submitted by the community to newsroom.unl.edu/announce'
@@ -98,6 +107,8 @@ processor_configuration:
   update_existing: 0
   update_non_existent: _keep
   skip_hash_check: false
+  skip_validation: false
+  skip_validation_types: {  }
   authorize: false
   revision: false
   expire: -1
@@ -164,6 +175,11 @@ custom_sources:
     label: files
     machine_name: files
     type: json
+  domain_access:
+    value: domain_access
+    label: domain_access
+    machine_name: domain_access
+    type: blank
 mappings:
   -
     target: body
@@ -232,3 +248,9 @@ mappings:
       reference_by: mid
       autocreate: 0
       autocreate_bundle: image
+  -
+    target: field_domain_access
+    map:
+      target_id: domain_access
+    settings:
+      reference_by: id
