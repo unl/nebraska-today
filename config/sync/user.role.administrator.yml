@@ -26,6 +26,7 @@ dependencies:
     - taxonomy.vocabulary.tags
     - taxonomy.vocabulary.written_by
   module:
+    - ban
     - block_content
     - content_lock
     - contextual
@@ -78,6 +79,7 @@ permissions:
   - 'administer users'
   - 'assign domain editors'
   - 'assign editors to any domain'
+  - 'ban IP addresses'
   - 'break content lock'
   - 'create advertisement content'
   - 'create advertisement content on assigned domains'
