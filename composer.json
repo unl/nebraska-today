@@ -133,6 +133,7 @@
         "post-drupal-scaffold-cmd": [
             "cd web && patch -p1 < ../patches/custom-htaccess-oldpaths.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
+            "cd web && patch -p1 < ../patches/custom-htaccess-noindex-test-domain.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-set-reverse-proxy-headers.patch"
         ],
         "install-wdn": "DrupalProject\\composer\\UnlScriptHandler::deployWdn"
