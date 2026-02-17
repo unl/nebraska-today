@@ -1,4 +1,9 @@
 services:
+  unl_cas.http_middleware:
+    class: Drupal\unl_cas\StackMiddleware\CookieCheck
+    arguments: []
+    tags:
+      - { name: http_middleware, priority: 280, responder: true }
   unl_cas.route_subscriber:
     class: Drupal\unl_cas\Routing\RouteSubscriber
     tags:
@@ -7,3 +12,4 @@ services:
     class: Drupal\unl_cas\Subscriber\UnlCasRedirectSubscriber
     tags:
       - { name: event_subscriber }
+

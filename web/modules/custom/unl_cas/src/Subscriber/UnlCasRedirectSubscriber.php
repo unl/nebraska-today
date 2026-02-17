@@ -18,10 +18,11 @@ class UnlCasRedirectSubscriber extends CasLoginRedirectSubscriber {
         KernelEvents::RESPONSE => [
           // Act before DomainRedirectResponseSubscriber::checkRedirectUrl() which has a
           // lower priority (10).
-          // @see \Drupal\Core\EventSubscriber\DomainRedirectResponseSubscriber::checkRedirectUrl()
+          // @see \Drupal\domain\EventSubscriber\DomainRedirectResponseSubscriber::checkRedirectUrl()
             ['onRedirectResponse', 20],
         ],
     ];
   }
 
 }
+

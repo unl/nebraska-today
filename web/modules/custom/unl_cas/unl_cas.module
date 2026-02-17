@@ -25,21 +25,29 @@ function unl_cas_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterfa
   $form['account']['pass']['#access'] = FALSE;
   $form['account']['status']['#access'] = FALSE;
 
-  // We want anyone who can access this form to be able to edit a user's roles.
-  // We do this here because we don't want Site Admin to have the full
-  // 'Administer roles and permissions' permission.
-  $form['account']['roles']['#access'] = TRUE;
-
-  if (!User::load(\Drupal::currentUser()->id())->hasRole('administrator')) {
-    // If user isn't an Administrator, they can't assign 'coder' role.
-    $form['account']['roles']['coder']['#disabled'] = TRUE;
-
-    // Limit 'Cancel account' ability to only Administrators.
-    $form['actions']['delete']['#access'] = FALSE;
+  // Allow Site Admin to edit a user's roles. Site Admin can't have the full
+  // 'Administer roles and permissions' permission in order to prevent them from
+  // being able to edit permissions.
+  if (User::load(\Drupal::currentUser()->id())->hasRole('site_admin')) {
+    $form['account']['roles']['#access'] = TRUE;
   }
 
-  // Always disable the Administrator role. It should be managed via Drush.
+  // If user isn't an Administrator, they can't assign 'coder' role.
+  $form['account']['roles']['coder']['#disabled'] = TRUE;
+  // Limit 'Cancel account' ability to only Super Administrators.
+  $form['actions']['delete']['#access'] = FALSE;
+
+  if (User::load(\Drupal::currentUser()->id())->hasRole('administrator')) {
+    $form['account']['roles']['coder']['#disabled'] = FALSE;
+  }
+  if (User::load(\Drupal::currentUser()->id())->hasRole('super_administrator')) {
+    $form['account']['roles']['coder']['#disabled'] = FALSE;
+    $form['actions']['delete']['#access'] = TRUE;
+  }
+
+  // Always disable the Administrator roles. They should be managed via Drush.
   $form['account']['roles']['administrator']['#disabled'] = TRUE;
+  $form['account']['roles']['super_administrator']['#disabled'] = TRUE;
 }
 
 /**
