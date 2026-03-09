@@ -296,7 +296,7 @@ class OnesiteApiArticles extends OnesiteApiBase {
       // Article Image is optional.
       //
       // The article hero image is a media item within a custom block reference.
-      if (isset($entity->field_article_lead_media) && $entity->field_article_lead_media->first()) {
+      if (isset($entity->field_article_lead_media) && $entity->field_article_lead_media->first() && $entity->field_article_lead_media->first()->get('entity')->getTarget()) {
         // https://drupal.stackexchange.com/a/186317
         $media = $entity->field_article_lead_media->first()->get('entity')->getTarget()->getValue();
         if (isset($media->field_media_image)) {
@@ -332,6 +332,22 @@ class OnesiteApiArticles extends OnesiteApiBase {
           // Cutline is optional.
           if (isset($block_content->field_cutline)) {
             $processed_entity['articleImage']['caption'] = trim($block_content->field_cutline->value);
+          }
+        }
+        else if (isset($media->field_media_oembed_video)) {
+          $thumbnail_item = $media->get('thumbnail')->first();
+          if ($thumbnail_item) {
+            $thumbnail_file = $thumbnail_item->entity;
+
+            $processed_entity['articleImage'] = [
+              'url' => $thumbnail_file->createFileUrl(FALSE),
+              'mimeType' =>  $thumbnail_file->getMimeType(),
+              'size' => $thumbnail_file->getSize(),
+            ];
+            $alt = $thumbnail_item->get('alt');
+            if (isset($alt)) {
+              $processed_entity['articleImage']['alt'] = trim($alt->getString());
+            }
           }
         }
       }
