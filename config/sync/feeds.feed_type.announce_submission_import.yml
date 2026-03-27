@@ -180,6 +180,11 @@ custom_sources:
     label: domain_access
     machine_name: domain_access
     type: blank
+  files_description:
+    value: "files[?(@.use_for == 'originalimage')].description"
+    label: files_description
+    machine_name: files_description
+    type: json
 mappings:
   -
     target: body
@@ -254,3 +259,7 @@ mappings:
       target_id: domain_access
     settings:
       reference_by: id
+  -
+    target: temporary_target
+    map:
+      temporary: files_description

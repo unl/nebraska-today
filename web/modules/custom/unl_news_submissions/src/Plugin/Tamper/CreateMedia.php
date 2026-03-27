@@ -26,6 +26,11 @@ class CreateMedia extends TamperBase {
     $file_name = explode("/", $data);
     $file_name = 'announce_' . end($file_name);
 
+    $alt = '';
+    if ($item) {
+      $alt = $item->getSourceProperty('files_description');
+    }
+
     $file_data = file_get_contents($data);
     $file = \Drupal::service('file.repository')
       ->writeData($file_data, 'public://media/images/'.$file_name, FileSystemInterface::EXISTS_REPLACE);
@@ -34,7 +39,7 @@ class CreateMedia extends TamperBase {
       'uid' => \Drupal::currentUser()->id(),
       'field_media_image' => [
         'target_id' => $file->id(),
-        'alt' => ' ',
+        'alt' => $alt,
       ],
     ]);
     $media->setName($file_name)
