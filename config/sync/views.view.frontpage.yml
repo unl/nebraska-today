@@ -1,6 +1,6 @@
 uuid: ab638d01-a812-4f40-8c94-b70add284691
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
@@ -614,6 +614,7 @@ display:
     display_plugin: feed
     position: 2
     display_options:
+      enabled: false
       pager:
         type: some
         options:
