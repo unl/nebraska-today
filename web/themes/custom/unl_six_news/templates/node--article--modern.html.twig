@@ -41,21 +41,16 @@
         transform: scale(-1,-1); */
     }
     @media (max-width: 768px) {
-        .dcf-basic-view {
-            grid-template-columns: 1fr; /* single column */
-            grid-column-gap: 0;
-        }
-
-        .dcf-basic-view > div {
+        .dcf-d-grid > div {
             grid-column: 1 / -1 !important; /* each section takes full width */
         }
-        .dcf-basic-view > div:first-child {
+        .dcf-d-grid > div:first-child {
             order: 3;
         }
-        .dcf-basic-view > div:nth-child(2) {
+        .dcf-d-grid > div:nth-child(2) {
             order: 1;
         }
-        .dcf-basic-view > div:nth-child(3) {
+        .dcf-d-grid > div:nth-child(3) {
             order: 2;
         }
     }
@@ -72,7 +67,7 @@
 
 
       <div class="dcf-wrapper custom-main-page">
-        <div class="dcf-basic-view">
+        <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6">
           <div style="grid-column: 1/3;">
 
           </div>
@@ -100,7 +95,7 @@
     </div>
   </div>
 
-  <div class="dcf-basic-view dcf-mt-4 dcf-pb-7">
+  <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6 dcf-mt-4 dcf-pb-7">
     <div style="grid-column: 1/3;">
       {{ content.field_tags }}
     </div>

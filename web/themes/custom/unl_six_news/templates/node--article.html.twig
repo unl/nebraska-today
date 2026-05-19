@@ -12,12 +12,6 @@
 {{ attach_library('classy/node') }}
 {{ attach_library('unl_six_news/article') }}
 
-<script>
-  window.addEventListener('inlineJSReady', function() {
-    WDN.initializePlugin('font-serif');
-  }, false);
-</script>
-
 <article{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
@@ -114,12 +108,12 @@
       {% else %}
         {# This is "Basic" or not defined. #}
         <div class="dcf-wrapper custom-main-page">
-          <div class="dcf-basic-view">
-            <div class="dcf-col-100% dcf-col-67%-start@sm dcf-col-75%-start@md">
+          <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6">
+            <div class="dcf-col-span-12 dcf-col-span-8@sm dcf-col-span-9@md">
               <div>{{ content.field_article_lead_media }}</div>
             </div>
-            <div class="dcf-col-100% dcf-col-33%-end@sm dcf-col-25%-end@md">
-              <hr class="custom-l-line dcf-mt-0 dcf-mb-1 dcf-basic-view-hr">
+            <div class="dcf-col-span-12 dcf-col-span-4@sm dcf-col-span-3@md">
+              <hr class="custom-l-line dcf-mt-0 dcf-mb-1">
               <div class="dcf-txt-3xs custom-hide dcf-italic dcf-pr-5 dcf-mt-0 dcf-mb-1 custom-credit-text">
                 {{ credit }}
               </div>

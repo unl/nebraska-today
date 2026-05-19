@@ -8,12 +8,12 @@
   {{ title }}
   {{ title_suffix }}
 
-  <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
-    <div class="dcf-col-100% dcf-col-75%-start@md">
+  <div class="dcf-d-grid dcf-grid-cols-12 dcf-col-gap-vw dcf-row-gap-6">
+    <div class="dcf-col-span-12 dcf-col-span-8@md">
       <h2 class="dcf-regular dcf-mb-4">Featured Fields of Expertise</h2>
       {{ drupal_view('experts_featured', 'block_1') }}
     </div>
-    <div class="dcf-col-100% dcf-col-25%-end@md">
+    <div class="dcf-col-span-12 dcf-col-span-4@md">
       {% if header %}
         <header>
           {{ header }}
