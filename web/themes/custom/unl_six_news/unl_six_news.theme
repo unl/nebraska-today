@@ -1,0 +1,253 @@
+<?php
+
+use Drupal\Core\Cache\CacheBackendInterface;
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements template_preprocess_field().
+ */
+function unl_six_news_preprocess_field(&$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
+
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_media_and_card') {
+
+    //foreach ($element['items'] as $key => $item) {
+    //   $variables['element']['items'][$key]['type'] =
+    // }
+  }
+
+  if ($element['#field_name'] == 'field_ca') {
+    foreach ($variables['items'] as $key => $item) {
+      $bundle = $item['content']['#paragraph']->bundle();
+      $variables['items'][$key]['news_bundle'] = $bundle;
+      $variables['paratypes'][$bundle]++;
+
+    }
+  }
+
+  // Add loop index to paragraph twig templates.
+  // Being used in paragraph--slideshow--paragraph-media.html.twig
+  // https://www.drupal.org/project/paragraphs/issues/2881460#comment-12986813
+  if (
+    $variables['field_type'] == 'entity_reference_revisions'
+    &&
+    $variables['element']['#items']->getItemDefinition()->getSetting('target_type') == 'paragraph'
+  ) {
+    foreach ($variables['items'] as $idx => $item) {
+      $variables['items'][$idx]['content']['#paragraph']->index = $idx;
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_image().
+ */
+function unl_six_news_preprocess_image(&$variables) {
+
+  $x = 1;
+}
+
+/**
+ * Implements template_preprocess_media().
+ */
+function unl_six_news_preprocess_media(array &$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node) {
+    $variables['node_title'] = $node->getTitle();
+  }
+}
+
+/**
+ * Implements template_preprocess_node().
+ */
+function unl_six_news_preprocess_node(array &$variables) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+
+  if ($node->getType() == 'article') {
+    // Make the Image Media credit field easy to access as {{ credit }}.
+    $variables['credit'] = '';
+
+    if (!$node->field_article_lead_media->isEmpty()) {
+      // https://drupal.stackexchange.com/a/186317
+      $media = $node->field_article_lead_media->first()->get('entity')->getTarget()->getValue();
+      if ($media->bundle() == 'image' && !$media->field_media_image_credit->isEmpty()) {
+        $variables['credit'] = $media->field_media_image_credit->value;
+      }
+
+      $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
+    }
+
+    // Set the Month and Day variables for the Teaser Event template.
+    if (!$node->field_article_event_date->isEmpty()) {
+      // The value coming out of the database is in UTC.
+      $date = new DrupalDateTime($node->field_article_event_date->value, 'UTC');
+      $date->setTimezone(new \DateTimeZone('America/Chicago'));
+      $variables['event_date_month'] = $date->format('M');
+      $variables['event_date_day'] = $date->format('j');
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ */
+function unl_six_news_preprocess_paragraph(&$variables) {
+  // Provide a {{ bundle }} variable for the template.
+  $paragraph = $variables['paragraph'];
+  $bundle = $paragraph->bundle();
+  $variables['bundle'] = $bundle;
+
+  // Change the view mode of the newsletter article reference based on user selection.
+  if ($variables['paragraph']->hasField('field_p_email_article_display')) {
+    $view_mode_string = $variables['paragraph']->field_p_email_article_display->target_id;
+    $view_mode_array = explode('.', $view_mode_string);
+    if (isset($variables['content']['field_p_email_article']['0']['#view_mode'])) {
+      $variables['content']['field_p_email_article']['0']['#view_mode'] = $view_mode_array[1];
+      unset($variables['content']['field_p_email_article']['0']['#cache']['keys']);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_region().
+ */
+function unl_six_news_preprocess_region(&$variables) {
+  // Elevate some things from the Article node up to the Hero Region.
+  if ($variables['region'] == 'hero') {
+    $current_route = \Drupal::routeMatch();
+    $node = $current_route->getParameter('node');
+    if ($node instanceof NodeInterface && $node->getType() == 'article') {
+      // Add created/published time to the hero region template, region--hero.html.twig.
+      $variables['created'] = \Drupal::service('date.formatter')->format($node->getCreatedTime(), 'simple_date');
+      // Add helper variable for the old article notice.
+      $variables['is_fresh'] = ($node->getCreatedTime() > strtotime('-1 year'));
+      // Add field_subtitle to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_subtitle') && !$node->get('field_subtitle')->isEmpty()) {
+        $variables['field_subtitle'] = $node->get('field_subtitle')->view(['label'=>'hidden', 'type'=>'TextFieldItemList']);
+      }
+      // Add field_written_by to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_written_by') && !$node->get('field_written_by')->isEmpty()) {
+        $variables['field_written_by'] = $node->get('field_written_by')->view(['label'=>'hidden', 'type'=>'EntityReferenceFieldItemList']);
+      }
+      // Add field_title_placement in order to hide the page title if it is going to be shown in node--article.html.twig.
+      if ($node->hasField('field_article_lead_media') && !$node->get('field_article_lead_media')->isEmpty()) {
+        $variables['field_title_placement'] = $node->get('field_article_title_placement')->view(['label'=>'hidden', 'type'=>'FieldItemList']);
+      }
+      // Add field_article_page_style to the hero region template, region--hero.html.twig.
+      if ($node->hasField('field_article_page_style') && !$node->get('field_article_page_style')->isEmpty()) {
+        $variables['field_article_page_style'] = $node->get('field_article_page_style')->value;
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function unl_six_news_preprocess_views_view_unformatted(&$vars) {
+  $view = $vars['view'];
+
+  if ($view->id() == 'main_page_featured') {
+    $feed = _unl_six_news_get_rss('https://newsroom.unl.edu/inthenews/rss.php', 60 * 2);
+    $url = 'https://newsroom.unl.edu/inthenews/recent_quote.php';
+    $data = _unl_six_news_url_cache_callback($url, function ($url, $data) {
+      return $data;
+    }, 60 * 2);
+    foreach ($feed['item'] as $key => $post) {
+      if ($key + 1 > 4) {
+        continue;
+      }
+      $vars['inthenews'] .= '<li style="list-style:none;" class="custom-in-the-news-padding">
+                                    <a class="dcf-d-block dcf-txt-h6 dcf-lh-2 unl-ls-h dcf-txt-decor-hover" href="' . $post['link'] . '">' . $post['title'] . '</a>
+                                    <div class=" dcf-txt-xs unl-dark-gray">' . date('F j, Y', strtotime($post['pubDate'])) . '</div>
+                                 </li>';
+    }
+    $vars['quote'] = $data;
+  }
+
+  // Break the Experts view up into four chunks for use in columns.
+  if ($view->id() == 'experts') {
+    $vars['row_chunks'] = array_chunk($vars['rows'], ceil(count($vars['rows']) / 4), true);
+  }
+}
+
+function _unl_six_news_url_cache_callback($url, $callback, $ttl) {
+  $cache_name = md5(__FUNCTION__ . $url);
+  if ($cache = \Drupal::cache()->get($cache_name)) {
+    if (time() < (int) $cache->expire) {
+      return $cache->data;
+    }
+  }
+
+  if (!$data = @file_get_contents($url, FALSE, stream_context_create([
+    'ssl' => [
+      'verify_peer' => FALSE,
+      'verify_peer_name' => FALSE,
+    ],
+  ]))) {
+    return FALSE;
+  }
+
+  $data = $callback($url, $data);
+  \Drupal::cache()->set($cache_name, $data, time() + $ttl);
+
+  return $data;
+}
+
+function _unl_six_news_get_rss($url, $ttl) {
+  $data = _unl_six_news_url_cache_callback($url, function ($url, $data) {
+    return $data;
+  }, $ttl);
+
+  $feed = [];
+
+  if (!$data = simplexml_load_string($data)) {
+    return $feed;
+  }
+
+  $feed = (array) $data->channel;
+
+  $i = 0;
+  foreach ($data->channel->item as $item) {
+    $feed['item'][$i] = (array) $item;
+    $i++;
+  }
+
+  return $feed;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for node templates.
+ */
+function unl_six_news_theme_suggestions_node_alter(&$suggestions, $variables) {
+  $node = $variables['elements']['#node'];
+  $view_mode = $variables['elements']['#view_mode'];
+  if ($node->bundle() === 'article' && $view_mode === 'full') {
+    if ($node->hasField('field_article_page_style') && !$node->get('field_article_page_style')->isEmpty()) {
+      $style = $node->get('field_article_page_style')->value;
+      // Sanitize for template suggestion (replace dashes/spaces).
+      $style_suggestion = strtr($style, ['-' => '_', ' ' => '_']);
+      // Add a new theme suggestion. Prepend so it's checked first.
+      $suggestions[] = 'node__article__' . $style_suggestion;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function unl_six_news_theme_suggestions_paragraph_alter(&$suggestions, $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent) {
+    $suggestions[] = 'paragraph__' . $parent->bundle() . '__' .  $paragraph->bundle();
+  }
+}

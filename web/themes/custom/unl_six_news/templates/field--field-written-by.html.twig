@@ -1,0 +1,20 @@
+{%
+  set classes = [
+    'field-written-by',
+    'dcf-mt-1',
+    'dcf-txt-sm',
+  ]
+%}
+
+{% if multiple %}
+  <div{{ attributes.addClass(classes) }}>
+    By
+    {% for item in items %}
+      <span{{ item.attributes }}>{{ item.content }}</span>
+    {% endfor %}
+  </div>
+{% else %}
+  {% for item in items %}
+    <span{{ attributes.addClass(classes) }}>By {{ item.content }}</span>
+  {% endfor %}
+{% endif %}

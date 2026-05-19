@@ -1,0 +1,116 @@
+{# Grid featured lead image and views #}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('unl_six_news/article') }}
+
+{% set createdDate = node.getCreatedTime|date('F j, Y') %}
+
+{# Vertical Align Text #}
+{% if content.field_article_vertical_display.0['#markup'] == 'Display overlay center' %}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-vertical-center' %}
+{%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay top'%}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-top' %}
+{%  elseif content.field_article_vertical_display.0['#markup'] == 'Display overlay bottom'%}
+   {%  set vertical_align_class = 'fifthy-fifthy-text-placement-bottom' %}
+{% endif %}
+
+{# Horizontal Align Text #}
+{% if content.field_article_horizontal_display.0['#markup'] == 'Display overlay left' %}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-left' %}
+{%  elseif content.field_article_horizontal_display.0['#markup'] == 'Display overlay right'%}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-right' %}
+{%  elseif content.field_article_horizontal_display.0['#markup'] == 'Display overlay center'%}
+   {%  set horizontal_align_class = 'fifthy-fifthy-text-placement-center' %}
+{% endif %}
+
+{# Compact Text #}
+{% if content.field_article_compact_title.0['#markup'] == 'Compact' %}
+   {%  set compact_text_align_class = 'fifthy-fifthy-text-placement-compact' %}
+{%  elseif content.field_article_compact_title.0['#markup'] == 'Non-Compact'%}
+   {%  set compact_text_align_class = 'fifthy-fifthy-text-placement-non-compact' %}
+{% endif %}
+
+{# Lead image object position #}
+{% if node.field_article_lead_media_obj_pos.value == '50_0' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_0' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_25' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_25' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_75' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_75' %}
+{% elseif node.field_article_lead_media_obj_pos.value == '50_100' %}
+  {%  set obj_pos_class = 'custom_obj_pos_50_100' %}
+{% else %}
+  {%  set obj_pos_class = '' %}
+{% endif %}
+
+
+
+<div{{ attributes.addClass(classes) }}>
+
+  {% if content.field_article_display_options.0['#markup'] == 'Full Width Lead & View'  %}
+
+    <div class="dcf-bleed custom-front-hero custom-hide-title dcf-d-flex dcf-relative dcf-overflow-hidden dcf-flex-wrap dcf-flex-col">
+      <div class="custom-heading">
+        <h2>
+          <a href="{{ url }}" class="unl-cream dcf-txt-decor-none">{{ label }}</a>
+        </h2>
+        <div class="custom-before-in-text">
+          <div>{{ createdDate }} <span class="custom-section-display">{{ content.field_section }}</span></div>
+        </div>
+        <div class="dcf-mt-3 custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans ">
+          <a class="dcf-txt-decor-none custom-arrow" href="{{ url }}">Read more</a>
+        </div>
+      </div>
+      <div class="custom-image dcf-relative custom-min-height-35 {{ obj_pos_class }}">
+        {{ content.field_article_lead_media }}
+      </div>
+    </div>
+    {# Recent News #}
+    <div class="dcf-pt-8">
+      {{ drupal_view('recent', 'block_2') }}
+    </div>
+
+  {% elseif content.field_article_display_options.0['#markup'] == '50/50 Lead & View'  %}
+
+    <div class="dcf-grid-halves@lg dcf-grid-full@sm dcf-ai-center dcf-mt-6">
+      <div class="dcf-relative">
+        <div class="dcf-z-2 custom-position dcf-h-auto {{ vertical_align_class }} {{ horizontal_align_class }} {{ compact_text_align_class }}">
+          <div class="dcf-p-2 unl-cream unl-bg-scarlet">
+            <h2 class="dcf-txt-h3">
+              <a href="{{ url }}" class="unl-cream dcf-txt-decor-none">{{ label }}</a>
+            </h2>
+            <div class="custom-before-in-text">
+              <div>{{ createdDate }} <span class="custom-section-display">{{ content.field_section }}</span></div>
+            </div>
+            <div class="dcf-mt-2 custom-feature-link dcf-txt-left dcf-txt-xs dcf-uppercase unl-font-sans">
+              <a class="dcf-txt-decor-none custom-arrow" href="{{ url }}" style="color:var(--caption);">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          {{ content.field_article_lead_media }}
+        </div>
+      </div>
+      {# Recent News #}
+      <div class="custom-dcf-wrapper">
+        {{ drupal_view('recent', 'block_3') }}
+      </div>
+    </div>
+
+  {% endif %}
+
+</div>
+
+
+
+

@@ -1,0 +1,16 @@
+global-styling:
+  version: VERSION
+  css:
+    theme:
+      css/new.css: {}
+      css/wdn-overrides.css: {}
+article:
+  version: VERSION
+  css:
+    theme:
+      css/theme/article.css: {}
+seven-photo-up:
+  version: VERSION
+  css:
+    theme:
+      css/theme/seven-photo-up.css: {}

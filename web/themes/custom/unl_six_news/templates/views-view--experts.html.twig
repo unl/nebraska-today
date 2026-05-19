@@ -1,0 +1,49 @@
+{%
+  set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  <div class="dcf-grid dcf-col-gap-vw dcf-row-gap-6">
+    <div class="dcf-col-100% dcf-col-75%-start@md">
+      <h2 class="dcf-regular dcf-mb-4">Featured Fields of Expertise</h2>
+      {{ drupal_view('experts_featured', 'block_1') }}
+    </div>
+    <div class="dcf-col-100% dcf-col-25%-end@md">
+      {% if header %}
+        <header>
+          {{ header }}
+        </header>
+      {% endif %}
+    </div>
+  </div>
+
+  <h2 class="dcf-mt-4">All Fields</h2>
+
+  {{ exposed }}
+  {{ attachment_before }}
+
+  <span class="dcf-d-block dcf-mb-8"></span>
+
+  {% if rows -%}
+    {{ rows }}
+  {% elseif empty -%}
+    {{ empty }}
+  {% endif %}
+  {{ pager }}
+
+  {{ attachment_after }}
+  {{ more }}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

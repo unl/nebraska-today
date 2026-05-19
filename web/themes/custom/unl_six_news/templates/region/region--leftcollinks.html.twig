@@ -1,0 +1,19 @@
+{%
+  set classes = [
+  'region',
+  'region-' ~ region|clean_class,
+]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    <h2>Related Links</h2>
+    <ul>
+      <li><a href="https://ucomm.unl.edu/">University Communication &amp; Marketing</a></li>
+      <li><a href="https://huskers.com/media">Athletic Department Communications Office</a></li>
+    </ul>
+
+    {{ content }}
+
+  </div>
+{% endif %}

@@ -1,0 +1,341 @@
+<div class="dcf-mb-5">
+    <div class="dcf-mt-5">
+        <h1 class="dcf-txt-center dcf-mb-3 dcf-mt-3 ">{{ content.field_title }}</h1>
+        <p>{{ content.body.0 }}</p>
+    </div>
+    
+    {# for 2 images layout #}
+    {% if content.field_grid_styling.0['#markup'] == '2 Images-Type 1' %}
+        <div class = "custom-gallery4x4">
+            <span class= "custom-gallery-2-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-2-2-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+        </div>  
+
+    {% elseif content.field_grid_styling.0['#markup'] == '2 Images-Type 2' %}
+        <div class = "custom-gallery4x4">
+            <span class= "custom-gallery-2-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-2-2-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+        </div>  
+
+    {# for 2 images wide layout #}      
+    {% elseif content.field_grid_styling.0['#markup'] == '2 Wide-Images-Type 1' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper">
+            <span class= "custom-gallery-2-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-2-2-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+        </div>    
+
+    {% elseif content.field_grid_styling.0['#markup'] == '2 Wide-Images-Type 2' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper">
+            <span class= "custom-gallery-2-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-2-2-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+        </div> 
+
+    {# for 3 images layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 1' %}
+        <div class = "custom-gallery4x4">
+            <span class= "custom-gallery-3-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type1 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>   
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 2' %}
+        <div class = "custom-gallery4x4">
+            <span class= "custom-gallery-3-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type2 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>  
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 3' %}
+        <div class = "custom-gallery4x4 ">
+            <span class= "custom-gallery-3-1-type3 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type3 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type3 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div> 
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Images-Type 4' %}
+        <div class = "custom-gallery4x4">
+            <span class= "custom-gallery-3-1-type4 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type4 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type4 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>                   
+
+    {# for 3 images wide layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Wide-Images-Type 1' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-3-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type1 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>   
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Wide-Images-Type 2' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper">
+            <span class= "custom-gallery-3-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type2 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div> 
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Wide-Images-Type 3' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper">
+            <span class= "custom-gallery-3-1-type3 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type3 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type3 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>      
+
+    {% elseif content.field_grid_styling.0['#markup'] == '3 Wide-Images-Type 4' %}
+        <div class = "custom-gallery4x4 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-3-1-type4 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-3-2-type4 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-3-3-type4 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+        </div>   
+
+
+    {# for 4 images  layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '4 Images-Type 1' %}
+        <div class = "custom-gallery8x8 ">
+            <span class= "custom-gallery-4-1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover "> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-4-2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-4-3 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-4-4 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+        </div>
+
+    {# for 4 images wide layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '4 Wide-Images-Type 1' %}
+        <div class = "custom-gallery8x8 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-4-1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover "> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-4-2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-4-3 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-4-4 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+        </div>
+
+    {# for 5 images layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '5 Images-Type 1'%}
+        <div class = "custom-gallery8x8 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-5-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-5-2-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-5-3-type1 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-5-4-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-5-5-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+        </div>
+
+    {% elseif content.field_grid_styling.0['#markup'] == '5 Images-Type 2'%}
+        <div class = "custom-gallery8x8  custom-bleed custom-wrapper">
+            <span class= "custom-gallery-5-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-5-2-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-5-3-type2 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-5-4-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-5-5-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+        </div>
+
+    {# for 6 images layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '6 Images-Type 1' %}
+        <div class = "custom-gallery8x8  custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-6-1-type1  dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-6-2-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-6-3-type1 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-6-4-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-6-5-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+            <span class= "custom-gallery-6-6-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[5] }}</span>
+            </span>
+        </div>
+
+    {% elseif content.field_grid_styling.0['#markup'] == '6 Images-Type 2' %}
+        <div class = "custom-gallery8x8 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-6-1-type2  dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-6-2-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-6-3-type2 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-6-4-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-6-5-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+            <span class= "custom-gallery-6-6-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[5] }}</span>
+            </span>
+        </div>
+
+    {# for 7 images layout #}
+    {% elseif content.field_grid_styling.0['#markup'] == '7 Images-Type 1' %}
+        <div class = "custom-gallery8x8 custom-bleed custom-wrapper ">
+            <span class= "custom-gallery-7-1-type1 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-7-2-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-7-3-type1 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-7-4-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-7-5-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+            <span class= "custom-gallery-7-6-type1 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover">{{ content.field_gallery_media[5] }}</span>
+            </span>
+            <span class= "custom-gallery-7-7-type1 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover">{{ content.field_gallery_media[6] }}</span>
+            </span>
+        </div>
+
+    {% elseif content.field_grid_styling.0['#markup'] == '7 Images-Type 2' %}
+        <div class = "custom-gallery8x8 custom-bleed custom-wrapper">
+            <span class= "custom-gallery-7-1-type2 dcf-overflow-hidden ">
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[0] }}</span>
+            </span>
+            <span class= "custom-gallery-7-2-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[1] }}</span>
+            </span>
+            <span class= "custom-gallery-7-3-type2 dcf-overflow-hidden " > 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[2] }}</span>
+            </span>
+            <span class= "custom-gallery-7-4-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[3] }}</span>
+            </span>
+            <span class= "custom-gallery-7-5-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover"> {{ content.field_gallery_media[4] }}</span>
+            </span>
+            <span class= "custom-gallery-7-6-type2 dcf-overflow-hidden"> 
+                <span class="image-gallery-grid dcf-hover">{{ content.field_gallery_media[5] }}</span>
+            </span>
+            <span class= "custom-gallery-7-7-type2 dcf-overflow-hidden "> 
+                <span class="image-gallery-grid dcf-hover">{{ content.field_gallery_media[6] }}</span>
+            </span>
+        </div>
+
+    {% endif %} 
+</div>
+
+<script>
+    // Animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('dcf-show-quote');
+        }
+    });
+});
+const hiddenElements = document.querySelectorAll('.dcf-hidden-quote');
+hiddenElements.forEach((el) => observer.observe(el));
+
+</script>
