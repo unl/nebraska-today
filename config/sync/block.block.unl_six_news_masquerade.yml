@@ -1,13 +1,13 @@
-uuid: 07444407-46c5-4825-a9f0-0e09a8c613c4
+uuid: c695e050-6b52-486b-b8d8-9a961661ecde
 langcode: en
 status: true
 dependencies:
   module:
     - masquerade
   theme:
-    - unl_five_news
-id: masquerade
-theme: unl_five_news
+    - unl_six_news
+id: unl_six_news_masquerade
+theme: unl_six_news
 region: leftcollinks
 weight: 0
 provider: null

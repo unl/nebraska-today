@@ -1,13 +1,13 @@
-uuid: 21c15e19-984b-4554-b81f-5dc37fa4b5ae
+uuid: bfbdb59b-2849-47ca-b37a-0ee7cc4c0a8a
 langcode: en
 status: true
 dependencies:
   theme:
-    - unl_five_news
+    - unl_six_news
 _core:
   default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
-id: unl_five_news_primary_admin_actions
-theme: unl_five_news
+id: unl_six_news_primary_admin_actions
+theme: unl_six_news
 region: content_top
 weight: -3
 provider: null

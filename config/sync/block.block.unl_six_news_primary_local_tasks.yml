@@ -1,0 +1,34 @@
+uuid: f699de3f-b71d-4283-9e46-26c02893cd18
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - unl_six_news
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: unl_six_news_primary_local_tasks
+theme: unl_six_news
+region: navlinks
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      editor_ianr: editor_ianr
+      content_editor: content_editor
+      administrator: administrator
+      super_administrator: super_administrator

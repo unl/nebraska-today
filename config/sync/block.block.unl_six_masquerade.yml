@@ -1,0 +1,21 @@
+uuid: b12d4779-7ab0-4b58-942a-22141f98ebe6
+langcode: en
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - unl_six
+id: unl_six_masquerade
+theme: unl_six
+region: leftcollinks
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  label_display: visible
+  provider: masquerade
+  show_unmasquerade_link: false
+visibility: {  }

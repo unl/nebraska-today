@@ -1,4 +1,4 @@
-uuid: d7ccea82-9fd9-42db-bfe2-4a30fdcc871e
+uuid: 4b2a9ce7-ab59-41ad-a725-0d3c5544c770
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,9 @@ dependencies:
   module:
     - views
   theme:
-    - unl_five_news
-id: unl_five_news_views_block__footer_placeholder_block_1
-theme: unl_five_news
+    - unl_six_news
+id: unl_six_news_views_block__footer_placeholder_block_1
+theme: unl_six_news
 region: contactinfo
 weight: 0
 provider: null

@@ -1,0 +1,24 @@
+uuid: 597312fa-6277-46ca-ba9f-5f1eabe0caa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.footer_placeholder
+  module:
+    - views
+  theme:
+    - unl_six
+id: unl_six_views_block__footer_placeholder_block_1
+theme: unl_six
+region: contactinfo
+weight: 0
+provider: null
+plugin: 'views_block:footer_placeholder-block_1'
+settings:
+  id: 'views_block:footer_placeholder-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

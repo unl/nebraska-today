@@ -1,14 +1,14 @@
-uuid: 9dd9273a-7d3a-47a0-ab70-6ffad1b8638f
+uuid: c2648a0d-bef0-4a4c-ae00-2586a152de6b
 langcode: en
 status: true
 dependencies:
   theme:
-    - unl_five
+    - unl_six_news
 _core:
   default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
-id: unl_five_page_title
-theme: unl_five
-region: header
+id: unl_six_news_page_title
+theme: unl_six_news
+region: hero
 weight: -5
 provider: null
 plugin: page_title_block

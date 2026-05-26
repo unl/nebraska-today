@@ -1,4 +1,4 @@
-uuid: 236f9d33-8947-4b3e-a95c-ee250acdc9d0
+uuid: 6167e7d4-8850-49ba-881b-cf20b970f38f
 langcode: en
 status: true
 dependencies:
@@ -8,9 +8,9 @@ dependencies:
     - domain
     - system
   theme:
-    - unl_five_news
-id: unl_five_news_main_menu_ianr
-theme: unl_five_news
+    - unl_six_news
+id: unl_six_news_main_menu_ianr
+theme: unl_six_news
 region: navlinks
 weight: 0
 provider: null

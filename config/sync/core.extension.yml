@@ -119,6 +119,6 @@ module:
 theme:
   claro: 0
   stable9: 0
-  unl_five: 0
-  unl_five_news: 0
+  unl_six: 0
+  unl_six_news: 0
 profile: unl_news

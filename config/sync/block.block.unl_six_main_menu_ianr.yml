@@ -1,0 +1,33 @@
+uuid: ae98493d-50e6-44c5-b323-db2777e96c70
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main-ianr
+  module:
+    - domain
+    - system
+  theme:
+    - unl_six
+id: unl_six_main_menu_ianr
+theme: unl_six
+region: navlinks
+weight: 0
+provider: null
+plugin: 'system_menu_block:main-ianr'
+settings:
+  id: 'system_menu_block:main-ianr'
+  label: 'Main navigation (IANR)'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility:
+  domain:
+    id: domain
+    negate: false
+    context_mapping:
+      domain: '@domain.current_domain_context:domain'
+    domains:
+      ianrnews_unl_edu: ianrnews_unl_edu
