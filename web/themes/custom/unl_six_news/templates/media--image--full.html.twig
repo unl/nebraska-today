@@ -1,0 +1,14 @@
+{#
+  Used for High Resolution Photos and....?
+#}
+<div{{ attributes.addClass('dcf-mb-6') }}>
+  {{
+    content.field_media_image[0]|merge({
+      '#item_attributes': create_attribute({
+        class: ['dcf-gallery-img'],
+        'data-cutline': media.field_media_image.alt,
+        'data-credit': media.field_media_image_credit.value
+      })
+    })
+  }}
+</div>
