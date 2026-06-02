@@ -42,8 +42,8 @@
 
 
 .dcf-hover-image:hover {
-  border: 1px solid var(--hover);
-  transition: border .3s ease;
+  outline: 1px solid var(--hover);
+  transition: outline .3s ease;
 }
 
 .custom-l-line {
