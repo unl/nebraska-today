@@ -65,7 +65,7 @@
         "drupal/core-recommended": "^10.0",
         "drupal/ctools": "^4.0",
         "drupal/diff": "^2.0@beta",
-        "drupal/domain_access": "^2.0@beta",
+        "drupal/domain": "^2.0",
         "drupal/external_entities": "2.x@dev",
         "drupal/feeds": "^3.0@beta",
         "drupal/feeds_ex": "1.x-dev@dev",

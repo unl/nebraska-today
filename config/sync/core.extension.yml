@@ -28,7 +28,6 @@ module:
   dblog: 0
   diff: 0
   domain: 0
-  domain_access: 0
   domain_config: 0
   domain_config_ui: 0
   dynamic_page_cache: 0
@@ -115,6 +114,7 @@ module:
   image_style_warmer: 10
   views: 10
   paragraphs: 11
+  domain_access: 20
   unl_news: 1000
 theme:
   claro: 0
