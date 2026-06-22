@@ -2,6 +2,8 @@ uuid: b72c7c0c-8d8f-4184-82ad-cc66becc5f73
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.simplenews_issue
   module:
     - node
 id: node_newsletter_issue
@@ -12,7 +14,6 @@ selection_criteria:
   053e4998-4edb-4267-b6d6-4f112727f98b:
     id: 'entity_bundle:node'
     negate: false
-    uuid: 053e4998-4edb-4267-b6d6-4f112727f98b
     context_mapping:
       node: node
     bundles:
