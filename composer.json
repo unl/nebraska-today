@@ -132,6 +132,7 @@
     },
     "scripts": {
         "post-drupal-scaffold-cmd": [
+            "cd web && patch -p1 < ../patches/custom-htaccess-block-bots.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-oldpaths.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-enforce-https.patch",
             "cd web && patch -p1 < ../patches/custom-htaccess-noindex-test-domain.patch",

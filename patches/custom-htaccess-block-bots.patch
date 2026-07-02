@@ -1,0 +1,31 @@
+diff --git a/.htaccess b/.htaccess
+index 0d8a283..622f899 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -189,3 +189,26 @@ AddEncoding gzip svgz
+   # Disable Proxy header, since it's an attack vector.
+   RequestHeader unset Proxy
+ </IfModule>
++
++SetEnvIf User-Agent "Ahrefs" bad_user
++SetEnvIf User-Agent "AliyunSecBot" bad_user
++SetEnvIf User-Agent "Amazonbot" bad_user
++SetEnvIf User-Agent "Amzn-SearchBot" bad_user
++SetEnvIf User-Agent "Applebot" bad_user
++SetEnvIf User-Agent "Bytespider" bad_user
++SetEnvIf User-Agent "ClaudeBot" bad_user
++SetEnvIf User-Agent "Claude-SearchBot" bad_user
++SetEnvIf User-Agent "crawler" bad_user
++SetEnvIf User-Agent "DataForSeoBot" bad_user
++SetEnvIf User-Agent "dotbot" bad_user
++SetEnvIf User-Agent "GPTBot" bad_user
++SetEnvIf User-Agent "OAI-AdsBot" bad_user
++SetEnvIf User-Agent "OAI-SearchBot" bad_user
++SetEnvIf User-Agent "PerplexityBot" bad_user
++SetEnvIf User-Agent "PetalBot" bad_user
++SetEnvIf User-Agent "SeekportBot" bad_user
++SetEnvIf User-Agent "SemrushBot" bad_user
++SetEnvIf User-Agent "SleepBot" bad_user
++SetEnvIf User-Agent "Sogou" bad_user
++SetEnvIf User-Agent "TikTokSpider" bad_user
++Deny from env=bad_user
