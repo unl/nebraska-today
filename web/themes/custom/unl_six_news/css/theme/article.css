@@ -1995,6 +1995,6 @@ blockquote p:nth-of-type(3)::after {
   padding-right: 5.62vw;
 }
 
-.unl-bg-scarlet.unl-cream a {
+#dcf-main .unl-bg-scarlet.unl-cream a {
   color: #fefdfa !important;
 }
