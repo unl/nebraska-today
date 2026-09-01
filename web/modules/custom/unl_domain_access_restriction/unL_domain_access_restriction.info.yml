@@ -1,0 +1,7 @@
+name: Domain Access Restriction
+type: module
+description: Restricts deletion/unpublishing of content assigned to a domain beyond what the user has access to.
+core_version_requirement: ^10.6 || ^11
+package: UNL
+dependencies:
+  - domain_access:domain_access

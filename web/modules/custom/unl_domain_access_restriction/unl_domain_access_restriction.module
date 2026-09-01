@@ -1,0 +1,66 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * Implements hook_entity_access().
+ */
+function unl_domain_access_restriction_entity_access(
+    EntityInterface       $entity,
+                          $operation,
+    AccountInterface      $account,
+) {
+  xdebug_break();
+  // Only apply this restriction to deleting nodes.
+  if ($operation !== 'delete' || $entity->getEntityTypeId() !== 'node') {
+    return AccessResult::neutral();
+  }
+
+  // Make sure the node has the Domain Access field.
+  if (!$entity->hasField('field_domain_access')) {
+    return AccessResult::neutral();
+  }
+
+  // Load the actual user entity.
+  $user = User::load($account->id());
+
+  if (!$user || !$user->hasField('field_domain_access')) {
+    return AccessResult::neutral();
+  }
+
+  // Get the domains assigned to the user.
+  $user_domain_ids = array_filter(
+      array_column(
+          $user->get('field_domain_access')->getValue(),
+          'target_id'
+      )
+  );
+
+  // Get the domains assigned to the node.
+  $node_domain_ids = array_filter(
+      array_column(
+          $entity->get('field_domain_access')->getValue(),
+          'target_id'
+      )
+  );
+
+  // Find domains assigned to the node that the user is NOT assigned to.
+  $unauthorized_domain_ids = array_diff(
+      $node_domain_ids,
+      $user_domain_ids
+  );
+
+  // If the node contains even one domain the user isn't assigned to,
+  // deny deletion.
+  if (!empty($unauthorized_domain_ids)) {
+    return AccessResult::forbidden()
+        ->addCacheableDependency($entity)
+        ->cachePerUser();
+  }
+
+  // Otherwise, let Domain Access perform its normal access checking.
+  return AccessResult::neutral();
+}
