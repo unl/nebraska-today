@@ -2,36 +2,37 @@
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
 use Drupal\user\Entity\User;
 
 /**
  * Implements hook_entity_access().
+ *
+ * Prevents users from deleting nodes when the node is assigned to any domain
+ * that the user is not assigned to.
  */
 function unl_domain_access_restriction_entity_access(
-    EntityInterface       $entity,
-                          $operation,
-    AccountInterface      $account,
+    EntityInterface $entity,
+                    $operation,
+    AccountInterface $account,
 ) {
-  xdebug_break();
-  // Only apply this restriction to deleting nodes.
+  // We only care about deleting nodes.
   if ($operation !== 'delete' || $entity->getEntityTypeId() !== 'node') {
     return AccessResult::neutral();
   }
 
-  // Make sure the node has the Domain Access field.
   if (!$entity->hasField('field_domain_access')) {
     return AccessResult::neutral();
   }
 
-  // Load the actual user entity.
   $user = User::load($account->id());
 
   if (!$user || !$user->hasField('field_domain_access')) {
     return AccessResult::neutral();
   }
 
-  // Get the domains assigned to the user.
   $user_domain_ids = array_filter(
       array_column(
           $user->get('field_domain_access')->getValue(),
@@ -39,7 +40,6 @@ function unl_domain_access_restriction_entity_access(
       )
   );
 
-  // Get the domains assigned to the node.
   $node_domain_ids = array_filter(
       array_column(
           $entity->get('field_domain_access')->getValue(),
@@ -47,20 +47,76 @@ function unl_domain_access_restriction_entity_access(
       )
   );
 
-  // Find domains assigned to the node that the user is NOT assigned to.
   $unauthorized_domain_ids = array_diff(
       $node_domain_ids,
       $user_domain_ids
   );
 
-  // If the node contains even one domain the user isn't assigned to,
-  // deny deletion.
   if (!empty($unauthorized_domain_ids)) {
     return AccessResult::forbidden()
         ->addCacheableDependency($entity)
+        ->addCacheableDependency($user)
         ->cachePerUser();
   }
 
-  // Otherwise, let Domain Access perform its normal access checking.
   return AccessResult::neutral();
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ *
+ * Disables the Published status field when the user is not affiliated with
+ * all of the domains assigned to the node.
+ */
+function unl_domain_access_restriction_form_node_form_alter(
+    array &$form,
+    FormStateInterface $form_state,
+    $form_id,
+) {
+  $node = $form_state->getFormObject()->getEntity();
+
+  if (!$node instanceof NodeInterface || $node->isNew()) {
+    return;
+  }
+
+  if (!$node->hasField('field_domain_access')) {
+    return;
+  }
+
+  $account = \Drupal::currentUser();
+  $user = User::load($account->id());
+
+  if (!$user || !$user->hasField('field_domain_access')) {
+    return;
+  }
+
+  $user_domain_ids = array_filter(
+      array_column(
+          $user->get('field_domain_access')->getValue(),
+          'target_id'
+      )
+  );
+
+  $node_domain_ids = array_filter(
+      array_column(
+          $node->get('field_domain_access')->getValue(),
+          'target_id'
+      )
+  );
+
+  $unauthorized_domain_ids = array_diff(
+      $node_domain_ids,
+      $user_domain_ids
+  );
+  xdebug_break();
+  // If the node contains a domain the user isn't assigned to, prevent
+  // them from changing Published to Unpublished.
+  if (!empty($unauthorized_domain_ids)) {
+    if (isset($form['status']['widget']['value'])) {
+      $form['status']['widget']['value']['#disabled'] = TRUE;
+      $form['status']['widget']['value']['#description'] = t(
+          'This item is also on Nebraska Today. To remove it from IANR News, uncheck the Domain Access setting below.'
+      );
+    }
+  }
 }
