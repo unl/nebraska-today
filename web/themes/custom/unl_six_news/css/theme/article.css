@@ -33,21 +33,6 @@
 }
 
 
-.custom-first-paragraph-big-font p:first-of-type {
-  font-size: 1.33em;
-}
-.custom-first-paragraph-big-font li p {
-  font-size: inherit !important;
-}
-.dcf-drop-cap p:first-of-type::first-letter {
-    float: left;
-    font-size: 4.74em;
-    line-height: .63;
-    margin-top: .84rem;
-    padding-left: .056rem;
-    font-weight: 600;
-    padding-right: .56rem;
-}
 
 
 .dcf-hover-image:hover {
